@@ -1,8 +1,8 @@
 National Information Exchange Model Naming and Design Rules
 
-Version 4.0beta1
+Version 4.0beta2pre1
 
-March 31, 2017
+May 10, 2017
 
 NIEM Technical Architecture Committee (NTAC)
 
@@ -705,7 +705,7 @@ Rule 4-6. Schema claims extension conformance target
 
    The RDF view of the meaning of data carries into NIEM: NIEM elements form statements that make claims about the world: that a person has a name, a residence location, a spouse, etc. The assertion of one set of facts does not necessarily rule out other statements: A person could have multiple names, could have moved, or could be divorced. Each statement is a claim asserted to be true by the originator of the statement.
 
-   This NDR discusses defines NIEM data in XML terminology, complex types and elements, rather than using RDF terms, resources and properties. NIEM objects and associations coincide with RDF resources; both objects and associations correspond to RDF resources with additional constraints:
+   This NDR discusses NIEM data in XML terminology, complex types and elements, rather than using RDF terms, resources and properties. NIEM objects and associations coincide with RDF resources; both objects and associations correspond to RDF resources with additional constraints:
 
    NIEM associations are defined as n-ary properties, as described in [N-ary], "Use Case 3: N-ary relation with no distinguished participant". NIEM associations are defined in Section 10.3, Associations, below. Assertions are made via NIEM-conformant XML data, described by Section 12, XML instance document rules, below.
 
@@ -735,7 +735,9 @@ Rule 4-6. Schema claims extension conformance target
 
       The properties of a node in a graph may be spread among different node objects within a document. When that happens, the keys of the different node objects need to be merged to create the properties of the resulting node.
 
-   Mapping of NIEM data to RDF frequently involves the use of blank nodes, not universally-meaningful resource IRIS.
+   Mapping of NIEM data to RDF frequently involves the use of blank nodes, instead of universally-meaningful resource IRIs.
+
+   The identifier of an object is constructed using the above attributes; if the above attributes do not appear on an object, then an object may be treated as a blank node, and assigned a blank node identifier.
 
 5.5. NIEM data is explicit, not implicit
 
@@ -745,8 +747,6 @@ Rule 4-6. Schema claims extension conformance target
 
 5.6. Mapping of NIEM concepts to RDF concepts
 
-   This section has not yet been updated to accommodate attribute structures:uri, and the updated mappings for structures:id and structures:ref.
-
    This section provides RDF implementations for many aspects of NIEM-conformant schemas and instance documents.
 
 5.6.1. Resource IRIs for XML Schema components and information items
@@ -755,7 +755,7 @@ Rule 4-6. Schema claims extension conformance target
 
       A qualified name is a name subject to namespace interpretation.
 
-   A Qname is used to represent a qualified name, as described by [XML Schema Datatypes] Section 3.2.18, QName, which states:
+   A QName is used to represent a qualified name, as described by [XML Schema Datatypes] Section 3.2.18, QName, which states:
 
       The value space of QName is the set of tuples {namespace name, local part}, where namespace name is an anyURI and local part is an NCName.
 
@@ -773,17 +773,7 @@ Rule 4-6. Schema claims extension conformance target
 
       *  schema component: the resource IRI is built from the qualified name constructed from its {target namespace} and {name} properties.
 
-5.6.2. Blank nodes for instances and schemas
-
-   A blank node may correspond to an occurrence of an element information item, which represents the relationship established by the element.
-
-   A blank node may correspond to the content of an element, which represents an instance of a type. This is distinct from the occurrence of the element itself. This includes resolution of structures:ref to structures:id attributes, in which case the content of the referred-to element is considered the content of the element.
-
-   A blank node may correspond to a combination of factors. For example, a blank node is used for each application of an element to a base object via an augmentation, as a single augmentation may be applied to multiple base objects.
-
-   A blank node may also correspond to the above, but for attributes.
-
-5.6.3. RDF Literals
+5.6.2. RDF Literals
 
    A simple value may be incorporated into a [conformant instance XML document] as the value of an attribute information item, or as a child of an element information item. This section describes how a simple value is mapped to an RDF literal. Note that there is no mapping for the simple content of an element that is not a [conformant element information item], nor for attributes defined by non-conformant schema documents, so there is no accommodation of mixed content, untyped values, or other cases outside of what conformant schema documents define.
 
@@ -797,7 +787,7 @@ Rule 4-6. Schema claims extension conformance target
 
    The literal for a simple value $value is:
 
-      *  If $value has a base type definition that is derived from type xs:string (and not a XML Schema-defined type derived from xs:string), and a non-empty language specification is applied to $value using xml:lang, as described by [XML] Section 2.12, Language Identification, then the literal is a language-tagged string, as described by [RDF Concepts] Section 3.3, Literals:
+      *  If $value has a base type definition that is derived from type xs:string (and not an XML Schema-defined type derived from xs:string), and a non-empty language specification is applied to $value using xml:lang, as described by [XML] Section 2.12, Language Identification, then the literal is a language-tagged string, as described by [RDF Concepts] Section 3.3, Literals:
 
             "$lexical-form"@$language-tag
 
@@ -823,75 +813,45 @@ Rule 4-6. Schema claims extension conformance target
 
             Where: $lexical-form is a Unicode string for $value.
 
-5.6.4. Resolved element
-
-   This document defines two attributes, structures:id and structures:ref that, together, define a reference mechanism for conformant elements. This enables the use of references to date in place of directly-contained data, which loops in data graphs, as well as for multiple relationships to be defined to a single object. This mechanism uses XML IDs and IDREFs as provided by the XML Schema language. As this document defines the mechanism, a structures:ref attribute may refer to a structures:id; this reference means that the element that has the structures:ref attribute refers to the element that has the structures:id attribute.
-
-   This section defines an operation, resolving an element information item to obtain whatever element is referred to by it. This is put in terms of taking an element and finding the resolved element to which it refers. In a case where there is no reference, the resolved element is the same as the original element.
-
-   [Definition: resolved element information item]
-
-      Within an XML document $document, for any element information item $element there is a resolved element information item, which is:
-
-         *  If all of the following are true:
-
-               *  $document is a [conformant instance XML document].
-
-               *  $element and $referent are [conformant element information items] within $document.
-
-               *  $element owns attribute information item structures:ref with a value $ref.
-
-               *  $referent owns attribute information item structures:id with a value $id.
-
-               *  $ref is equal to $id.
-
-            Then the resolved element information item for $element is $referent.
-
-         *  Otherwise, the resolved element information item for $element is $element.
-
-5.6.5. NIEM instance mappings to RDF
+5.6.3. NIEM instance mappings to RDF
 
    This section has the following subsections:
 
-   * Section 5.6.5.1, XML document mapping
-   * Section 5.6.5.2, Content of an element
-   * Section 5.6.5.3, Element as a property with unknown context 
-   * Section 5.6.5.4, Element as a simple property of an object or association
-   * Section 5.6.5.5, Attribute as a simple property of an object or association
-   * Section 5.6.5.6, Elements via an augmentation type
-   * Section 5.6.5.7, Attributes via an augmentation type
-   * Section 5.6.5.8, Elements applied to an object via a metadata type
-   * Section 5.6.5.9, Attributes applied to an object via a metadata type
-   * Section 5.6.5.10, Elements applied to a relationship via a metadata type
-   * Section 5.6.5.11, Attributes applied to a relationship via a metadata type
+   * Section 5.6.3.1, XML document mapping
+   * Section 5.6.3.2, Element instance
+   * Section 5.6.3.3, Element as a property with unknown context 
+   * Section 5.6.3.4, Element as a simple property of an object or association
+   * Section 5.6.3.5, Attribute as a simple property of an object or association
+   * Section 5.6.3.6, Elements via an augmentation type
+   * Section 5.6.3.7, Attributes via an augmentation type
 
-5.6.5.1. XML document mapping
+5.6.3.1. XML document mapping
 
    A [conformant instance XML document] entails a corresponding RDF graph, which is a set of triples, which are entailed by the mapping of the contents of the XML document to RDF.
 
-5.6.5.2. Content of an element
+5.6.3.2. Element instance
 
    A [conformant element information item] $element that has property [type definition] that is an [object type] or an [association type], entails the RDF:
 
-      $content rdf:type $type .
+      $object rdf:type $type .
 
       Where:
 
-         *  $content is a blank node corresponding to the content of $element.
+         *  $object is a node identifier for the object held by $element.
 
          *  $type is resource IRI for the value of the [type definition] property of $element.
 
    If $element has a non-empty simple value, then it also entails the RDF:
 
-      $content rdf:value $literal .
+      $object rdf:value $literal .
 
       Where:
 
-         *  $content is as above.
+         *  $object is as above.
 
-         *  $literal is the literal value for $element, as described in Section 5.6.3, RDF Literals, above.
+         *  $literal is the literal value for $element, as described in Section 5.6.2, RDF Literals, above.
 
-5.6.5.3. Element as a property with unknown context 
+5.6.3.3. Element as a property with unknown context 
 
    A [conformant element information item] $element that
 
@@ -901,66 +861,51 @@ Rule 4-6. Schema claims extension conformance target
 
    entails the RDF:
 
-      $element-node rdf:type rdf:Statement .
-      $element-node rdf:subject $blank-node .
-      $element-node rdf:predicate $predicate .
-      $element-node rdf:object $element-content-blank-node .
+      $context $predicate $object .
 
       Where:
 
-         *  $element-node is a blank node corresponding to $element, to represent the relationship being established.
-
-         *  $blank-node is a blank node, to represent the unknown context in which $element occurs.
+         *  $context is a blank node, to represent the unknown context in which $element occurs.
 
          *  $predicate is the IRI for element information item $element, to represent the semantics of the relationship.
 
-         *  $element-content-blank-node is a blank node corresponding to the content of the resolved element information item for $element.
+         *  $object is a node identifier for the object held by $element.
 
-5.6.5.4. Element as a simple property of an object or association
+5.6.3.4. Element as a simple property of an object or association
 
    A [conformant element information item] $context that is an instance of an [object type] or [association type], and that has a child [conformant element information item] $element that is an instance of an [object type] or an [association type], entails the RDF:
 
-      $element-node rdf:type rdf:Statement .
-      $element-node rdf:subject $subject .
-      $element-node rdf:predicate $predicate .
-      $element-node rdf:object $object .
+      $subject $predicate $object .
 
       Where:
 
-         *  $element-node is a blank node corresponding to $element.
-
-         *  $subject is a blank node corresponding to the content of $context.
+         *  $subject is a node identifier for the object held by $context.
 
          *  $predicate is the IRI for $element.
 
-         *  $object is a blank node corresponding to the content of the [resolved element information item] for $child.
+         *  $object is a node identifier for the object held by $element.
 
-5.6.5.5. Attribute as a simple property of an object or association
+5.6.3.5. Attribute as a simple property of an object or association
 
    An attribute information item $attribute where:
 
       *  $attribute is owned by a [conformant element information item] $context that has property [type definition] that is an [object type] or an [association type], and
 
-      *  $attribute has property [attribute declaration] $attribute-declaration that is defined by a [reference schema document] or an [extension schema document]
+      *  $attribute has property [attribute declaration] that is defined by a [reference schema document] or an [extension schema document]
 
    entails the RDF:
 
-      $attribute-node rdf:type rdf:Statement .
-      $attribute-node rdf:subject $subject .
-      $attribute-node rdf:predicate $predicate .
-      $attribute-node rdf:object $literal .
+      $subject $predicate $literal .
 
       Where:
 
-         *  $attribute-node is a blank node corresponding to $attribute.
+         *  $subject is a node identifier for the object held by $context.
 
-         *  $subject is a blank node corresponding to the content of $context.
+         *  $predicate is the resource IRI for $attribute.
 
-         *  $predicate is the resource IRI for $attribute-declaration.
+         *  $literal is the literal value for $attribute, as described in Section 5.6.2, RDF Literals, above.
 
-         *  $literal is the literal value for $attribute, as described in Section 5.6.3, RDF Literals, above.
-
-5.6.5.6. Elements via an augmentation type
+5.6.3.6. Elements via an augmentation type
 
    An element of an augmentation type contains a set of elements and attributes that are applied to some base object or association.
 
@@ -970,30 +915,23 @@ Rule 4-6. Schema claims extension conformance target
 
       *  Element information item $augmentation that is a child of $base that has [type definition] that is an [augmentation type],
 
-      *  Element information item $resolved-augmentation that is the [resolved element information item] for $augmentation,
+      *  Element information item $resolved-augmentation is any augmentation element with an object that has the the same node identifier as the object held by $augmentation, and
 
-      *  Element information item $element that is a child of $resolved-augmentation, that has [type definition] that is an [object type] or an [association type], and
-
-      *  Element information item $resolved-element that is the [resolved element information item] for $element
+      *  Element information item $element that is a child of $resolved-augmentation, that has [type definition] that is an [object type] or an [association type].
 
    entails the RDF:
 
-      $element-node rdf:type rdf:Statement .
-      $element-node rdf:subject $subject .
-      $element-node rdf:predicate $predicate .
-      $element-node rdf:object $object .
+      $subject $predicate $object .
 
       Where:
 
-         *  $element-node is a blank node corresponding to $element applied to $base via $augmentation.
-
-         *  $subject is a blank node corresponding to the content of $base.
+         *  $subject is the node identifier for the object held by $base.
 
          *  $predicate is the resource IRI for [element declaration] of $element.
 
-         *  $object is a blank node corresponding to the content of $resolved-element
+         *  $object is the node identifier for the object held by $element
 
-5.6.5.7. Attributes via an augmentation type
+5.6.3.7. Attributes via an augmentation type
 
    An element of an augmentation type contains a set of elements and attributes that are applied to some base object or association.
 
@@ -1003,156 +941,23 @@ Rule 4-6. Schema claims extension conformance target
 
       *  Element information item $augmentation that is a child of $base that has [type definition] that is an [augmentation type],
 
-      *  Element information item $resolved-augmentation that is the [resolved element information item] for $augmentation,
+      *  Element information item $resolved-augmentation that is any augmentation element with an object that has the same node identifier as the object held by $augmentation,
 
       *  Attribute information item $attribute that is owned by $resolved-augmentation, that has an [attribute declaration] that is defined by a [reference schema document] or an [extension schema document]
 
    entails the RDF:
 
-      $attribute-node rdf:type rdf:Statement .
-      $attribute-node rdf:subject $subject .
-      $attribute-node rdf:predicate $predicate .
-      $attribute-node rdf:object $literal .
+      $subject $predicate $literal .
 
       Where:
 
-         *  $attribute-node is a blank node corresponding to $attribute applied to $base via $augmentation.
+         *  $subject is a node identifier for the object held by $base.
 
-         *  $subject is a blank node corresponding to the content of $base.
+         *  $predicate is the resource IRI for $attribute.
 
-         *  $predicate is the resource IRI for [attribute declaration] of $attribute.
+         *  $literal is the literal value for $attribute, as described in Section 5.6.2, RDF Literals, above.
 
-         *  $literal is the literal value for $attribute, as described in Section 5.6.3, RDF Literals, above.
-
-5.6.5.8. Elements applied to an object via a metadata type
-
-   An element of a metadata type contains a set of elements and attributes that are applied to some base object or association.
-
-   For each element applied to a type via a metadata type:
-
-      *  Element information item $base that is an instance of an [object type] or [association type],
-
-      *  Each value $metadata-idref that is a value in attribute structures:metadata owned by $base.
-
-      *  Each element information item $metadata that has [type definition] that is a [metadata type], and has attribute structures:id with a value of $metadata-idref.
-
-      *  Element information item $element that is a child of $metadata, that has [type definition] that is an [object type] or an [association type], and
-
-      *  Element information item $resolved-element that is the [resolved element information item] for $element
-
-   entails the RDF:
-
-      $element-node rdf:type rdf:Statement .
-      $element-node rdf:subject $subject .
-      $element-node rdf:predicate $predicate .
-      $element-node rdf:object $object .
-
-      Where:
-
-         *  $element-node is a blank node corresponding to $element applied to $base via $metadata.
-
-         *  $subject is a blank node corresponding to the content of $base.
-
-         *  $predicate is the resource IRI for [element declaration] of $element.
-
-         *  $object is a blank node corresponding to the content of $resolved-element
-
-5.6.5.9. Attributes applied to an object via a metadata type
-
-   An element of a metadata type contains a set of elements and attributes that are applied to some base object or association.
-
-   For each element applied to a type via a metadata type:
-
-      *  Element information item $base that is an instance of an [object type] or [association type],
-
-      *  Each value $metadata-idref that is a value in attribute structures:metadata owned by $base.
-
-      *  Each element information item $metadata that has [type definition] that is a [metadata type], and has attribute structures:id with a value of $metadata-idref.
-
-      *  Attribute information item $attribute that is owned by $metadata, that has [attribute declaration] that is defined by a [reference schema document] or an [extension schema document]
-
-   entails the RDF:
-
-      $attribute-node rdf:type rdf:Statement .
-      $attribute-node rdf:subject $subject .
-      $attribute-node rdf:predicate $predicate .
-      $attribute-node rdf:object $literal .
-
-      Where:
-
-         *  $attribute-node is a blank node corresponding to $attribute applied to $base via $metadata.
-
-         *  $subject is a blank node corresponding to the content of $base.
-
-         *  $predicate is the resource IRI for [element declaration] of $element.
-
-         *  $literal is the literal value for $attribute, as described in Section 5.6.3, RDF Literals, above.
-
-5.6.5.10. Elements applied to a relationship via a metadata type
-
-   An element of a metadata type contains a set of elements and attributes that are applied to a relationship.
-
-   For each element applied to a type via a metadata type:
-
-      *  Element information item $base that is an instance of an [object type] or [association type],
-
-      *  Each value $metadata-idref that is a value in attribute structures:relationshipMetadata owned by $base.
-
-      *  Each element information item $metadata that has [type definition] that is a [metadata type], and has attribute structures:id with a value of $metadata-idref.
-
-      *  Element information item $element that is a child of $metadata, that has [type definition] that is an [object type] or an [association type], and
-
-      *  Element information item $resolved-element that is the [resolved element information item] for $element
-
-   entails the RDF:
-
-      $element-node rdf:type rdf:Statement .
-      $element-node rdf:subject $subject .
-      $element-node rdf:predicate $predicate .
-      $element-node rdf:object $object .
-
-      Where:
-
-         *  $element-node is a blank node corresponding to $element applied to $base via $metadata.
-
-         *  $subject is a blank node corresponding to $base.
-
-         *  $predicate is the resource IRI for [element declaration] of $element.
-
-         *  $object is a blank node corresponding to the content of $resolved-element
-
-5.6.5.11. Attributes applied to a relationship via a metadata type
-
-   An element of a metadata type contains a set of elements and attributes that are applied to a relationship.
-
-   For each element applied to a type via a metadata type:
-
-      *  Element information item $base that is an instance of an [object type] or [association type],
-
-      *  Each value $metadata-idref that is a value in attribute structures:metadata owned by $base.
-
-      *  Each element information item $metadata that has [type definition] that is a [metadata type], and has attribute structures:id with a value of $metadata-idref.
-
-      *  Attribute information item $attribute that is owned by $metadata, that has [attribute declaration] that is defined by a [reference schema document] or an [extension schema document]
-
-   entails the RDF:
-
-      $attribute-node rdf:type rdf:Statement .
-      $attribute-node rdf:subject $subject .
-      $attribute-node rdf:predicate $predicate .
-      $attribute-node rdf:object $literal .
-
-      Where:
-
-         *  $attribute-node is a blank node corresponding to $attribute applied to $base via $metadata.
-
-         *  $subject is a blank node corresponding to $base.
-
-         *  $predicate is the resource IRI for [element declaration] of $element.
-
-         *  $literal is the literal value for $attribute, as described in Section 5.6.3, RDF Literals, above.
-
-5.6.6. NIEM complex type definitions to RDF
+5.6.4. NIEM complex type definitions to RDF
 
    The following RDF mappings apply to the content of a [reference schema document] or [extension schema document].
 
@@ -1162,17 +967,13 @@ Rule 4-6. Schema claims extension conformance target
 
       Where $resource is the resource IRI for $type.
 
-   An [object type] or [association type] $type that has property {base type definition} $base entails the RDF:
+   An [object type] or [association type] $type that has property {base type definition} $base also entails the RDF:
 
-      $type-resource rdfs:subClassOf $base-resource
+      $resource rdfs:subClassOf $base-resource
 
-      Where:
+      Where $base-resource is the resource IRI for $base.
 
-         *  $type-resource is the resource IRI for $type.
-
-         *  $base-resource is the resource IRI for $base.
-
-5.6.7. NIEM element declaration mappings to RDF
+5.6.5. NIEM element declaration mappings to RDF
 
    The following RDF mappings apply to the content of a [reference schema document] or [extension schema document].
 
@@ -1210,7 +1011,7 @@ Rule 4-6. Schema claims extension conformance target
 
          *  $type-resource is the resource IRI for $type.
 
-5.6.8. NIEM attribute declarations to RDF
+5.6.6. NIEM attribute declarations to RDF
 
    The following RDF mappings apply to the content of a [reference schema document] or [extension schema document].
 
