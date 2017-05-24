@@ -702,7 +702,8 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-62</xsl:attribute>
-            <xsl:attribute name="name">xs:sequence must be child of xs:extension or xs:restriction</xsl:attribute>
+            <xsl:attribute name="name">xs:sequence must be child of xs:extension
+              or xs:restriction</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M67"/>
@@ -3060,8 +3061,10 @@
       <xsl:apply-templates select="*" mode="M66"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-62xs:sequence must be child of xs:extension or xs:restriction-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">xs:sequence must be child of xs:extension or xs:restriction</svrl:text>
+   <!--PATTERN rule_9-62xs:sequence must be child of xs:extension
+              or xs:restriction-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">xs:sequence must be child of xs:extension
+              or xs:restriction</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:sequence" priority="1000" mode="M67">

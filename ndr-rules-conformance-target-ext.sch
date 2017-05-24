@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="US-ASCII" standalone="yes"?><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" queryBinding="xslt2"><sch:title>Rules for extension XML Schema documents</sch:title><xsl:include href="ndr-functions.xsl"/>
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" queryBinding="xslt2">
+      <sch:title>Rules for extension XML Schema documents</sch:title>
+    
+      <xsl:include href="ndr-functions.xsl"/>
+    
 <sch:ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
 <sch:ns prefix="xsl" uri="http://www.w3.org/1999/XSL/Transform"/>
 <sch:ns prefix="nf" uri="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#NDRFunctions"/>
@@ -350,7 +354,8 @@
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_9-62"><sch:title>xs:sequence must be child of xs:extension or xs:restriction</sch:title>
+<sch:pattern id="rule_9-62"><sch:title>xs:sequence must be child of xs:extension
+              or xs:restriction</sch:title>
   <sch:rule context="xs:sequence">
     <sch:assert test="exists(parent::xs:extension) or exists(parent::xs:restriction)">Rule 9-62: An element xs:sequence MUST be a child of element xs:extension or xs:restriction.</sch:assert>
   </sch:rule>
