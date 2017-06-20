@@ -12,18 +12,6 @@
 <sch:ns prefix="structures" uri="http://release.niem.gov/niem/structures/4.0/"/>
 <sch:ns prefix="term" uri="http://release.niem.gov/niem/appinfo/4.0/"/>
       
-<sch:pattern id="rule_7-1"><sch:title>Document is an XML document</sch:title>
-  <sch:rule context="*[. is nf:get-document-element(.)]">
-    <sch:report test="true()">Rule 7-1: The document MUST be an XML document.</sch:report>
-  </sch:rule>
-</sch:pattern>
-        
-<sch:pattern id="rule_7-2"><sch:title>Document uses XML namespaces properly</sch:title>
-  <sch:rule context="*[. is nf:get-document-element(.)]">
-    <sch:report test="true()">Rule 7-2: The document MUST be namespace-well-formed and namespace-valid.</sch:report>
-  </sch:rule>
-</sch:pattern>
-        
 <sch:pattern id="rule_12-2"><sch:title>Attribute structures:ref must reference structures:id</sch:title>
   <sch:rule context="*[@structures:ref]">
     <sch:let name="ref" value="@structures:ref"/>

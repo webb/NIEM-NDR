@@ -206,7 +206,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-71</xsl:attribute>
+            <xsl:attribute name="id">rule_10-73</xsl:attribute>
             <xsl:attribute name="name">appinfo:appliesToTypes references types</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -215,7 +215,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-73</xsl:attribute>
+            <xsl:attribute name="id">rule_10-75</xsl:attribute>
             <xsl:attribute name="name">appinfo:appliesToElements references elements</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -224,7 +224,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-17</xsl:attribute>
+            <xsl:attribute name="id">rule_11-18</xsl:attribute>
             <xsl:attribute name="name">Name of element declaration with simple content has representation term</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -233,7 +233,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-36</xsl:attribute>
+            <xsl:attribute name="id">rule_11-37</xsl:attribute>
             <xsl:attribute name="name">Reference schema imports reference schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -242,7 +242,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-37</xsl:attribute>
+            <xsl:attribute name="id">rule_11-38</xsl:attribute>
             <xsl:attribute name="name">Extension schema document imports reference or extension schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -251,7 +251,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-40</xsl:attribute>
+            <xsl:attribute name="id">rule_11-41</xsl:attribute>
             <xsl:attribute name="name">Each namespace may have only a single root schema in a schema set</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -323,7 +323,7 @@
       <xsl:apply-templates select="*" mode="M11"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-71appinfo:appliesToTypes references types-->
+   <!--PATTERN rule_10-73appinfo:appliesToTypes references types-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:appliesToTypes references types</svrl:text>
 
 	  <!--RULE -->
@@ -342,7 +342,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-71: Every item in @appinfo:appliesToTypes MUST resolve to a type.</svrl:text>
+               <svrl:text>Rule 10-73: Every item in @appinfo:appliesToTypes MUST resolve to a type.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -353,7 +353,7 @@
       <xsl:apply-templates select="*" mode="M12"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-73appinfo:appliesToElements references elements-->
+   <!--PATTERN rule_10-75appinfo:appliesToElements references elements-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:appliesToElements references elements</svrl:text>
 
 	  <!--RULE -->
@@ -372,7 +372,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-73: Every item in @appinfo:appliesToElements MUST resolve to an element.</svrl:text>
+               <svrl:text>Rule 10-75: Every item in @appinfo:appliesToElements MUST resolve to an element.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -383,7 +383,7 @@
       <xsl:apply-templates select="*" mode="M13"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-17Name of element declaration with simple content has representation term-->
+   <!--PATTERN rule_11-18Name of element declaration with simple content has representation term-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of element declaration with simple content has representation term</svrl:text>
 
 	  <!--RULE -->
@@ -393,19 +393,16 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[@name and @type        and (nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument'))             or nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ExtensionSchemaDocument')))        and (some $type-qname in resolve-QName(@type, .) satisfies (               nf:get-target-namespace(.) != namespace-uri-from-QName($type-qname)               and nf:resolve-type(., $type-qname)/xs:simpleContent))]"/>
 
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="some $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies                         ends-with(@name, $representation-term)"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="some $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies ends-with(@name, $representation-term)">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Rule 11-17: the name of an element declaration that is of simple content MUST use a representation term.</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
+		    <!--REPORT -->
+      <xsl:if test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies                             not(ends-with(@name, $representation-term))">
+         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                 test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies not(ends-with(@name, $representation-term))">
+            <xsl:attribute name="location">
+               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+            </xsl:attribute>
+            <svrl:text>Rule 11-18: the name of an element declaration that is of simple content SHOULD use a representation term.</svrl:text>
+         </svrl:successful-report>
+      </xsl:if>
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M14"/>
@@ -413,7 +410,7 @@
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-36Reference schema imports reference schema-->
+   <!--PATTERN rule_11-37Reference schema imports reference schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Reference schema imports reference schema</svrl:text>
 
 	  <!--RULE -->
@@ -432,7 +429,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-36: A namespace imported as conformant from a reference schema document MUST identify a namespace defined by a reference schema document.</svrl:text>
+               <svrl:text>Rule 11-37: A namespace imported as conformant from a reference schema document MUST identify a namespace defined by a reference schema document.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -443,7 +440,7 @@
       <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-37Extension schema document imports reference or extension schema-->
+   <!--PATTERN rule_11-38Extension schema document imports reference or extension schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Extension schema document imports reference or extension schema</svrl:text>
 
 	  <!--RULE -->
@@ -462,7 +459,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-37: A namespace imported as conformant from an extension schema document MUST identify a namespace defined by a reference schema document or an extension schema document.</svrl:text>
+               <svrl:text>Rule 11-38: A namespace imported as conformant from an extension schema document MUST identify a namespace defined by a reference schema document or an extension schema document.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -473,7 +470,7 @@
       <xsl:apply-templates select="*" mode="M16"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-40Each namespace may have only a single root schema in a schema set-->
+   <!--PATTERN rule_11-41Each namespace may have only a single root schema in a schema set-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Each namespace may have only a single root schema in a schema set</svrl:text>
 
 	  <!--RULE -->
@@ -492,7 +489,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-40: A namespace may appear as a root schema in a schema set only once.</svrl:text>
+               <svrl:text>Rule 11-41: A namespace may appear as a root schema in a schema set only once.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

@@ -188,29 +188,11 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_7-1</xsl:attribute>
-            <xsl:attribute name="name">Document is an XML document</xsl:attribute>
-            <xsl:apply-templates/>
-         </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M10"/>
-         <svrl:active-pattern>
-            <xsl:attribute name="document">
-               <xsl:value-of select="document-uri(/)"/>
-            </xsl:attribute>
-            <xsl:attribute name="id">rule_7-2</xsl:attribute>
-            <xsl:attribute name="name">Document uses XML namespaces properly</xsl:attribute>
-            <xsl:apply-templates/>
-         </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M11"/>
-         <svrl:active-pattern>
-            <xsl:attribute name="document">
-               <xsl:value-of select="document-uri(/)"/>
-            </xsl:attribute>
             <xsl:attribute name="id">rule_12-2</xsl:attribute>
             <xsl:attribute name="name">Attribute structures:ref must reference structures:id</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M12"/>
+         <xsl:apply-templates select="/" mode="M10"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -219,7 +201,7 @@
             <xsl:attribute name="name">Attribute structures:metadata references metadata element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M13"/>
+         <xsl:apply-templates select="/" mode="M11"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -228,7 +210,7 @@
             <xsl:attribute name="name">Attribute structures:relationshipMetadata references metadata element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M14"/>
+         <xsl:apply-templates select="/" mode="M12"/>
       </svrl:schematron-output>
    </xsl:template>
 
@@ -236,63 +218,11 @@
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Rules for instance XML documents</svrl:text>
    <xsl:include xmlns:sch="http://purl.oclc.org/dsdl/schematron" href="ndr-functions.xsl"/>
 
-   <!--PATTERN rule_7-1Document is an XML document-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Document is an XML document</svrl:text>
-
-	  <!--RULE -->
-   <xsl:template match="*[. is nf:get-document-element(.)]"
-                 priority="1000"
-                 mode="M10">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="*[. is nf:get-document-element(.)]"/>
-
-		    <!--REPORT -->
-      <xsl:if test="true()">
-         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
-            <xsl:attribute name="location">
-               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-            </xsl:attribute>
-            <svrl:text>Rule 7-1: The document MUST be an XML document.</svrl:text>
-         </svrl:successful-report>
-      </xsl:if>
-      <xsl:apply-templates select="*" mode="M10"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M10"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M10">
-      <xsl:apply-templates select="*" mode="M10"/>
-   </xsl:template>
-
-   <!--PATTERN rule_7-2Document uses XML namespaces properly-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Document uses XML namespaces properly</svrl:text>
-
-	  <!--RULE -->
-   <xsl:template match="*[. is nf:get-document-element(.)]"
-                 priority="1000"
-                 mode="M11">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="*[. is nf:get-document-element(.)]"/>
-
-		    <!--REPORT -->
-      <xsl:if test="true()">
-         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
-            <xsl:attribute name="location">
-               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-            </xsl:attribute>
-            <svrl:text>Rule 7-2: The document MUST be namespace-well-formed and namespace-valid.</svrl:text>
-         </svrl:successful-report>
-      </xsl:if>
-      <xsl:apply-templates select="*" mode="M11"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M11"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M11">
-      <xsl:apply-templates select="*" mode="M11"/>
-   </xsl:template>
-
    <!--PATTERN rule_12-2Attribute structures:ref must reference structures:id-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute structures:ref must reference structures:id</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="*[@structures:ref]" priority="1000" mode="M12">
+   <xsl:template match="*[@structures:ref]" priority="1000" mode="M10">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="*[@structures:ref]"/>
       <xsl:variable name="ref" select="@structures:ref"/>
 
@@ -309,18 +239,18 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M12"/>
+      <xsl:apply-templates select="*" mode="M10"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M12"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M12">
-      <xsl:apply-templates select="*" mode="M12"/>
+   <xsl:template match="text()" priority="-1" mode="M10"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M10">
+      <xsl:apply-templates select="*" mode="M10"/>
    </xsl:template>
 
    <!--PATTERN rule_12-12Attribute structures:metadata references metadata element-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute structures:metadata references metadata element</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="*[exists(@structures:metadata)]" priority="1000" mode="M13">
+   <xsl:template match="*[exists(@structures:metadata)]" priority="1000" mode="M11">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="*[exists(@structures:metadata)]"/>
 
@@ -337,11 +267,11 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M13"/>
+      <xsl:apply-templates select="*" mode="M11"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M13"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M13">
-      <xsl:apply-templates select="*" mode="M13"/>
+   <xsl:template match="text()" priority="-1" mode="M11"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M11">
+      <xsl:apply-templates select="*" mode="M11"/>
    </xsl:template>
 
    <!--PATTERN rule_12-13Attribute structures:relationshipMetadata references metadata element-->
@@ -350,7 +280,7 @@
 	  <!--RULE -->
    <xsl:template match="*[exists(@structures:relationshipMetadata)]"
                  priority="1000"
-                 mode="M14">
+                 mode="M12">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="*[exists(@structures:relationshipMetadata)]"/>
 
@@ -367,10 +297,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M14"/>
+      <xsl:apply-templates select="*" mode="M12"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M14"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M14">
-      <xsl:apply-templates select="*" mode="M14"/>
+   <xsl:template match="text()" priority="-1" mode="M12"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M12">
+      <xsl:apply-templates select="*" mode="M12"/>
    </xsl:template>
 </xsl:stylesheet>
