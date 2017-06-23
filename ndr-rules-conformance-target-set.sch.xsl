@@ -224,7 +224,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-18</xsl:attribute>
+            <xsl:attribute name="id">rule_11-15</xsl:attribute>
             <xsl:attribute name="name">Name of element declaration with simple content has representation term</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -233,7 +233,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-37</xsl:attribute>
+            <xsl:attribute name="id">rule_11-34</xsl:attribute>
             <xsl:attribute name="name">Reference schema imports reference schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -242,7 +242,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-38</xsl:attribute>
+            <xsl:attribute name="id">rule_11-35</xsl:attribute>
             <xsl:attribute name="name">Extension schema document imports reference or extension schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -251,7 +251,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-41</xsl:attribute>
+            <xsl:attribute name="id">rule_11-38</xsl:attribute>
             <xsl:attribute name="name">Each namespace may have only a single root schema in a schema set</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -383,7 +383,7 @@
       <xsl:apply-templates select="*" mode="M13"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-18Name of element declaration with simple content has representation term-->
+   <!--PATTERN rule_11-15Name of element declaration with simple content has representation term-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of element declaration with simple content has representation term</svrl:text>
 
 	  <!--RULE -->
@@ -400,7 +400,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-18: the name of an element declaration that is of simple content SHOULD use a representation term.</svrl:text>
+            <svrl:text>Rule 11-15: the name of an element declaration that is of simple content SHOULD use a representation term.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M14"/>
@@ -410,7 +410,7 @@
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-37Reference schema imports reference schema-->
+   <!--PATTERN rule_11-34Reference schema imports reference schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Reference schema imports reference schema</svrl:text>
 
 	  <!--RULE -->
@@ -429,7 +429,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-37: A namespace imported as conformant from a reference schema document MUST identify a namespace defined by a reference schema document.</svrl:text>
+               <svrl:text>Rule 11-34: A namespace imported as conformant from a reference schema document MUST identify a namespace defined by a reference schema document.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -440,7 +440,7 @@
       <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-38Extension schema document imports reference or extension schema-->
+   <!--PATTERN rule_11-35Extension schema document imports reference or extension schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Extension schema document imports reference or extension schema</svrl:text>
 
 	  <!--RULE -->
@@ -459,7 +459,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-38: A namespace imported as conformant from an extension schema document MUST identify a namespace defined by a reference schema document or an extension schema document.</svrl:text>
+               <svrl:text>Rule 11-35: A namespace imported as conformant from an extension schema document MUST identify a namespace defined by a reference schema document or an extension schema document.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -470,7 +470,7 @@
       <xsl:apply-templates select="*" mode="M16"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-41Each namespace may have only a single root schema in a schema set-->
+   <!--PATTERN rule_11-38Each namespace may have only a single root schema in a schema set-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Each namespace may have only a single root schema in a schema set</svrl:text>
 
 	  <!--RULE -->
@@ -489,7 +489,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-41: A namespace may appear as a root schema in a schema set only once.</svrl:text>
+               <svrl:text>Rule 11-38: A namespace may appear as a root schema in a schema set only once.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

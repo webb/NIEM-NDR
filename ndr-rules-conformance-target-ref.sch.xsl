@@ -1277,11 +1277,38 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
+            <xsl:attribute name="id">rule_10-46</xsl:attribute>
+            <xsl:attribute name="name">Schema component names have only specific characters</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M131"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_10-49</xsl:attribute>
+            <xsl:attribute name="name">Attribute name begins with lower case letter</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M132"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_10-50</xsl:attribute>
+            <xsl:attribute name="name">Name of schema component other than attribute and proxy type begins with upper case letter</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M133"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
             <xsl:attribute name="id">rule_10-69</xsl:attribute>
             <xsl:attribute name="name">Deprecated annotates schema component</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M131"/>
+         <xsl:apply-templates select="/" mode="M134"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -1290,7 +1317,7 @@
             <xsl:attribute name="name">External import indicator annotates import</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M132"/>
+         <xsl:apply-templates select="/" mode="M135"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -1299,7 +1326,7 @@
             <xsl:attribute name="name">External adapter type indicator annotates complex type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M133"/>
+         <xsl:apply-templates select="/" mode="M136"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -1308,7 +1335,7 @@
             <xsl:attribute name="name">appinfo:appliesToTypes annotates metadata element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M134"/>
+         <xsl:apply-templates select="/" mode="M137"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -1317,7 +1344,7 @@
             <xsl:attribute name="name">appinfo:appliesToElements annotates metadata element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M135"/>
+         <xsl:apply-templates select="/" mode="M138"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -1326,7 +1353,7 @@
             <xsl:attribute name="name">appinfo:LocalTerm annotates schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M136"/>
+         <xsl:apply-templates select="/" mode="M139"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -1335,7 +1362,7 @@
             <xsl:attribute name="name">appinfo:LocalTerm has literal or definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M137"/>
+         <xsl:apply-templates select="/" mode="M140"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -1344,40 +1371,13 @@
             <xsl:attribute name="name">Name of type ends in "Type"</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M138"/>
-         <svrl:active-pattern>
-            <xsl:attribute name="document">
-               <xsl:value-of select="document-uri(/)"/>
-            </xsl:attribute>
-            <xsl:attribute name="id">rule_11-2</xsl:attribute>
-            <xsl:attribute name="name">Name of type other than proxy type is in upper camel case</xsl:attribute>
-            <xsl:apply-templates/>
-         </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M139"/>
-         <svrl:active-pattern>
-            <xsl:attribute name="document">
-               <xsl:value-of select="document-uri(/)"/>
-            </xsl:attribute>
-            <xsl:attribute name="id">rule_11-3</xsl:attribute>
-            <xsl:attribute name="name">Base type definition defined by conformant schema</xsl:attribute>
-            <xsl:apply-templates/>
-         </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M140"/>
-         <svrl:active-pattern>
-            <xsl:attribute name="document">
-               <xsl:value-of select="document-uri(/)"/>
-            </xsl:attribute>
-            <xsl:attribute name="id">rule_11-4</xsl:attribute>
-            <xsl:attribute name="name">Name of simple type ends in "SimpleType"</xsl:attribute>
-            <xsl:apply-templates/>
-         </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M141"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-5</xsl:attribute>
-            <xsl:attribute name="name">Name of simple type is upper camel case</xsl:attribute>
+            <xsl:attribute name="id">rule_11-2</xsl:attribute>
+            <xsl:attribute name="name">Base type definition defined by conformant schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M142"/>
@@ -1385,8 +1385,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-7</xsl:attribute>
-            <xsl:attribute name="name">List item type defined by conformant schemas</xsl:attribute>
+            <xsl:attribute name="id">rule_11-3</xsl:attribute>
+            <xsl:attribute name="name">Name of simple type ends in "SimpleType"</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M143"/>
@@ -1394,8 +1394,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-8</xsl:attribute>
-            <xsl:attribute name="name">Union member types defined by conformant schemas</xsl:attribute>
+            <xsl:attribute name="id">rule_11-5</xsl:attribute>
+            <xsl:attribute name="name">List item type defined by conformant schemas</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M144"/>
@@ -1403,8 +1403,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-9</xsl:attribute>
-            <xsl:attribute name="name">Name of a code simple type has standard suffix</xsl:attribute>
+            <xsl:attribute name="id">rule_11-6</xsl:attribute>
+            <xsl:attribute name="name">Union member types defined by conformant schemas</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M145"/>
@@ -1412,8 +1412,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-11</xsl:attribute>
-            <xsl:attribute name="name">Attribute of code simple type has code representation term</xsl:attribute>
+            <xsl:attribute name="id">rule_11-7</xsl:attribute>
+            <xsl:attribute name="name">Name of a code simple type has standard suffix</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M146"/>
@@ -1421,8 +1421,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-12</xsl:attribute>
-            <xsl:attribute name="name">Complex type with simple content has structures:SimpleObjectAttributeGroup</xsl:attribute>
+            <xsl:attribute name="id">rule_11-9</xsl:attribute>
+            <xsl:attribute name="name">Attribute of code simple type has code representation term</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M147"/>
@@ -1430,8 +1430,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-13</xsl:attribute>
-            <xsl:attribute name="name">Element name is upper camel case</xsl:attribute>
+            <xsl:attribute name="id">rule_11-10</xsl:attribute>
+            <xsl:attribute name="name">Complex type with simple content has structures:SimpleObjectAttributeGroup</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M148"/>
@@ -1439,7 +1439,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-14</xsl:attribute>
+            <xsl:attribute name="id">rule_11-11</xsl:attribute>
             <xsl:attribute name="name">Element type does not have a simple type name</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1448,7 +1448,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-15</xsl:attribute>
+            <xsl:attribute name="id">rule_11-12</xsl:attribute>
             <xsl:attribute name="name">Element type is from conformant namespace</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1457,7 +1457,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-16</xsl:attribute>
+            <xsl:attribute name="id">rule_11-13</xsl:attribute>
             <xsl:attribute name="name">Name of element that ends in "Abstract" is abstract</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1466,7 +1466,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-17</xsl:attribute>
+            <xsl:attribute name="id">rule_11-14</xsl:attribute>
             <xsl:attribute name="name">Name of element declaration with simple content has representation term</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1475,7 +1475,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-19</xsl:attribute>
+            <xsl:attribute name="id">rule_11-16</xsl:attribute>
             <xsl:attribute name="name">Element substitution group defined by conformant schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1484,7 +1484,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-20</xsl:attribute>
+            <xsl:attribute name="id">rule_11-17</xsl:attribute>
             <xsl:attribute name="name">Attribute type defined by conformant schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1493,7 +1493,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-21</xsl:attribute>
+            <xsl:attribute name="id">rule_11-18</xsl:attribute>
             <xsl:attribute name="name">Attribute name uses representation term</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1502,7 +1502,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-23</xsl:attribute>
+            <xsl:attribute name="id">rule_11-20</xsl:attribute>
             <xsl:attribute name="name">Element reference defined by conformant schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1511,7 +1511,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-24</xsl:attribute>
+            <xsl:attribute name="id">rule_11-21</xsl:attribute>
             <xsl:attribute name="name">Referenced attribute defined by conformant schemas</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1520,7 +1520,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-25</xsl:attribute>
+            <xsl:attribute name="id">rule_11-22</xsl:attribute>
             <xsl:attribute name="name">Schema uses only known attribute groups</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1529,7 +1529,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-32</xsl:attribute>
+            <xsl:attribute name="id">rule_11-29</xsl:attribute>
             <xsl:attribute name="name">Standard opening phrase for element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1538,7 +1538,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-33</xsl:attribute>
+            <xsl:attribute name="id">rule_11-30</xsl:attribute>
             <xsl:attribute name="name">Standard opening phrase for complex type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1547,7 +1547,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-34</xsl:attribute>
+            <xsl:attribute name="id">rule_11-31</xsl:attribute>
             <xsl:attribute name="name">Standard opening phrase for simple type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1556,7 +1556,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-39</xsl:attribute>
+            <xsl:attribute name="id">rule_11-36</xsl:attribute>
             <xsl:attribute name="name">Structures imported as conformant</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1565,7 +1565,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-40</xsl:attribute>
+            <xsl:attribute name="id">rule_11-37</xsl:attribute>
             <xsl:attribute name="name">XML namespace imported as conformant</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1574,7 +1574,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-42</xsl:attribute>
+            <xsl:attribute name="id">rule_11-39</xsl:attribute>
             <xsl:attribute name="name">Consistently marked namespace imports</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -4378,7 +4378,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 10-17: A complex type definition a {base type definition} of a code type or code simple type SHOULD have a {name} that ends in 'CodeType'.</svrl:text>
+            <svrl:text>Rule 10-17: A complex type definition with a {base type definition} of a code type or code simple type SHOULD have a {name} that ends in 'CodeType'.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M111"/>
@@ -4952,11 +4952,127 @@
       <xsl:apply-templates select="*" mode="M130"/>
    </xsl:template>
 
+   <!--PATTERN rule_10-46Schema component names have only specific characters-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Schema component names have only specific characters</svrl:text>
+
+	  <!--RULE -->
+   <xsl:template match="xs:*[exists(@name)]" priority="1000" mode="M131">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:*[exists(@name)]"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="matches(@name, '^[A-Za-z0-9\-_\.]*$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="matches(@name, '^[A-Za-z0-9\-_\.]*$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Rule 10-46: The name of an XML Schema component defined by the schema must be composed of only the characters uppercase 'A' through 'Z', lowercase 'a' through 'z', numbers '0' through '9', underscore, hyphen, and period.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M131"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M131"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M131">
+      <xsl:apply-templates select="*" mode="M131"/>
+   </xsl:template>
+
+   <!--PATTERN rule_10-49Attribute name begins with lower case letter-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute name begins with lower case letter</svrl:text>
+
+	  <!--RULE -->
+   <xsl:template match="xs:attribute[exists(@name)]" priority="1000" mode="M132">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="xs:attribute[exists(@name)]"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="matches(@name, '^[a-z]')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="matches(@name, '^[a-z]')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Rule 10-49: Within the schema, any attribute declaration MUST have a name that begins with a lowercase letter
+      ('a'-'z').</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M132"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M132"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M132">
+      <xsl:apply-templates select="*" mode="M132"/>
+   </xsl:template>
+
+   <!--PATTERN rule_10-50Name of schema component other than attribute and proxy type begins with upper case letter-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of schema component other than attribute and proxy type begins with upper case letter</svrl:text>
+
+	  <!--RULE -->
+   <xsl:template match="xs:attribute" priority="1002" mode="M133">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:attribute"/>
+
+		    <!--REPORT -->
+      <xsl:if test="false()">
+         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="false()">
+            <xsl:attribute name="location">
+               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+            </xsl:attribute>
+            <svrl:text>Rule 10-50: This rule does not apply to an attribute.</svrl:text>
+         </svrl:successful-report>
+      </xsl:if>
+      <xsl:apply-templates select="*" mode="M133"/>
+   </xsl:template>
+
+	  <!--RULE -->
+   <xsl:template match="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]"
+                 priority="1001"
+                 mode="M133">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]"/>
+
+		    <!--REPORT -->
+      <xsl:if test="false()">
+         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="false()">
+            <xsl:attribute name="location">
+               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+            </xsl:attribute>
+            <svrl:text>Rule 10-50: This rule does not apply to a proxy types.</svrl:text>
+         </svrl:successful-report>
+      </xsl:if>
+      <xsl:apply-templates select="*" mode="M133"/>
+   </xsl:template>
+
+	  <!--RULE -->
+   <xsl:template match="xs:*[exists(@name)]" priority="1000" mode="M133">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:*[exists(@name)]"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="matches(@name, '^[A-Z]')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="matches(@name, '^[A-Z]')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Rule 10-50: Within the schema, an XML Schema component that is not an attribute declaration or proxy type MUST have a name that begins with an upper-case letter ('A'-'Z').</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M133"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M133"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M133">
+      <xsl:apply-templates select="*" mode="M133"/>
+   </xsl:template>
+
    <!--PATTERN rule_10-69Deprecated annotates schema component-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Deprecated annotates schema component</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="*[exists(@appinfo:deprecated)]" priority="1000" mode="M131">
+   <xsl:template match="*[exists(@appinfo:deprecated)]" priority="1000" mode="M134">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="*[exists(@appinfo:deprecated)]"/>
 
@@ -4974,11 +5090,11 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M131"/>
+      <xsl:apply-templates select="*" mode="M134"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M131"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M131">
-      <xsl:apply-templates select="*" mode="M131"/>
+   <xsl:template match="text()" priority="-1" mode="M134"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M134">
+      <xsl:apply-templates select="*" mode="M134"/>
    </xsl:template>
 
    <!--PATTERN rule_10-70External import indicator annotates import-->
@@ -4987,7 +5103,7 @@
 	  <!--RULE -->
    <xsl:template match="*[exists(@appinfo:externalImportIndicator)]"
                  priority="1000"
-                 mode="M132">
+                 mode="M135">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="*[exists(@appinfo:externalImportIndicator)]"/>
 
@@ -5003,11 +5119,11 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M132"/>
+      <xsl:apply-templates select="*" mode="M135"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M132"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M132">
-      <xsl:apply-templates select="*" mode="M132"/>
+   <xsl:template match="text()" priority="-1" mode="M135"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M135">
+      <xsl:apply-templates select="*" mode="M135"/>
    </xsl:template>
 
    <!--PATTERN rule_10-71External adapter type indicator annotates complex type-->
@@ -5016,7 +5132,7 @@
 	  <!--RULE -->
    <xsl:template match="*[exists(@appinfo:externalAdapterTypeIndicator)]"
                  priority="1000"
-                 mode="M133">
+                 mode="M136">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="*[exists(@appinfo:externalAdapterTypeIndicator)]"/>
 
@@ -5033,11 +5149,11 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M133"/>
+      <xsl:apply-templates select="*" mode="M136"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M133"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M133">
-      <xsl:apply-templates select="*" mode="M133"/>
+   <xsl:template match="text()" priority="-1" mode="M136"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M136">
+      <xsl:apply-templates select="*" mode="M136"/>
    </xsl:template>
 
    <!--PATTERN rule_10-72appinfo:appliesToTypes annotates metadata element-->
@@ -5046,7 +5162,7 @@
 	  <!--RULE -->
    <xsl:template match="*[exists(@appinfo:appliesToTypes)]"
                  priority="1000"
-                 mode="M134">
+                 mode="M137">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="*[exists(@appinfo:appliesToTypes)]"/>
 
@@ -5063,11 +5179,11 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M134"/>
+      <xsl:apply-templates select="*" mode="M137"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M134"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M134">
-      <xsl:apply-templates select="*" mode="M134"/>
+   <xsl:template match="text()" priority="-1" mode="M137"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M137">
+      <xsl:apply-templates select="*" mode="M137"/>
    </xsl:template>
 
    <!--PATTERN rule_10-74appinfo:appliesToElements annotates metadata element-->
@@ -5076,7 +5192,7 @@
 	  <!--RULE -->
    <xsl:template match="*[exists(@appinfo:appliesToElements)]"
                  priority="1000"
-                 mode="M135">
+                 mode="M138">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="*[exists(@appinfo:appliesToElements)]"/>
 
@@ -5093,18 +5209,18 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M135"/>
+      <xsl:apply-templates select="*" mode="M138"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M135"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M135">
-      <xsl:apply-templates select="*" mode="M135"/>
+   <xsl:template match="text()" priority="-1" mode="M138"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M138">
+      <xsl:apply-templates select="*" mode="M138"/>
    </xsl:template>
 
    <!--PATTERN rule_10-76appinfo:LocalTerm annotates schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:LocalTerm annotates schema</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="appinfo:LocalTerm" priority="1000" mode="M136">
+   <xsl:template match="appinfo:LocalTerm" priority="1000" mode="M139">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="appinfo:LocalTerm"/>
 
 		    <!--ASSERT -->
@@ -5120,18 +5236,18 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M136"/>
+      <xsl:apply-templates select="*" mode="M139"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M136"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M136">
-      <xsl:apply-templates select="*" mode="M136"/>
+   <xsl:template match="text()" priority="-1" mode="M139"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M139">
+      <xsl:apply-templates select="*" mode="M139"/>
    </xsl:template>
 
    <!--PATTERN rule_10-77appinfo:LocalTerm has literal or definition-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:LocalTerm has literal or definition</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="appinfo:LocalTerm" priority="1000" mode="M137">
+   <xsl:template match="appinfo:LocalTerm" priority="1000" mode="M140">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="appinfo:LocalTerm"/>
 
 		    <!--ASSERT -->
@@ -5147,11 +5263,11 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M137"/>
+      <xsl:apply-templates select="*" mode="M140"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M137"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M137">
-      <xsl:apply-templates select="*" mode="M137"/>
+   <xsl:template match="text()" priority="-1" mode="M140"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M140">
+      <xsl:apply-templates select="*" mode="M140"/>
    </xsl:template>
 
    <!--PATTERN rule_11-1Name of type ends in "Type"-->
@@ -5160,7 +5276,7 @@
 	  <!--RULE -->
    <xsl:template match="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]"
                  priority="1001"
-                 mode="M138">
+                 mode="M141">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]"/>
 
@@ -5173,13 +5289,13 @@
             <svrl:text>Rule 11-1: The name of a proxy type does not end in "Type".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M138"/>
+      <xsl:apply-templates select="*" mode="M141"/>
    </xsl:template>
 
 	  <!--RULE -->
    <xsl:template match="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]"
                  priority="1000"
-                 mode="M138">
+                 mode="M141">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]"/>
 
@@ -5195,67 +5311,18 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M138"/>
+      <xsl:apply-templates select="*" mode="M141"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M138"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M138">
-      <xsl:apply-templates select="*" mode="M138"/>
-   </xsl:template>
-
-   <!--PATTERN rule_11-2Name of type other than proxy type is in upper camel case-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of type other than proxy type is in upper camel case</svrl:text>
-
-	  <!--RULE -->
-   <xsl:template match="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]"
-                 priority="1001"
-                 mode="M139">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]"/>
-
-		    <!--REPORT -->
-      <xsl:if test="false()">
-         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="false()">
-            <xsl:attribute name="location">
-               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-            </xsl:attribute>
-            <svrl:text>Rule 11-2: The name of a proxy type is not upper camel case.</svrl:text>
-         </svrl:successful-report>
-      </xsl:if>
-      <xsl:apply-templates select="*" mode="M139"/>
+   <xsl:template match="text()" priority="-1" mode="M141"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M141">
+      <xsl:apply-templates select="*" mode="M141"/>
    </xsl:template>
 
-	  <!--RULE -->
-   <xsl:template match="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]"
-                 priority="1000"
-                 mode="M139">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="matches(@name, '^([A-Z][A-Za-z0-9\-]*)+$')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(@name, '^([A-Z][A-Za-z0-9\-]*)+$')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Rule 11-2: A type definition schema component that does not define a proxy type MUST be in upper camel case.</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M139"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M139"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M139">
-      <xsl:apply-templates select="*" mode="M139"/>
-   </xsl:template>
-
-   <!--PATTERN rule_11-3Base type definition defined by conformant schema-->
+   <!--PATTERN rule_11-2Base type definition defined by conformant schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Base type definition defined by conformant schema</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@base)]" priority="1000" mode="M140">
+   <xsl:template match="xs:*[exists(@base)]" priority="1000" mode="M142">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:*[exists(@base)]"/>
 
 		    <!--ASSERT -->
@@ -5267,22 +5334,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-3: The {base type definition} of a type definition MUST have the target namespace or the XML Schema namespace or a namespace that is imported as conformant.</svrl:text>
+               <svrl:text>Rule 11-2: The {base type definition} of a type definition MUST have the target namespace or the XML Schema namespace or a namespace that is imported as conformant.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M140"/>
+      <xsl:apply-templates select="*" mode="M142"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M140"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M140">
-      <xsl:apply-templates select="*" mode="M140"/>
+   <xsl:template match="text()" priority="-1" mode="M142"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M142">
+      <xsl:apply-templates select="*" mode="M142"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-4Name of simple type ends in "SimpleType"-->
+   <!--PATTERN rule_11-3Name of simple type ends in "SimpleType"-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of simple type ends in "SimpleType"</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:simpleType[@name]" priority="1000" mode="M141">
+   <xsl:template match="xs:simpleType[@name]" priority="1000" mode="M143">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:simpleType[@name]"/>
 
 		    <!--ASSERT -->
@@ -5294,50 +5361,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-4: A simple type definition schema component MUST have a name that ends in "SimpleType".</svrl:text>
+               <svrl:text>Rule 11-3: A simple type definition schema component MUST have a name that ends in "SimpleType".</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M141"/>
+      <xsl:apply-templates select="*" mode="M143"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M141"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M141">
-      <xsl:apply-templates select="*" mode="M141"/>
-   </xsl:template>
-
-   <!--PATTERN rule_11-5Name of simple type is upper camel case-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of simple type is upper camel case</svrl:text>
-
-	  <!--RULE -->
-   <xsl:template match="xs:simpleType[exists(@name)]" priority="1000" mode="M142">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:simpleType[exists(@name)]"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="matches(string(@name), '^([A-Z][A-Za-z0-9\-]*)+$')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(string(@name), '^([A-Z][A-Za-z0-9\-]*)+$')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Rule 11-5: The name of a simple type definition schema component MUST be upper camel case.</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M142"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M142"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M142">
-      <xsl:apply-templates select="*" mode="M142"/>
+   <xsl:template match="text()" priority="-1" mode="M143"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M143">
+      <xsl:apply-templates select="*" mode="M143"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-7List item type defined by conformant schemas-->
+   <!--PATTERN rule_11-5List item type defined by conformant schemas-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">List item type defined by conformant schemas</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:list[exists(@itemType)]" priority="1000" mode="M143">
+   <xsl:template match="xs:list[exists(@itemType)]" priority="1000" mode="M144">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:list[exists(@itemType)]"/>
       <xsl:variable name="namespace"
@@ -5352,22 +5391,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-7: The item type of a list simple type definition MUST have a target namespace equal to the target namespace of the XML Schema document within which it is defined, or a namespace that is imported as conformant by the schema document within which it is defined.</svrl:text>
+               <svrl:text>Rule 11-5: The item type of a list simple type definition MUST have a target namespace equal to the target namespace of the XML Schema document within which it is defined, or a namespace that is imported as conformant by the schema document within which it is defined.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M143"/>
+      <xsl:apply-templates select="*" mode="M144"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M143"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M143">
-      <xsl:apply-templates select="*" mode="M143"/>
+   <xsl:template match="text()" priority="-1" mode="M144"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M144">
+      <xsl:apply-templates select="*" mode="M144"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-8Union member types defined by conformant schemas-->
+   <!--PATTERN rule_11-6Union member types defined by conformant schemas-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Union member types defined by conformant schemas</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:union[exists(@memberTypes)]" priority="1000" mode="M144">
+   <xsl:template match="xs:union[exists(@memberTypes)]" priority="1000" mode="M145">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:union[exists(@memberTypes)]"/>
 
@@ -5380,24 +5419,24 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-8: Every member type of a union simple type definition MUST have a target namespace that is equal to either the target namespace of the XML Schema document within which it is defined or a namespace that is imported as conformant by the schema document within which it is defined.</svrl:text>
+               <svrl:text>Rule 11-6: Every member type of a union simple type definition MUST have a target namespace that is equal to either the target namespace of the XML Schema document within which it is defined or a namespace that is imported as conformant by the schema document within which it is defined.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M145"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M144"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M144">
-      <xsl:apply-templates select="*" mode="M144"/>
+   <xsl:template match="text()" priority="-1" mode="M145"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M145">
+      <xsl:apply-templates select="*" mode="M145"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-9Name of a code simple type has standard suffix-->
+   <!--PATTERN rule_11-7Name of a code simple type has standard suffix-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of a code simple type has standard suffix</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:simpleType[exists(@name)       and (xs:restriction/xs:enumeration            or xs:restriction[ends-with(local-name-from-QName(resolve-QName(@base, .)), 'CodeSimpleType')])]"
                  priority="1000"
-                 mode="M145">
+                 mode="M146">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:simpleType[exists(@name)       and (xs:restriction/xs:enumeration            or xs:restriction[ends-with(local-name-from-QName(resolve-QName(@base, .)), 'CodeSimpleType')])]"/>
 
@@ -5408,23 +5447,23 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-9: A simple type definition schema component that has an enumeration facet or that is derived from a code simple type SHOULD have a name that ends in "CodeSimpleType".</svrl:text>
+            <svrl:text>Rule 11-7: A simple type definition schema component that has an enumeration facet or that is derived from a code simple type SHOULD have a name that ends in "CodeSimpleType".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M145"/>
+      <xsl:apply-templates select="*" mode="M146"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M145"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M145">
-      <xsl:apply-templates select="*" mode="M145"/>
+   <xsl:template match="text()" priority="-1" mode="M146"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M146">
+      <xsl:apply-templates select="*" mode="M146"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-11Attribute of code simple type has code representation term-->
+   <!--PATTERN rule_11-9Attribute of code simple type has code representation term-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute of code simple type has code representation term</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:attribute[exists(@name) and exists(@type) and ends-with(@type, 'CodeSimpleType')]"
                  priority="1000"
-                 mode="M146">
+                 mode="M147">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:attribute[exists(@name) and exists(@type) and ends-with(@type, 'CodeSimpleType')]"/>
 
@@ -5435,23 +5474,23 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-11: An attribute with a type that is a code simple type SHOULD have a name with representation term "Code"</svrl:text>
+            <svrl:text>Rule 11-9: An attribute with a type that is a code simple type SHOULD have a name with representation term "Code"</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M146"/>
+      <xsl:apply-templates select="*" mode="M147"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M146"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M146">
-      <xsl:apply-templates select="*" mode="M146"/>
+   <xsl:template match="text()" priority="-1" mode="M147"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M147">
+      <xsl:apply-templates select="*" mode="M147"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-12Complex type with simple content has structures:SimpleObjectAttributeGroup-->
+   <!--PATTERN rule_11-10Complex type with simple content has structures:SimpleObjectAttributeGroup-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Complex type with simple content has structures:SimpleObjectAttributeGroup</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:simpleContent/xs:extension[       some $base-qname in resolve-QName(@base, .) satisfies         namespace-uri-from-QName($base-qname) = xs:anyURI('http://www.w3.org/2001/XMLSchema')         or ends-with(local-name-from-QName($base-qname), 'SimpleType')]"
                  priority="1000"
-                 mode="M147">
+                 mode="M148">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:simpleContent/xs:extension[       some $base-qname in resolve-QName(@base, .) satisfies         namespace-uri-from-QName($base-qname) = xs:anyURI('http://www.w3.org/2001/XMLSchema')         or ends-with(local-name-from-QName($base-qname), 'SimpleType')]"/>
 
@@ -5464,35 +5503,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-12: A complex type definition with simple content schema component with a derivation method of extension that has a base type definition that is a simple type MUST incorporate the attribute group {http://release.niem.gov/niem/structures/4.0/}SimpleObjectAttributeGroup.</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M147"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M147"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M147">
-      <xsl:apply-templates select="*" mode="M147"/>
-   </xsl:template>
-
-   <!--PATTERN rule_11-13Element name is upper camel case-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element name is upper camel case</svrl:text>
-
-	  <!--RULE -->
-   <xsl:template match="xs:element[exists(@name)]" priority="1000" mode="M148">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[exists(@name)]"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="matches(string(@name), '^([A-Z][A-Za-z0-9\-]*)+$')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(string(@name), '^([A-Z][A-Za-z0-9\-]*)+$')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Rule 11-13: The name of an element declaration MUST be upper camel case.</svrl:text>
+               <svrl:text>Rule 11-10: A complex type definition with simple content schema component with a derivation method of extension that has a base type definition that is a simple type MUST incorporate the attribute group {http://release.niem.gov/niem/structures/4.0/}SimpleObjectAttributeGroup.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5503,7 +5514,7 @@
       <xsl:apply-templates select="*" mode="M148"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-14Element type does not have a simple type name-->
+   <!--PATTERN rule_11-11Element type does not have a simple type name-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element type does not have a simple type name</svrl:text>
 
 	  <!--RULE -->
@@ -5520,7 +5531,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-14: The {type definition} of an element declaration MUST NOT have a {name} that ends in 'SimpleType'.</svrl:text>
+               <svrl:text>Rule 11-11: The {type definition} of an element declaration MUST NOT have a {name} that ends in 'SimpleType'.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5531,7 +5542,7 @@
       <xsl:apply-templates select="*" mode="M149"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-15Element type is from conformant namespace-->
+   <!--PATTERN rule_11-12Element type is from conformant namespace-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element type is from conformant namespace</svrl:text>
 
 	  <!--RULE -->
@@ -5548,7 +5559,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-15: The {type definition} of an element declaration MUST have a {target namespace} that is the target namespace, or one that is imported as conformant.</svrl:text>
+               <svrl:text>Rule 11-12: The {type definition} of an element declaration MUST have a {target namespace} that is the target namespace, or one that is imported as conformant.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5559,7 +5570,7 @@
       <xsl:apply-templates select="*" mode="M150"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-16Name of element that ends in "Abstract" is abstract-->
+   <!--PATTERN rule_11-13Name of element that ends in "Abstract" is abstract-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of element that ends in "Abstract" is abstract</svrl:text>
 
 	  <!--RULE -->
@@ -5573,7 +5584,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-16: An element declaration SHOULD have a name that ends in 'Abstract', 'AugmentationPoint', or 'Representation' if and only if it has the {abstract} property with a value of "true".</svrl:text>
+            <svrl:text>Rule 11-13: An element declaration SHOULD have a name that ends in 'Abstract', 'AugmentationPoint', or 'Representation' if and only if it has the {abstract} property with a value of "true".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M151"/>
@@ -5583,7 +5594,7 @@
       <xsl:apply-templates select="*" mode="M151"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-17Name of element declaration with simple content has representation term-->
+   <!--PATTERN rule_11-14Name of element declaration with simple content has representation term-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of element declaration with simple content has representation term</svrl:text>
 
 	  <!--RULE -->
@@ -5600,7 +5611,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-17: The name of an element declaration that is of simple content SHOULD use a representation term.</svrl:text>
+            <svrl:text>Rule 11-14: The name of an element declaration that is of simple content SHOULD use a representation term.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M152"/>
@@ -5610,7 +5621,7 @@
       <xsl:apply-templates select="*" mode="M152"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-19Element substitution group defined by conformant schema-->
+   <!--PATTERN rule_11-16Element substitution group defined by conformant schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element substitution group defined by conformant schema</svrl:text>
 
 	  <!--RULE -->
@@ -5631,7 +5642,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-19: An element substitution group MUST have either the target namespace or a namespace that is imported as conformant.</svrl:text>
+               <svrl:text>Rule 11-16: An element substitution group MUST have either the target namespace or a namespace that is imported as conformant.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5642,7 +5653,7 @@
       <xsl:apply-templates select="*" mode="M153"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-20Attribute type defined by conformant schema-->
+   <!--PATTERN rule_11-17Attribute type defined by conformant schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute type defined by conformant schema</svrl:text>
 
 	  <!--RULE -->
@@ -5661,7 +5672,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-20: The type of an attribute declaration MUST have the target namespace or the XML Schema namespace or a namespace that is imported as conformant.</svrl:text>
+               <svrl:text>Rule 11-17: The type of an attribute declaration MUST have the target namespace or the XML Schema namespace or a namespace that is imported as conformant.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5672,7 +5683,7 @@
       <xsl:apply-templates select="*" mode="M154"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-21Attribute name uses representation term-->
+   <!--PATTERN rule_11-18Attribute name uses representation term-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute name uses representation term</svrl:text>
 
 	  <!--RULE -->
@@ -5687,7 +5698,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-21: An attribute name SHOULD end with a representation term.</svrl:text>
+            <svrl:text>Rule 11-18: An attribute name SHOULD end with a representation term.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M155"/>
@@ -5697,7 +5708,7 @@
       <xsl:apply-templates select="*" mode="M155"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-23Element reference defined by conformant schema-->
+   <!--PATTERN rule_11-20Element reference defined by conformant schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element reference defined by conformant schema</svrl:text>
 
 	  <!--RULE -->
@@ -5718,7 +5729,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-23: An element reference MUST be to a component that has a namespace that is either the target namespace of the schema document in which it appears, or which is imported as conformant by that schema document.</svrl:text>
+               <svrl:text>Rule 11-20: An element reference MUST be to a component that has a namespace that is either the target namespace of the schema document in which it appears, or which is imported as conformant by that schema document.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5729,7 +5740,7 @@
       <xsl:apply-templates select="*" mode="M156"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-24Referenced attribute defined by conformant schemas-->
+   <!--PATTERN rule_11-21Referenced attribute defined by conformant schemas-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Referenced attribute defined by conformant schemas</svrl:text>
 
 	  <!--RULE -->
@@ -5747,7 +5758,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-24: An attribute {}ref MUST have the target namespace or a namespace that is imported as conformant.</svrl:text>
+               <svrl:text>Rule 11-21: An attribute {}ref MUST have the target namespace or a namespace that is imported as conformant.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5758,7 +5769,7 @@
       <xsl:apply-templates select="*" mode="M157"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-25Schema uses only known attribute groups-->
+   <!--PATTERN rule_11-22Schema uses only known attribute groups-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Schema uses only known attribute groups</svrl:text>
 
 	  <!--RULE -->
@@ -5775,7 +5786,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-25: An attribute group reference MUST be structures:SimpleObjectAttributeGroup or have the IC-ISM or IC-NTK namespace.</svrl:text>
+               <svrl:text>Rule 11-22: An attribute group reference MUST be structures:SimpleObjectAttributeGroup or have the IC-ISM or IC-NTK namespace.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5786,7 +5797,7 @@
       <xsl:apply-templates select="*" mode="M158"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-32Standard opening phrase for element-->
+   <!--PATTERN rule_11-29Standard opening phrase for element-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for element</svrl:text>
 
 	  <!--RULE -->
@@ -5803,7 +5814,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an augmentation point element SHOULD begin with standard opening phrase "an augmentation point...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an augmentation point element SHOULD begin with standard opening phrase "an augmentation point...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -5823,7 +5834,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -5843,7 +5854,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for a metadata element SHOULD begin with the standard opening phrase "metadata about..." or "information that further qualifies...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for a metadata element SHOULD begin with the standard opening phrase "metadata about..." or "information that further qualifies...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -5863,7 +5874,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an association element that is not abstract SHOULD begin with the standard opening phrase "an (optional adjectives) (relationship|association)...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an association element that is not abstract SHOULD begin with the standard opening phrase "an (optional adjectives) (relationship|association)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -5883,7 +5894,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an abstract element SHOULD begin with the standard opening phrase "a data concept...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an abstract element SHOULD begin with the standard opening phrase "a data concept...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -5903,7 +5914,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "a(n?) (optional adjectives) (date|month|year)...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "a(n?) (optional adjectives) (date|month|year)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -5923,7 +5934,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (count|number)...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (count|number)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -5943,7 +5954,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (image|picture|photograph)".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (image|picture|photograph)".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -5963,7 +5974,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "true if ...; false (otherwise|if)...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "true if ...; false (otherwise|if)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -5983,7 +5994,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) identification...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) identification...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -6003,7 +6014,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) name...".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) name...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -6023,7 +6034,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-32: The data definition for an element declaration with a name SHOULD begin with the standard opening phrase "(a|an)".</svrl:text>
+            <svrl:text>Rule 11-29: The data definition for an element declaration with a name SHOULD begin with the standard opening phrase "(a|an)".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M159"/>
@@ -6033,7 +6044,7 @@
       <xsl:apply-templates select="*" mode="M159"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-33Standard opening phrase for complex type-->
+   <!--PATTERN rule_11-30Standard opening phrase for complex type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for complex type</svrl:text>
 
 	  <!--RULE -->
@@ -6050,7 +6061,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-33: The data definition for an association type SHOULD begin with the standard opening phrase "a datatype for (a relationship|an association)...".</svrl:text>
+            <svrl:text>Rule 11-30: The data definition for an association type SHOULD begin with the standard opening phrase "a datatype for (a relationship|an association)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M160"/>
@@ -6070,7 +6081,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-33: The data definition for an augmentation type SHOULD begin with the standard opening phrase "a data type (that supplements|for additional information about)...".</svrl:text>
+            <svrl:text>Rule 11-30: The data definition for an augmentation type SHOULD begin with the standard opening phrase "a data type (that supplements|for additional information about)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M160"/>
@@ -6090,7 +6101,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-33: The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</svrl:text>
+            <svrl:text>Rule 11-30: The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M160"/>
@@ -6110,7 +6121,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-33: The data definition for a type SHOULD begin with the standard opening phrase "a data type...".</svrl:text>
+            <svrl:text>Rule 11-30: The data definition for a type SHOULD begin with the standard opening phrase "a data type...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M160"/>
@@ -6120,7 +6131,7 @@
       <xsl:apply-templates select="*" mode="M160"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-34Standard opening phrase for simple type-->
+   <!--PATTERN rule_11-31Standard opening phrase for simple type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for simple type</svrl:text>
 
 	  <!--RULE -->
@@ -6137,7 +6148,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-34: The data definition for a type SHOULD begin with a standard opening phrase "a data type...".</svrl:text>
+            <svrl:text>Rule 11-31: The data definition for a type SHOULD begin with a standard opening phrase "a data type...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M161"/>
@@ -6147,7 +6158,7 @@
       <xsl:apply-templates select="*" mode="M161"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-39Structures imported as conformant-->
+   <!--PATTERN rule_11-36Structures imported as conformant-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Structures imported as conformant</svrl:text>
 
 	  <!--RULE -->
@@ -6166,7 +6177,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-39: An import of the structures namespace MUST NOT be labeled as an external import.</svrl:text>
+               <svrl:text>Rule 11-36: An import of the structures namespace MUST NOT be labeled as an external import.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6177,7 +6188,7 @@
       <xsl:apply-templates select="*" mode="M162"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-40XML namespace imported as conformant-->
+   <!--PATTERN rule_11-37XML namespace imported as conformant-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">XML namespace imported as conformant</svrl:text>
 
 	  <!--RULE -->
@@ -6196,7 +6207,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-40: An import of the XML namespace MUST NOT be labeled as an external import.</svrl:text>
+               <svrl:text>Rule 11-37: An import of the XML namespace MUST NOT be labeled as an external import.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -6207,7 +6218,7 @@
       <xsl:apply-templates select="*" mode="M163"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-42Consistently marked namespace imports-->
+   <!--PATTERN rule_11-39Consistently marked namespace imports-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Consistently marked namespace imports</svrl:text>
 
 	  <!--RULE -->
@@ -6227,7 +6238,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-42: All xs:import elements that have the same namespace MUST have the same conformance marking via appinfo:externalImportIndicator.</svrl:text>
+               <svrl:text>Rule 11-39: All xs:import elements that have the same namespace MUST have the same conformance marking via appinfo:externalImportIndicator.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

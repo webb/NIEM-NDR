@@ -620,7 +620,7 @@
             
 <sch:pattern id="rule_10-17"><sch:title>Name of code type ends in "CodeType"</sch:title>
   <sch:rule context="xs:complexType[exists(xs:simpleContent[                        exists(xs:*[local-name() = ('extension', 'restriction')                                    and (ends-with(@base, 'CodeSimpleType')                                    or ends-with(@base, 'CodeType'))])])]">
-    <sch:report test="not(ends-with(@name, 'CodeType'))">Rule 10-17: A complex type definition a {base type definition} of a code type or code simple type SHOULD have a {name} that ends in 'CodeType'.</sch:report>
+    <sch:report test="not(ends-with(@name, 'CodeType'))">Rule 10-17: A complex type definition with a {base type definition} of a code type or code simple type SHOULD have a {name} that ends in 'CodeType'.</sch:report>
   </sch:rule>
 </sch:pattern>
                 
@@ -746,6 +746,31 @@
   </sch:rule>
 </sch:pattern>
 	  
+<sch:pattern id="rule_10-46"><sch:title>Schema component names have only specific characters</sch:title>
+  <sch:rule context="xs:*[exists(@name)]">
+    <sch:assert test="matches(@name, '^[A-Za-z0-9\-_\.]*$')">Rule 10-46: The name of an XML Schema component defined by the schema must be composed of only the characters uppercase 'A' through 'Z', lowercase 'a' through 'z', numbers '0' through '9', underscore, hyphen, and period.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+        
+<sch:pattern id="rule_10-49"><sch:title>Attribute name begins with lower case letter</sch:title>
+  <sch:rule context="xs:attribute[exists(@name)]">
+    <sch:assert test="matches(@name, '^[a-z]')">Rule 10-49: Within the schema, any attribute declaration MUST have a name that begins with a lowercase letter
+      ('a'-'z').</sch:assert>
+  </sch:rule>
+</sch:pattern>
+          
+<sch:pattern id="rule_10-50"><sch:title>Name of schema component other than attribute and proxy type begins with upper case letter</sch:title>
+  <sch:rule context="xs:attribute">
+    <sch:report test="false()">Rule 10-50: This rule does not apply to an attribute.</sch:report>
+  </sch:rule>
+  <sch:rule context="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]">
+    <sch:report test="false()">Rule 10-50: This rule does not apply to a proxy types.</sch:report>
+  </sch:rule>
+  <sch:rule context="xs:*[exists(@name)]">
+    <sch:assert test="matches(@name, '^[A-Z]')">Rule 10-50: Within the schema, an XML Schema component that is not an attribute declaration or proxy type MUST have a name that begins with an upper-case letter ('A'-'Z').</sch:assert>
+  </sch:rule>
+</sch:pattern>
+          
 <sch:pattern id="rule_10-69"><sch:title>Deprecated annotates schema component</sch:title>
   <sch:rule context="*[exists(@appinfo:deprecated)]">
     <sch:assert test="namespace-uri-from-QName(node-name(.)) = xs:anyURI('http://www.w3.org/2001/XMLSchema')">Rule 10-69: The attribute appinfo:deprecated MUST be owned by an element with a namespace name <namespace-uri-for-prefix xmlns="https://iead.ittl.gtri.org/wr24/doc/2011-09-30-2258">xs</namespace-uri-for-prefix>.</sch:assert>
@@ -797,212 +822,191 @@
   </sch:rule>
 </sch:pattern>
           
-<sch:pattern id="rule_11-2"><sch:title>Name of type other than proxy type is in upper camel case</sch:title>
-  <sch:rule context="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]">
-    <sch:report test="false()">Rule 11-2: The name of a proxy type is not upper camel case.</sch:report>
-  </sch:rule>
-  <sch:rule context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]">
-    <sch:assert test="matches(@name, '^([A-Z][A-Za-z0-9\-]*)+$')">Rule 11-2: A type definition schema component that does not define a proxy type MUST be in upper camel case.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-          
-<sch:pattern id="rule_11-3"><sch:title>Base type definition defined by conformant schema</sch:title>
+<sch:pattern id="rule_11-2"><sch:title>Base type definition defined by conformant schema</sch:title>
   <sch:rule context="xs:*[exists(@base)]">
-    <sch:assert test="some $base-namespace in namespace-uri-from-QName(resolve-QName(@base, .)) satisfies (                         $base-namespace = (nf:get-target-namespace(.), xs:anyURI('http://www.w3.org/2001/XMLSchema'))                         or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                                                    and $base-namespace = xs:anyURI(@namespace)                                                                    and empty(@appinfo:externalImportIndicator)]))">Rule 11-3: The {base type definition} of a type definition MUST have the target namespace or the XML Schema namespace or a namespace that is imported as conformant.</sch:assert>
+    <sch:assert test="some $base-namespace in namespace-uri-from-QName(resolve-QName(@base, .)) satisfies (                         $base-namespace = (nf:get-target-namespace(.), xs:anyURI('http://www.w3.org/2001/XMLSchema'))                         or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                                                    and $base-namespace = xs:anyURI(@namespace)                                                                    and empty(@appinfo:externalImportIndicator)]))">Rule 11-2: The {base type definition} of a type definition MUST have the target namespace or the XML Schema namespace or a namespace that is imported as conformant.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-4"><sch:title>Name of simple type ends in "SimpleType"</sch:title>
+<sch:pattern id="rule_11-3"><sch:title>Name of simple type ends in "SimpleType"</sch:title>
   <sch:rule context="xs:simpleType[@name]">
-    <sch:assert test="ends-with(@name, 'SimpleType')">Rule 11-4: A simple type definition schema component MUST have a name that ends in "SimpleType".</sch:assert>
+    <sch:assert test="ends-with(@name, 'SimpleType')">Rule 11-3: A simple type definition schema component MUST have a name that ends in "SimpleType".</sch:assert>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-5"><sch:title>Name of simple type is upper camel case</sch:title>
-  <sch:rule context="xs:simpleType[exists(@name)]">
-    <sch:assert test="matches(string(@name), '^([A-Z][A-Za-z0-9\-]*)+$')">Rule 11-5: The name of a simple type definition schema component MUST be upper camel case.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-            
-<sch:pattern id="rule_11-7"><sch:title>List item type defined by conformant schemas</sch:title>
+<sch:pattern id="rule_11-5"><sch:title>List item type defined by conformant schemas</sch:title>
   <sch:rule context="xs:list[exists(@itemType)]">
     <sch:let name="namespace" value="namespace-uri-from-QName(resolve-QName(@itemType, .))"/>
-    <sch:assert test="$namespace = (nf:get-target-namespace(.), xs:anyURI('http://www.w3.org/2001/XMLSchema'))                       or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                     and $namespace = xs:anyURI(@namespace)                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-7: The item type of a list simple type definition MUST have a target namespace equal to the target namespace of the XML Schema document within which it is defined, or a namespace that is imported as conformant by the schema document within which it is defined.</sch:assert>
+    <sch:assert test="$namespace = (nf:get-target-namespace(.), xs:anyURI('http://www.w3.org/2001/XMLSchema'))                       or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                     and $namespace = xs:anyURI(@namespace)                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-5: The item type of a list simple type definition MUST have a target namespace equal to the target namespace of the XML Schema document within which it is defined, or a namespace that is imported as conformant by the schema document within which it is defined.</sch:assert>
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_11-8"><sch:title>Union member types defined by conformant schemas</sch:title>
+<sch:pattern id="rule_11-6"><sch:title>Union member types defined by conformant schemas</sch:title>
   <sch:rule context="xs:union[exists(@memberTypes)]">
-    <sch:assert test="every $qname in tokenize(normalize-space(@memberTypes), ' '),                             $namespace in namespace-uri-from-QName(resolve-QName($qname, .))                       satisfies ($namespace = nf:get-target-namespace(.)                                  or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                            and $namespace = xs:anyURI(@namespace)                                            and empty(@appinfo:externalImportIndicator)]))">Rule 11-8: Every member type of a union simple type definition MUST have a target namespace that is equal to either the target namespace of the XML Schema document within which it is defined or a namespace that is imported as conformant by the schema document within which it is defined.</sch:assert>
+    <sch:assert test="every $qname in tokenize(normalize-space(@memberTypes), ' '),                             $namespace in namespace-uri-from-QName(resolve-QName($qname, .))                       satisfies ($namespace = nf:get-target-namespace(.)                                  or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                            and $namespace = xs:anyURI(@namespace)                                            and empty(@appinfo:externalImportIndicator)]))">Rule 11-6: Every member type of a union simple type definition MUST have a target namespace that is equal to either the target namespace of the XML Schema document within which it is defined or a namespace that is imported as conformant by the schema document within which it is defined.</sch:assert>
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_11-9"><sch:title>Name of a code simple type has standard suffix</sch:title>
+<sch:pattern id="rule_11-7"><sch:title>Name of a code simple type has standard suffix</sch:title>
   <sch:rule context="xs:simpleType[exists(@name)       and (xs:restriction/xs:enumeration            or xs:restriction[ends-with(local-name-from-QName(resolve-QName(@base, .)), 'CodeSimpleType')])]">
-    <sch:report test="not(ends-with(@name, 'CodeSimpleType'))">Rule 11-9: A simple type definition schema component that has an enumeration facet or that is derived from a code simple type SHOULD have a name that ends in "CodeSimpleType".</sch:report>
+    <sch:report test="not(ends-with(@name, 'CodeSimpleType'))">Rule 11-7: A simple type definition schema component that has an enumeration facet or that is derived from a code simple type SHOULD have a name that ends in "CodeSimpleType".</sch:report>
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_11-11"><sch:title>Attribute of code simple type has code representation term</sch:title>
+<sch:pattern id="rule_11-9"><sch:title>Attribute of code simple type has code representation term</sch:title>
   <sch:rule context="xs:attribute[exists(@name) and exists(@type) and ends-with(@type, 'CodeSimpleType')]">
-    <sch:report test="not(ends-with(@name, 'Code'))">Rule 11-11: An attribute with a type that is a code simple type SHOULD have a name with representation term "Code"</sch:report>
+    <sch:report test="not(ends-with(@name, 'Code'))">Rule 11-9: An attribute with a type that is a code simple type SHOULD have a name with representation term "Code"</sch:report>
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_11-12"><sch:title>Complex type with simple content has structures:SimpleObjectAttributeGroup</sch:title>
+<sch:pattern id="rule_11-10"><sch:title>Complex type with simple content has structures:SimpleObjectAttributeGroup</sch:title>
   <sch:rule context="xs:simpleContent/xs:extension[       some $base-qname in resolve-QName(@base, .) satisfies         namespace-uri-from-QName($base-qname) = xs:anyURI('http://www.w3.org/2001/XMLSchema')         or ends-with(local-name-from-QName($base-qname), 'SimpleType')]">
-    <sch:assert test="xs:attributeGroup[                         resolve-QName(@ref, .) = xs:QName('structures:SimpleObjectAttributeGroup')]">Rule 11-12: A complex type definition with simple content schema component with a derivation method of extension that has a base type definition that is a simple type MUST incorporate the attribute group {http://release.niem.gov/niem/structures/4.0/}SimpleObjectAttributeGroup.</sch:assert>
+    <sch:assert test="xs:attributeGroup[                         resolve-QName(@ref, .) = xs:QName('structures:SimpleObjectAttributeGroup')]">Rule 11-10: A complex type definition with simple content schema component with a derivation method of extension that has a base type definition that is a simple type MUST incorporate the attribute group {http://release.niem.gov/niem/structures/4.0/}SimpleObjectAttributeGroup.</sch:assert>
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_11-13"><sch:title>Element name is upper camel case</sch:title>
-  <sch:rule context="xs:element[exists(@name)]">
-    <sch:assert test="matches(string(@name), '^([A-Z][A-Za-z0-9\-]*)+$')">Rule 11-13: The name of an element declaration MUST be upper camel case.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-            
-<sch:pattern id="rule_11-14"><sch:title>Element type does not have a simple type name</sch:title>
+<sch:pattern id="rule_11-11"><sch:title>Element type does not have a simple type name</sch:title>
   <sch:rule context="xs:element[exists(@type)]">
-    <sch:assert test="not(ends-with(@type, 'SimpleType'))">Rule 11-14: The {type definition} of an element declaration MUST NOT have a {name} that ends in 'SimpleType'.</sch:assert>
+    <sch:assert test="not(ends-with(@type, 'SimpleType'))">Rule 11-11: The {type definition} of an element declaration MUST NOT have a {name} that ends in 'SimpleType'.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-15"><sch:title>Element type is from conformant namespace</sch:title>
+<sch:pattern id="rule_11-12"><sch:title>Element type is from conformant namespace</sch:title>
   <sch:rule context="xs:element[exists(@type)]">
-    <sch:assert test="for $type-qname in resolve-QName(@type, .),                           $type-namespace in namespace-uri-from-QName($type-qname) return                         $type-namespace = nf:get-target-namespace(.)                         or exists(nf:get-document-element(.)/xs:import[                                     xs:anyURI(@namespace) = $type-namespace                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-15: The {type definition} of an element declaration MUST have a {target namespace} that is the target namespace, or one that is imported as conformant.</sch:assert>
+    <sch:assert test="for $type-qname in resolve-QName(@type, .),                           $type-namespace in namespace-uri-from-QName($type-qname) return                         $type-namespace = nf:get-target-namespace(.)                         or exists(nf:get-document-element(.)/xs:import[                                     xs:anyURI(@namespace) = $type-namespace                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-12: The {type definition} of an element declaration MUST have a {target namespace} that is the target namespace, or one that is imported as conformant.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-16"><sch:title>Name of element that ends in "Abstract" is abstract</sch:title>
+<sch:pattern id="rule_11-13"><sch:title>Name of element that ends in "Abstract" is abstract</sch:title>
   <sch:rule context="xs:element[@name]">
-    <sch:report test="not(exists(@abstract[xs:boolean(.) = true()])                            eq (ends-with(@name, 'Abstract')                                or ends-with(@name, 'AugmentationPoint')                               or ends-with(@name, 'Representation')))">Rule 11-16: An element declaration SHOULD have a name that ends in 'Abstract', 'AugmentationPoint', or 'Representation' if and only if it has the {abstract} property with a value of "true".</sch:report>
+    <sch:report test="not(exists(@abstract[xs:boolean(.) = true()])                            eq (ends-with(@name, 'Abstract')                                or ends-with(@name, 'AugmentationPoint')                               or ends-with(@name, 'Representation')))">Rule 11-13: An element declaration SHOULD have a name that ends in 'Abstract', 'AugmentationPoint', or 'Representation' if and only if it has the {abstract} property with a value of "true".</sch:report>
   </sch:rule>
 </sch:pattern>
 	    
-<sch:pattern id="rule_11-17"><sch:title>Name of element declaration with simple content has representation term</sch:title>
+<sch:pattern id="rule_11-14"><sch:title>Name of element declaration with simple content has representation term</sch:title>
   <sch:rule context="xs:element[@name and @type                                 and (some $type-qname in resolve-QName(@type, .) satisfies (                                        nf:get-target-namespace(.) = namespace-uri-from-QName($type-qname)                                        and nf:resolve-type(., $type-qname)/xs:simpleContent))]">
-    <sch:report test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies                             not(ends-with(@name, $representation-term))">Rule 11-17: The name of an element declaration that is of simple content SHOULD use a representation term.</sch:report>
+    <sch:report test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies                             not(ends-with(@name, $representation-term))">Rule 11-14: The name of an element declaration that is of simple content SHOULD use a representation term.</sch:report>
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_11-19"><sch:title>Element substitution group defined by conformant schema</sch:title>
+<sch:pattern id="rule_11-16"><sch:title>Element substitution group defined by conformant schema</sch:title>
   <sch:rule context="xs:element[exists(@substitutionGroup)]">
     <sch:let name="namespace" value="namespace-uri-from-QName(resolve-QName(@substitutionGroup, .))"/>
-    <sch:assert test="$namespace = nf:get-target-namespace(.)                       or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                     and $namespace = xs:anyURI(@namespace)                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-19: An element substitution group MUST have either the target namespace or a namespace that is imported as conformant.</sch:assert>
+    <sch:assert test="$namespace = nf:get-target-namespace(.)                       or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                     and $namespace = xs:anyURI(@namespace)                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-16: An element substitution group MUST have either the target namespace or a namespace that is imported as conformant.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-20"><sch:title>Attribute type defined by conformant schema</sch:title>
+<sch:pattern id="rule_11-17"><sch:title>Attribute type defined by conformant schema</sch:title>
   <sch:rule context="xs:attribute[exists(@type)]">
     <sch:let name="namespace" value="namespace-uri-from-QName(resolve-QName(@type, .))"/>
-    <sch:assert test="$namespace = (nf:get-target-namespace(.), xs:anyURI('http://www.w3.org/2001/XMLSchema'))                       or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                     and $namespace = xs:anyURI(@namespace)                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-20: The type of an attribute declaration MUST have the target namespace or the XML Schema namespace or a namespace that is imported as conformant.</sch:assert>
+    <sch:assert test="$namespace = (nf:get-target-namespace(.), xs:anyURI('http://www.w3.org/2001/XMLSchema'))                       or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                     and $namespace = xs:anyURI(@namespace)                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-17: The type of an attribute declaration MUST have the target namespace or the XML Schema namespace or a namespace that is imported as conformant.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-21"><sch:title>Attribute name uses representation term</sch:title>
+<sch:pattern id="rule_11-18"><sch:title>Attribute name uses representation term</sch:title>
   <sch:rule context="xs:attribute[exists(@name)]">
-    <sch:report test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies                             not(ends-with(@name, $representation-term))">Rule 11-21: An attribute name SHOULD end with a representation term.</sch:report>
+    <sch:report test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies                             not(ends-with(@name, $representation-term))">Rule 11-18: An attribute name SHOULD end with a representation term.</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-23"><sch:title>Element reference defined by conformant schema</sch:title>
+<sch:pattern id="rule_11-20"><sch:title>Element reference defined by conformant schema</sch:title>
   <sch:rule context="xs:element[exists(ancestor::xs:complexType[empty(@appinfo:externalAdapterTypeIndicator)]) and @ref]">
     <sch:let name="namespace" value="namespace-uri-from-QName(resolve-QName(@ref, .))"/>
-    <sch:assert test="$namespace = nf:get-target-namespace(.)                       or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                     and $namespace = xs:anyURI(@namespace)                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-23: An element reference MUST be to a component that has a namespace that is either the target namespace of the schema document in which it appears, or which is imported as conformant by that schema document.</sch:assert>
+    <sch:assert test="$namespace = nf:get-target-namespace(.)                       or exists(ancestor::xs:schema[1]/xs:import[exists(@namespace)                                     and $namespace = xs:anyURI(@namespace)                                     and empty(@appinfo:externalImportIndicator)])">Rule 11-20: An element reference MUST be to a component that has a namespace that is either the target namespace of the schema document in which it appears, or which is imported as conformant by that schema document.</sch:assert>
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_11-24"><sch:title>Referenced attribute defined by conformant schemas</sch:title>
+<sch:pattern id="rule_11-21"><sch:title>Referenced attribute defined by conformant schemas</sch:title>
   <sch:rule context="xs:attribute[@ref]">
     <sch:let name="namespace" value="namespace-uri-from-QName(resolve-QName(@ref, .))"/>
-    <sch:assert test="some $namespace in namespace-uri-from-QName(resolve-QName(@ref, .)) satisfies (                         $namespace = nf:get-target-namespace(.)                         or ancestor::xs:schema[1]/xs:import[                              @namespace                              and $namespace = xs:anyURI(@namespace)                              and empty(@appinfo:externalImportIndicator)])">Rule 11-24: An attribute {}ref MUST have the target namespace or a namespace that is imported as conformant.</sch:assert>
+    <sch:assert test="some $namespace in namespace-uri-from-QName(resolve-QName(@ref, .)) satisfies (                         $namespace = nf:get-target-namespace(.)                         or ancestor::xs:schema[1]/xs:import[                              @namespace                              and $namespace = xs:anyURI(@namespace)                              and empty(@appinfo:externalImportIndicator)])">Rule 11-21: An attribute {}ref MUST have the target namespace or a namespace that is imported as conformant.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-25"><sch:title>Schema uses only known attribute groups</sch:title>
+<sch:pattern id="rule_11-22"><sch:title>Schema uses only known attribute groups</sch:title>
   <sch:rule context="xs:attributeGroup[@ref]">
-    <sch:assert test="some $ref in resolve-QName(@ref, .) satisfies (                         $ref = xs:QName('structures:SimpleObjectAttributeGroup')                         or namespace-uri-from-QName($ref) = (xs:anyURI('urn:us:gov:ic:ism'),                                                              xs:anyURI('urn:us:gov:ic:ntk')))">Rule 11-25: An attribute group reference MUST be structures:SimpleObjectAttributeGroup or have the IC-ISM or IC-NTK namespace.</sch:assert>
+    <sch:assert test="some $ref in resolve-QName(@ref, .) satisfies (                         $ref = xs:QName('structures:SimpleObjectAttributeGroup')                         or namespace-uri-from-QName($ref) = (xs:anyURI('urn:us:gov:ic:ism'),                                                              xs:anyURI('urn:us:gov:ic:ntk')))">Rule 11-22: An attribute group reference MUST be structures:SimpleObjectAttributeGroup or have the IC-ISM or IC-NTK namespace.</sch:assert>
   </sch:rule>
 </sch:pattern>
           
-<sch:pattern id="rule_11-32"><sch:title>Standard opening phrase for element</sch:title>
+<sch:pattern id="rule_11-29"><sch:title>Standard opening phrase for element</sch:title>
   <sch:rule context="xs:element[ends-with(@name, 'AugmentationPoint')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(starts-with(lower-case(normalize-space(.)), 'an augmentation point '))">Rule 11-32: The data definition for an augmentation point element SHOULD begin with standard opening phrase "an augmentation point...".</sch:report>
+    <sch:report test="not(starts-with(lower-case(normalize-space(.)), 'an augmentation point '))">Rule 11-29: The data definition for an augmentation point element SHOULD begin with standard opening phrase "an augmentation point...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[ends-with(@name, 'Augmentation')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="every $phrase in ('supplements ', 'additional information about ')                       satisfies not(starts-with(lower-case(normalize-space(.)), $phrase))">Rule 11-32: The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</sch:report>
+    <sch:report test="every $phrase in ('supplements ', 'additional information about ')                       satisfies not(starts-with(lower-case(normalize-space(.)), $phrase))">Rule 11-29: The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[ends-with(@name, 'Metadata')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '(metadata about|information that further qualifies)'))">Rule 11-32: The data definition for a metadata element SHOULD begin with the standard opening phrase "metadata about..." or "information that further qualifies...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '(metadata about|information that further qualifies)'))">Rule 11-29: The data definition for a metadata element SHOULD begin with the standard opening phrase "metadata about..." or "information that further qualifies...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[ends-with(@name, 'Association') and empty(@abstract)                        ]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)),                                   '^an?( .*)? (relationship|association)'))">Rule 11-32: The data definition for an association element that is not abstract SHOULD begin with the standard opening phrase "an (optional adjectives) (relationship|association)...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)),                                   '^an?( .*)? (relationship|association)'))">Rule 11-29: The data definition for an association element that is not abstract SHOULD begin with the standard opening phrase "an (optional adjectives) (relationship|association)...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[xs:boolean(@abstract) = true()                        ]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(starts-with(lower-case(normalize-space(.)), 'a data concept'))">Rule 11-32: The data definition for an abstract element SHOULD begin with the standard opening phrase "a data concept...".</sch:report>
+    <sch:report test="not(starts-with(lower-case(normalize-space(.)), 'a data concept'))">Rule 11-29: The data definition for an abstract element SHOULD begin with the standard opening phrase "a data concept...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[ends-with(@name, 'Date')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))">Rule 11-32: The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "a(n?) (optional adjectives) (date|month|year)...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))">Rule 11-29: The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "a(n?) (optional adjectives) (date|month|year)...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[ends-with(@name, 'Quantity')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))">Rule 11-32: The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (count|number)...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))">Rule 11-29: The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (count|number)...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[ends-with(@name, 'Picture')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))">Rule 11-32: The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (image|picture|photograph)".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))">Rule 11-29: The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (image|picture|photograph)".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[ends-with(@name, 'Indicator')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">Rule 11-32: The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "true if ...; false (otherwise|if)...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">Rule 11-29: The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "true if ...; false (otherwise|if)...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[ends-with(@name, 'Identification')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))">Rule 11-32: The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) identification...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))">Rule 11-29: The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) identification...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[ends-with(@name, 'Name')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))">Rule 11-32: The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) name...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))">Rule 11-29: The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) name...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:element[@name]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an? '))">Rule 11-32: The data definition for an element declaration with a name SHOULD begin with the standard opening phrase "(a|an)".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^an? '))">Rule 11-29: The data definition for an element declaration with a name SHOULD begin with the standard opening phrase "(a|an)".</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-33"><sch:title>Standard opening phrase for complex type</sch:title>
+<sch:pattern id="rule_11-30"><sch:title>Standard opening phrase for complex type</sch:title>
   <sch:rule context="xs:complexType[ends-with(@name, 'AssociationType')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type for (a relationship|an association)'))">Rule 11-33: The data definition for an association type SHOULD begin with the standard opening phrase "a datatype for (a relationship|an association)...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type for (a relationship|an association)'))">Rule 11-30: The data definition for an association type SHOULD begin with the standard opening phrase "a datatype for (a relationship|an association)...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:complexType[ends-with(@name, 'AugmentationType')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type (that supplements|for additional information about)'))">Rule 11-33: The data definition for an augmentation type SHOULD begin with the standard opening phrase "a data type (that supplements|for additional information about)...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type (that supplements|for additional information about)'))">Rule 11-30: The data definition for an augmentation type SHOULD begin with the standard opening phrase "a data type (that supplements|for additional information about)...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:complexType[ends-with(@name, 'MetadataType')]/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type for (metadata about|information that further qualifies)'))">Rule 11-33: The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type for (metadata about|information that further qualifies)'))">Rule 11-30: The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</sch:report>
   </sch:rule>
   <sch:rule context="xs:complexType/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type'))">Rule 11-33: The data definition for a type SHOULD begin with the standard opening phrase "a data type...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type'))">Rule 11-30: The data definition for a type SHOULD begin with the standard opening phrase "a data type...".</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-34"><sch:title>Standard opening phrase for simple type</sch:title>
+<sch:pattern id="rule_11-31"><sch:title>Standard opening phrase for simple type</sch:title>
   <sch:rule context="xs:simpleType/xs:annotation/xs:documentation[1]">
-    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type'))">Rule 11-34: The data definition for a type SHOULD begin with a standard opening phrase "a data type...".</sch:report>
+    <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type'))">Rule 11-31: The data definition for a type SHOULD begin with a standard opening phrase "a data type...".</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-39"><sch:title>Structures imported as conformant</sch:title>
+<sch:pattern id="rule_11-36"><sch:title>Structures imported as conformant</sch:title>
   <sch:rule context="xs:import[exists(@namespace)                                and xs:anyURI(@namespace) = xs:anyURI('http://release.niem.gov/niem/structures/4.0/')]">
-    <sch:assert test="empty(@appinfo:externalImportIndicator)">Rule 11-39: An import of the structures namespace MUST NOT be labeled as an external import.</sch:assert>
+    <sch:assert test="empty(@appinfo:externalImportIndicator)">Rule 11-36: An import of the structures namespace MUST NOT be labeled as an external import.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-40"><sch:title>XML namespace imported as conformant</sch:title>
+<sch:pattern id="rule_11-37"><sch:title>XML namespace imported as conformant</sch:title>
   <sch:rule context="xs:import[exists(@namespace)                                and xs:anyURI(@namespace) = xs:anyURI('http://www.w3.org/XML/1998/namespace')]">
-    <sch:assert test="empty(@appinfo:externalImportIndicator)">Rule 11-40: An import of the XML namespace MUST NOT be labeled as an external import.</sch:assert>
+    <sch:assert test="empty(@appinfo:externalImportIndicator)">Rule 11-37: An import of the XML namespace MUST NOT be labeled as an external import.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-42"><sch:title>Consistently marked namespace imports</sch:title>
+<sch:pattern id="rule_11-39"><sch:title>Consistently marked namespace imports</sch:title>
   <sch:rule context="xs:import">
     <sch:let name="namespace" value="@namespace"/>
     <sch:let name="is-conformant" value="empty(@appinfo:externalImportIndicator)"/>
     <sch:let name="first" value="exactly-one(parent::xs:schema/xs:import[@namespace = $namespace][1])"/>
-    <sch:assert test=". is $first                       or $is-conformant = empty($first/@appinfo:externalImportIndicator)">Rule 11-42: All xs:import elements that have the same namespace MUST have the same conformance marking via appinfo:externalImportIndicator.</sch:assert>
+    <sch:assert test=". is $first                       or $is-conformant = empty($first/@appinfo:externalImportIndicator)">Rule 11-39: All xs:import elements that have the same namespace MUST have the same conformance marking via appinfo:externalImportIndicator.</sch:assert>
   </sch:rule>
 </sch:pattern>
           </sch:schema>
