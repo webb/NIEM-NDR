@@ -588,7 +588,7 @@
 <sch:pattern id="rule_10-24"><sch:title>Augmentable type has at most one augmentation point element</sch:title>
   <sch:rule context="xs:complexType[                        @name[not(ends-with(., 'MetadataType'))                              and not(ends-with(., 'AugmentationType'))]                        and empty(@appinfo:externalAdapterTypeIndicator)                        and xs:complexContent]">
     <sch:let name="augmentation-point-qname" value="QName(string(nf:get-target-namespace(.)),                           replace(./@name, 'Type$', 'AugmentationPoint'))"/>
-    <sch:assert test="count(xs:complexContent/xs:extension/xs:sequence/xs:element[                               @ref[resolve-QName(., ..) = $augmentation-point-qname]]) &lt;= 1">Rule 10-24: An augmentable type MUST contain no more than one element use of its augmentation point element.</sch:assert>
+    <sch:assert test="count(xs:complexContent/xs:extension/xs:sequence/xs:element[                               @ref[resolve-QName(., ..) = $augmentation-point-qname]]) le 1">Rule 10-24: An augmentable type MUST contain no more than one element use of its augmentation point element.</sch:assert>
   </sch:rule>
 </sch:pattern>
             

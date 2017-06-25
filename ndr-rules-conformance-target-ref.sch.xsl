@@ -4550,10 +4550,10 @@
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="count(xs:complexContent/xs:extension/xs:sequence/xs:element[                               @ref[resolve-QName(., ..) = $augmentation-point-qname]]) &lt;= 1"/>
+         <xsl:when test="count(xs:complexContent/xs:extension/xs:sequence/xs:element[                               @ref[resolve-QName(., ..) = $augmentation-point-qname]]) le 1"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="count(xs:complexContent/xs:extension/xs:sequence/xs:element[ @ref[resolve-QName(., ..) = $augmentation-point-qname]]) &lt;= 1">
+                                test="count(xs:complexContent/xs:extension/xs:sequence/xs:element[ @ref[resolve-QName(., ..) = $augmentation-point-qname]]) le 1">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>

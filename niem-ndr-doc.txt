@@ -20,9 +20,7 @@ Status
 
    This specification is a product of the NIEM Program Management Office (PMO).
 
-   
-
-   Send comments on this specification via email to niem-comments@lists.gatech.edu.
+   Updates, revisions, and errata for this specification are posted to https://github.com/NIEM/NIEM-NDR. Please submit comments on this specification as issues at https://github.com/NIEM/NIEM-NDR/issues.
 
 Contents
 
@@ -184,7 +182,7 @@ Table of Tables
 
    The Schematron rules are written using XPath2 as defined by [XPath 2]. These executable rules are normative.
 
-   An execution of a Schematron pattern that issues a failed assertion (represented via sch:assert) represents a validation error, and signifies that the assessed artifact violates a requirement of a conformance rule. An example of a constraint rule that uses schematron is Rule 9-10, Simple type definition is top-level.
+   An execution of a Schematron pattern that issues a failed assertion (represented via sch:assert) represents a validation error, and signifies that the assessed artifact violates a requirement of a conformance rule. An example of a constraint rule that uses Schematron is Rule 9-10, Simple type definition is top-level.
 
    An execution of a Schematron pattern that issues a report (represented via sch:report) indicates cause for concern. This may be:
 
@@ -655,7 +653,7 @@ Rule 4-6. Schema claims extension conformance target
 
       *  NIEM's use of the RDF model defines what a set of NIEM data means. The RDF specification provides a detailed description of what a statement means. This meaning is leveraged by NIEM.
 
-      *  NIEM's use of the RDF model provides a basis for inferencing and reasoning about XML data that uses NIEM. That is, using the rules defined for the RDF model, programs can determine implications of relationships between NIEM-defined objects.
+      *  NIEM's use of the RDF model provides a basis for inferring and reasoning about XML data that uses NIEM. That is, using the rules defined for the RDF model, programs can determine implications of relationships between NIEM-defined objects.
 
    With the exception of this section, NIEM rules are explained in this document without reference to RDF or RDF concepts. Understanding RDF is not required to understand NIEM-conformant schemas or data based on NIEM. However, understanding RDF concepts may deepen understanding of NIEM.
 
@@ -729,7 +727,7 @@ Rule 4-6. Schema claims extension conformance target
 
    The values of URIs and IDs within NIEM XML documents are not presumed to have any particular significance. XML requires every ID to be unique within its XML document, and for every IDREF to refer to an ID within the same document. The mapping of IDs and IDREFs to URIs does not mean that the identifiers are persistent or significant.
 
-   These attributes provide the identifiers of objects. The properties of an object may be spread across several XML elements that have the same identifer. These properties must be merged together to provide all the properties of a single object, as described by [JSON LD] Section 8.2, Node Objects:
+   These attributes provide the identifiers of objects. The properties of an object may be spread across several XML elements that have the same identifier. These properties must be merged together to provide all the properties of a single object, as described by [JSON LD] Section 8.2, Node Objects:
 
       The properties of a node in a graph may be spread among different node objects within a document. When that happens, the keys of the different node objects need to be merged to create the properties of the resulting node.
 
@@ -1514,7 +1512,7 @@ Rule 7-5. Component name follows ISO 11179 Part 5 Annex A
 
 8.1. Wildcards
 
-   There are many constructs within XML Schema that act as wildcards. That is, they introduce buckets that may carry arbitrary or otherwise nonvalidated content. Such constructs violate [Principle 12], above, and as such provide implicit workarounds for the difficult task of agreeing on the content of data models. Such workarounds should be made explicitly, outside the core data model.
+   There are many constructs within XML Schema that act as wildcards. That is, they introduce buckets that may carry arbitrary or otherwise not-validated content. Such constructs violate [Principle 12], above, and as such provide implicit workarounds for the difficult task of agreeing on the content of data models. Such workarounds should be made explicitly, outside the core data model.
 
    The following restrictions help to ban wildcards and arbitrary data:
 
@@ -2877,7 +2875,7 @@ Rule 9-89. xs:import must have namespace
         </sch:rule>
       </sch:pattern>
 
-   An import that does not specify a namespace is enabling references to non-namespaced components. NIEM requires that all components have a defined namespace. It is important that the namespace declared by a schema be universally defined and unambiguous.
+   An import that does not specify a namespace is enabling references to components without namespaces. NIEM requires that all components have a defined namespace. It is important that the namespace declared by a schema be universally defined and unambiguous.
 
 Rule 9-90. XML Schema document set must be complete
 
@@ -3617,9 +3615,9 @@ Rule 10-22. Association element type is an association type
 
       *  It results in numerous, domain-specific specializations of nc:PersonType, each with common content and extension-specific content.
 
-      *  There is no method for the developer of an information exchange specification (IES) to bring these types back together into a single type that carries the attributes desired for the IES. XML Schema does not support multiple inheritance, so there is no way to join together j:PersonType, im:PersonType, and cyfs:PersonType.
+      *  There is no method for the developer of an information exchange package description (IEPD) to bring these types back together into a single type that carries the attributes desired for the IEPD. XML Schema does not support multiple inheritance, so there would be no way to join together nc:PersonType, j:PersonType, and im:PersonType.
 
-      *  There is no standard or easy way for the developer to express that the various element instances of the various person types represent the same person, or which parts of those instances are required to be populated; does each person restate the name and birthdate, or is that handled by just one instance?
+      *  There is no standard or easy way for the developer to express that the various element instances of the various person types represent the same person, or which parts of those instances are required to be populated; does each person restate the name and birth-date, or is that handled by just one instance?
 
       *  A domain, having created its own j:PersonType that extends nc:PersonType, is, of course, going to create elements of that type. These elements will not be easily reused by other domains, as the Immigration namespace will want to use im:PersonType instead of j:PersonType.
 
@@ -3796,7 +3794,7 @@ Rule 10-24. Augmentable type has at most one augmentation point element
                    value="QName(string(nf:get-target-namespace(.)),
                                 replace(./@name, 'Type$', 'AugmentationPoint'))"/>
           <sch:assert test="count(xs:complexContent/xs:extension/xs:sequence/xs:element[
-                                    @ref[resolve-QName(., ..) = $augmentation-point-qname]]) &lt;= 1"
+                                    @ref[resolve-QName(., ..) = $augmentation-point-qname]]) le 1"
             >An augmentable type MUST contain no more than one element use of its augmentation point element.</sch:assert>
         </sch:rule>
       </sch:pattern>
@@ -4239,7 +4237,7 @@ Rule 10-46. Schema component names have only specific characters
 
       *  Period (".").
 
-   Other characters, such as unicode characters outside the ASCII character set, are explictly prohibited from the name of an XML Schema component defined by the schema.
+   Other characters, such as unicode characters outside the ASCII character set, are explicitly prohibited from the name of an XML Schema component defined by the schema.
 
 Rule 10-47. Punctuation in component name is a separator
 
@@ -4345,7 +4343,7 @@ Rule 10-53. Local terminology interpretation
 
       An element information item appinfo:LocalTerm MUST establish a term as follows:
 
-         1. The value of the attribute termis the [local term]; it may occur as a term within the name of a schema component within the schema document.
+         1. The value of the attribute term is the [local term]; it may occur as a term within the name of a schema component within the schema document.
 
          2. The value of the attribute literal is the meaning of the local term, provided as a full, plain-text form of the term. This may be useful when a local term is an abbreviation, acronym, or diminutive form of a longer term.
 
@@ -4515,7 +4513,7 @@ Rule 10-63. Redundant term in name is omitted
 
       |Percent|A representation of a ratio in which the two units are the same.
 
-      Quantity||A counted number of nonmonetary units possibly including fractions.
+      Quantity||A counted number of non-monetary units possibly including fractions.
 
       Text|-|A character string (i.e., a finite sequence of characters) generally in the form of words of a language.
 
@@ -4816,7 +4814,7 @@ Rule 11-4. Use lists only when data is uniform
 
    The use of lists should be reserved for cases where the data is fairly uniform.
 
-   Items in a list are not individually addressable by NIEM metadata techniques. The items are also not individually referencable by elements or attributes; one will have a value of the entire list, including all the items in the list. NIEM provides no method for individually addressing an item in a list. If an individual item in a list needs to be marked up in a manner different than other items in the list, the use of individual elements may be preferred to the definition of a list simple type.
+   Items in a list are not individually addressable by NIEM metadata techniques. The items may not be individually referenced by elements or attributes; one will have a value of the entire list, including all the items in the list. NIEM provides no method for individually addressing an item in a list. If an individual item in a list needs to be marked up in a manner different than other items in the list, the use of individual elements may be preferred to the definition of a list simple type.
 
 Rule 11-5. List item type defined by conformant schemas
 
@@ -5167,7 +5165,7 @@ Rule 11-22. Schema uses only known attribute groups
 
       2. The structural definition of each component. This is made up of XML Schema component definitions, along with certain [application information] (via xs:appinfo).
 
-   When possible, meaning is expressed via XML Schema mechanisms: type derivation, element substitution, specific types and structures, as well as names that are trivially parseable. Beyond that, NIEM-specific syntax must be used, as discussed in this section.
+   When possible, meaning is expressed via XML Schema mechanisms: type derivation, element substitution, specific types and structures, as well as names that may be easily parsed. Beyond that, NIEM-specific syntax must be used, as discussed in this section.
 
 11.6.1. Human-readable documentation
 
@@ -5326,7 +5324,7 @@ Rule 11-33. Different version means different view
 
       Two XML Schema documents MUST have the same value for attribute targetNamespace carried by the element xs:schema, and different values for attribute version carried by the element xs:schema if and only if they are different views of the same set of components.
 
-   These rules embody the basic philosophy behind NIEM's use of namespaced components: A component is uniquely identified by its class (e.g. element, attribute, type), its namespace (a URI), and its local name (an unqualified string). Any two matching component identifiers refer to the same component, even if the versions of the schemas containing each are different.
+   These rules embody the basic philosophy behind NIEM's use of components with namespaces: A component is uniquely identified by its class (e.g. element, attribute, type), its namespace (a URI), and its local name (an unqualified string). Any two matching component identifiers refer to the same component, even if the versions of the schemas containing each are different.
 
 11.8. Schema assembly
 
