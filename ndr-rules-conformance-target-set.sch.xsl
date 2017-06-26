@@ -188,7 +188,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-31</xsl:attribute>
+            <xsl:attribute name="id">rule_9-32</xsl:attribute>
             <xsl:attribute name="name">Base type of complex type with complex content must have complex content</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -263,7 +263,7 @@
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Rules XML Schema document sets</svrl:text>
    <xsl:include xmlns:sch="http://purl.oclc.org/dsdl/schematron" href="ndr-functions.xsl"/>
 
-   <!--PATTERN rule_9-31Base type of complex type with complex content must have complex content-->
+   <!--PATTERN rule_9-32Base type of complex type with complex content must have complex content-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Base type of complex type with complex content must have complex content</svrl:text>
 
 	  <!--RULE -->
@@ -282,7 +282,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-31: The base type of complex type that has complex content MUST have complex content.</svrl:text>
+               <svrl:text>Rule 9-32: The base type of complex type that has complex content MUST have complex content.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

@@ -12,9 +12,9 @@
 <sch:ns prefix="structures" uri="http://release.niem.gov/niem/structures/4.0/"/>
 <sch:ns prefix="term" uri="http://release.niem.gov/niem/appinfo/4.0/"/>
       
-<sch:pattern id="rule_9-31"><sch:title>Base type of complex type with complex content must have complex content</sch:title>
+<sch:pattern id="rule_9-32"><sch:title>Base type of complex type with complex content must have complex content</sch:title>
   <sch:rule context="xs:complexType[         nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument'))         or nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ExtensionSchemaDocument'))       ]/xs:complexContent">
-    <sch:assert test="some $derivation in xs:*[self::xs:extension or self::xs:restriction],                            $base-qname in resolve-QName($derivation/@base, $derivation),                            $base-type in nf:resolve-type($derivation, $base-qname) satisfies                          empty($base-type/self::xs:complexType/xs:simpleContent)">Rule 9-31: The base type of complex type that has complex content MUST have complex content.</sch:assert>
+    <sch:assert test="some $derivation in xs:*[self::xs:extension or self::xs:restriction],                            $base-qname in resolve-QName($derivation/@base, $derivation),                            $base-type in nf:resolve-type($derivation, $base-qname) satisfies                          empty($base-type/self::xs:complexType/xs:simpleContent)">Rule 9-32: The base type of complex type that has complex content MUST have complex content.</sch:assert>
   </sch:rule>
 </sch:pattern>
             

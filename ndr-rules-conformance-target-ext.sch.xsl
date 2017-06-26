@@ -314,7 +314,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-13</xsl:attribute>
+            <xsl:attribute name="id">rule_9-14</xsl:attribute>
             <xsl:attribute name="name">No list item type of xs:ID</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -323,7 +323,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-14</xsl:attribute>
+            <xsl:attribute name="id">rule_9-15</xsl:attribute>
             <xsl:attribute name="name">No list item type of xs:IDREF</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -332,7 +332,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-15</xsl:attribute>
+            <xsl:attribute name="id">rule_9-16</xsl:attribute>
             <xsl:attribute name="name">No list item type of xs:anySimpleType</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -341,7 +341,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-16</xsl:attribute>
+            <xsl:attribute name="id">rule_9-17</xsl:attribute>
             <xsl:attribute name="name">No list item type of xs:ENTITY</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -350,7 +350,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-17</xsl:attribute>
+            <xsl:attribute name="id">rule_9-18</xsl:attribute>
             <xsl:attribute name="name">No union member types of xs:ID</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -359,7 +359,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-18</xsl:attribute>
+            <xsl:attribute name="id">rule_9-19</xsl:attribute>
             <xsl:attribute name="name">No union member types of xs:IDREF</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -368,7 +368,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-19</xsl:attribute>
+            <xsl:attribute name="id">rule_9-20</xsl:attribute>
             <xsl:attribute name="name">No union member types of xs:IDREFS</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -377,7 +377,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-20</xsl:attribute>
+            <xsl:attribute name="id">rule_9-21</xsl:attribute>
             <xsl:attribute name="name">No union member types of xs:anySimpleType</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -386,7 +386,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-21</xsl:attribute>
+            <xsl:attribute name="id">rule_9-22</xsl:attribute>
             <xsl:attribute name="name">No union member types of xs:ENTITY</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -395,7 +395,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-22</xsl:attribute>
+            <xsl:attribute name="id">rule_9-23</xsl:attribute>
             <xsl:attribute name="name">No union member types of xs:ENTITIES</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -404,7 +404,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-23</xsl:attribute>
+            <xsl:attribute name="id">rule_9-24</xsl:attribute>
             <xsl:attribute name="name">Enumeration has data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -413,7 +413,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-24</xsl:attribute>
+            <xsl:attribute name="id">rule_9-25</xsl:attribute>
             <xsl:attribute name="name">Complex type definitions is top-level</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -422,7 +422,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-25</xsl:attribute>
+            <xsl:attribute name="id">rule_9-26</xsl:attribute>
             <xsl:attribute name="name">Complex type has data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -431,7 +431,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-26</xsl:attribute>
+            <xsl:attribute name="id">rule_9-27</xsl:attribute>
             <xsl:attribute name="name">No mixed content on complex type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -440,7 +440,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-27</xsl:attribute>
+            <xsl:attribute name="id">rule_9-28</xsl:attribute>
             <xsl:attribute name="name">No mixed content on complex content</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -449,7 +449,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-28</xsl:attribute>
+            <xsl:attribute name="id">rule_9-29</xsl:attribute>
             <xsl:attribute name="name">Complex type content is explicitly simple or complex</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -458,7 +458,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-30</xsl:attribute>
+            <xsl:attribute name="id">rule_9-31</xsl:attribute>
             <xsl:attribute name="name">Base type of complex type with complex content must have complex content</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -467,7 +467,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-35</xsl:attribute>
+            <xsl:attribute name="id">rule_9-36</xsl:attribute>
             <xsl:attribute name="name">Element declaration is top-level</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -476,7 +476,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-36</xsl:attribute>
+            <xsl:attribute name="id">rule_9-37</xsl:attribute>
             <xsl:attribute name="name">Element declaration has data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -485,7 +485,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-37</xsl:attribute>
+            <xsl:attribute name="id">rule_9-38</xsl:attribute>
             <xsl:attribute name="name">Untyped element is abstract</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -494,7 +494,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-38</xsl:attribute>
+            <xsl:attribute name="id">rule_9-39</xsl:attribute>
             <xsl:attribute name="name">Element of type xs:anySimpleType is abstract</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -503,7 +503,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-39</xsl:attribute>
+            <xsl:attribute name="id">rule_9-40</xsl:attribute>
             <xsl:attribute name="name">Element type not in the XML Schema namespace</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -512,7 +512,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-40</xsl:attribute>
+            <xsl:attribute name="id">rule_9-41</xsl:attribute>
             <xsl:attribute name="name">Element type not in the XML namespace</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -521,7 +521,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-41</xsl:attribute>
+            <xsl:attribute name="id">rule_9-42</xsl:attribute>
             <xsl:attribute name="name">Element type is not simple type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -530,7 +530,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-44</xsl:attribute>
+            <xsl:attribute name="id">rule_9-45</xsl:attribute>
             <xsl:attribute name="name">No element default value</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -539,7 +539,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-45</xsl:attribute>
+            <xsl:attribute name="id">rule_9-46</xsl:attribute>
             <xsl:attribute name="name">No element fixed value</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -548,7 +548,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-47</xsl:attribute>
+            <xsl:attribute name="id">rule_9-48</xsl:attribute>
             <xsl:attribute name="name">Attribute declaration is top-level</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -557,7 +557,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-48</xsl:attribute>
+            <xsl:attribute name="id">rule_9-49</xsl:attribute>
             <xsl:attribute name="name">Attribute declaration has data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -566,7 +566,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-49</xsl:attribute>
+            <xsl:attribute name="id">rule_9-50</xsl:attribute>
             <xsl:attribute name="name">Attribute declaration has type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -575,7 +575,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-50</xsl:attribute>
+            <xsl:attribute name="id">rule_9-51</xsl:attribute>
             <xsl:attribute name="name">No attribute type of xs:ID</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -584,7 +584,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-51</xsl:attribute>
+            <xsl:attribute name="id">rule_9-52</xsl:attribute>
             <xsl:attribute name="name">No attribute type of xs:IDREF</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -593,7 +593,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-52</xsl:attribute>
+            <xsl:attribute name="id">rule_9-53</xsl:attribute>
             <xsl:attribute name="name">No attribute type of xs:IDREFS</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -602,7 +602,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-53</xsl:attribute>
+            <xsl:attribute name="id">rule_9-54</xsl:attribute>
             <xsl:attribute name="name">No attribute type of xs:ENTITY</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -611,7 +611,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-54</xsl:attribute>
+            <xsl:attribute name="id">rule_9-55</xsl:attribute>
             <xsl:attribute name="name">No attribute type of xs:ENTITIES</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -620,7 +620,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-55</xsl:attribute>
+            <xsl:attribute name="id">rule_9-56</xsl:attribute>
             <xsl:attribute name="name">No attribute type of xs:anySimpleType</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -629,7 +629,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-56</xsl:attribute>
+            <xsl:attribute name="id">rule_9-57</xsl:attribute>
             <xsl:attribute name="name">No attribute default values</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -638,7 +638,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-57</xsl:attribute>
+            <xsl:attribute name="id">rule_9-58</xsl:attribute>
             <xsl:attribute name="name">No attribute fixed values</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -647,7 +647,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-58</xsl:attribute>
+            <xsl:attribute name="id">rule_9-59</xsl:attribute>
             <xsl:attribute name="name">No use of element xs:notation</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -656,7 +656,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-60</xsl:attribute>
+            <xsl:attribute name="id">rule_9-61</xsl:attribute>
             <xsl:attribute name="name">No xs:all</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -665,7 +665,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-62</xsl:attribute>
+            <xsl:attribute name="id">rule_9-63</xsl:attribute>
             <xsl:attribute name="name">xs:sequence must be child of xs:extension
               or xs:restriction</xsl:attribute>
             <xsl:apply-templates/>
@@ -675,7 +675,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-64</xsl:attribute>
+            <xsl:attribute name="id">rule_9-65</xsl:attribute>
             <xsl:attribute name="name">xs:choice must be child of xs:sequence</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -684,7 +684,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-65</xsl:attribute>
+            <xsl:attribute name="id">rule_9-66</xsl:attribute>
             <xsl:attribute name="name">Sequence has minimum cardinality 1</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -693,7 +693,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-66</xsl:attribute>
+            <xsl:attribute name="id">rule_9-67</xsl:attribute>
             <xsl:attribute name="name">Sequence has maximum cardinality 1</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -702,7 +702,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-67</xsl:attribute>
+            <xsl:attribute name="id">rule_9-68</xsl:attribute>
             <xsl:attribute name="name">Choice has minimum cardinality 1</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -711,7 +711,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-68</xsl:attribute>
+            <xsl:attribute name="id">rule_9-69</xsl:attribute>
             <xsl:attribute name="name">Choice has maximum cardinality 1</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -720,7 +720,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-71</xsl:attribute>
+            <xsl:attribute name="id">rule_9-72</xsl:attribute>
             <xsl:attribute name="name">No use of xs:unique</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -729,7 +729,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-72</xsl:attribute>
+            <xsl:attribute name="id">rule_9-73</xsl:attribute>
             <xsl:attribute name="name">No use of xs:key</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -738,7 +738,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-73</xsl:attribute>
+            <xsl:attribute name="id">rule_9-74</xsl:attribute>
             <xsl:attribute name="name">No use of xs:keyref</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -747,7 +747,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-74</xsl:attribute>
+            <xsl:attribute name="id">rule_9-75</xsl:attribute>
             <xsl:attribute name="name">No use of xs:group</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -756,7 +756,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-75</xsl:attribute>
+            <xsl:attribute name="id">rule_9-76</xsl:attribute>
             <xsl:attribute name="name">No definition of attribute groups</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -765,7 +765,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-76</xsl:attribute>
+            <xsl:attribute name="id">rule_9-77</xsl:attribute>
             <xsl:attribute name="name">Comment is not recommended</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -774,7 +774,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-77</xsl:attribute>
+            <xsl:attribute name="id">rule_9-78</xsl:attribute>
             <xsl:attribute name="name">Documentation element has no element children</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -783,7 +783,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-78</xsl:attribute>
+            <xsl:attribute name="id">rule_9-79</xsl:attribute>
             <xsl:attribute name="name">xs:appinfo children are comments, elements, or whitespace</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -792,7 +792,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-79</xsl:attribute>
+            <xsl:attribute name="id">rule_9-80</xsl:attribute>
             <xsl:attribute name="name">Appinfo child elements have namespaces</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -801,7 +801,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-80</xsl:attribute>
+            <xsl:attribute name="id">rule_9-81</xsl:attribute>
             <xsl:attribute name="name">Appinfo descendants are not XML Schema elements</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -810,7 +810,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-81</xsl:attribute>
+            <xsl:attribute name="id">rule_9-82</xsl:attribute>
             <xsl:attribute name="name">Schema has data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -819,7 +819,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-82</xsl:attribute>
+            <xsl:attribute name="id">rule_9-83</xsl:attribute>
             <xsl:attribute name="name">Schema document defines target namespace</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -828,7 +828,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-84</xsl:attribute>
+            <xsl:attribute name="id">rule_9-85</xsl:attribute>
             <xsl:attribute name="name">Schema has version</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -837,7 +837,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-87</xsl:attribute>
+            <xsl:attribute name="id">rule_9-88</xsl:attribute>
             <xsl:attribute name="name">No use of xs:redefine</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -846,7 +846,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-88</xsl:attribute>
+            <xsl:attribute name="id">rule_9-89</xsl:attribute>
             <xsl:attribute name="name">No use of xs:include</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -855,7 +855,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-89</xsl:attribute>
+            <xsl:attribute name="id">rule_9-90</xsl:attribute>
             <xsl:attribute name="name">xs:import must have namespace</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -864,7 +864,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-91</xsl:attribute>
+            <xsl:attribute name="id">rule_9-92</xsl:attribute>
             <xsl:attribute name="name">Namespace referenced by attribute type is imported</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -873,7 +873,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-92</xsl:attribute>
+            <xsl:attribute name="id">rule_9-93</xsl:attribute>
             <xsl:attribute name="name">Namespace referenced by attribute base is imported</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -882,7 +882,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-93</xsl:attribute>
+            <xsl:attribute name="id">rule_9-94</xsl:attribute>
             <xsl:attribute name="name">Namespace referenced by attribute itemType is imported</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -891,7 +891,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-94</xsl:attribute>
+            <xsl:attribute name="id">rule_9-95</xsl:attribute>
             <xsl:attribute name="name">Namespaces referenced by attribute memberTypes is imported</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -900,7 +900,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-95</xsl:attribute>
+            <xsl:attribute name="id">rule_9-96</xsl:attribute>
             <xsl:attribute name="name">Namespace referenced by attribute ref is imported</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -909,7 +909,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_9-96</xsl:attribute>
+            <xsl:attribute name="id">rule_9-97</xsl:attribute>
             <xsl:attribute name="name">Namespace referenced by attribute substitutionGroup is imported</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1838,7 +1838,7 @@
       <xsl:apply-templates select="*" mode="M23"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-13No list item type of xs:ID-->
+   <!--PATTERN rule_9-14No list item type of xs:ID-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No list item type of xs:ID</svrl:text>
 
 	  <!--RULE -->
@@ -1855,7 +1855,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-13: A schema component MUST NOT have an attribute {}itemType with a value of xs:ID.</svrl:text>
+               <svrl:text>Rule 9-14: A schema component MUST NOT have an attribute {}itemType with a value of xs:ID.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1866,7 +1866,7 @@
       <xsl:apply-templates select="*" mode="M24"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-14No list item type of xs:IDREF-->
+   <!--PATTERN rule_9-15No list item type of xs:IDREF-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No list item type of xs:IDREF</svrl:text>
 
 	  <!--RULE -->
@@ -1883,7 +1883,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-14: A schema component MUST NOT have an attribute {}itemType with a value of xs:IDREF.</svrl:text>
+               <svrl:text>Rule 9-15: A schema component MUST NOT have an attribute {}itemType with a value of xs:IDREF.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1894,7 +1894,7 @@
       <xsl:apply-templates select="*" mode="M25"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-15No list item type of xs:anySimpleType-->
+   <!--PATTERN rule_9-16No list item type of xs:anySimpleType-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No list item type of xs:anySimpleType</svrl:text>
 
 	  <!--RULE -->
@@ -1911,7 +1911,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-15: A schema component MUST NOT have an attribute {}itemType with a value of xs:anySimpleType.</svrl:text>
+               <svrl:text>Rule 9-16: A schema component MUST NOT have an attribute {}itemType with a value of xs:anySimpleType.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1922,7 +1922,7 @@
       <xsl:apply-templates select="*" mode="M26"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-16No list item type of xs:ENTITY-->
+   <!--PATTERN rule_9-17No list item type of xs:ENTITY-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No list item type of xs:ENTITY</svrl:text>
 
 	  <!--RULE -->
@@ -1939,7 +1939,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-16: A schema component MUST NOT have an attribute {}itemType with a value of xs:ENTITY.</svrl:text>
+               <svrl:text>Rule 9-17: A schema component MUST NOT have an attribute {}itemType with a value of xs:ENTITY.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1950,7 +1950,7 @@
       <xsl:apply-templates select="*" mode="M27"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-17No union member types of xs:ID-->
+   <!--PATTERN rule_9-18No union member types of xs:ID-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:ID</svrl:text>
 
 	  <!--RULE -->
@@ -1967,7 +1967,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-17: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ID.</svrl:text>
+               <svrl:text>Rule 9-18: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ID.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -1978,7 +1978,7 @@
       <xsl:apply-templates select="*" mode="M28"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-18No union member types of xs:IDREF-->
+   <!--PATTERN rule_9-19No union member types of xs:IDREF-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:IDREF</svrl:text>
 
 	  <!--RULE -->
@@ -1995,7 +1995,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-18: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREF.</svrl:text>
+               <svrl:text>Rule 9-19: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREF.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2006,7 +2006,7 @@
       <xsl:apply-templates select="*" mode="M29"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-19No union member types of xs:IDREFS-->
+   <!--PATTERN rule_9-20No union member types of xs:IDREFS-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:IDREFS</svrl:text>
 
 	  <!--RULE -->
@@ -2023,7 +2023,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-19: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREFS.</svrl:text>
+               <svrl:text>Rule 9-20: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREFS.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2034,7 +2034,7 @@
       <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-20No union member types of xs:anySimpleType-->
+   <!--PATTERN rule_9-21No union member types of xs:anySimpleType-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:anySimpleType</svrl:text>
 
 	  <!--RULE -->
@@ -2051,7 +2051,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-20: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:anySimpleType.</svrl:text>
+               <svrl:text>Rule 9-21: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:anySimpleType.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2062,7 +2062,7 @@
       <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-21No union member types of xs:ENTITY-->
+   <!--PATTERN rule_9-22No union member types of xs:ENTITY-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:ENTITY</svrl:text>
 
 	  <!--RULE -->
@@ -2079,7 +2079,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-21: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITY.</svrl:text>
+               <svrl:text>Rule 9-22: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITY.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2090,7 +2090,7 @@
       <xsl:apply-templates select="*" mode="M32"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-22No union member types of xs:ENTITIES-->
+   <!--PATTERN rule_9-23No union member types of xs:ENTITIES-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:ENTITIES</svrl:text>
 
 	  <!--RULE -->
@@ -2107,7 +2107,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-22: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITIES.</svrl:text>
+               <svrl:text>Rule 9-23: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITIES.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2118,7 +2118,7 @@
       <xsl:apply-templates select="*" mode="M33"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-23Enumeration has data definition-->
+   <!--PATTERN rule_9-24Enumeration has data definition-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Enumeration has data definition</svrl:text>
 
 	  <!--RULE -->
@@ -2134,7 +2134,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-23: An enumeration facet MUST have a data definition.</svrl:text>
+               <svrl:text>Rule 9-24: An enumeration facet MUST have a data definition.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2145,7 +2145,7 @@
       <xsl:apply-templates select="*" mode="M34"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-24Complex type definitions is top-level-->
+   <!--PATTERN rule_9-25Complex type definitions is top-level-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Complex type definitions is top-level</svrl:text>
 
 	  <!--RULE -->
@@ -2161,7 +2161,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-24: A complex type definition MUST be top-level.</svrl:text>
+               <svrl:text>Rule 9-25: A complex type definition MUST be top-level.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2172,7 +2172,7 @@
       <xsl:apply-templates select="*" mode="M35"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-25Complex type has data definition-->
+   <!--PATTERN rule_9-26Complex type has data definition-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Complex type has data definition</svrl:text>
 
 	  <!--RULE -->
@@ -2188,7 +2188,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-25: A complex type MUST have a data definition.</svrl:text>
+               <svrl:text>Rule 9-26: A complex type MUST have a data definition.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2199,7 +2199,7 @@
       <xsl:apply-templates select="*" mode="M36"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-26No mixed content on complex type-->
+   <!--PATTERN rule_9-27No mixed content on complex type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No mixed content on complex type</svrl:text>
 
 	  <!--RULE -->
@@ -2216,7 +2216,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-26: A complex type definition MUST NOT have mixed content.</svrl:text>
+               <svrl:text>Rule 9-27: A complex type definition MUST NOT have mixed content.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2227,7 +2227,7 @@
       <xsl:apply-templates select="*" mode="M37"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-27No mixed content on complex content-->
+   <!--PATTERN rule_9-28No mixed content on complex content-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No mixed content on complex content</svrl:text>
 
 	  <!--RULE -->
@@ -2246,7 +2246,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-27: A complex type definition with complex content MUST NOT have mixed content.</svrl:text>
+               <svrl:text>Rule 9-28: A complex type definition with complex content MUST NOT have mixed content.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2257,7 +2257,7 @@
       <xsl:apply-templates select="*" mode="M38"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-28Complex type content is explicitly simple or complex-->
+   <!--PATTERN rule_9-29Complex type content is explicitly simple or complex-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Complex type content is explicitly simple or complex</svrl:text>
 
 	  <!--RULE -->
@@ -2273,7 +2273,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-28: An element xs:complexType MUST have a child element xs:simpleContent or xs:complexContent.</svrl:text>
+               <svrl:text>Rule 9-29: An element xs:complexType MUST have a child element xs:simpleContent or xs:complexContent.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2284,7 +2284,7 @@
       <xsl:apply-templates select="*" mode="M39"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-30Base type of complex type with complex content must have complex content-->
+   <!--PATTERN rule_9-31Base type of complex type with complex content must have complex content-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Base type of complex type with complex content must have complex content</svrl:text>
 
 	  <!--RULE -->
@@ -2303,7 +2303,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-30: The base type of complex type that has complex content MUST be a complex type with complex content.</svrl:text>
+               <svrl:text>Rule 9-31: The base type of complex type that has complex content MUST be a complex type with complex content.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2314,7 +2314,7 @@
       <xsl:apply-templates select="*" mode="M40"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-35Element declaration is top-level-->
+   <!--PATTERN rule_9-36Element declaration is top-level-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element declaration is top-level</svrl:text>
 
 	  <!--RULE -->
@@ -2331,7 +2331,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-35: An element declaration MUST be top-level.</svrl:text>
+               <svrl:text>Rule 9-36: An element declaration MUST be top-level.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2342,7 +2342,7 @@
       <xsl:apply-templates select="*" mode="M41"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-36Element declaration has data definition-->
+   <!--PATTERN rule_9-37Element declaration has data definition-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element declaration has data definition</svrl:text>
 
 	  <!--RULE -->
@@ -2359,7 +2359,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-36: An element declaration MUST have a data definition.</svrl:text>
+               <svrl:text>Rule 9-37: An element declaration MUST have a data definition.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2370,7 +2370,7 @@
       <xsl:apply-templates select="*" mode="M42"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-37Untyped element is abstract-->
+   <!--PATTERN rule_9-38Untyped element is abstract-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Untyped element is abstract</svrl:text>
 
 	  <!--RULE -->
@@ -2389,7 +2389,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-37: A top-level element declaration that does not set the {type definition} property via the attribute "type" MUST have the {abstract} property with a value of "true".</svrl:text>
+               <svrl:text>Rule 9-38: A top-level element declaration that does not set the {type definition} property via the attribute "type" MUST have the {abstract} property with a value of "true".</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2400,7 +2400,7 @@
       <xsl:apply-templates select="*" mode="M43"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-38Element of type xs:anySimpleType is abstract-->
+   <!--PATTERN rule_9-39Element of type xs:anySimpleType is abstract-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element of type xs:anySimpleType is abstract</svrl:text>
 
 	  <!--RULE -->
@@ -2419,7 +2419,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-38: An element declaration that has a type xs:anySimpleType MUST have the {abstract} property with a value of "true".</svrl:text>
+               <svrl:text>Rule 9-39: An element declaration that has a type xs:anySimpleType MUST have the {abstract} property with a value of "true".</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2430,7 +2430,7 @@
       <xsl:apply-templates select="*" mode="M44"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-39Element type not in the XML Schema namespace-->
+   <!--PATTERN rule_9-40Element type not in the XML Schema namespace-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element type not in the XML Schema namespace</svrl:text>
 
 	  <!--RULE -->
@@ -2447,7 +2447,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-39: An element type that is not xs:anySimpleType MUST NOT have a namespace name <namespace-uri-for-prefix xmlns="https://iead.ittl.gtri.org/wr24/doc/2011-09-30-2258"
+               <svrl:text>Rule 9-40: An element type that is not xs:anySimpleType MUST NOT have a namespace name <namespace-uri-for-prefix xmlns="https://iead.ittl.gtri.org/wr24/doc/2011-09-30-2258"
                                             xmlns:sch="http://purl.oclc.org/dsdl/schematron">xs</namespace-uri-for-prefix>.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -2459,7 +2459,7 @@
       <xsl:apply-templates select="*" mode="M45"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-40Element type not in the XML namespace-->
+   <!--PATTERN rule_9-41Element type not in the XML namespace-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element type not in the XML namespace</svrl:text>
 
 	  <!--RULE -->
@@ -2476,7 +2476,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-40: An element type MUST NOT have a namespace name that is in the XML namespace.</svrl:text>
+               <svrl:text>Rule 9-41: An element type MUST NOT have a namespace name that is in the XML namespace.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2487,7 +2487,7 @@
       <xsl:apply-templates select="*" mode="M46"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-41Element type is not simple type-->
+   <!--PATTERN rule_9-42Element type is not simple type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element type is not simple type</svrl:text>
 
 	  <!--RULE -->
@@ -2503,7 +2503,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-41: An element type that is not xs:anySimpleType MUST NOT be a simple type.</svrl:text>
+               <svrl:text>Rule 9-42: An element type that is not xs:anySimpleType MUST NOT be a simple type.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2514,7 +2514,7 @@
       <xsl:apply-templates select="*" mode="M47"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-44No element default value-->
+   <!--PATTERN rule_9-45No element default value-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No element default value</svrl:text>
 
 	  <!--RULE -->
@@ -2529,7 +2529,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-44: An element xs:element MUST NOT have an attribute {}default.</svrl:text>
+               <svrl:text>Rule 9-45: An element xs:element MUST NOT have an attribute {}default.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2540,7 +2540,7 @@
       <xsl:apply-templates select="*" mode="M48"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-45No element fixed value-->
+   <!--PATTERN rule_9-46No element fixed value-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No element fixed value</svrl:text>
 
 	  <!--RULE -->
@@ -2555,7 +2555,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-45: An element xs:element MUST NOT have an attribute {}fixed.</svrl:text>
+               <svrl:text>Rule 9-46: An element xs:element MUST NOT have an attribute {}fixed.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2566,7 +2566,7 @@
       <xsl:apply-templates select="*" mode="M49"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-47Attribute declaration is top-level-->
+   <!--PATTERN rule_9-48Attribute declaration is top-level-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute declaration is top-level</svrl:text>
 
 	  <!--RULE -->
@@ -2583,7 +2583,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-47: An attribute declaration MUST be top-level.</svrl:text>
+               <svrl:text>Rule 9-48: An attribute declaration MUST be top-level.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2594,7 +2594,7 @@
       <xsl:apply-templates select="*" mode="M50"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-48Attribute declaration has data definition-->
+   <!--PATTERN rule_9-49Attribute declaration has data definition-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute declaration has data definition</svrl:text>
 
 	  <!--RULE -->
@@ -2611,7 +2611,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-48: An attribute declaration MUST have a data definition.</svrl:text>
+               <svrl:text>Rule 9-49: An attribute declaration MUST have a data definition.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2622,7 +2622,7 @@
       <xsl:apply-templates select="*" mode="M51"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-49Attribute declaration has type-->
+   <!--PATTERN rule_9-50Attribute declaration has type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute declaration has type</svrl:text>
 
 	  <!--RULE -->
@@ -2638,7 +2638,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-49: A top-level attribute declaration MUST have a type.</svrl:text>
+               <svrl:text>Rule 9-50: A top-level attribute declaration MUST have a type.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2649,7 +2649,7 @@
       <xsl:apply-templates select="*" mode="M52"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-50No attribute type of xs:ID-->
+   <!--PATTERN rule_9-51No attribute type of xs:ID-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No attribute type of xs:ID</svrl:text>
 
 	  <!--RULE -->
@@ -2666,7 +2666,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-50: A schema component MUST NOT have an attribute {}type with a value of xs:ID.</svrl:text>
+               <svrl:text>Rule 9-51: A schema component MUST NOT have an attribute {}type with a value of xs:ID.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2677,7 +2677,7 @@
       <xsl:apply-templates select="*" mode="M53"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-51No attribute type of xs:IDREF-->
+   <!--PATTERN rule_9-52No attribute type of xs:IDREF-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No attribute type of xs:IDREF</svrl:text>
 
 	  <!--RULE -->
@@ -2694,7 +2694,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-51: A schema component MUST NOT have an attribute {}type with a value of xs:IDREF.</svrl:text>
+               <svrl:text>Rule 9-52: A schema component MUST NOT have an attribute {}type with a value of xs:IDREF.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2705,7 +2705,7 @@
       <xsl:apply-templates select="*" mode="M54"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-52No attribute type of xs:IDREFS-->
+   <!--PATTERN rule_9-53No attribute type of xs:IDREFS-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No attribute type of xs:IDREFS</svrl:text>
 
 	  <!--RULE -->
@@ -2722,7 +2722,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-52: A schema component MUST NOT have an attribute {}type with a value of xs:IDREFS.</svrl:text>
+               <svrl:text>Rule 9-53: A schema component MUST NOT have an attribute {}type with a value of xs:IDREFS.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2733,7 +2733,7 @@
       <xsl:apply-templates select="*" mode="M55"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-53No attribute type of xs:ENTITY-->
+   <!--PATTERN rule_9-54No attribute type of xs:ENTITY-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No attribute type of xs:ENTITY</svrl:text>
 
 	  <!--RULE -->
@@ -2750,7 +2750,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-53: A schema component MUST NOT have an attribute {}type with a value of xs:ENTITY.</svrl:text>
+               <svrl:text>Rule 9-54: A schema component MUST NOT have an attribute {}type with a value of xs:ENTITY.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2761,7 +2761,7 @@
       <xsl:apply-templates select="*" mode="M56"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-54No attribute type of xs:ENTITIES-->
+   <!--PATTERN rule_9-55No attribute type of xs:ENTITIES-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No attribute type of xs:ENTITIES</svrl:text>
 
 	  <!--RULE -->
@@ -2778,7 +2778,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-54: A schema component MUST NOT have an attribute {}type with a value of xs:ENTITIES.</svrl:text>
+               <svrl:text>Rule 9-55: A schema component MUST NOT have an attribute {}type with a value of xs:ENTITIES.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2789,7 +2789,7 @@
       <xsl:apply-templates select="*" mode="M57"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-55No attribute type of xs:anySimpleType-->
+   <!--PATTERN rule_9-56No attribute type of xs:anySimpleType-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No attribute type of xs:anySimpleType</svrl:text>
 
 	  <!--RULE -->
@@ -2806,7 +2806,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-55: A schema component MUST NOT have an attribute {}type with a value of xs:anySimpleType.</svrl:text>
+               <svrl:text>Rule 9-56: A schema component MUST NOT have an attribute {}type with a value of xs:anySimpleType.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2817,7 +2817,7 @@
       <xsl:apply-templates select="*" mode="M58"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-56No attribute default values-->
+   <!--PATTERN rule_9-57No attribute default values-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No attribute default values</svrl:text>
 
 	  <!--RULE -->
@@ -2832,7 +2832,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-56: An element xs:attribute MUST NOT have an attribute {}default.</svrl:text>
+               <svrl:text>Rule 9-57: An element xs:attribute MUST NOT have an attribute {}default.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2843,8 +2843,27 @@
       <xsl:apply-templates select="*" mode="M59"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-57No attribute fixed values-->
+   <!--PATTERN rule_9-58No attribute fixed values-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No attribute fixed values</svrl:text>
+
+	  <!--RULE -->
+   <xsl:template match="xs:attribute[exists(@ref) and @use eq 'required']"
+                 priority="1001"
+                 mode="M60">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="xs:attribute[exists(@ref) and @use eq 'required']"/>
+
+		    <!--REPORT -->
+      <xsl:if test="false()">
+         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="false()">
+            <xsl:attribute name="location">
+               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+            </xsl:attribute>
+            <svrl:text>Rule 9-58: This rule does not constrain attribute uses that are required</svrl:text>
+         </svrl:successful-report>
+      </xsl:if>
+      <xsl:apply-templates select="*" mode="M60"/>
+   </xsl:template>
 
 	  <!--RULE -->
    <xsl:template match="xs:attribute" priority="1000" mode="M60">
@@ -2858,7 +2877,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-57: An element xs:attribute MUST NOT have an attribute {}fixed.</svrl:text>
+               <svrl:text>Rule 9-58: An element xs:attribute that is not a required attribute use MUST NOT have an attribute {}fixed.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2869,7 +2888,7 @@
       <xsl:apply-templates select="*" mode="M60"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-58No use of element xs:notation-->
+   <!--PATTERN rule_9-59No use of element xs:notation-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No use of element xs:notation</svrl:text>
 
 	  <!--RULE -->
@@ -2884,7 +2903,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-58: The schema MUST NOT contain the element xs:notation.</svrl:text>
+               <svrl:text>Rule 9-59: The schema MUST NOT contain the element xs:notation.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2895,7 +2914,7 @@
       <xsl:apply-templates select="*" mode="M61"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-60No xs:all-->
+   <!--PATTERN rule_9-61No xs:all-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No xs:all</svrl:text>
 
 	  <!--RULE -->
@@ -2910,7 +2929,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-60: The schema MUST NOT contain the element xs:all</svrl:text>
+               <svrl:text>Rule 9-61: The schema MUST NOT contain the element xs:all</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2921,7 +2940,7 @@
       <xsl:apply-templates select="*" mode="M62"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-62xs:sequence must be child of xs:extension
+   <!--PATTERN rule_9-63xs:sequence must be child of xs:extension
               or xs:restriction-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">xs:sequence must be child of xs:extension
               or xs:restriction</svrl:text>
@@ -2939,7 +2958,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-62: An element xs:sequence MUST be a child of element xs:extension or xs:restriction.</svrl:text>
+               <svrl:text>Rule 9-63: An element xs:sequence MUST be a child of element xs:extension or xs:restriction.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2950,7 +2969,7 @@
       <xsl:apply-templates select="*" mode="M63"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-64xs:choice must be child of xs:sequence-->
+   <!--PATTERN rule_9-65xs:choice must be child of xs:sequence-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">xs:choice must be child of xs:sequence</svrl:text>
 
 	  <!--RULE -->
@@ -2966,7 +2985,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-64: An element xs:choice MUST be a child of element xs:sequence.</svrl:text>
+               <svrl:text>Rule 9-65: An element xs:choice MUST be a child of element xs:sequence.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2977,7 +2996,7 @@
       <xsl:apply-templates select="*" mode="M64"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-65Sequence has minimum cardinality 1-->
+   <!--PATTERN rule_9-66Sequence has minimum cardinality 1-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Sequence has minimum cardinality 1</svrl:text>
 
 	  <!--RULE -->
@@ -2993,7 +3012,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-65: An element xs:sequence MUST either not have the attribute {}minOccurs, or that attribute MUST have a value of 1.</svrl:text>
+               <svrl:text>Rule 9-66: An element xs:sequence MUST either not have the attribute {}minOccurs, or that attribute MUST have a value of 1.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3004,7 +3023,7 @@
       <xsl:apply-templates select="*" mode="M65"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-66Sequence has maximum cardinality 1-->
+   <!--PATTERN rule_9-67Sequence has maximum cardinality 1-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Sequence has maximum cardinality 1</svrl:text>
 
 	  <!--RULE -->
@@ -3020,7 +3039,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-66: An element xs:sequence MUST either not have the attribute {}maxOccurs, or that attribute MUST have a value of 1.</svrl:text>
+               <svrl:text>Rule 9-67: An element xs:sequence MUST either not have the attribute {}maxOccurs, or that attribute MUST have a value of 1.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3031,7 +3050,7 @@
       <xsl:apply-templates select="*" mode="M66"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-67Choice has minimum cardinality 1-->
+   <!--PATTERN rule_9-68Choice has minimum cardinality 1-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Choice has minimum cardinality 1</svrl:text>
 
 	  <!--RULE -->
@@ -3047,7 +3066,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-67: An element xs:choice MUST either not have the attribute {}minOccurs, or that attribute MUST have a value of 1.</svrl:text>
+               <svrl:text>Rule 9-68: An element xs:choice MUST either not have the attribute {}minOccurs, or that attribute MUST have a value of 1.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3058,7 +3077,7 @@
       <xsl:apply-templates select="*" mode="M67"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-68Choice has maximum cardinality 1-->
+   <!--PATTERN rule_9-69Choice has maximum cardinality 1-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Choice has maximum cardinality 1</svrl:text>
 
 	  <!--RULE -->
@@ -3074,7 +3093,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-68: An element xs:choice MUST either not have the attribute {}maxOccurs, or that attribute MUST have a value of 1.</svrl:text>
+               <svrl:text>Rule 9-69: An element xs:choice MUST either not have the attribute {}maxOccurs, or that attribute MUST have a value of 1.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3085,7 +3104,7 @@
       <xsl:apply-templates select="*" mode="M68"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-71No use of xs:unique-->
+   <!--PATTERN rule_9-72No use of xs:unique-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No use of xs:unique</svrl:text>
 
 	  <!--RULE -->
@@ -3100,7 +3119,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-71: The schema MUST NOT contain the element xs:unique.</svrl:text>
+               <svrl:text>Rule 9-72: The schema MUST NOT contain the element xs:unique.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3111,7 +3130,7 @@
       <xsl:apply-templates select="*" mode="M69"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-72No use of xs:key-->
+   <!--PATTERN rule_9-73No use of xs:key-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No use of xs:key</svrl:text>
 
 	  <!--RULE -->
@@ -3126,7 +3145,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-72: The schema MUST NOT contain the element xs:key.</svrl:text>
+               <svrl:text>Rule 9-73: The schema MUST NOT contain the element xs:key.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3137,7 +3156,7 @@
       <xsl:apply-templates select="*" mode="M70"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-73No use of xs:keyref-->
+   <!--PATTERN rule_9-74No use of xs:keyref-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No use of xs:keyref</svrl:text>
 
 	  <!--RULE -->
@@ -3152,7 +3171,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-73: The schema MUST NOT contain the element xs:keyref.</svrl:text>
+               <svrl:text>Rule 9-74: The schema MUST NOT contain the element xs:keyref.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3163,7 +3182,7 @@
       <xsl:apply-templates select="*" mode="M71"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-74No use of xs:group-->
+   <!--PATTERN rule_9-75No use of xs:group-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No use of xs:group</svrl:text>
 
 	  <!--RULE -->
@@ -3178,7 +3197,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-74: The schema MUST NOT contain the element xs:group.</svrl:text>
+               <svrl:text>Rule 9-75: The schema MUST NOT contain the element xs:group.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3189,7 +3208,7 @@
       <xsl:apply-templates select="*" mode="M72"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-75No definition of attribute groups-->
+   <!--PATTERN rule_9-76No definition of attribute groups-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No definition of attribute groups</svrl:text>
 
 	  <!--RULE -->
@@ -3205,7 +3224,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-75: The schema MUST NOT contain an attribute group definition schema component.</svrl:text>
+               <svrl:text>Rule 9-76: The schema MUST NOT contain an attribute group definition schema component.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3216,7 +3235,7 @@
       <xsl:apply-templates select="*" mode="M73"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-76Comment is not recommended-->
+   <!--PATTERN rule_9-77Comment is not recommended-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Comment is not recommended</svrl:text>
 
 	  <!--RULE -->
@@ -3229,7 +3248,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 9-76: An XML Comment is not an XML Schema annotation component; an XML comment SHOULD NOT appear in the schema.</svrl:text>
+            <svrl:text>Rule 9-77: An XML Comment is not an XML Schema annotation component; an XML comment SHOULD NOT appear in the schema.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M74"/>
@@ -3239,7 +3258,7 @@
       <xsl:apply-templates select="*" mode="M74"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-77Documentation element has no element children-->
+   <!--PATTERN rule_9-78Documentation element has no element children-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Documentation element has no element children</svrl:text>
 
 	  <!--RULE -->
@@ -3256,7 +3275,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-77: A child of element xs:documentation MUST be text or an XML comment.</svrl:text>
+               <svrl:text>Rule 9-78: A child of element xs:documentation MUST be text or an XML comment.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3267,7 +3286,7 @@
       <xsl:apply-templates select="*" mode="M75"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-78xs:appinfo children are comments, elements, or whitespace-->
+   <!--PATTERN rule_9-79xs:appinfo children are comments, elements, or whitespace-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">xs:appinfo children are comments, elements, or whitespace</svrl:text>
 
 	  <!--RULE -->
@@ -3283,7 +3302,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-78: A child of element xs:appinfo MUST be an element, a comment, or whitespace text.</svrl:text>
+               <svrl:text>Rule 9-79: A child of element xs:appinfo MUST be an element, a comment, or whitespace text.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3294,7 +3313,7 @@
       <xsl:apply-templates select="*" mode="M76"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-79Appinfo child elements have namespaces-->
+   <!--PATTERN rule_9-80Appinfo child elements have namespaces-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Appinfo child elements have namespaces</svrl:text>
 
 	  <!--RULE -->
@@ -3310,7 +3329,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-79: An element that is a child of xs:appinfo MUST have a namespace name.</svrl:text>
+               <svrl:text>Rule 9-80: An element that is a child of xs:appinfo MUST have a namespace name.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3321,7 +3340,7 @@
       <xsl:apply-templates select="*" mode="M77"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-80Appinfo descendants are not XML Schema elements-->
+   <!--PATTERN rule_9-81Appinfo descendants are not XML Schema elements-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Appinfo descendants are not XML Schema elements</svrl:text>
 
 	  <!--RULE -->
@@ -3336,7 +3355,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-80: An element with a namespace name of xs: MUST NOT have an ancestor element xs:appinfo.</svrl:text>
+               <svrl:text>Rule 9-81: An element with a namespace name of xs: MUST NOT have an ancestor element xs:appinfo.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3347,7 +3366,7 @@
       <xsl:apply-templates select="*" mode="M78"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-81Schema has data definition-->
+   <!--PATTERN rule_9-82Schema has data definition-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Schema has data definition</svrl:text>
 
 	  <!--RULE -->
@@ -3363,7 +3382,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-81: An element xs:schema MUST have a data definition.</svrl:text>
+               <svrl:text>Rule 9-82: An element xs:schema MUST have a data definition.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3374,7 +3393,7 @@
       <xsl:apply-templates select="*" mode="M79"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-82Schema document defines target namespace-->
+   <!--PATTERN rule_9-83Schema document defines target namespace-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Schema document defines target namespace</svrl:text>
 
 	  <!--RULE -->
@@ -3389,7 +3408,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-82: The schema MUST define a target namespace.</svrl:text>
+               <svrl:text>Rule 9-83: The schema MUST define a target namespace.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3400,7 +3419,7 @@
       <xsl:apply-templates select="*" mode="M80"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-84Schema has version-->
+   <!--PATTERN rule_9-85Schema has version-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Schema has version</svrl:text>
 
 	  <!--RULE -->
@@ -3416,7 +3435,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-84: An element xs:schema MUST have an attribute {}version that MUST NOT be empty.</svrl:text>
+               <svrl:text>Rule 9-85: An element xs:schema MUST have an attribute {}version that MUST NOT be empty.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3427,7 +3446,7 @@
       <xsl:apply-templates select="*" mode="M81"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-87No use of xs:redefine-->
+   <!--PATTERN rule_9-88No use of xs:redefine-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No use of xs:redefine</svrl:text>
 
 	  <!--RULE -->
@@ -3442,7 +3461,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-87: The schema MUST NOT contain the element xs:redefine.</svrl:text>
+               <svrl:text>Rule 9-88: The schema MUST NOT contain the element xs:redefine.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3453,7 +3472,7 @@
       <xsl:apply-templates select="*" mode="M82"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-88No use of xs:include-->
+   <!--PATTERN rule_9-89No use of xs:include-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No use of xs:include</svrl:text>
 
 	  <!--RULE -->
@@ -3468,7 +3487,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-88: The schema MUST NOT contain the element xs:include.</svrl:text>
+               <svrl:text>Rule 9-89: The schema MUST NOT contain the element xs:include.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3479,7 +3498,7 @@
       <xsl:apply-templates select="*" mode="M83"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-89xs:import must have namespace-->
+   <!--PATTERN rule_9-90xs:import must have namespace-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">xs:import must have namespace</svrl:text>
 
 	  <!--RULE -->
@@ -3494,7 +3513,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-89: An element xs:import MUST have an attribute {}namespace.</svrl:text>
+               <svrl:text>Rule 9-90: An element xs:import MUST have an attribute {}namespace.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3505,7 +3524,7 @@
       <xsl:apply-templates select="*" mode="M84"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-91Namespace referenced by attribute type is imported-->
+   <!--PATTERN rule_9-92Namespace referenced by attribute type is imported-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Namespace referenced by attribute type is imported</svrl:text>
 
 	  <!--RULE -->
@@ -3521,7 +3540,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-91: The namespace of a type referenced by @type MUST be the target namespace, the XML Schema namespace, or be imported.</svrl:text>
+               <svrl:text>Rule 9-92: The namespace of a type referenced by @type MUST be the target namespace, the XML Schema namespace, or be imported.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3532,7 +3551,7 @@
       <xsl:apply-templates select="*" mode="M85"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-92Namespace referenced by attribute base is imported-->
+   <!--PATTERN rule_9-93Namespace referenced by attribute base is imported-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Namespace referenced by attribute base is imported</svrl:text>
 
 	  <!--RULE -->
@@ -3548,7 +3567,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-92: The namespace of a type referenced by @base MUST be the target namespace, the XML Schema namespace, or be imported.</svrl:text>
+               <svrl:text>Rule 9-93: The namespace of a type referenced by @base MUST be the target namespace, the XML Schema namespace, or be imported.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3559,7 +3578,7 @@
       <xsl:apply-templates select="*" mode="M86"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-93Namespace referenced by attribute itemType is imported-->
+   <!--PATTERN rule_9-94Namespace referenced by attribute itemType is imported-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Namespace referenced by attribute itemType is imported</svrl:text>
 
 	  <!--RULE -->
@@ -3575,7 +3594,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-93: The namespace of a type referenced by @itemType MUST be the target namespace, the XML Schema namespace, or be imported.</svrl:text>
+               <svrl:text>Rule 9-94: The namespace of a type referenced by @itemType MUST be the target namespace, the XML Schema namespace, or be imported.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3586,7 +3605,7 @@
       <xsl:apply-templates select="*" mode="M87"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-94Namespaces referenced by attribute memberTypes is imported-->
+   <!--PATTERN rule_9-95Namespaces referenced by attribute memberTypes is imported-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Namespaces referenced by attribute memberTypes is imported</svrl:text>
 
 	  <!--RULE -->
@@ -3602,7 +3621,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-94: The namespace of a type referenced by @memberTypes MUST be the target namespace, the XML Schema namespace, or be imported.</svrl:text>
+               <svrl:text>Rule 9-95: The namespace of a type referenced by @memberTypes MUST be the target namespace, the XML Schema namespace, or be imported.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3613,7 +3632,7 @@
       <xsl:apply-templates select="*" mode="M88"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-95Namespace referenced by attribute ref is imported-->
+   <!--PATTERN rule_9-96Namespace referenced by attribute ref is imported-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Namespace referenced by attribute ref is imported</svrl:text>
 
 	  <!--RULE -->
@@ -3629,7 +3648,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-95: The namespace of a component referenced by @ref MUST be the target namespace or be imported.</svrl:text>
+               <svrl:text>Rule 9-96: The namespace of a component referenced by @ref MUST be the target namespace or be imported.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3640,7 +3659,7 @@
       <xsl:apply-templates select="*" mode="M89"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-96Namespace referenced by attribute substitutionGroup is imported-->
+   <!--PATTERN rule_9-97Namespace referenced by attribute substitutionGroup is imported-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Namespace referenced by attribute substitutionGroup is imported</svrl:text>
 
 	  <!--RULE -->
@@ -3657,7 +3676,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-96: The namespace of a component referenced by @substitutionGroup MUST be the target namespace or be imported.</svrl:text>
+               <svrl:text>Rule 9-97: The namespace of a component referenced by @substitutionGroup MUST be the target namespace or be imported.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
