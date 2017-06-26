@@ -3302,7 +3302,7 @@ Rule 10-6. Instance of RoleOf element indicates a role object
 
    To construct such a component, a NIEM-conformant schema must import the namespace defined by the [external schema document].
 
-   Rule 11-34, Reference schema imports reference schema and Rule 11-35, Extension schema document imports reference or extension schema require that xs:import elements be consistent with an importing [schema document].
+   Rule 11-48, Reference schema imports reference schema and Rule 11-49, Extension schema document imports reference or extension schema require that xs:import elements be consistent with an importing [schema document].
 
    A NIEM-conformant schema has well-known documentation points. Therefore, a schema that imports a NIEM-conformant namespace need not provide additional documentation. However, when an external schema document is imported, appropriate documentation must be provided at the point of import because documentation associated with external schema documents is undefined and variable. In this particular case, documentation of external schema documents is required at their point of use in NIEM.
 
@@ -5249,7 +5249,9 @@ Rule 11-28. Data definition follows 11179-4 recommendations
 
 11.6.1.1. Data definition opening phrases
 
-Rule 11-29. Standard opening phrase for element
+11.6.1.1.1. Element opening phrases
+
+Rule 11-29. Standard opening phrase for augmentation point element
 
    [Rule 11-29] (REF, EXT)
 
@@ -5258,87 +5260,199 @@ Rule 11-29. Standard opening phrase for element
           <sch:report test="not(starts-with(lower-case(normalize-space(.)), 'an augmentation point '))"
             >The data definition for an augmentation point element SHOULD begin with standard opening phrase "an augmentation point...".</sch:report>
         </sch:rule>
+      </sch:pattern>
+
+Rule 11-30. Standard opening phrase for augmentation element
+
+   [Rule 11-30] (REF, EXT)
+
+      <sch:pattern>
         <sch:rule context="xs:element[ends-with(@name, 'Augmentation')]/xs:annotation/xs:documentation[1]">
           <sch:report test="every $phrase in ('supplements ', 'additional information about ')
                             satisfies not(starts-with(lower-case(normalize-space(.)), $phrase))"
             >The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</sch:report>
         </sch:rule>
-        <sch:rule context="xs:element[ends-with(@name, 'Metadata')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '(metadata about|information that further qualifies)'))"
-            >The data definition for a metadata element SHOULD begin with the standard opening phrase "metadata about..." or "information that further qualifies...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:element[ends-with(@name, 'Association') and empty(@abstract)
-                             ]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)),
-                                        '^an?( .*)? (relationship|association)'))"
-            >The data definition for an association element that is not abstract SHOULD begin with the standard opening phrase "an (optional adjectives) (relationship|association)...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:element[xs:boolean(@abstract) = true()
-                             ]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(starts-with(lower-case(normalize-space(.)), 'a data concept'))"
-            >The data definition for an abstract element SHOULD begin with the standard opening phrase "a data concept...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:element[ends-with(@name, 'Date')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))"
-            >The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "a(n?) (optional adjectives) (date|month|year)...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:element[ends-with(@name, 'Quantity')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))"
-            >The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (count|number)...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:element[ends-with(@name, 'Picture')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))"
-            >The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (image|picture|photograph)".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:element[ends-with(@name, 'Indicator')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))"
-            >The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "true if ...; false (otherwise|if)...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:element[ends-with(@name, 'Identification')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))"
-            >The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) identification...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:element[ends-with(@name, 'Name')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))"
-            >The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) name...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:element[@name]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an? '))"
-            >The data definition for an element declaration with a name SHOULD begin with the standard opening phrase "(a|an)".</sch:report>
-        </sch:rule>
       </sch:pattern>
 
-Rule 11-30. Standard opening phrase for complex type
-
-   [Rule 11-30] (REF, EXT)
-
-      <sch:pattern>
-        <sch:rule context="xs:complexType[ends-with(@name, 'AssociationType')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type for (a relationship|an association)'))"
-            >The data definition for an association type SHOULD begin with the standard opening phrase "a datatype for (a relationship|an association)...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:complexType[ends-with(@name, 'AugmentationType')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type (that supplements|for additional information about)'))"
-            >The data definition for an augmentation type SHOULD begin with the standard opening phrase "a data type (that supplements|for additional information about)...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:complexType[ends-with(@name, 'MetadataType')]/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type for (metadata about|information that further qualifies)'))"
-            >The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</sch:report>
-        </sch:rule>
-        <sch:rule context="xs:complexType/xs:annotation/xs:documentation[1]">
-          <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type'))"
-            >The data definition for a type SHOULD begin with the standard opening phrase "a data type...".</sch:report>
-        </sch:rule>
-      </sch:pattern>
-
-Rule 11-31. Standard opening phrase for simple type
+Rule 11-31. Standard opening phrase for metadata element
 
    [Rule 11-31] (REF, EXT)
 
       <sch:pattern>
+        <sch:rule context="xs:element[ends-with(@name, 'Metadata')
+                                      and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '(metadata about|information that further qualifies)'))"
+            >The data definition for a metadata element SHOULD begin with the standard opening phrase "metadata about..." or "information that further qualifies...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-32. Standard opening phrase for association element
+
+   [Rule 11-32] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:element[ends-with(@name, 'Association')
+                                      and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)),
+                                        '^an?( .*)? (relationship|association)'))"
+            >The data definition for an association element that is not abstract SHOULD begin with the standard opening phrase "an (optional adjectives) (relationship|association)...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-33. Standard opening phrase for abstract element
+
+   [Rule 11-33] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:element[xs:boolean(@abstract) = true()
+                             and not(ends-with(@name, 'AugmentationPoint'))]/xs:annotation/xs:documentation[1]">
+          <sch:report test="not(starts-with(lower-case(normalize-space(.)), 'a data concept'))"
+            >The data definition for an abstract element SHOULD begin with the standard opening phrase "a data concept...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-34. Standard opening phrase for date element
+
+   [Rule 11-34] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:element[ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]
+                             /xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))"
+            >The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "a(n?) (optional adjectives) (date|month|year)...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-35. Standard opening phrase for quantity element
+
+   [Rule 11-35] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:element[ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]
+                             /xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))"
+            >The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (count|number)...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-36. Standard opening phrase for picture element
+
+   [Rule 11-36] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:element[ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]
+                             /xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))"
+            >The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (image|picture|photograph)".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-37. Standard opening phrase for indicator element
+
+   [Rule 11-37] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:element[ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]
+                             /xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))"
+            >The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "true if ...; false (otherwise|if)...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-38. Standard opening phrase for identification element
+
+   [Rule 11-38] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:element[ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]
+                             /xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))"
+            >The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) identification...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-39. Standard opening phrase for name element
+
+   [Rule 11-39] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:element[ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]
+                             /xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))"
+            >The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) name...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-40. Standard opening phrase for element
+
+   [Rule 11-40] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:element[@name 
+                                      and not(ends-with(@name, 'Indicator'))
+                                      and not(ends-with(@name, 'Augmentation'))
+                                      and not(ends-with(@name, 'Metadata'))
+                                      and not(xs:boolean(@abstract) eq true())]
+                             /xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^an? '))"
+            >The data definition for an element declaration SHOULD begin with the standard opening phrase "(a|an)".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+11.6.1.1.2. Complex type opening phrases
+
+Rule 11-41. Standard opening phrase for association type
+
+   [Rule 11-41] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:complexType[ends-with(@name, 'AssociationType')]/xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type for (a relationship|an association)'))"
+            >The data definition for an association type SHOULD begin with the standard opening phrase "a data type for (a relationship|an association)...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-42. Standard opening phrase for augmentation type
+
+   [Rule 11-42] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:complexType[ends-with(@name, 'AugmentationType')]/xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type (that supplements|for additional information about)'))"
+            >The data definition for an augmentation type SHOULD begin with the standard opening phrase "a data type (that supplements|for additional information about)...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-43. Standard opening phrase for metadata type
+
+   [Rule 11-43] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:complexType[ends-with(@name, 'MetadataType')]/xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type for (metadata about|information that further qualifies)'))"
+            >The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-44. Standard opening phrase for complex type
+
+   [Rule 11-44] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:complexType/xs:annotation/xs:documentation[1]">
+          <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type'))"
+            >The data definition for a complex type SHOULD begin with the standard opening phrase "a data type...".</sch:report>
+        </sch:rule>
+      </sch:pattern>
+
+Rule 11-45. Standard opening phrase for simple type
+
+   [Rule 11-45] (REF, EXT)
+
+      <sch:pattern>
         <sch:rule context="xs:simpleType/xs:annotation/xs:documentation[1]">
           <sch:report test="not(matches(lower-case(normalize-space(.)), '^a data type'))"
-            >The data definition for a type SHOULD begin with a standard opening phrase "a data type...".</sch:report>
+            >The data definition for a simple type SHOULD begin with a standard opening phrase "a data type...".</sch:report>
         </sch:rule>
       </sch:pattern>
 
@@ -5346,15 +5460,15 @@ Rule 11-31. Standard opening phrase for simple type
 
 11.7.1. xs:schema document element restrictions
 
-Rule 11-32. Same namespace means same components
+Rule 11-46. Same namespace means same components
 
-   [Rule 11-32] (REF, EXT)
+   [Rule 11-46] (REF, EXT)
 
       Two XML Schema documents MUST have the same value for attribute targetNamespace carried by the element xs:schema, if and only if they represent the same set of components.
 
-Rule 11-33. Different version means different view
+Rule 11-47. Different version means different view
 
-   [Rule 11-33] (REF, EXT)
+   [Rule 11-47] (REF, EXT)
 
       Two XML Schema documents MUST have the same value for attribute targetNamespace carried by the element xs:schema, and different values for attribute version carried by the element xs:schema if and only if they are different views of the same set of components.
 
@@ -5362,9 +5476,9 @@ Rule 11-33. Different version means different view
 
 11.8. Schema assembly
 
-Rule 11-34. Reference schema imports reference schema
+Rule 11-48. Reference schema imports reference schema
 
-   [Rule 11-34] (SET)
+   [Rule 11-48] (SET)
 
       <sch:pattern>
         <sch:rule context="xs:import[
@@ -5381,9 +5495,9 @@ Rule 11-34. Reference schema imports reference schema
 
    This document defines the term [reference schema document].
 
-Rule 11-35. Extension schema document imports reference or extension schema
+Rule 11-49. Extension schema document imports reference or extension schema
 
-   [Rule 11-35] (SET)
+   [Rule 11-49] (SET)
 
       <sch:pattern>
         <sch:rule context="xs:import[
@@ -5405,9 +5519,9 @@ Rule 11-35. Extension schema document imports reference or extension schema
 
    There are several namespaces that are treated specially by the NIEM NDR. When the following namespaces are imported into a conformant schema document, they must be imported as if they are conformant. That is, the xs:import element must not have an attribute appinfo:externalImportIndicator with a value of "true".
 
-Rule 11-36. Structures imported as conformant
+Rule 11-50. Structures imported as conformant
 
-   [Rule 11-36] (REF, EXT)
+   [Rule 11-50] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:import[exists(@namespace)
@@ -5417,9 +5531,9 @@ Rule 11-36. Structures imported as conformant
         </sch:rule>
       </sch:pattern>
 
-Rule 11-37. XML namespace imported as conformant
+Rule 11-51. XML namespace imported as conformant
 
-   [Rule 11-37] (REF, EXT)
+   [Rule 11-51] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:import[exists(@namespace)
@@ -5429,9 +5543,9 @@ Rule 11-37. XML namespace imported as conformant
         </sch:rule>
       </sch:pattern>
 
-Rule 11-38. Each namespace may have only a single root schema in a schema set
+Rule 11-52. Each namespace may have only a single root schema in a schema set
 
-   [Rule 11-38] (SET)
+   [Rule 11-52] (SET)
 
       <sch:pattern>
         <sch:rule context="xs:schema[exists(@targetNamespace)
@@ -5443,11 +5557,11 @@ Rule 11-38. Each namespace may have only a single root schema in a schema set
         </sch:rule>
       </sch:pattern>
 
-Rule 11-39. Consistently marked namespace imports
+Rule 11-53. Consistently marked namespace imports
 
    XML Schemas allows multiple xs:import elements for the same namespace, which allows for multiple sets of annotations and schema locations. 
 
-   [Rule 11-39] (REF, EXT)
+   [Rule 11-53] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:import">
@@ -6211,17 +6325,31 @@ Appendix E. Index of rules
    Rule 11-26, Do not leak representation into data definition: Section 11.6.1, Human-readable documentation
    Rule 11-27, Data definition follows 11179-4 requirements: Section 11.6.1, Human-readable documentation
    Rule 11-28, Data definition follows 11179-4 recommendations: Section 11.6.1, Human-readable documentation
-   Rule 11-29, Standard opening phrase for element: Section 11.6.1.1, Data definition opening phrases
-   Rule 11-30, Standard opening phrase for complex type: Section 11.6.1.1, Data definition opening phrases
-   Rule 11-31, Standard opening phrase for simple type: Section 11.6.1.1, Data definition opening phrases
-   Rule 11-32, Same namespace means same components: Section 11.7.1, xs:schema document element restrictions
-   Rule 11-33, Different version means different view: Section 11.7.1, xs:schema document element restrictions
-   Rule 11-34, Reference schema imports reference schema: Section 11.8, Schema assembly
-   Rule 11-35, Extension schema document imports reference or extension schema: Section 11.8, Schema assembly
-   Rule 11-36, Structures imported as conformant: Section 11.8.1, Supporting namespaces are imported as conformant
-   Rule 11-37, XML namespace imported as conformant: Section 11.8.1, Supporting namespaces are imported as conformant
-   Rule 11-38, Each namespace may have only a single root schema in a schema set: Section 11.8, Schema assembly
-   Rule 11-39, Consistently marked namespace imports: Section 11.8, Schema assembly
+   Rule 11-29, Standard opening phrase for augmentation point element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-30, Standard opening phrase for augmentation element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-31, Standard opening phrase for metadata element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-32, Standard opening phrase for association element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-33, Standard opening phrase for abstract element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-34, Standard opening phrase for date element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-35, Standard opening phrase for quantity element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-36, Standard opening phrase for picture element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-37, Standard opening phrase for indicator element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-38, Standard opening phrase for identification element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-39, Standard opening phrase for name element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-40, Standard opening phrase for element: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-41, Standard opening phrase for association type: Section 11.6.1.1.2, Complex type opening phrases
+   Rule 11-42, Standard opening phrase for augmentation type: Section 11.6.1.1.2, Complex type opening phrases
+   Rule 11-43, Standard opening phrase for metadata type: Section 11.6.1.1.2, Complex type opening phrases
+   Rule 11-44, Standard opening phrase for complex type: Section 11.6.1.1.2, Complex type opening phrases
+   Rule 11-45, Standard opening phrase for simple type: Section 11.6.1.1, Data definition opening phrases
+   Rule 11-46, Same namespace means same components: Section 11.7.1, xs:schema document element restrictions
+   Rule 11-47, Different version means different view: Section 11.7.1, xs:schema document element restrictions
+   Rule 11-48, Reference schema imports reference schema: Section 11.8, Schema assembly
+   Rule 11-49, Extension schema document imports reference or extension schema: Section 11.8, Schema assembly
+   Rule 11-50, Structures imported as conformant: Section 11.8.1, Supporting namespaces are imported as conformant
+   Rule 11-51, XML namespace imported as conformant: Section 11.8.1, Supporting namespaces are imported as conformant
+   Rule 11-52, Each namespace may have only a single root schema in a schema set: Section 11.8, Schema assembly
+   Rule 11-53, Consistently marked namespace imports: Section 11.8, Schema assembly
    Rule 12-1, Instance must be schema-valid: Section 12, XML instance document rules
    Rule 12-2, Attribute structures:ref must reference structures:id: Section 12.2, Reference elements
    Rule 12-3, Linked elements have same validation root: Section 12.2, Reference elements

@@ -1396,7 +1396,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-29</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for augmentation point element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M144"/>
@@ -1405,7 +1405,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-30</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for complex type</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for augmentation element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M145"/>
@@ -1414,7 +1414,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-31</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for simple type</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for metadata element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M146"/>
@@ -1422,8 +1422,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-36</xsl:attribute>
-            <xsl:attribute name="name">Structures imported as conformant</xsl:attribute>
+            <xsl:attribute name="id">rule_11-32</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for association element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M147"/>
@@ -1431,8 +1431,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-37</xsl:attribute>
-            <xsl:attribute name="name">XML namespace imported as conformant</xsl:attribute>
+            <xsl:attribute name="id">rule_11-33</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for abstract element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M148"/>
@@ -1440,11 +1440,137 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_11-39</xsl:attribute>
-            <xsl:attribute name="name">Consistently marked namespace imports</xsl:attribute>
+            <xsl:attribute name="id">rule_11-34</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for date element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M149"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-35</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for quantity element</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M150"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-36</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for picture element</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M151"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-37</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for indicator element</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M152"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-38</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for identification element</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M153"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-39</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for name element</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M154"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-40</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for element</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M155"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-41</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for association type</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M156"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-42</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for augmentation type</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M157"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-43</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for metadata type</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M158"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-44</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for complex type</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M159"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-45</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for simple type</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M160"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-50</xsl:attribute>
+            <xsl:attribute name="name">Structures imported as conformant</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M161"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-51</xsl:attribute>
+            <xsl:attribute name="name">XML namespace imported as conformant</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M162"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:attribute name="id">rule_11-53</xsl:attribute>
+            <xsl:attribute name="name">Consistently marked namespace imports</xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M163"/>
       </svrl:schematron-output>
    </xsl:template>
 
@@ -5271,12 +5397,12 @@
       <xsl:apply-templates select="*" mode="M143"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-29Standard opening phrase for element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for element</svrl:text>
+   <!--PATTERN rule_11-29Standard opening phrase for augmentation point element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for augmentation point element</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'AugmentationPoint')]/xs:annotation/xs:documentation[1]"
-                 priority="1011"
+                 priority="1000"
                  mode="M144">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'AugmentationPoint')]/xs:annotation/xs:documentation[1]"/>
@@ -5293,11 +5419,18 @@
       </xsl:if>
       <xsl:apply-templates select="*" mode="M144"/>
    </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M144"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M144">
+      <xsl:apply-templates select="*" mode="M144"/>
+   </xsl:template>
+
+   <!--PATTERN rule_11-30Standard opening phrase for augmentation element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for augmentation element</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Augmentation')]/xs:annotation/xs:documentation[1]"
-                 priority="1010"
-                 mode="M144">
+                 priority="1000"
+                 mode="M145">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Augmentation')]/xs:annotation/xs:documentation[1]"/>
 
@@ -5308,18 +5441,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</svrl:text>
+            <svrl:text>Rule 11-30: The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M145"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M145"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M145">
+      <xsl:apply-templates select="*" mode="M145"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-31Standard opening phrase for metadata element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for metadata element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Metadata')]/xs:annotation/xs:documentation[1]"
-                 priority="1009"
-                 mode="M144">
+   <xsl:template match="xs:element[ends-with(@name, 'Metadata')                                 and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]"
+                 priority="1000"
+                 mode="M146">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Metadata')]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[ends-with(@name, 'Metadata')                                 and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '(metadata about|information that further qualifies)'))">
@@ -5328,18 +5468,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for a metadata element SHOULD begin with the standard opening phrase "metadata about..." or "information that further qualifies...".</svrl:text>
+            <svrl:text>Rule 11-31: The data definition for a metadata element SHOULD begin with the standard opening phrase "metadata about..." or "information that further qualifies...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M146"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M146"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M146">
+      <xsl:apply-templates select="*" mode="M146"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-32Standard opening phrase for association element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for association element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Association') and empty(@abstract)                        ]/xs:annotation/xs:documentation[1]"
-                 priority="1008"
-                 mode="M144">
+   <xsl:template match="xs:element[ends-with(@name, 'Association')                                 and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]"
+                 priority="1000"
+                 mode="M147">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Association') and empty(@abstract)                        ]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[ends-with(@name, 'Association')                                 and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(matches(lower-case(normalize-space(.)),                                   '^an?( .*)? (relationship|association)'))">
@@ -5348,18 +5495,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an association element that is not abstract SHOULD begin with the standard opening phrase "an (optional adjectives) (relationship|association)...".</svrl:text>
+            <svrl:text>Rule 11-32: The data definition for an association element that is not abstract SHOULD begin with the standard opening phrase "an (optional adjectives) (relationship|association)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M147"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M147"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M147">
+      <xsl:apply-templates select="*" mode="M147"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-33Standard opening phrase for abstract element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for abstract element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[xs:boolean(@abstract) = true()                        ]/xs:annotation/xs:documentation[1]"
-                 priority="1007"
-                 mode="M144">
+   <xsl:template match="xs:element[xs:boolean(@abstract) = true()                        and not(ends-with(@name, 'AugmentationPoint'))]/xs:annotation/xs:documentation[1]"
+                 priority="1000"
+                 mode="M148">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[xs:boolean(@abstract) = true()                        ]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[xs:boolean(@abstract) = true()                        and not(ends-with(@name, 'AugmentationPoint'))]/xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(starts-with(lower-case(normalize-space(.)), 'a data concept'))">
@@ -5368,18 +5522,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an abstract element SHOULD begin with the standard opening phrase "a data concept...".</svrl:text>
+            <svrl:text>Rule 11-33: The data definition for an abstract element SHOULD begin with the standard opening phrase "a data concept...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M148"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M148"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M148">
+      <xsl:apply-templates select="*" mode="M148"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-34Standard opening phrase for date element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for date element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Date')]/xs:annotation/xs:documentation[1]"
-                 priority="1006"
-                 mode="M144">
+   <xsl:template match="xs:element[ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+                 priority="1000"
+                 mode="M149">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Date')]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))">
@@ -5388,18 +5549,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "a(n?) (optional adjectives) (date|month|year)...".</svrl:text>
+            <svrl:text>Rule 11-34: The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "a(n?) (optional adjectives) (date|month|year)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M149"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M149"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M149">
+      <xsl:apply-templates select="*" mode="M149"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-35Standard opening phrase for quantity element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for quantity element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Quantity')]/xs:annotation/xs:documentation[1]"
-                 priority="1005"
-                 mode="M144">
+   <xsl:template match="xs:element[ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+                 priority="1000"
+                 mode="M150">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Quantity')]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))">
@@ -5408,18 +5576,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (count|number)...".</svrl:text>
+            <svrl:text>Rule 11-35: The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (count|number)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M150"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M150"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M150">
+      <xsl:apply-templates select="*" mode="M150"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-36Standard opening phrase for picture element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for picture element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Picture')]/xs:annotation/xs:documentation[1]"
-                 priority="1004"
-                 mode="M144">
+   <xsl:template match="xs:element[ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+                 priority="1000"
+                 mode="M151">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Picture')]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))">
@@ -5428,18 +5603,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (image|picture|photograph)".</svrl:text>
+            <svrl:text>Rule 11-36: The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "an (optional adjectives) (image|picture|photograph)".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M151"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M151"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M151">
+      <xsl:apply-templates select="*" mode="M151"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-37Standard opening phrase for indicator element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for indicator element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Indicator')]/xs:annotation/xs:documentation[1]"
-                 priority="1003"
-                 mode="M144">
+   <xsl:template match="xs:element[ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+                 priority="1000"
+                 mode="M152">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Indicator')]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">
@@ -5448,18 +5630,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "true if ...; false (otherwise|if)...".</svrl:text>
+            <svrl:text>Rule 11-37: The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "true if ...; false (otherwise|if)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M152"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M152"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M152">
+      <xsl:apply-templates select="*" mode="M152"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-38Standard opening phrase for identification element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for identification element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Identification')]/xs:annotation/xs:documentation[1]"
-                 priority="1002"
-                 mode="M144">
+   <xsl:template match="xs:element[ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+                 priority="1000"
+                 mode="M153">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Identification')]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))">
@@ -5468,18 +5657,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) identification...".</svrl:text>
+            <svrl:text>Rule 11-38: The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) identification...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M153"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M153"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M153">
+      <xsl:apply-templates select="*" mode="M153"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-39Standard opening phrase for name element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for name element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Name')]/xs:annotation/xs:documentation[1]"
-                 priority="1001"
-                 mode="M144">
+   <xsl:template match="xs:element[ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+                 priority="1000"
+                 mode="M154">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Name')]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))">
@@ -5488,18 +5684,25 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) name...".</svrl:text>
+            <svrl:text>Rule 11-39: The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(a|an) (optional adjectives) name...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M154"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M154"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M154">
+      <xsl:apply-templates select="*" mode="M154"/>
    </xsl:template>
 
+   <!--PATTERN rule_11-40Standard opening phrase for element-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for element</svrl:text>
+
 	  <!--RULE -->
-   <xsl:template match="xs:element[@name]/xs:annotation/xs:documentation[1]"
+   <xsl:template match="xs:element[@name                                  and not(ends-with(@name, 'Indicator'))                                 and not(ends-with(@name, 'Augmentation'))                                 and not(ends-with(@name, 'Metadata'))                                 and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
                  priority="1000"
-                 mode="M144">
+                 mode="M155">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[@name]/xs:annotation/xs:documentation[1]"/>
+                       context="xs:element[@name                                  and not(ends-with(@name, 'Indicator'))                                 and not(ends-with(@name, 'Augmentation'))                                 and not(ends-with(@name, 'Metadata'))                                 and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT -->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an? '))">
@@ -5508,23 +5711,23 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-29: The data definition for an element declaration with a name SHOULD begin with the standard opening phrase "(a|an)".</svrl:text>
+            <svrl:text>Rule 11-40: The data definition for an element declaration SHOULD begin with the standard opening phrase "(a|an)".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M144"/>
+      <xsl:apply-templates select="*" mode="M155"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M144"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M144">
-      <xsl:apply-templates select="*" mode="M144"/>
+   <xsl:template match="text()" priority="-1" mode="M155"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M155">
+      <xsl:apply-templates select="*" mode="M155"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-30Standard opening phrase for complex type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for complex type</svrl:text>
+   <!--PATTERN rule_11-41Standard opening phrase for association type-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for association type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType[ends-with(@name, 'AssociationType')]/xs:annotation/xs:documentation[1]"
-                 priority="1003"
-                 mode="M145">
+                 priority="1000"
+                 mode="M156">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[ends-with(@name, 'AssociationType')]/xs:annotation/xs:documentation[1]"/>
 
@@ -5535,16 +5738,23 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-30: The data definition for an association type SHOULD begin with the standard opening phrase "a datatype for (a relationship|an association)...".</svrl:text>
+            <svrl:text>Rule 11-41: The data definition for an association type SHOULD begin with the standard opening phrase "a data type for (a relationship|an association)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M145"/>
+      <xsl:apply-templates select="*" mode="M156"/>
    </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M156"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M156">
+      <xsl:apply-templates select="*" mode="M156"/>
+   </xsl:template>
+
+   <!--PATTERN rule_11-42Standard opening phrase for augmentation type-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for augmentation type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType[ends-with(@name, 'AugmentationType')]/xs:annotation/xs:documentation[1]"
-                 priority="1002"
-                 mode="M145">
+                 priority="1000"
+                 mode="M157">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[ends-with(@name, 'AugmentationType')]/xs:annotation/xs:documentation[1]"/>
 
@@ -5555,16 +5765,23 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-30: The data definition for an augmentation type SHOULD begin with the standard opening phrase "a data type (that supplements|for additional information about)...".</svrl:text>
+            <svrl:text>Rule 11-42: The data definition for an augmentation type SHOULD begin with the standard opening phrase "a data type (that supplements|for additional information about)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M145"/>
+      <xsl:apply-templates select="*" mode="M157"/>
    </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M157"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M157">
+      <xsl:apply-templates select="*" mode="M157"/>
+   </xsl:template>
+
+   <!--PATTERN rule_11-43Standard opening phrase for metadata type-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for metadata type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType[ends-with(@name, 'MetadataType')]/xs:annotation/xs:documentation[1]"
-                 priority="1001"
-                 mode="M145">
+                 priority="1000"
+                 mode="M158">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[ends-with(@name, 'MetadataType')]/xs:annotation/xs:documentation[1]"/>
 
@@ -5575,16 +5792,23 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-30: The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</svrl:text>
+            <svrl:text>Rule 11-43: The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M145"/>
+      <xsl:apply-templates select="*" mode="M158"/>
    </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M158"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M158">
+      <xsl:apply-templates select="*" mode="M158"/>
+   </xsl:template>
+
+   <!--PATTERN rule_11-44Standard opening phrase for complex type-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for complex type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType/xs:annotation/xs:documentation[1]"
                  priority="1000"
-                 mode="M145">
+                 mode="M159">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType/xs:annotation/xs:documentation[1]"/>
 
@@ -5595,23 +5819,23 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-30: The data definition for a type SHOULD begin with the standard opening phrase "a data type...".</svrl:text>
+            <svrl:text>Rule 11-44: The data definition for a complex type SHOULD begin with the standard opening phrase "a data type...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M145"/>
+      <xsl:apply-templates select="*" mode="M159"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M145"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M145">
-      <xsl:apply-templates select="*" mode="M145"/>
+   <xsl:template match="text()" priority="-1" mode="M159"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M159">
+      <xsl:apply-templates select="*" mode="M159"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-31Standard opening phrase for simple type-->
+   <!--PATTERN rule_11-45Standard opening phrase for simple type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for simple type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:simpleType/xs:annotation/xs:documentation[1]"
                  priority="1000"
-                 mode="M146">
+                 mode="M160">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:simpleType/xs:annotation/xs:documentation[1]"/>
 
@@ -5622,23 +5846,23 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-31: The data definition for a type SHOULD begin with a standard opening phrase "a data type...".</svrl:text>
+            <svrl:text>Rule 11-45: The data definition for a simple type SHOULD begin with a standard opening phrase "a data type...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M146"/>
+      <xsl:apply-templates select="*" mode="M160"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M146"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M146">
-      <xsl:apply-templates select="*" mode="M146"/>
+   <xsl:template match="text()" priority="-1" mode="M160"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M160">
+      <xsl:apply-templates select="*" mode="M160"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-36Structures imported as conformant-->
+   <!--PATTERN rule_11-50Structures imported as conformant-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Structures imported as conformant</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:import[exists(@namespace)                                and xs:anyURI(@namespace) = xs:anyURI('http://release.niem.gov/niem/structures/4.0/')]"
                  priority="1000"
-                 mode="M147">
+                 mode="M161">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:import[exists(@namespace)                                and xs:anyURI(@namespace) = xs:anyURI('http://release.niem.gov/niem/structures/4.0/')]"/>
 
@@ -5651,24 +5875,24 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-36: An import of the structures namespace MUST NOT be labeled as an external import.</svrl:text>
+               <svrl:text>Rule 11-50: An import of the structures namespace MUST NOT be labeled as an external import.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M147"/>
+      <xsl:apply-templates select="*" mode="M161"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M147"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M147">
-      <xsl:apply-templates select="*" mode="M147"/>
+   <xsl:template match="text()" priority="-1" mode="M161"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M161">
+      <xsl:apply-templates select="*" mode="M161"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-37XML namespace imported as conformant-->
+   <!--PATTERN rule_11-51XML namespace imported as conformant-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">XML namespace imported as conformant</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:import[exists(@namespace)                                and xs:anyURI(@namespace) = xs:anyURI('http://www.w3.org/XML/1998/namespace')]"
                  priority="1000"
-                 mode="M148">
+                 mode="M162">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:import[exists(@namespace)                                and xs:anyURI(@namespace) = xs:anyURI('http://www.w3.org/XML/1998/namespace')]"/>
 
@@ -5681,22 +5905,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-37: An import of the XML namespace MUST NOT be labeled as an external import.</svrl:text>
+               <svrl:text>Rule 11-51: An import of the XML namespace MUST NOT be labeled as an external import.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M148"/>
+      <xsl:apply-templates select="*" mode="M162"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M148"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M148">
-      <xsl:apply-templates select="*" mode="M148"/>
+   <xsl:template match="text()" priority="-1" mode="M162"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M162">
+      <xsl:apply-templates select="*" mode="M162"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-39Consistently marked namespace imports-->
+   <!--PATTERN rule_11-53Consistently marked namespace imports-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Consistently marked namespace imports</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:import" priority="1000" mode="M149">
+   <xsl:template match="xs:import" priority="1000" mode="M163">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:import"/>
       <xsl:variable name="namespace" select="@namespace"/>
       <xsl:variable name="is-conformant" select="empty(@appinfo:externalImportIndicator)"/>
@@ -5712,14 +5936,14 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 11-39: All xs:import elements that have the same namespace MUST have the same conformance marking via appinfo:externalImportIndicator.</svrl:text>
+               <svrl:text>Rule 11-53: All xs:import elements that have the same namespace MUST have the same conformance marking via appinfo:externalImportIndicator.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M149"/>
+      <xsl:apply-templates select="*" mode="M163"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M149"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M149">
-      <xsl:apply-templates select="*" mode="M149"/>
+   <xsl:template match="text()" priority="-1" mode="M163"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M163">
+      <xsl:apply-templates select="*" mode="M163"/>
    </xsl:template>
 </xsl:stylesheet>

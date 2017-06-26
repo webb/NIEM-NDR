@@ -234,17 +234,31 @@
    <map:rule descriptiveID="" ruleID="rule_11-26"/>
    <map:rule descriptiveID="def-11179-4-req" ruleID="rule_11-27"/>
    <map:rule descriptiveID="def-11179-4-rec" ruleID="rule_11-28"/>
-   <map:rule descriptiveID="rule-sop-element" ruleID="rule_11-29"/>
-   <map:rule descriptiveID="rule-sop-complex-type" ruleID="rule_11-30"/>
-   <map:rule descriptiveID="rule-sop-simple-type" ruleID="rule_11-31"/>
-   <map:rule descriptiveID="" ruleID="rule_11-32"/>
-   <map:rule descriptiveID="" ruleID="rule_11-33"/>
-   <map:rule descriptiveID="xs-import-consistent-with-schema" ruleID="rule_11-34"/>
-   <map:rule descriptiveID="rule-ext-imports-ext" ruleID="rule_11-35"/>
-   <map:rule descriptiveID="structures-imported-conformant" ruleID="rule_11-36"/>
-   <map:rule descriptiveID="schema-for-xml-imported-conformant" ruleID="rule_11-37"/>
-   <map:rule descriptiveID="namespace-appears-once" ruleID="rule_11-38"/>
-   <map:rule descriptiveID="rule-import-is-consistent" ruleID="rule_11-39"/>
+   <map:rule descriptiveID="rule-sop-augmentation-point" ruleID="rule_11-29"/>
+   <map:rule descriptiveID="rule-sop-augmentation" ruleID="rule_11-30"/>
+   <map:rule descriptiveID="rule-sop-metadata" ruleID="rule_11-31"/>
+   <map:rule descriptiveID="rule-sop-association" ruleID="rule_11-32"/>
+   <map:rule descriptiveID="rule-sop-abstract" ruleID="rule_11-33"/>
+   <map:rule descriptiveID="rule-sop-date" ruleID="rule_11-34"/>
+   <map:rule descriptiveID="rule-sop-quantity" ruleID="rule_11-35"/>
+   <map:rule descriptiveID="rule-sop-picture" ruleID="rule_11-36"/>
+   <map:rule descriptiveID="rule-sop-indicator" ruleID="rule_11-37"/>
+   <map:rule descriptiveID="rule-sop-identification" ruleID="rule_11-38"/>
+   <map:rule descriptiveID="rule-sop-name" ruleID="rule_11-39"/>
+   <map:rule descriptiveID="rule-sop-element" ruleID="rule_11-40"/>
+   <map:rule descriptiveID="rule-sop-association-type" ruleID="rule_11-41"/>
+   <map:rule descriptiveID="rule-sop-augmentation-type" ruleID="rule_11-42"/>
+   <map:rule descriptiveID="rule-sop-metadata-type" ruleID="rule_11-43"/>
+   <map:rule descriptiveID="rule-sop-complex-type" ruleID="rule_11-44"/>
+   <map:rule descriptiveID="rule-sop-simple-type" ruleID="rule_11-45"/>
+   <map:rule descriptiveID="" ruleID="rule_11-46"/>
+   <map:rule descriptiveID="" ruleID="rule_11-47"/>
+   <map:rule descriptiveID="xs-import-consistent-with-schema" ruleID="rule_11-48"/>
+   <map:rule descriptiveID="rule-ext-imports-ext" ruleID="rule_11-49"/>
+   <map:rule descriptiveID="structures-imported-conformant" ruleID="rule_11-50"/>
+   <map:rule descriptiveID="schema-for-xml-imported-conformant" ruleID="rule_11-51"/>
+   <map:rule descriptiveID="namespace-appears-once" ruleID="rule_11-52"/>
+   <map:rule descriptiveID="rule-import-is-consistent" ruleID="rule_11-53"/>
    <map:rule descriptiveID="" ruleID="rule_12-1"/>
    <map:rule descriptiveID="rule-ref-refs-id" ruleID="rule_12-2"/>
    <map:rule descriptiveID="rule-ref-and-id-have-same-validation-root"
