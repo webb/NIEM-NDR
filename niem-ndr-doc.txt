@@ -2,7 +2,7 @@ National Information Exchange Model Naming and Design Rules
 
 Version 4.0beta2
 
-June 26, 2017
+June 27, 2017
 
 NIEM Technical Architecture Committee (NTAC)
 
@@ -1789,7 +1789,7 @@ Rule 9-13. No use of "fixed" on simple type facets
 
       <sch:pattern>
         <sch:rule context="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace
-            or self::xs:maxInclusive or self::xs:maxEclusive or self::xs:minExclusive or self::xs:minInclusive 
+            or self::xs:maxInclusive or self::xs:maxExclusive or self::xs:minExclusive or self::xs:minInclusive 
             or self::xs:totalDigits or self::xs:fractionDigits]">
           <sch:assert test="empty(@fixed)"
             >A simple type constraining facet MUST NOT have an attribute {}fixed.</sch:assert>
@@ -3746,7 +3746,7 @@ Rule 10-22. Association element type is an association type
 
    The augmentation type is derived from structures:AugmentationType and has a name ending in "AugmentationType". The augmentation element uses the type, and has a name ending in "Augmentation". Note that the thing that binds the augmentation type to the augmentation point is the augmentation element's use of the augmentation point element as its substitution group. This means that an augmentation type can be reused for multiple types, by creating more augmentation elements that have that type, each with its own substitution group for a different augmentation point.
 
-   In addition to defining elements that use an augmentation type, a schema document may define an element that substitutes for an augmentation point element, but does not use an augmentation type. For example, the CBRN namespace defines an augmentation to nc:ScheduleType:
+   In addition to defining elements that use an augmentation type, a schema document may define an element that substitutes for an augmentation point element, but does not use an augmentation type. For example, the following CBRN namespace defines an augmentation to nc:ScheduleType. While an element of an augmentation type acts as a container, holding elements that apply to an augmented object, this element is a direct property of a schedule, providing a meaningful characteristic (hours of operation) for a schedule. The resulting syntax is briefer than it would be using an augmentation type; the resulting instance looks similar to how it might look if the schedule type had been extended, rather than augmented.
 
    Figure 10-12: An augmentation that is not an augmentation type
 
@@ -4336,7 +4336,7 @@ Rule 10-51. Names use common abbreviations
 
    [Rule 10-51] (REF, EXT)
 
-      The schema MUST use, in defined names, the abbreviations identified by Table Table 10-1, Abbreviations used in schema component names, rather than their full meanings.
+      The schema SHOULD use, in defined names, the abbreviations identified by Table Table 10-1, Abbreviations used in schema component names, rather than their full meanings.
 
    Table 10-1: Abbreviations used in schema component names
 
@@ -4674,7 +4674,7 @@ Rule 10-70. External import indicator annotates import
 
 Rule 10-71. External adapter type indicator annotates complex type
 
-   [Rule 10-71] (REF)
+   [Rule 10-71] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="*[exists(@appinfo:externalAdapterTypeIndicator)]">
@@ -5645,13 +5645,15 @@ Rule 12-2. Empty content has no meaning
 
 12.2. Identifiers and references
 
-   Nested elements, shown above, are sufficient to represent simple data that takes the form of a tree. However, the use of nested elements has limitations; expression of all relationships via nested elementis not always possible. Situations that cause problems include:
+   Nested elements, shown above, are sufficient to represent simple data that takes the form of a tree. However, the use of nested elements has limitations; expression of all relationships via nested elements is not always possible. Situations that cause problems include:
 
       *  Cycles: some object has a relationship that, when followed, eventually circles back to itself. For example, suppose that Bob has a sister relationship to Sue, who has a brother relationship back to Bob. This is not a tree, and so needs some representation other than just nested elements.
 
       *  Reuse: multiple objects have a relationship to a common object. For example, suppose Bob and Sue both have a mother relationship to Sally. Expressed via nested elements, this would result in a duplicate representation of Sally.
 
-   NIEM provides two different ways to solve this problem: the use of local references pointing to local identifiers, and the use of uniform resource identifiers (URIs). These two methods are similar, and can interoperate, but have distinctions, as described by Section 12.2.3, Differentiating reference-to-identifer links and use of URIs, below.
+   NIEM provides two different ways to solve this problem: the use of local references pointing to local identifiers, and the use of uniform resource identifiers (URIs). These two methods are similar, and can interoperate, but have distinctions, as described by Section 12.2.3, Differentiating reference-to-identifier links and use of URIs, below.
+
+Rule 12-3. Element has only one resource identifying attribute
 
    [Rule 12-3] (INS)
 
@@ -5666,11 +5668,11 @@ Rule 12-2. Empty content has no meaning
 
    The XML specifications define ID and IDREF attributes, which act as references in XML data. This is supported by XML Schema, and NIEM uses ID and IDREF as one way to reference data across data objects. Under this framework:
 
-      *  Within an XML document, each value of any attribute of type xs:ID must be unique. For exampe, if an element has an attribute of type xs:ID with the value of "Bob", then there may not be any other attribute in the document that is of type xs:ID that also has the value "Bob". NIEM provides attribute structures:id of type xs:ID to act as a standard local identifier.
+      *  Within an XML document, each value of any attribute of type xs:ID must be unique. For example, if an element has an attribute of type xs:ID with the value of "Bob", then there may not be any other attribute in the document that is of type xs:ID that also has the value "Bob". NIEM provides attribute structures:id of type xs:ID to act as a standard local identifier.
 
       *  Within an XML document, the value of any attribute of type xs:IDREF must appear somewhere within the document as the value of some attribute of type xs:ID. For example, if an attribute of type xs:IDREF has the value "Bob", then somewhere within that XML document there must be an attribute of type xs:ID with the value "Bob". NIEM provides attribute structures:ref as a standard local reference.
 
-      *  These constraints, that IDs must be unique, and that IDREFs must refer to IDs, are XML costraints, not unique to NIEM.
+      *  These constraints, that IDs must be unique, and that IDREFs must refer to IDs, are XML constraints, not unique to NIEM.
 
       *  There are additional constraints placed on XML documents and XML schemas regarding the use of ID and IDREF attributes. For example, an element may not have two attributes of type ID.
 
@@ -5791,7 +5793,7 @@ Rule 12-9. structures:ref denotes resource identifier
 
    Consistent with Section 5.4, Unique identification of data objects, above, a set of elements that each have the same resource identifier denote the same object, which has that given identifier. This means that, in an XML representation, the properties of an object may be spread across a set of elements that share an identifier.
 
-12.2.3. Differentiating reference-to-identifer links and use of URIs
+12.2.3. Differentiating reference-to-identifier links and use of URIs
 
    These two methods are similar, and can interoperate, but have distinctions:
 
@@ -5811,7 +5813,7 @@ Rule 12-9. structures:ref denotes resource identifier
 
       *  A structures:uri can reference any structures:ref within the same document, or in another conformant document.
 
-      *  Any structures:uri may reference any other structures:uri, within the same docuemnt, or in another conformant document.
+      *  Any structures:uri may reference any other structures:uri, within the same document, or in another conformant document.
 
 12.2.4. Reference and content elements have same meaning
 
@@ -6445,7 +6447,7 @@ Appendix E. Index of rules
    Rule 11-53, Consistently marked namespace imports: Section 11.8, Schema assembly
    Rule 12-1, Instance must be schema-valid: Section 12, XML instance document rules
    Rule 12-2, Empty content has no meaning: Section 12.1, The meaning of NIEM data
-   Rule 12-3: Section 12.2, Identifiers and references
+   Rule 12-3, Element has only one resource identifying attribute: Section 12.2, Identifiers and references
    Rule 12-4, Attribute structures:ref must reference structures:id: Section 12.2.1, Local identifiers and references
    Rule 12-5, Linked elements have same validation root: Section 12.2.1, Local identifiers and references
    Rule 12-6, Attribute structures:ref references element of correct type: Section 12.2.1, Local identifiers and references

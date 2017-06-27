@@ -102,7 +102,7 @@
 </sch:pattern>
     
 <sch:pattern id="rule_9-13"><sch:title>No use of "fixed" on simple type facets</sch:title>
-  <sch:rule context="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace       or self::xs:maxInclusive or self::xs:maxEclusive or self::xs:minExclusive or self::xs:minInclusive        or self::xs:totalDigits or self::xs:fractionDigits]">
+  <sch:rule context="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace       or self::xs:maxInclusive or self::xs:maxExclusive or self::xs:minExclusive or self::xs:minInclusive        or self::xs:totalDigits or self::xs:fractionDigits]">
     <sch:assert test="empty(@fixed)">Rule 9-13: A simple type constraining facet MUST NOT have an attribute {}fixed.</sch:assert>
   </sch:rule>
 </sch:pattern>

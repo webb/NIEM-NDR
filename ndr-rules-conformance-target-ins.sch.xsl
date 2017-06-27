@@ -187,7 +187,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_12-3</xsl:attribute>
-            <xsl:attribute name="name">Identifiers and references</xsl:attribute>
+            <xsl:attribute name="name">Element has only one resource identifying attribute</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M9"/>
@@ -225,8 +225,8 @@
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Rules for instance XML documents</svrl:text>
    <xsl:include xmlns:sch="http://purl.oclc.org/dsdl/schematron" href="ndr-functions.xsl"/>
 
-   <!--PATTERN rule_12-3Identifiers and references-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Identifiers and references</svrl:text>
+   <!--PATTERN rule_12-3Element has only one resource identifying attribute-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Element has only one resource identifying attribute</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="*[exists(@structures:id) or exists(@structures:ref) or exists(@structures:uri)]"

@@ -2135,11 +2135,11 @@
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No use of "fixed" on simple type facets</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace       or self::xs:maxInclusive or self::xs:maxEclusive or self::xs:minExclusive or self::xs:minInclusive        or self::xs:totalDigits or self::xs:fractionDigits]"
+   <xsl:template match="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace       or self::xs:maxInclusive or self::xs:maxExclusive or self::xs:minExclusive or self::xs:minInclusive        or self::xs:totalDigits or self::xs:fractionDigits]"
                  priority="1000"
                  mode="M24">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace       or self::xs:maxInclusive or self::xs:maxEclusive or self::xs:minExclusive or self::xs:minInclusive        or self::xs:totalDigits or self::xs:fractionDigits]"/>
+                       context="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace       or self::xs:maxInclusive or self::xs:maxExclusive or self::xs:minExclusive or self::xs:minInclusive        or self::xs:totalDigits or self::xs:fractionDigits]"/>
 
 		    <!--ASSERT -->
       <xsl:choose>

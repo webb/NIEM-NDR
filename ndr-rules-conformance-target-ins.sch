@@ -11,12 +11,12 @@
 <sch:ns prefix="appinfo" uri="http://release.niem.gov/niem/appinfo/4.0/"/>
 <sch:ns prefix="structures" uri="http://release.niem.gov/niem/structures/4.0/"/>
       
-<sch:pattern id="rule_12-3"><sch:title>Identifiers and references</sch:title>
+<sch:pattern id="rule_12-3"><sch:title>Element has only one resource identifying attribute</sch:title>
   <sch:rule context="*[exists(@structures:id) or exists(@structures:ref) or exists(@structures:uri)]">
     <sch:assert test="count(@structures:id | @structures:ref | @structures:uri) le 1">Rule 12-3: An element MUST NOT have more than one attribute that is structures:id, structures:ref, or structures:uri.</sch:assert>
   </sch:rule>
 </sch:pattern>
-          
+            
 <sch:pattern id="rule_12-4"><sch:title>Attribute structures:ref must reference structures:id</sch:title>
   <sch:rule context="*[@structures:ref]">
     <sch:let name="ref" value="@structures:ref"/>

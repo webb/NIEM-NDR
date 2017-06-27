@@ -701,6 +701,12 @@
   </sch:rule>
 </sch:pattern>
           
+<sch:pattern id="rule_10-71"><sch:title>External adapter type indicator annotates complex type</sch:title>
+  <sch:rule context="*[exists(@appinfo:externalAdapterTypeIndicator)]">
+    <sch:assert test="exists(self::xs:complexType)">Rule 10-71: The attribute appinfo:externalAdapterTypeIndicator MUST be owned by an element xs:complexType.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+          
 <sch:pattern id="rule_10-72"><sch:title>appinfo:appliesToTypes annotates metadata element</sch:title>
   <sch:rule context="*[exists(@appinfo:appliesToTypes)]">
     <sch:assert test="exists(self::xs:element[exists(@name)                                and ends-with(@name, 'Metadata')])">Rule 10-72: The attribute appinfo:appliesToTypes MUST be owned by a metadata element.</sch:assert>
