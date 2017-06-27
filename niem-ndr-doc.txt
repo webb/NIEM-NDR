@@ -237,7 +237,6 @@ Table of Tables
       <sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance"/>
       <sch:ns prefix="appinfo" uri="http://release.niem.gov/niem/appinfo/4.0/"/>
       <sch:ns prefix="structures" uri="http://release.niem.gov/niem/structures/4.0/"/>
-      <sch:ns prefix="term" uri="http://release.niem.gov/niem/appinfo/4.0/"/>
 
    Note that the binding of the prefix xml to the XML namespace ("http://www.w3.org/XML/1998/namespace") is implicit.
 
@@ -2279,7 +2278,7 @@ Rule 9-46. No element fixed value
 
 Rule 9-47. Element declaration is nillable
 
-   All elements declared by reference schemas allow a nil value. This enables the ID/IDREF mechanism linking structures:ref and structures:id, as described by Section 12.2, Reference elements, below.
+   All elements declared by reference schemas allow a nil value. This enables the ID/IDREF mechanism linking structures:ref and structures:id, as described by Section 12.2, Identifiers and references, below.
 
    A developer may constrain the use of nil in an instance by setting nillable to false in subset schemas, or by use of non-XML Schema mechanisms, such as Schematron.
 
@@ -5592,74 +5591,102 @@ Rule 12-1. Instance must be schema-valid
 
    NIEM embraces the use of XML Schema instance attributes, including xsi:type, xsi:nil, and xsi:schemaLocation, as specified by [XML Schema Structures].
 
-12.1. Content elements
+12.1. The meaning of NIEM data
 
-   In XML instances, relationships between data objects are expressed as XML elements:
-
-      1. Data objects are expressed as XML elements.
-
-      2. XML elements contain attributes and other elements.
-
-   In this way, there is a relationship between the outer element (the containing element, also called the parent element) and the inner elements (the contained elements, also called as the child elements). An element that contains its content in this way is called a [content element].
-
-   [Definition: content element]
-
-      A content element is an element information item that does not contain an attribute structures:ref. A content element expresses its value as text and element content of the element information item.
-
-   The most common NIEM patterns use content elements to represent most data. The following is an example of a content element in use. All elements in this example are content elements.
+   The main way that NIEM XML data represents relationships and values is via the hierarchy of XML elements in an XML document. For example, the following fragment of an XML document:
 
    Figure 12-1: Example of content elements
 
-      <nc:Item>
-        <nc:ItemOwner>
-          <nc:EntityPerson>
-            <nc:PersonName>
-              <nc:PersonFullName>John Doe</nc:PersonFullName>
-            </nc:PersonName>
-          </nc:EntityPerson>
-        </nc:ItemOwner>
-      </nc:Item>
+      <nc:Person>
+        <nc:PersonName>
+          <nc:PersonFullName>John Doe</nc:PersonFullName>
+        </nc:PersonName>
+      </nc:Person>
 
-12.2. Reference elements
+   In this instance, the XML elements describe relationships between data objects:
 
-   Content elements are sufficient to represent data that takes the form of a tree. However, use of content elements has limitations; expression of all relationships via element containment is not always possible. Situations that cause problems include:
+   Table 12-1: Meaning of NIEM XML
 
-      *  Cycles: the relationships transitively held by an object include a relationship to itself.
+      XML description|The Meaning of the data
 
-         For example, suppose that object 1 has a relationship to object 2 and object 2 has a relationship to object 1. This is not a tree, and so needs some representation other than a simple tree.
+      The top element occurs within some context, about which we do not know anything.|There is some object, representing whatever is outside the outer element.
 
-      *  Reuse: multiple objects have a relationship to a common object.
+      The top element is nc:Person. The NIEM reference schema defines the type of the element as nc:PersonType.|There is a relationship, called nc:Person, between the unknown context object and an object of type nc:PersonType.
 
-         For example, suppose object 1 has a relationship to object 2 and object 3 has a relationship to object 2. Expressed via containment, this would result in a duplicate of object 2.
+      The next element is nc:PersonName. The schema indicates that element is of type nc:PersonNameType.|There is a relationship called nc:PersonName between the object of type nc:PersonType and an object of type nc:PersonNameType.
 
-   A method that solves this problem is the use of references. In a C or assembler, you could use a pointer. In C++, a reference might be used. In Java, a reference value might be used. The method defined by the XML standard is the use of ID and IDREF. An IDREF refers to an ID. NIEM uses this method and assigns to it specific semantics.
+      The next element is nc:PersonFullName. The schema shows that the element is of type nc:PersonNameTextType.|There is a relationship, called nc:PersonFullName from the object of type nc:PersonNameType and an object of type nc:PersonNameTextType.
 
-   Naive solutions to these problems that use only content elements require techniques such as repeating data and identifying and excluding duplicate data; these operation entail the use of excess storage and processing time.
+      Within that element is the simple value "John Doe". The schema tells us the content of that element is of simple type xs:string.|The object of type nc:PersonNameTextType has a value that is the literal "John Doe".
 
-   It is good to avoid these problems; in order to avoid them, NIEM allows [reference elements]. A reference element expresses a relationship to another object by using a reference attribute, structures:ref. In Figure 12-2, Example of reference element, below, the outer object is the content of nc:Item, which is an object of type nc:ItemType. It has a relationship nc:ItemOwner to the object that is the content of the nc:Entity element.
+   To summarize:
 
-   Figure 12-2: Example of reference element
+      1. Data objects and literal values are expressed in XML as the values of elements and attributes.
 
-      <nc:Item>
-        <nc:ItemOwner structures:ref="m82"/>
-      </nc:Item>
-      <nc:Entity structures:id="m82">
-        <nc:EntityPerson>
-          <nc:PersonName>
-            <nc:PersonFullName>John Doe</nc:PersonFullName>
-          </nc:PersonName>
-        </nc:EntityPerson>
-      </nc:Entity>
+      2. The names of the XML elements and attributes identify and describe the relationships between the objects and literals.
 
-   NIEM XML instances use IDREF attributes to establish links between XML elements.
+      3. The names of the XML Schema complex types and simple types describe the data objects.
 
-   [Definition: reference element]
+   NIEM is designed so that NIEM XML data is a form of RDF data. This is described in some detail by Section 5, The NIEM conceptual model, above, in particular Section 5.6.3, NIEM instance mappings to RDF, above. The XML data, above, corresponds to the following graph. Here, the circles are data objects, and the arrows show relationships, between the objects, and between the objects and their types:
 
-      A reference element is an element information item that has an attribute structures:ref. A reference element refers to its value by reference, instead of carrying it as content.
+   Figure 12-2: Diagram showing the meaning of XML data
 
-Rule 12-2. Attribute structures:ref must reference structures:id
+      Images are omitted from this edition.
+
+Rule 12-2. Empty content has no meaning
 
    [Rule 12-2] (INS)
+
+      Within the instance, the meaning of an element with no content is that additional properties are not asserted. There MUST NOT be additional meaning interpreted for an element with no content.
+
+   Elements without content only show a lack of asserted information. That is, all that is asserted is what is explicitly stated, through a combination of XML instance data and its schema. Data that is not present makes no claims. It may be absent due to lack of availability, lack of knowledge, or deliberate withholding of information. These cases should be modeled explicitly, if they are required.
+
+12.2. Identifiers and references
+
+   Nested elements, shown above, are sufficient to represent simple data that takes the form of a tree. However, the use of nested elements has limitations; expression of all relationships via nested elementis not always possible. Situations that cause problems include:
+
+      *  Cycles: some object has a relationship that, when followed, eventually circles back to itself. For example, suppose that Bob has a sister relationship to Sue, who has a brother relationship back to Bob. This is not a tree, and so needs some representation other than just nested elements.
+
+      *  Reuse: multiple objects have a relationship to a common object. For example, suppose Bob and Sue both have a mother relationship to Sally. Expressed via nested elements, this would result in a duplicate representation of Sally.
+
+   NIEM provides two different ways to solve this problem: the use of local references pointing to local identifiers, and the use of uniform resource identifiers (URIs). These two methods are similar, and can interoperate, but have distinctions, as described by Section 12.2.3, Differentiating reference-to-identifer links and use of URIs, below.
+
+12.2.1. Local identifiers and references
+
+   The XML specifications define ID and IDREF attributes, which act as references in XML data. This is supported by XML Schema, and NIEM uses ID and IDREF as one way to reference data across data objects. Under this framework:
+
+      *  Within an XML document, each value of any attribute of type xs:ID must be unique. For exampe, if an element has an attribute of type xs:ID with the value of "Bob", then there may not be any other attribute in the document that is of type xs:ID that also has the value "Bob". NIEM provides attribute structures:id of type xs:ID to act as a standard local identifier.
+
+      *  Within an XML document, the value of any attribute of type xs:IDREF must appear somewhere within the document as the value of some attribute of type xs:ID. For example, if an attribute of type xs:IDREF has the value "Bob", then somewhere within that XML document there must be an attribute of type xs:ID with the value "Bob". NIEM provides attribute structures:ref as a standard local reference.
+
+      *  These constraints, that IDs must be unique, and that IDREFs must refer to IDs, are XML costraints, not unique to NIEM.
+
+      *  There are additional constraints placed on XML documents and XML schemas regarding the use of ID and IDREF attributes. For example, an element may not have two attributes of type ID.
+
+   In short, within a NIEM-conformant XML document, an attribute structures:ref refers to an attribute structures:id. These attributes may appear in an XML document to express that an object that is the value of an element is the same as some other object within the document. For example, in the following example, the user of the weapon (Bart) is the same person that is the subject of the arrest:
+
+   Figure 12-3: Example of structures:id and structures:ref
+
+      <j:Arrest>
+        <j:ArrestInvolvedWeapon>
+          <nc:WeaponUser structures:id="bart">
+            <nc:PersonName>
+              <nc:PersonGivenName>Bart</nc:PersonGivenName>
+            </nc:PersonName>
+          </nc:WeaponUser>
+        </j:ArrestInvolvedWeapon>
+        <j:ArrestSubject>
+          <nc:RoleOfPerson structures:ref="bart"/>
+        </j:ArrestSubject>
+      </j:Arrest>
+
+   Note that rules below establish that relationships established using structures:id and structures:ref have the exact same meaning as relationships established using nested elements. An information exchange specification may constrain them differently, or prefer one over the other, but from a NIEM perspective, they have the same meaning.
+
+Rule 12-3. Attribute structures:ref must reference structures:id
+
+   Although many attributes with ID and IDREF semantics are defined by many vocabularies, for consistency, within a NIEM XML document any attribute structures:ref must refer to an attribute structures:id, and not any other attribute.
+
+   [Rule 12-3] (INS)
 
       <sch:pattern>
         <sch:rule context="*[@structures:ref]">
@@ -5671,9 +5698,11 @@ Rule 12-2. Attribute structures:ref must reference structures:id
 
    This mirrors the terminology in [XML] subsection Validity constraint: IDREF within Section 3.3.1, Attribute Types, except it requires the target attribute to be structures:id, rather than any attribute of type ID.
 
-Rule 12-3. Linked elements have same validation root
+Rule 12-4. Linked elements have same validation root
 
-   [Rule 12-3] (INS)
+   NIEM supports type-safe references: references using structures:ref and structures:id must preserve the type constraints that would apply if nested elements were used instead of a reference. For example, an element of type nc:PersonType must always refer to another element of type nc:PersonType, or a type derived from nc:PersonType, when using structures:ref to establish the relationship.
+
+   [Rule 12-4] (INS)
 
       Given that:
 
@@ -5693,9 +5722,9 @@ Rule 12-3. Linked elements have same validation root
 
    The term "validation root" is defined by [XML Schema Structures] Section 5.2, Assessing Schema-Validity. It is established as a part of validity assessment of an XML document. It is required because relationships between the types of elements cannot be established if those elements were not assessed together.
 
-Rule 12-4. Attribute structures:ref references element of correct type
+Rule 12-5. Attribute structures:ref references element of correct type
 
-   [Rule 12-4] (INS)
+   [Rule 12-5] (INS)
 
       Given that:
 
@@ -5717,25 +5746,81 @@ Rule 12-4. Attribute structures:ref references element of correct type
 
    This rule requires that the type of the element pointed to by a structures:ref attribute must be of (or derived from) the type of the reference element.
 
-12.2.1. Reference and content elements have same meaning
+12.2.2. Uniform resource identifiers in NIEM data
 
-   An important aspect of the use of NIEM reference and content elements is that they have the same meaning. The use of a content element versus a reference element is merely for convenience and ease of serialization. There is no change in meaning or semantics between content and reference elements.
+   NIEM supports the linked data methodology through the use of uniform resource identifiers (URIs), expressed through the attribute structures:uri in XML documents . This attribute works much like structures:ref and structures:id, and overlaps somewhat. Linked data introduces key terminology:
 
-   Any claim that content elements represent composition while reference elements represent aggregation is incorrect. Any life cycle dependency is not expressed through the use of content and reference elements, and is not an explicit part of the NIEM model.
+      *  Anything modeled or addressed by an information system may be called a resource: people, vehicles, reports, documents, relationships, ideas: anything that is talked about and modeled in an information system is a resource.
 
-Rule 12-5. Reference and content elements have the same meaning
+      *  Every resource may have a name, called a uniform resource identifier (URI).
 
-   [Rule 12-5] (INS)
+   As described in Section 5.4, Unique identification of data objects, above, structures:uri, structures:id, and structures:ref each denote a resource identifier. Although a structures:ref must always refer to a structures:id, and a value of structures:id must be unique within its document, a structures:uri may refer to any of structures:uri, structures:ref, or structures:id.
 
-      There MUST NOT be any difference in meaning between a relationship established via an element declaration instantiated as a content element and that element declaration instantiated as a reference element.
+Rule 12-6. structures:uri denotes resource identifier
 
-   There is no difference in meaning between relationships established by content elements and those established by reference elements. They are simply two mechanisms for expressing connections between objects. Neither mechanism implies that properties are intrinsic or extrinsic; such characteristics must be explicitly stated in property definitions.
+   [Rule 12-6] (INS)
+
+      The value of an attribute structures:uri is a URI-reference, as defined by [RFC 3986], which denotes a resource identifier on the element holding the attribute, in accordance with evaluation consistent with [RFC 3986] and [XML Base].
+
+   The attributes structures:id and structures:ref each have a mapping to equivalent values of structures:uri.
+
+Rule 12-7. structures:id denotes resource identifier
+
+   [Rule 12-7] (INS)
+
+      The value of the structures:id with a value of $value denotes a resource identifier on the element holding the attribute, as would be denoted by an attribute structures:uri with a value of "#$value".
+
+Rule 12-8. structures:ref denotes resource identifier
+
+   [Rule 12-8] (INS)
+
+      The value of the structures:ref with a value of $value denotes a resource identifier on the element holding the attribute, as would be denoted by an attribute structures:uri with a value of "#$value".
+
+   For example, structures:id="hello" and structures:ref="hello" each denote the same resource identifier for an element as if it held an attribute structures:uri="#hello".
+
+   Consistent with Section 5.4, Unique identification of data objects, above, a set of elements that each have the same resource identifier denote the same object, which has that given identifier. This means that, in an XML representation, the properties of an object may be spread across a set of elements that share an identifier.
+
+12.2.3. Differentiating reference-to-identifer links and use of URIs
+
+   These two methods are similar, and can interoperate, but have distinctions:
+
+      *  With ref-to-id links, both structures:ref and structures:id are required to be within the same document.
+
+      *  With ref-to-id links, both structures:id and structures:ref are required to be validated against the same schema.
+
+      *  Ref-to-id links provide and require type safety, in that the type of an object pointed to by structures:ref must be consistent with the referencing element's type declaration.
+
+      *  The value of structures:id must be unique for IDs within the document.
+
+      *  The value of structures:ref must appear within the document as the value of an attribute structures:id.
+
+      *  An attribute structures:uri is a URI-reference that can reference any resource, inside or outside the document.
+
+      *  A structures:uri can reference any structures:id within the same document, or in another conformant document.
+
+      *  A structures:uri can reference any structures:ref within the same document, or in another conformant document.
+
+      *  Any structures:uri may reference any other structures:uri, within the same docuemnt, or in another conformant document.
+
+12.2.4. Reference and content elements have same meaning
+
+   An important aspect of the use of nested elements, ref-to-id references, and URI references, is that they all have the same meaning. Expressing a relationship via a nested element, versus an ref-to-id reference is merely for convenience and ease of serialization. There is no change in meaning or semantics between relationships expressed by sub-elements versus relationships expressed by structures:ref or structures:uri.
+
+   Any claim that nested elements represent composition while references represent aggregation is incorrect. No life cycle dependency is implied by either method.
+
+Rule 12-9. Nested elements and references have the same meaning.
+
+   [Rule 12-9] (INS)
+
+      There MUST NOT be any difference in meaning between a relationship established via an element declaration instantiated by a nested element, and that element declaration instantiated via reference.
+
+   There is no difference in meaning between relationships established by sub-elements and those established by references. They are simply two mechanisms for expressing connections between objects. Neither mechanism implies that properties are intrinsic or extrinsic; such characteristics must be explicitly stated in property definitions.
 
    Being of type xs:ID and xs:IDREF, validating schema parsers will perform certain checks on the values of structures:id and structures:ref. Specifically, no two IDs may have the same value. This includes structures:id and other IDs that may be used within an XML document. Also, any value of structures:ref must also appear as the value of an ID.
 
-   By this rule, the following two XML fragments have the same meaning. First, Figure 12-3, Example with a backward reference, below, shows a person object being expressed, followed by a backwards reference to it. Second, Figure 12-4, Example with a forward reference, below, shows a person as a forward reference to the person object that is expressed later, within the definition of a witness. Both of these XML fragments have the same semantics.
+   By this rule, the following two XML fragments have the same meaning. First, Figure 12-4, Example with a backward reference, below, shows a person object being expressed, followed by a backwards reference to it. Second, Figure 12-5, Example with a forward reference, below, shows a person as a forward reference to the person object that is expressed later, within the definition of a witness. Both of these XML fragments have the same semantics.
 
-   Figure 12-3: Example with a backward reference
+   Figure 12-4: Example with a backward reference
 
       <nc:Person structures:id="c58">
         <nc:PersonName>
@@ -5746,7 +5831,7 @@ Rule 12-5. Reference and content elements have the same meaning
         <nc:RoleOfPerson structures:ref="c58"/>
       </j:Witness>
 
-   Figure 12-4: Example with a forward reference
+   Figure 12-5: Example with a forward reference
 
       <nc:Person structures:ref="t85"/>
       <j:Witness>
@@ -5757,23 +5842,15 @@ Rule 12-5. Reference and content elements have the same meaning
         </nc:RoleOfPerson>
       </j:Witness>
 
-   NIEM-conformant data instances may use content elements and reference elements as needed, to represent the meaning of the fundamental data. There is no difference in meaning between reference and content data representations. The two different methods are available for ease of representation. No difference in meaning should be implied by the use of one method or the other.
+   NIEM-conformant data instances may use either representation as needed, to represent the meaning of the fundamental data. There is no difference in meaning between reference and content data representations. The two different methods are available for ease of representation. No difference in meaning should be implied by the use of one method or the other.
 
    Assertions that indicate "included" data is intrinsic, while referenced data is extrinsic, are not valid and are not applicable to NIEM-conformant data instances and data definitions.
-
-Rule 12-6. Empty content has no meaning
-
-   [Rule 12-6] (INS)
-
-      Within the instance, the meaning of an element with no content is that additional properties are not asserted. There MUST NOT be additional meaning interpreted for an element with no content.
-
-   Elements without content only show a lack of asserted information. That is, all that is asserted is what is explicitly stated, through a combination of XML instance data and its schema. Data that is not present makes no claims. It may be absent due to lack of availability, lack of knowledge, or deliberate withholding of information. These cases should be modeled explicitly, if they are required.
 
 12.3. Instance metadata
 
    NIEM provides the metadata mechanism for giving information about object assertions. An object may have an attribute that refers to one or more metadata objects. A structures:metadata attribute indicates that a data item has the given metadata. A structures:relationshipMetadata attribute asserts that the link (or relationship) established by an element has the given metadata.
 
-   Figure 12-5: Example of metadata used in an instance
+   Figure 12-6: Example of metadata used in an instance
 
       <nc:Person>
         <nc:PersonBirthDate structures:metadata="j86">
@@ -5817,45 +5894,45 @@ Rule 12-6. Empty content has no meaning
 
    Application of metadata to a type or element to which it is not applicable is not NIEM-conformant. A metadata element may be labeled as applicable to multiple elements via attribute appinfo:appliesToElements, or to multiple types via attribute appinfo:appliesToTypes. In either case it may apply to an instance of any of the listed elements or types. A metadata element with neither attribute appinfo:appliesToElements nor attribute appinfo:appliesToTypes may be applied to any element of any type.
 
-Rule 12-7. Metadata applies to referring entity
+Rule 12-10. Metadata applies to referring entity
 
-   [Rule 12-7] (INS)
+   [Rule 12-10] (INS)
 
       Within an element instance, when an object $O links to a metadata object via an attribute structures:metadata, the information in the metadata object MUST be applied to the object $O.
 
    structures:metadata applies metadata to an object.
 
-Rule 12-8. Referent of structures:relationshipMetadata annotates relationship
+Rule 12-11. Referent of structures:relationshipMetadata annotates relationship
 
-   [Rule 12-8] (INS)
+   [Rule 12-11] (INS)
 
       Within an element instance, when an object $O1 contains an element $E, with content object $O2 or with a reference to object $O2, and $O2 links to a metadata object via an attribute structures:relationshipMetadata, the information in the metadata object MUST be applied to the relationship $E between $O1 and $O2.
 
    structures:relationshipMetadata applies metadata to a relationship between two objects.
 
-Rule 12-9. Values of structures:metadata refer to values of structures:id
+Rule 12-12. Values of structures:metadata refer to values of structures:id
 
-   [Rule 12-9] (INS)
+   [Rule 12-12] (INS)
 
       Given that each IDREF in the value of an attribute structures:metadata must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute structures:id.
 
-Rule 12-10. Value of structures:relationshipMetadata refers to value of structures:id
+Rule 12-13. Value of structures:relationshipMetadata refers to value of structures:id
 
-   [Rule 12-10] (INS)
+   [Rule 12-13] (INS)
 
       Given that each IDREF in the value of an attribute structures:relationshipMetadata must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute structures:id.
 
-Rule 12-11. structures:metadata and structures:relationshipMetadata refer to metadata elements
+Rule 12-14. structures:metadata and structures:relationshipMetadata refer to metadata elements
 
-   [Rule 12-11] (INS)
+   [Rule 12-14] (INS)
 
       Each element referenced by an attribute structures:metadata or an attribute structures:relationshipMetadata MUST have [element declaration] that is a [metadata element declaration].
 
-   Although not implemented in Schematron, this rule covers the cases not covered by Rule 12-12, Attribute structures:metadata references metadata element.
+   Although not implemented in Schematron, this rule covers the cases not covered by Rule 12-15, Attribute structures:metadata references metadata element.
 
-Rule 12-12. Attribute structures:metadata references metadata element
+Rule 12-15. Attribute structures:metadata references metadata element
 
-   [Rule 12-12] (INS)
+   [Rule 12-15] (INS)
 
       <sch:pattern>
         <sch:rule context="*[exists(@structures:metadata)]">
@@ -5868,9 +5945,9 @@ Rule 12-12. Attribute structures:metadata references metadata element
 
    Note that this will NOT diagnose a scenario in which the element with a name ending in "Metadata" is an external element; additional tests would be required to catch that.
 
-Rule 12-13. Attribute structures:relationshipMetadata references metadata element
+Rule 12-16. Attribute structures:relationshipMetadata references metadata element
 
-   [Rule 12-13] (INS)
+   [Rule 12-16] (INS)
 
       <sch:pattern>
         <sch:rule context="*[exists(@structures:relationshipMetadata)]">
@@ -5883,9 +5960,9 @@ Rule 12-13. Attribute structures:relationshipMetadata references metadata elemen
 
    Note that this will NOT diagnose a scenario in which the element with a name ending in "Metadata" is an external element; additional tests would be required to catch that.
 
-Rule 12-14. Metadata is applicable to element
+Rule 12-17. Metadata is applicable to element
 
-   [Rule 12-14] (INS)
+   [Rule 12-17] (INS)
 
       Given that an element $SUBJECT-ELEMENT uses a metadata element $METADATA-ELEMENT through a value in either an attribute structures:metadata or an attribute structures:relationshipMetadata, the element $SUBJECT-ELEMENT MUST be an applicable element for $METADATA-ELEMENT.
 
@@ -5942,7 +6019,7 @@ Appendix B. Structures namespace
    <?xml version="1.0" encoding="US-ASCII"?>
    <xs:schema
        targetNamespace="http://release.niem.gov/niem/structures/4.0/"
-       version="4.0beta2pre1"
+       version="4.0"
        xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
        xmlns:xs="http://www.w3.org/2001/XMLSchema">
    
@@ -6015,7 +6092,7 @@ Appendix C. Appinfo namespace
    <?xml version="1.0" encoding="US-ASCII"?>
    <xs:schema
        targetNamespace="http://release.niem.gov/niem/appinfo/4.0/"
-       version="4.0beta2pre1"
+       version="4.0"
        xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
        xmlns:xs="http://www.w3.org/2001/XMLSchema">
    
@@ -6351,19 +6428,22 @@ Appendix E. Index of rules
    Rule 11-52, Each namespace may have only a single root schema in a schema set: Section 11.8, Schema assembly
    Rule 11-53, Consistently marked namespace imports: Section 11.8, Schema assembly
    Rule 12-1, Instance must be schema-valid: Section 12, XML instance document rules
-   Rule 12-2, Attribute structures:ref must reference structures:id: Section 12.2, Reference elements
-   Rule 12-3, Linked elements have same validation root: Section 12.2, Reference elements
-   Rule 12-4, Attribute structures:ref references element of correct type: Section 12.2, Reference elements
-   Rule 12-5, Reference and content elements have the same meaning: Section 12.2.1, Reference and content elements have same meaning
-   Rule 12-6, Empty content has no meaning: Section 12, XML instance document rules
-   Rule 12-7, Metadata applies to referring entity: Section 12.3, Instance metadata
-   Rule 12-8, Referent of structures:relationshipMetadata annotates relationship: Section 12.3, Instance metadata
-   Rule 12-9, Values of structures:metadata refer to values of structures:id: Section 12.3, Instance metadata
-   Rule 12-10, Value of structures:relationshipMetadata refers to value of structures:id: Section 12.3, Instance metadata
-   Rule 12-11, structures:metadata and structures:relationshipMetadata refer to metadata elements: Section 12.3, Instance metadata
-   Rule 12-12, Attribute structures:metadata references metadata element: Section 12.3, Instance metadata
-   Rule 12-13, Attribute structures:relationshipMetadata references metadata element: Section 12.3, Instance metadata
-   Rule 12-14, Metadata is applicable to element: Section 12.3, Instance metadata
+   Rule 12-2, Empty content has no meaning: Section 12.1, The meaning of NIEM data
+   Rule 12-3, Attribute structures:ref must reference structures:id: Section 12.2.1, Local identifiers and references
+   Rule 12-4, Linked elements have same validation root: Section 12.2.1, Local identifiers and references
+   Rule 12-5, Attribute structures:ref references element of correct type: Section 12.2.1, Local identifiers and references
+   Rule 12-6, structures:uri denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
+   Rule 12-7, structures:id denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
+   Rule 12-8, structures:ref denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
+   Rule 12-9, Nested elements and references have the same meaning.: Section 12.2.4, Reference and content elements have same meaning
+   Rule 12-10, Metadata applies to referring entity: Section 12.3, Instance metadata
+   Rule 12-11, Referent of structures:relationshipMetadata annotates relationship: Section 12.3, Instance metadata
+   Rule 12-12, Values of structures:metadata refer to values of structures:id: Section 12.3, Instance metadata
+   Rule 12-13, Value of structures:relationshipMetadata refers to value of structures:id: Section 12.3, Instance metadata
+   Rule 12-14, structures:metadata and structures:relationshipMetadata refer to metadata elements: Section 12.3, Instance metadata
+   Rule 12-15, Attribute structures:metadata references metadata element: Section 12.3, Instance metadata
+   Rule 12-16, Attribute structures:relationshipMetadata references metadata element: Section 12.3, Instance metadata
+   Rule 12-17, Metadata is applicable to element: Section 12.3, Instance metadata
 
 Appendix F. General index
 

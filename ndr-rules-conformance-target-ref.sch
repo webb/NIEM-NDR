@@ -10,7 +10,6 @@
 <sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance"/>
 <sch:ns prefix="appinfo" uri="http://release.niem.gov/niem/appinfo/4.0/"/>
 <sch:ns prefix="structures" uri="http://release.niem.gov/niem/structures/4.0/"/>
-<sch:ns prefix="term" uri="http://release.niem.gov/niem/appinfo/4.0/"/>
       
 <sch:pattern id="rule_4-4"><sch:title>Document element has attribute ct:conformanceTargets</sch:title>
   <sch:rule context="*[. is nf:get-document-element(.)                        or exists(@ct:conformanceTargets)]">

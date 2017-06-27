@@ -10,7 +10,6 @@
 <sch:ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance"/>
 <sch:ns prefix="appinfo" uri="http://release.niem.gov/niem/appinfo/4.0/"/>
 <sch:ns prefix="structures" uri="http://release.niem.gov/niem/structures/4.0/"/>
-<sch:ns prefix="term" uri="http://release.niem.gov/niem/appinfo/4.0/"/>
       
 <sch:pattern id="rule_9-32"><sch:title>Base type of complex type with complex content must have complex content</sch:title>
   <sch:rule context="xs:complexType[         nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument'))         or nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ExtensionSchemaDocument'))       ]/xs:complexContent">
