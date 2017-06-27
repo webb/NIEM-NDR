@@ -3652,8 +3652,6 @@ Rule 10-22. Association element type is an association type
 
       *  There is no standard or easy way for the developer to express that the various element instances of the various person types represent the same person, or which parts of those instances are required to be populated; does each person restate the name and birth-date, or is that handled by just one instance?
 
-      *  A domain, having created its own j:PersonType that extends nc:PersonType, is, of course, going to create elements of that type. These elements will not be easily reused by other domains, as the Immigration namespace will want to use im:PersonType instead of j:PersonType.
-
    This approach turns into a morass that is difficult to use and maintain, and which does not scale to support the breadth of the NIEM community.
 
    To handle this need, NIEM has adopted augmentations. There are several parts that fit together for the definition and use of augmentations:
@@ -3666,7 +3664,7 @@ Rule 10-22. Association element type is an association type
 
       *  A developer of a domain or other schema that extends common types may define elements that are substitutable for an augmentation point. Each of these elements expresses an additional characteristic or relationship of the base type.
 
-      *  A developer may also define an augmentation type, and a corresponding augmentation element of that type, which acts as a bucket of elements that apply to the base type. An augmentation element is defined to be substitutable for an augmentation point, which enables it to appear in instances of that base type.
+      *  A developer may also define an augmentation type, and a corresponding augmentation element of that type, which acts as a container of elements that apply to the base type. An augmentation element is defined to be substitutable for an augmentation point, which enables it to appear in instances of that base type.
 
       *  A developer of an information exchange may choose, through selection and subsetting reference schemas:
 
@@ -3679,6 +3677,8 @@ Rule 10-22. Association element type is an association type
       *  Augmentation point elements also appear on structures:ObjectType and structures:AssociationType. This allows schema developers to define elements that may be applied to any object or association.
 
    In addition, a developer may create an extension of a base type and have it carry augmentation elements, in order to avoid element substitution and flexible content models; whether to substitute or concretely use the elements is at the discretion of the developers and implementers of an information exchange.
+
+   The term [augmentation] describes any element in a NIEM-conformant instance XML document that appears as a result of being substituted for an augmentation point element. Such an element may have a type that is an [augmentation type], or it may be a direct element that represents a property.
 
    [Definition: augmentation]
 
@@ -3954,6 +3954,8 @@ Rule 10-31. Augmentation point reference must be last particle
          2. carries elements that establish a relationship to its parent object or association
 
          3. is designed to be used as an [augmentation] of its parent object or association
+
+   This term may be mistaken for another. The term [augmentation element declaration] describes element declarations defined by schemas, while the term [augmentation] applies to any element information item within an XML document that appears as the result of being substituted for an augmentation point.
 
 Rule 10-32. Element within instance of augmentation type modifies base
 
@@ -5651,6 +5653,15 @@ Rule 12-2. Empty content has no meaning
 
    NIEM provides two different ways to solve this problem: the use of local references pointing to local identifiers, and the use of uniform resource identifiers (URIs). These two methods are similar, and can interoperate, but have distinctions, as described by Section 12.2.3, Differentiating reference-to-identifer links and use of URIs, below.
 
+   [Rule 12-3] (INS)
+
+      <sch:pattern>
+        <sch:rule context="*[exists(@structures:id) or exists(@structures:ref) or exists(@structures:uri)]">
+          <sch:assert test="count(@structures:id | @structures:ref | @structures:uri) le 1"
+            >An element MUST NOT have more than one attribute that is structures:id, structures:ref, or structures:uri.</sch:assert>
+        </sch:rule>
+      </sch:pattern>
+
 12.2.1. Local identifiers and references
 
    The XML specifications define ID and IDREF attributes, which act as references in XML data. This is supported by XML Schema, and NIEM uses ID and IDREF as one way to reference data across data objects. Under this framework:
@@ -5682,11 +5693,11 @@ Rule 12-2. Empty content has no meaning
 
    Note that rules below establish that relationships established using structures:id and structures:ref have the exact same meaning as relationships established using nested elements. An information exchange specification may constrain them differently, or prefer one over the other, but from a NIEM perspective, they have the same meaning.
 
-Rule 12-3. Attribute structures:ref must reference structures:id
+Rule 12-4. Attribute structures:ref must reference structures:id
 
    Although many attributes with ID and IDREF semantics are defined by many vocabularies, for consistency, within a NIEM XML document any attribute structures:ref must refer to an attribute structures:id, and not any other attribute.
 
-   [Rule 12-3] (INS)
+   [Rule 12-4] (INS)
 
       <sch:pattern>
         <sch:rule context="*[@structures:ref]">
@@ -5698,11 +5709,11 @@ Rule 12-3. Attribute structures:ref must reference structures:id
 
    This mirrors the terminology in [XML] subsection Validity constraint: IDREF within Section 3.3.1, Attribute Types, except it requires the target attribute to be structures:id, rather than any attribute of type ID.
 
-Rule 12-4. Linked elements have same validation root
+Rule 12-5. Linked elements have same validation root
 
    NIEM supports type-safe references: references using structures:ref and structures:id must preserve the type constraints that would apply if nested elements were used instead of a reference. For example, an element of type nc:PersonType must always refer to another element of type nc:PersonType, or a type derived from nc:PersonType, when using structures:ref to establish the relationship.
 
-   [Rule 12-4] (INS)
+   [Rule 12-5] (INS)
 
       Given that:
 
@@ -5722,9 +5733,9 @@ Rule 12-4. Linked elements have same validation root
 
    The term "validation root" is defined by [XML Schema Structures] Section 5.2, Assessing Schema-Validity. It is established as a part of validity assessment of an XML document. It is required because relationships between the types of elements cannot be established if those elements were not assessed together.
 
-Rule 12-5. Attribute structures:ref references element of correct type
+Rule 12-6. Attribute structures:ref references element of correct type
 
-   [Rule 12-5] (INS)
+   [Rule 12-6] (INS)
 
       Given that:
 
@@ -5756,23 +5767,23 @@ Rule 12-5. Attribute structures:ref references element of correct type
 
    As described in Section 5.4, Unique identification of data objects, above, structures:uri, structures:id, and structures:ref each denote a resource identifier. Although a structures:ref must always refer to a structures:id, and a value of structures:id must be unique within its document, a structures:uri may refer to any of structures:uri, structures:ref, or structures:id.
 
-Rule 12-6. structures:uri denotes resource identifier
+Rule 12-7. structures:uri denotes resource identifier
 
-   [Rule 12-6] (INS)
+   [Rule 12-7] (INS)
 
       The value of an attribute structures:uri is a URI-reference, as defined by [RFC 3986], which denotes a resource identifier on the element holding the attribute, in accordance with evaluation consistent with [RFC 3986] and [XML Base].
 
    The attributes structures:id and structures:ref each have a mapping to equivalent values of structures:uri.
 
-Rule 12-7. structures:id denotes resource identifier
+Rule 12-8. structures:id denotes resource identifier
 
-   [Rule 12-7] (INS)
+   [Rule 12-8] (INS)
 
       The value of the structures:id with a value of $value denotes a resource identifier on the element holding the attribute, as would be denoted by an attribute structures:uri with a value of "#$value".
 
-Rule 12-8. structures:ref denotes resource identifier
+Rule 12-9. structures:ref denotes resource identifier
 
-   [Rule 12-8] (INS)
+   [Rule 12-9] (INS)
 
       The value of the structures:ref with a value of $value denotes a resource identifier on the element holding the attribute, as would be denoted by an attribute structures:uri with a value of "#$value".
 
@@ -5808,9 +5819,9 @@ Rule 12-8. structures:ref denotes resource identifier
 
    Any claim that nested elements represent composition while references represent aggregation is incorrect. No life cycle dependency is implied by either method.
 
-Rule 12-9. Nested elements and references have the same meaning.
+Rule 12-10. Nested elements and references have the same meaning.
 
-   [Rule 12-9] (INS)
+   [Rule 12-10] (INS)
 
       There MUST NOT be any difference in meaning between a relationship established via an element declaration instantiated by a nested element, and that element declaration instantiated via reference.
 
@@ -5894,45 +5905,45 @@ Rule 12-9. Nested elements and references have the same meaning.
 
    Application of metadata to a type or element to which it is not applicable is not NIEM-conformant. A metadata element may be labeled as applicable to multiple elements via attribute appinfo:appliesToElements, or to multiple types via attribute appinfo:appliesToTypes. In either case it may apply to an instance of any of the listed elements or types. A metadata element with neither attribute appinfo:appliesToElements nor attribute appinfo:appliesToTypes may be applied to any element of any type.
 
-Rule 12-10. Metadata applies to referring entity
+Rule 12-11. Metadata applies to referring entity
 
-   [Rule 12-10] (INS)
+   [Rule 12-11] (INS)
 
       Within an element instance, when an object $O links to a metadata object via an attribute structures:metadata, the information in the metadata object MUST be applied to the object $O.
 
    structures:metadata applies metadata to an object.
 
-Rule 12-11. Referent of structures:relationshipMetadata annotates relationship
+Rule 12-12. Referent of structures:relationshipMetadata annotates relationship
 
-   [Rule 12-11] (INS)
+   [Rule 12-12] (INS)
 
       Within an element instance, when an object $O1 contains an element $E, with content object $O2 or with a reference to object $O2, and $O2 links to a metadata object via an attribute structures:relationshipMetadata, the information in the metadata object MUST be applied to the relationship $E between $O1 and $O2.
 
    structures:relationshipMetadata applies metadata to a relationship between two objects.
 
-Rule 12-12. Values of structures:metadata refer to values of structures:id
-
-   [Rule 12-12] (INS)
-
-      Given that each IDREF in the value of an attribute structures:metadata must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute structures:id.
-
-Rule 12-13. Value of structures:relationshipMetadata refers to value of structures:id
+Rule 12-13. Values of structures:metadata refer to values of structures:id
 
    [Rule 12-13] (INS)
 
-      Given that each IDREF in the value of an attribute structures:relationshipMetadata must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute structures:id.
+      Given that each IDREF in the value of an attribute structures:metadata must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute structures:id.
 
-Rule 12-14. structures:metadata and structures:relationshipMetadata refer to metadata elements
+Rule 12-14. Value of structures:relationshipMetadata refers to value of structures:id
 
    [Rule 12-14] (INS)
 
-      Each element referenced by an attribute structures:metadata or an attribute structures:relationshipMetadata MUST have [element declaration] that is a [metadata element declaration].
+      Given that each IDREF in the value of an attribute structures:relationshipMetadata must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute structures:id.
 
-   Although not implemented in Schematron, this rule covers the cases not covered by Rule 12-15, Attribute structures:metadata references metadata element.
-
-Rule 12-15. Attribute structures:metadata references metadata element
+Rule 12-15. structures:metadata and structures:relationshipMetadata refer to metadata elements
 
    [Rule 12-15] (INS)
+
+      Each element referenced by an attribute structures:metadata or an attribute structures:relationshipMetadata MUST have [element declaration] that is a [metadata element declaration].
+
+   Although not implemented in Schematron, this rule covers the cases not covered by Rule 12-16, Attribute structures:metadata references metadata element.
+
+Rule 12-16. Attribute structures:metadata references metadata element
+
+   [Rule 12-16] (INS)
 
       <sch:pattern>
         <sch:rule context="*[exists(@structures:metadata)]">
@@ -5945,9 +5956,9 @@ Rule 12-15. Attribute structures:metadata references metadata element
 
    Note that this will NOT diagnose a scenario in which the element with a name ending in "Metadata" is an external element; additional tests would be required to catch that.
 
-Rule 12-16. Attribute structures:relationshipMetadata references metadata element
+Rule 12-17. Attribute structures:relationshipMetadata references metadata element
 
-   [Rule 12-16] (INS)
+   [Rule 12-17] (INS)
 
       <sch:pattern>
         <sch:rule context="*[exists(@structures:relationshipMetadata)]">
@@ -5960,9 +5971,9 @@ Rule 12-16. Attribute structures:relationshipMetadata references metadata elemen
 
    Note that this will NOT diagnose a scenario in which the element with a name ending in "Metadata" is an external element; additional tests would be required to catch that.
 
-Rule 12-17. Metadata is applicable to element
+Rule 12-18. Metadata is applicable to element
 
-   [Rule 12-17] (INS)
+   [Rule 12-18] (INS)
 
       Given that an element $SUBJECT-ELEMENT uses a metadata element $METADATA-ELEMENT through a value in either an attribute structures:metadata or an attribute structures:relationshipMetadata, the element $SUBJECT-ELEMENT MUST be an applicable element for $METADATA-ELEMENT.
 
@@ -6032,6 +6043,7 @@ Appendix B. Structures namespace
        <xs:attributeGroup name="SimpleObjectAttributeGroup">
            <xs:attribute ref="structures:id"/>
            <xs:attribute ref="structures:ref"/>
+           <xs:attribute ref="structures:uri"/>
            <xs:attribute ref="structures:metadata"/>
            <xs:attribute ref="structures:relationshipMetadata"/>
            <xs:anyAttribute namespace="urn:us:gov:ic:ism urn:us:gov:ic:ntk" processContents="lax"/>
@@ -6043,6 +6055,7 @@ Appendix B. Structures namespace
            </xs:sequence>
            <xs:attribute ref="structures:id"/>
            <xs:attribute ref="structures:ref"/>
+           <xs:attribute ref="structures:uri"/>
            <xs:attribute ref="structures:metadata"/>
            <xs:attribute ref="structures:relationshipMetadata"/>
            <xs:anyAttribute namespace="urn:us:gov:ic:ism urn:us:gov:ic:ntk" processContents="lax"/>
@@ -6060,6 +6073,7 @@ Appendix B. Structures namespace
            </xs:sequence>
            <xs:attribute ref="structures:id"/>
            <xs:attribute ref="structures:ref"/>
+           <xs:attribute ref="structures:uri"/>
            <xs:attribute ref="structures:metadata"/>
            <xs:attribute ref="structures:relationshipMetadata"/>
            <xs:anyAttribute namespace="urn:us:gov:ic:ism urn:us:gov:ic:ntk" processContents="lax"/>
@@ -6074,12 +6088,14 @@ Appendix B. Structures namespace
        <xs:complexType name="MetadataType" abstract="true">
            <xs:attribute ref="structures:id"/>
            <xs:attribute ref="structures:ref"/>
+           <xs:attribute ref="structures:uri"/>
            <xs:anyAttribute namespace="urn:us:gov:ic:ism urn:us:gov:ic:ntk" processContents="lax"/>
        </xs:complexType>
    
        <xs:complexType name="AugmentationType" abstract="true">
            <xs:attribute ref="structures:id"/>
            <xs:attribute ref="structures:ref"/>
+           <xs:attribute ref="structures:uri"/>
            <xs:attribute ref="structures:metadata"/>
            <xs:anyAttribute namespace="urn:us:gov:ic:ism urn:us:gov:ic:ntk" processContents="lax"/>
        </xs:complexType>
@@ -6429,21 +6445,22 @@ Appendix E. Index of rules
    Rule 11-53, Consistently marked namespace imports: Section 11.8, Schema assembly
    Rule 12-1, Instance must be schema-valid: Section 12, XML instance document rules
    Rule 12-2, Empty content has no meaning: Section 12.1, The meaning of NIEM data
-   Rule 12-3, Attribute structures:ref must reference structures:id: Section 12.2.1, Local identifiers and references
-   Rule 12-4, Linked elements have same validation root: Section 12.2.1, Local identifiers and references
-   Rule 12-5, Attribute structures:ref references element of correct type: Section 12.2.1, Local identifiers and references
-   Rule 12-6, structures:uri denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
-   Rule 12-7, structures:id denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
-   Rule 12-8, structures:ref denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
-   Rule 12-9, Nested elements and references have the same meaning.: Section 12.2.4, Reference and content elements have same meaning
-   Rule 12-10, Metadata applies to referring entity: Section 12.3, Instance metadata
-   Rule 12-11, Referent of structures:relationshipMetadata annotates relationship: Section 12.3, Instance metadata
-   Rule 12-12, Values of structures:metadata refer to values of structures:id: Section 12.3, Instance metadata
-   Rule 12-13, Value of structures:relationshipMetadata refers to value of structures:id: Section 12.3, Instance metadata
-   Rule 12-14, structures:metadata and structures:relationshipMetadata refer to metadata elements: Section 12.3, Instance metadata
-   Rule 12-15, Attribute structures:metadata references metadata element: Section 12.3, Instance metadata
-   Rule 12-16, Attribute structures:relationshipMetadata references metadata element: Section 12.3, Instance metadata
-   Rule 12-17, Metadata is applicable to element: Section 12.3, Instance metadata
+   Rule 12-3: Section 12.2, Identifiers and references
+   Rule 12-4, Attribute structures:ref must reference structures:id: Section 12.2.1, Local identifiers and references
+   Rule 12-5, Linked elements have same validation root: Section 12.2.1, Local identifiers and references
+   Rule 12-6, Attribute structures:ref references element of correct type: Section 12.2.1, Local identifiers and references
+   Rule 12-7, structures:uri denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
+   Rule 12-8, structures:id denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
+   Rule 12-9, structures:ref denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
+   Rule 12-10, Nested elements and references have the same meaning.: Section 12.2.4, Reference and content elements have same meaning
+   Rule 12-11, Metadata applies to referring entity: Section 12.3, Instance metadata
+   Rule 12-12, Referent of structures:relationshipMetadata annotates relationship: Section 12.3, Instance metadata
+   Rule 12-13, Values of structures:metadata refer to values of structures:id: Section 12.3, Instance metadata
+   Rule 12-14, Value of structures:relationshipMetadata refers to value of structures:id: Section 12.3, Instance metadata
+   Rule 12-15, structures:metadata and structures:relationshipMetadata refer to metadata elements: Section 12.3, Instance metadata
+   Rule 12-16, Attribute structures:metadata references metadata element: Section 12.3, Instance metadata
+   Rule 12-17, Attribute structures:relationshipMetadata references metadata element: Section 12.3, Instance metadata
+   Rule 12-18, Metadata is applicable to element: Section 12.3, Instance metadata
 
 Appendix F. General index
 

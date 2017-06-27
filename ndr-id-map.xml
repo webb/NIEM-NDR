@@ -261,21 +261,22 @@
    <map:rule descriptiveID="rule-import-is-consistent" ruleID="rule_11-53"/>
    <map:rule descriptiveID="" ruleID="rule_12-1"/>
    <map:rule descriptiveID="" ruleID="rule_12-2"/>
-   <map:rule descriptiveID="rule-ref-refs-id" ruleID="rule_12-3"/>
+   <map:rule descriptiveID="rule-only-one-id" ruleID="rule_12-3"/>
+   <map:rule descriptiveID="rule-ref-refs-id" ruleID="rule_12-4"/>
    <map:rule descriptiveID="rule-ref-and-id-have-same-validation-root"
-             ruleID="rule_12-4"/>
-   <map:rule descriptiveID="" ruleID="rule_12-5"/>
-   <map:rule descriptiveID="rule-uri-base" ruleID="rule_12-6"/>
-   <map:rule descriptiveID="rule-id-is-uri" ruleID="rule_12-7"/>
-   <map:rule descriptiveID="rule-ref-is-uri" ruleID="rule_12-8"/>
-   <map:rule descriptiveID="" ruleID="rule_12-9"/>
+             ruleID="rule_12-5"/>
+   <map:rule descriptiveID="" ruleID="rule_12-6"/>
+   <map:rule descriptiveID="rule-uri-base" ruleID="rule_12-7"/>
+   <map:rule descriptiveID="rule-id-is-uri" ruleID="rule_12-8"/>
+   <map:rule descriptiveID="rule-ref-is-uri" ruleID="rule_12-9"/>
    <map:rule descriptiveID="" ruleID="rule_12-10"/>
    <map:rule descriptiveID="" ruleID="rule_12-11"/>
    <map:rule descriptiveID="" ruleID="rule_12-12"/>
    <map:rule descriptiveID="" ruleID="rule_12-13"/>
    <map:rule descriptiveID="" ruleID="rule_12-14"/>
-   <map:rule descriptiveID="rule-attr-metadata-refs-metadata" ruleID="rule_12-15"/>
+   <map:rule descriptiveID="" ruleID="rule_12-15"/>
+   <map:rule descriptiveID="rule-attr-metadata-refs-metadata" ruleID="rule_12-16"/>
    <map:rule descriptiveID="rule-attr-rel-metadata-refs-metadata"
-             ruleID="rule_12-16"/>
-   <map:rule descriptiveID="" ruleID="rule_12-17"/>
+             ruleID="rule_12-17"/>
+   <map:rule descriptiveID="" ruleID="rule_12-18"/>
 </map:map>
