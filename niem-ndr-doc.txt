@@ -86,7 +86,7 @@ Table of Tables
 
 2.1. Document references
 
-   This document relies on references to many outside documents. Such references are noted by bold, bracketed inline terms. For example, a reference to RFC 2119 is shown as [RFC 2119]. All reference documents are recorded in Appendix A, References, below.
+   This document relies on references to many outside documents. Such references are noted by bold, bracketed inline terms. For example, a reference to RFC 3986 is shown as [RFC 3986]. All reference documents are recorded in Appendix A, References, below.
 
 2.2. Clark notation and qualified names
 
@@ -152,7 +152,7 @@ Table of Tables
 
 2.4.1. Rules
 
-   A rule states a specific requirement on an artifact or on the interpretation of an artifact. The classes of artifacts are identified by [conformance targets] that are enumerated by this document in Section 4.1, Conformance targets defined, below. The rules are normative. Human-readable text in rules uses [RFC 2119] terminology as described in Section 3.1, RFC 2119 terminology, below, for normative requirements and recommendations.
+   A rule states a specific requirement on an artifact or on the interpretation of an artifact. The classes of artifacts are identified by [conformance targets] that are enumerated by this document in Section 4.1, Conformance targets defined, below. The rules are normative. Human-readable text in rules uses [BCP 14] terminology as described in Section 3.1, BCP 14 terminology, below, for normative requirements and recommendations.
 
    [Rule <section>-<number>] (<applicability>)
 
@@ -178,7 +178,7 @@ Table of Tables
 
    This document defines many normative rules using Schematron rule-based validation syntax, as defined by [Schematron]. For example, see Rule 9-29, Complex type content is explicitly simple or complex. Effort has been made to make the rules precise and unambiguous. Very detailed text descriptions of rules can introduce ambiguity, and they are not directly executable by users. Providing NDR rules that are expressed as Schematron rules ensures that the rules are precise, and that they are directly executable through commercially-available and free tools.
 
-   Many rules herein do not have executable Schematron supporting them. Some are not fit for automatic validation, and others may be difficult or cumbersome to express in Schematron. In neither case are such rules any less normative. A rule that has no Schematron is just as normative as a rule that does have Schematron. The level of requirements and recommendations within a rule is expressed using terminology from [RFC 2119] as described in Section 3.1, RFC 2119 terminology, below.
+   Many rules herein do not have executable Schematron supporting them. Some are not fit for automatic validation, and others may be difficult or cumbersome to express in Schematron. In neither case are such rules any less normative. A rule that has no Schematron is just as normative as a rule that does have Schematron. The level of requirements and recommendations within a rule is expressed using terminology from [BCP 14] as described in Section 3.1, BCP 14 terminology, below.
 
    The Schematron rules are written using XPath2 as defined by [XPath 2]. These executable rules are normative.
 
@@ -280,9 +280,9 @@ Table of Tables
 
    This document uses standard terminology from other standards to explain the principles and rules that describe NIEM. In addition, it defines terms related to these other standards. This section enumerates this externally-dependent terminology.
 
-3.1. RFC 2119 terminology
+3.1. BCP 14 terminology
 
-   Within normative content (rules and definitions), the key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, MAY, and OPTIONAL in this document are to be interpreted as described in [RFC 2119].
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14] [RFC 2119] [RFC 8174] when, and only when, they appear in all capitals, as shown here.
 
 3.2. XML terminology
 
@@ -5983,6 +5983,12 @@ Rule 12-18. Metadata is applicable to element
 
 Appendix A. References
 
+   [BCP 14]: Internet Engineering Task Force Best Current Practice 14. Available from https://www.ietf.org/rfc/bcp/bcp14.txt. BCP 14 is composed of:
+
+         [RFC 2119]: Bradner, S., "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, March 1997. Available from http://www.ietf.org/rfc/rfc2119.txt.
+
+         [RFC 8174]: Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, May 2017. Available from https://www.ietf.org/rfc/rfc8174.txt.
+
    [ClarkNS]: Clark, J. "XML Namespaces", 4 February 1999. Available from http://www.jclark.com/xml/xmlns.htm.
 
    [ConfReq]: Lynne Rosenthal, and Mark Skall, eds. "Conformance Requirements for Specifications v1.0." The Organization for the Advancement of Structured Information Standards (OASIS), March 15, 2002. https://www.oasis-open.org/committees/download.php/305/conformance_requirements-v1.pdf.
@@ -6004,8 +6010,6 @@ Appendix A. References
    [OED]: "Oxford English Dictionary, Third Edition", Oxford University Press, November 2010. http://dictionary.oed.com/.
 
    [RDF Concepts]: Richard Cyganiak, David Wood, and Markus Lanthaler, eds. "RDF 1.1 Concepts and Abstract Syntax." The World Wide Web Consortium (W3C), February 25, 2014. http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/.
-
-   [RFC 2119]: Bradner, S. "Key words for use in RFCs to Indicate Requirement Levels", IETF RFC 2119, March 1997. Available from http://www.ietf.org/rfc/rfc2119.txt.
 
    [RFC 3986]: Berners-Lee, T., et al. "Uniform Resource Identifier (URI): Generic Syntax", Request for Comments 3986, January 2005. Available from http://tools.ietf.org/html/rfc3986.
 
