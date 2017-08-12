@@ -616,7 +616,7 @@
 <sch:pattern id="rule_10-28"><sch:title>Augmentation point element may only be referenced by its type</sch:title>
   <sch:rule context="xs:complexType//xs:element[exists(@ref[                        matches(local-name-from-QName(resolve-QName(., ..)), 'AugmentationPoint$')]) ]">
 
-    <sch:assert test="QName(string(nf:get-target-namespace(ancestor::xs:complexType[1])), ancestor::xs:complexType[1]/@name)                       = QName(string(namespace-uri-from-QName(resolve-QName(@ref, .))),                 replace(local-name-from-QName(resolve-QName(@ref, .)), 'AugmentationPoint$', 'Type'))">Rule 10-28: An augmentation point element MUST only be referenced by its corresponding type.</sch:assert>
+    <sch:assert test="QName(string(nf:get-target-namespace(ancestor::xs:complexType[1])), ancestor::xs:complexType[1]/@name)                       = QName(string(namespace-uri-from-QName(resolve-QName(@ref, .))),                replace(local-name-from-QName(resolve-QName(@ref, .)), 'AugmentationPoint$', 'Type'))">Rule 10-28: An augmentation point element MUST only be referenced by its corresponding type.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
@@ -797,7 +797,7 @@
             
 <sch:pattern id="rule_11-13"><sch:title>Name of element that ends in "Abstract" is abstract</sch:title>
   <sch:rule context="xs:element[@name]">
-    <sch:report role="warning" test="not(exists(@abstract[xs:boolean(.) = true()])                    eq (ends-with(@name, 'Abstract')                        or ends-with(@name, 'AugmentationPoint')                       or ends-with(@name, 'Representation')))">Rule 11-13: An element declaration SHOULD have a name that ends in 'Abstract', 'AugmentationPoint', or 'Representation' if and only if it has the {abstract} property with a value of "true".</sch:report>
+    <sch:report role="warning" test="not(exists(@abstract[xs:boolean(.) = true()])                   eq (ends-with(@name, 'Abstract')                       or ends-with(@name, 'AugmentationPoint')                       or ends-with(@name, 'Representation')))">Rule 11-13: An element declaration SHOULD have a name that ends in 'Abstract', 'AugmentationPoint', or 'Representation' if and only if it has the {abstract} property with a value of "true".</sch:report>
   </sch:rule>
 </sch:pattern>
 	    
@@ -823,7 +823,7 @@
             
 <sch:pattern id="rule_11-18"><sch:title>Attribute name uses representation term</sch:title>
   <sch:rule context="xs:attribute[exists(@name)]">
-    <sch:report role="warning" test="every $representation-term                in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List')                satisfies not(ends-with(@name, $representation-term))">Rule 11-18: An attribute name SHOULD end with a representation term.</sch:report>
+    <sch:report role="warning" test="every $representation-term               in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List')               satisfies not(ends-with(@name, $representation-term))">Rule 11-18: An attribute name SHOULD end with a representation term.</sch:report>
   </sch:rule>
 </sch:pattern>
             
@@ -855,7 +855,7 @@
             
 <sch:pattern id="rule_11-30"><sch:title>Standard opening phrase for augmentation element</sch:title>
   <sch:rule context="xs:element[ends-with(@name, 'Augmentation')]/xs:annotation/xs:documentation[1]">
-    <sch:report role="warning" test="every $phrase                in ('supplements ', 'additional information about ')               satisfies not(starts-with(lower-case(normalize-space(.)), $phrase))">Rule 11-30: The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</sch:report>
+    <sch:report role="warning" test="every $phrase               in ('supplements ', 'additional information about ')               satisfies not(starts-with(lower-case(normalize-space(.)), $phrase))">Rule 11-30: The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</sch:report>
   </sch:rule>
 </sch:pattern>
             
@@ -914,7 +914,7 @@
 </sch:pattern>
             
 <sch:pattern id="rule_11-40"><sch:title>Standard opening phrase for element</sch:title>
-  <sch:rule context="xs:element[@name                                  and not(ends-with(@name, 'Indicator'))                                 and not(ends-with(@name, 'Augmentation'))                                 and not(ends-with(@name, 'Metadata'))                                 and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]">
+  <sch:rule context="xs:element[@name                                 and not(ends-with(@name, 'Indicator'))                                 and not(ends-with(@name, 'Augmentation'))                                 and not(ends-with(@name, 'Metadata'))                                 and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]">
     <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an? '))">Rule 11-40: The data definition for an element declaration SHOULD begin with the standard opening phrase "(a|an)".</sch:report>
   </sch:rule>
 </sch:pattern>
@@ -933,7 +933,7 @@
             
 <sch:pattern id="rule_11-43"><sch:title>Standard opening phrase for metadata type</sch:title>
   <sch:rule context="xs:complexType[ends-with(@name, 'MetadataType')]/xs:annotation/xs:documentation[1]">
-    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)),                            '^a data type for (metadata about|information that further qualifies)'))">Rule 11-43: The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</sch:report>
+    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)),                           '^a data type for (metadata about|information that further qualifies)'))">Rule 11-43: The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</sch:report>
   </sch:rule>
 </sch:pattern>
             

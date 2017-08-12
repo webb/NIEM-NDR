@@ -1791,7 +1791,7 @@ Rule 9-13. No use of "fixed" on simple type facets
 
       <sch:pattern>
         <sch:rule context="xs:*[self::xs:length or self::xs:minLength or self::xs:maxLength or self::xs:whiteSpace
-            or self::xs:maxInclusive or self::xs:maxExclusive or self::xs:minExclusive or self::xs:minInclusive 
+            or self::xs:maxInclusive or self::xs:maxExclusive or self::xs:minExclusive or self::xs:minInclusive
             or self::xs:totalDigits or self::xs:fractionDigits]">
           <sch:assert test="empty(@fixed)"
             >A simple type constraining facet MUST NOT have an attribute {}fixed.</sch:assert>
@@ -2437,8 +2437,6 @@ Rule 9-58. No attribute fixed values
    The fixed attribute is described by [XML Schema Structures] Section 3.2.1, The Attribute Declaration Schema Component:
 
       default specifies that the attribute is to appear unconditionally in the post-schema-validation infoset, with the supplied value used whenever the attribute is not actually present; fixed indicates that the attribute value if present must equal the supplied constraint value, and if absent receives the supplied value as for default.
-
-   
 
    [Rule 9-58] (REF, EXT)
 
@@ -3510,7 +3508,7 @@ Rule 10-19. Element of code type has code representation term
       <sch:pattern>
         <sch:rule context="xs:element[exists(@name) and exists(@type) and ends-with(@type, 'CodeType')]">
           <sch:report role="warning"
-              test="not(ends-with(@name, 'Code'))"                 
+              test="not(ends-with(@name, 'Code'))"
             >An element with a type that is a code type SHOULD have a name with representation term "Code"</sch:report>
         </sch:rule>
       </sch:pattern>
@@ -3897,7 +3895,7 @@ Rule 10-28. Augmentation point element may only be referenced by its type
                              matches(local-name-from-QName(resolve-QName(., ..)), 'AugmentationPoint$')]) ]">
       
           <sch:assert test="QName(string(nf:get-target-namespace(ancestor::xs:complexType[1])), ancestor::xs:complexType[1]/@name)
-                            = QName(string(namespace-uri-from-QName(resolve-QName(@ref, .))), 
+                            = QName(string(namespace-uri-from-QName(resolve-QName(@ref, .))),
                      replace(local-name-from-QName(resolve-QName(@ref, .)), 'AugmentationPoint$', 'Type'))"
             >An augmentation point element MUST only be referenced by its corresponding type.</sch:assert>
         </sch:rule>
@@ -5017,8 +5015,8 @@ Rule 11-13. Name of element that ends in "Abstract" is abstract
       <sch:pattern>
         <sch:rule context="xs:element[@name]">
           <sch:report role="warning"
-              test="not(exists(@abstract[xs:boolean(.) = true()]) 
-                        eq (ends-with(@name, 'Abstract') 
+              test="not(exists(@abstract[xs:boolean(.) = true()])
+                        eq (ends-with(@name, 'Abstract')
                             or ends-with(@name, 'AugmentationPoint')
                             or ends-with(@name, 'Representation')))"
             >An element declaration SHOULD have a name that ends in 'Abstract', 'AugmentationPoint', or 'Representation' if and only if it has the {abstract} property with a value of "true".</sch:report>
@@ -5112,8 +5110,8 @@ Rule 11-18. Attribute name uses representation term
       <sch:pattern>
         <sch:rule context="xs:attribute[exists(@name)]">
           <sch:report role="warning"
-              test="every $representation-term 
-                    in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') 
+              test="every $representation-term
+                    in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List')
                     satisfies not(ends-with(@name, $representation-term))"
             >An attribute name SHOULD end with a representation term.</sch:report>
         </sch:rule>
@@ -5284,7 +5282,7 @@ Rule 11-30. Standard opening phrase for augmentation element
       <sch:pattern>
         <sch:rule context="xs:element[ends-with(@name, 'Augmentation')]/xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
-              test="every $phrase 
+              test="every $phrase
                     in ('supplements ', 'additional information about ')
                     satisfies not(starts-with(lower-case(normalize-space(.)), $phrase))"
             >The data definition for an augmentation element SHOULD begin with the standard opening phrase "supplements..." or "additional information about...".</sch:report>
@@ -5413,7 +5411,7 @@ Rule 11-40. Standard opening phrase for element
    [Rule 11-40] (REF, EXT)
 
       <sch:pattern>
-        <sch:rule context="xs:element[@name 
+        <sch:rule context="xs:element[@name
                                       and not(ends-with(@name, 'Indicator'))
                                       and not(ends-with(@name, 'Augmentation'))
                                       and not(ends-with(@name, 'Metadata'))
@@ -5459,7 +5457,7 @@ Rule 11-43. Standard opening phrase for metadata type
       <sch:pattern>
         <sch:rule context="xs:complexType[ends-with(@name, 'MetadataType')]/xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
-              test="not(matches(lower-case(normalize-space(.)), 
+              test="not(matches(lower-case(normalize-space(.)),
                                 '^a data type for (metadata about|information that further qualifies)'))"
             >The data definition for a metadata type SHOULD begin with the standard opening phrase "a data type for (metadata about|information that further qualifies)...".</sch:report>
         </sch:rule>
