@@ -154,7 +154,7 @@ Table of Tables
 
 2.4.1. Rules
 
-   A rule states a specific requirement on an artifact or on the interpretation of an artifact. The classes of artifacts are identified by [conformance targets] that are enumerated by this document in Section 4.1, Conformance targets defined, below. The rules are normative. Human-readable text in rules uses [BCP 14] terminology as described in Section 3.1, BCP 14 terminology, below, for normative requirements and recommendations.
+   A rule states a specific requirement on an artifact or on the interpretation of an artifact. The classes of artifacts are identified by [conformance targets] that are enumerated by this document in Section 4.1, Conformance targets defined, below. The rules are normative. Human-readable text in rules uses [BCP 14] terminology as described in Section 3.1, IETF Best Current Practice 14 terminology, below, for normative requirements and recommendations.
 
    [Rule <section>-<number>] (<applicability>)
 
@@ -180,7 +180,7 @@ Table of Tables
 
    This document defines many normative rules using Schematron rule-based validation syntax, as defined by [Schematron]. For example, see Rule 9-29, Complex type content is explicitly simple or complex. Effort has been made to make the rules precise and unambiguous. Very detailed text descriptions of rules can introduce ambiguity, and they are not directly executable by users. Providing NDR rules that are expressed as Schematron rules ensures that the rules are precise, and that they are directly executable through commercially-available and free tools.
 
-   Many rules herein do not have executable Schematron supporting them. Some are not fit for automatic validation, and others may be difficult or cumbersome to express in Schematron. In neither case are such rules any less normative. A rule that has no Schematron is just as normative as a rule that does have Schematron. The level of requirements and recommendations within a rule is expressed using terminology from [BCP 14] as described in Section 3.1, BCP 14 terminology, below.
+   Many rules herein do not have executable Schematron supporting them. Some are not fit for automatic validation, and others may be difficult or cumbersome to express in Schematron. In neither case are such rules any less normative. A rule that has no Schematron is just as normative as a rule that does have Schematron. The level of requirements and recommendations within a rule is expressed using terminology from [BCP 14] as described in Section 3.1, IETF Best Current Practice 14 terminology, below.
 
    The Schematron rules are written using XPath2 as defined by [XPath 2]. These executable rules are normative.
 
@@ -284,7 +284,7 @@ Table of Tables
 
    This document uses standard terminology from other standards to explain the principles and rules that describe NIEM. In addition, it defines terms related to these other standards. This section enumerates this externally-dependent terminology.
 
-3.1. BCP 14 terminology
+3.1. IETF Best Current Practice 14 terminology
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14] [RFC 2119] [RFC 8174] when, and only when, they appear in all capitals, as shown here.
 
