@@ -3361,9 +3361,10 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:attribute[exists(@ref) and @use eq 'required']"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="false()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="false()">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -3745,9 +3746,10 @@
    <xsl:template match="node()[comment()]" priority="1000" mode="M82">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="node()[comment()]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="true()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -4552,10 +4554,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[exists(xs:simpleContent[                        exists(xs:*[local-name() = ('extension', 'restriction')                                    and (ends-with(@base, 'CodeSimpleType')                                    or ends-with(@base, 'CodeType'))])])]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(ends-with(@name, 'CodeType'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(ends-with(@name, 'CodeType'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -4579,10 +4582,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[exists(@name) and exists(@type) and ends-with(@type, 'CodeType')]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(ends-with(@name, 'Code'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(ends-with(@name, 'Code'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5116,10 +5120,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[@name[ends-with(., 'Representation')]]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="empty(@abstract) or xs:boolean(@abstract) = false()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="empty(@abstract) or xs:boolean(@abstract) = false()">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5195,9 +5200,10 @@
    <xsl:template match="xs:attribute" priority="1002" mode="M133">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:attribute"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="false()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="false()">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5214,9 +5220,10 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="false()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="false()">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5461,9 +5468,10 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="false()">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="false()">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5621,10 +5629,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:simpleType[exists(@name)       and (xs:restriction/xs:enumeration            or xs:restriction[ends-with(local-name-from-QName(resolve-QName(@base, .)), 'CodeSimpleType')])]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(ends-with(@name, 'CodeSimpleType'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(ends-with(@name, 'CodeSimpleType'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5648,10 +5657,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:attribute[exists(@name) and exists(@type) and ends-with(@type, 'CodeSimpleType')]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(ends-with(@name, 'Code'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(ends-with(@name, 'Code'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5758,10 +5768,11 @@
    <xsl:template match="xs:element[@name]" priority="1000" mode="M151">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:element[@name]"/>
 
-		    <!--REPORT -->
-      <xsl:if test="not(exists(@abstract[xs:boolean(.) = true()])                            eq (ends-with(@name, 'Abstract')                                or ends-with(@name, 'AugmentationPoint')                               or ends-with(@name, 'Representation')))">
+		    <!--REPORT warning-->
+      <xsl:if test="not(exists(@abstract[xs:boolean(.) = true()])                    eq (ends-with(@name, 'Abstract')                        or ends-with(@name, 'AugmentationPoint')                       or ends-with(@name, 'Representation')))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(exists(@abstract[xs:boolean(.) = true()]) eq (ends-with(@name, 'Abstract') or ends-with(@name, 'AugmentationPoint') or ends-with(@name, 'Representation')))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5785,10 +5796,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[@name and @type                                 and (some $type-qname in resolve-QName(@type, .) satisfies (                                        nf:get-target-namespace(.) = namespace-uri-from-QName($type-qname)                                        and nf:resolve-type(., $type-qname)/xs:simpleContent))]"/>
 
-		    <!--REPORT -->
-      <xsl:if test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies                             not(ends-with(@name, $representation-term))">
+		    <!--REPORT warning-->
+      <xsl:if test="every $representation-term               in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List')               satisfies not(ends-with(@name, $representation-term))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies not(ends-with(@name, $representation-term))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5872,10 +5884,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:attribute[exists(@name)]"/>
 
-		    <!--REPORT -->
-      <xsl:if test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies                             not(ends-with(@name, $representation-term))">
+		    <!--REPORT warning-->
+      <xsl:if test="every $representation-term                in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List')                satisfies not(ends-with(@name, $representation-term))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="every $representation-term in ('Amount', 'BinaryObject', 'Graphic', 'Picture', 'Sound', 'Video', 'Code', 'DateTime', 'Date', 'Time', 'Duration', 'ID', 'URI', 'Indicator', 'Measure', 'Numeric', 'Value', 'Rate', 'Percent', 'Quantity', 'Text', 'Name', 'List') satisfies not(ends-with(@name, $representation-term))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -5988,10 +6001,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'AugmentationPoint')]/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(starts-with(lower-case(normalize-space(.)), 'an augmentation point '))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(starts-with(lower-case(normalize-space(.)), 'an augmentation point '))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6015,10 +6029,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Augmentation')]/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
-      <xsl:if test="every $phrase in ('supplements ', 'additional information about ')                       satisfies not(starts-with(lower-case(normalize-space(.)), $phrase))">
+		    <!--REPORT warning-->
+      <xsl:if test="every $phrase                in ('supplements ', 'additional information about ')               satisfies not(starts-with(lower-case(normalize-space(.)), $phrase))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="every $phrase in ('supplements ', 'additional information about ') satisfies not(starts-with(lower-case(normalize-space(.)), $phrase))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6042,10 +6057,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Metadata')                                 and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '(metadata about|information that further qualifies)'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '(metadata about|information that further qualifies)'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6069,10 +6085,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Association')                                 and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
-      <xsl:if test="not(matches(lower-case(normalize-space(.)),                                   '^an?( .*)? (relationship|association)'))">
+		    <!--REPORT warning-->
+      <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (relationship|association)'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (relationship|association)'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6096,10 +6113,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[xs:boolean(@abstract) = true()                        and not(ends-with(@name, 'AugmentationPoint'))]/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(starts-with(lower-case(normalize-space(.)), 'a data concept'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(starts-with(lower-case(normalize-space(.)), 'a data concept'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6123,10 +6141,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6150,10 +6169,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6177,10 +6197,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6204,10 +6225,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6231,10 +6253,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6258,10 +6281,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6285,10 +6309,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:element[@name                                  and not(ends-with(@name, 'Indicator'))                                 and not(ends-with(@name, 'Augmentation'))                                 and not(ends-with(@name, 'Metadata'))                                 and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an? '))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^an? '))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6312,10 +6337,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[ends-with(@name, 'AssociationType')]/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^a data type for (a relationship|an association)'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^a data type for (a relationship|an association)'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6339,10 +6365,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[ends-with(@name, 'AugmentationType')]/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
-      <xsl:if test="not(matches(lower-case(normalize-space(.)), '^a data type (that supplements|for additional information about)'))">
+		    <!--REPORT warning-->
+      <xsl:if test="not(matches(lower-case(normalize-space(.)),                           '^a data type (that supplements|for additional information about)'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^a data type (that supplements|for additional information about)'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6366,10 +6393,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType[ends-with(@name, 'MetadataType')]/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
-      <xsl:if test="not(matches(lower-case(normalize-space(.)), '^a data type for (metadata about|information that further qualifies)'))">
+		    <!--REPORT warning-->
+      <xsl:if test="not(matches(lower-case(normalize-space(.)),                            '^a data type for (metadata about|information that further qualifies)'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^a data type for (metadata about|information that further qualifies)'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6393,10 +6421,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:complexType/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^a data type'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^a data type'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
@@ -6420,10 +6449,11 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:simpleType/xs:annotation/xs:documentation[1]"/>
 
-		    <!--REPORT -->
+		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^a data type'))">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                  test="not(matches(lower-case(normalize-space(.)), '^a data type'))">
+            <xsl:attribute name="role">warning</xsl:attribute>
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
