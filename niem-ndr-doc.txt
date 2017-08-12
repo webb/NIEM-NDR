@@ -1294,7 +1294,7 @@ Rule 4-6. Schema claims extension conformance target
 
       Component definitions in NIEM-conformant schemas SHOULD reflect real-world concepts.
 
-   It is important for the modeler to understand what she is modeling; a person, an observation of a person, and a drivers license for a person are all at different levels, although they each may contain similar information.
+   Different users often have their own local practices for arranging components together, such as grouping components into sets and segments, or building in extra layers to help categorize components and make them easier to find when drilling down through an object. Since the broader community may not share the same practices, and grouping structures add additional complexity to both schemas and instances, NIEM components should model the real world as simply and closely as possible.
 
 6.5.4. Be consistent
 
