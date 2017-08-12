@@ -489,8 +489,6 @@ Table of Tables
 
       *  It is explicitly designated as an [extension schema document] via the conformance targets attribute.
 
-      *  It provides the broadest, most fundamental definitions of components in its namespace.
-
       *  It provides the authoritative definition of business semantics for components in its namespace.
 
       *  It contains components that, when appropriate, use or are derived from the components in [reference schema documents].
