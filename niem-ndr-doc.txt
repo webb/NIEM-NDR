@@ -3204,7 +3204,7 @@ Rule 10-2. Object type with complex content is derived from object type
    Figure 10-5: An XML instance of a role type
 
       <j:CrashDriver>
-        <nc:RoleOfPerson structures:ref="BRAVO"/>
+        <nc:RoleOfPerson structures:ref="BRAVO" xsi:nil="true"/>
         <j:CrashDriverViolationCode>A10</j:CrashDriverViolationCode>
         <j:CrashDrivingViolationCode>S16</j:CrashDrivingViolationCode>
       </j:CrashDriver>
@@ -5727,7 +5727,7 @@ Rule 12-3. Element has only one resource identifying attribute
           </nc:WeaponUser>
         </j:ArrestInvolvedWeapon>
         <j:ArrestSubject>
-          <nc:RoleOfPerson structures:ref="bart"/>
+          <nc:RoleOfPerson structures:ref="bart" xsi:nil="true"/>
         </j:ArrestSubject>
       </j:Arrest>
 
@@ -5879,12 +5879,12 @@ Rule 12-10. Nested elements and references have the same meaning.
         </nc:PersonName>
       </nc:Person>
       <j:Witness>
-        <nc:RoleOfPerson structures:ref="c58"/>
+        <nc:RoleOfPerson structures:ref="c58" xsi:nil="true"/>
       </j:Witness>
 
    Figure 12-5: Example with a forward reference
 
-      <nc:Person structures:ref="t85"/>
+      <nc:Person structures:ref="t85" xsi:nil="true"/>
       <j:Witness>
         <nc:RoleOfPerson structures:id="t85">
           <nc:PersonName>

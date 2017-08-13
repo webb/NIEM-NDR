@@ -626,7 +626,7 @@
     &lt;xs:documentation&gt;A person of whom the role object is a function.&lt;/xs:documentation&gt;
   &lt;/xs:annotation&gt;
 &lt;/xs:element&gt;</pre></div></div><p>Here is an example of the <code>j:CrashDriver</code> role type used in an instance:</p><div class="figure"><div class="caption"><a name="figure_10-5"></a>Figure 10-5: An XML instance of a role type</div><div class="box"><pre>&lt;j:CrashDriver&gt;
-  &lt;nc:RoleOfPerson structures:ref="BRAVO"/&gt;
+  &lt;nc:RoleOfPerson structures:ref="BRAVO" xsi:nil="true"/&gt;
   &lt;j:CrashDriverViolationCode&gt;A10&lt;/j:CrashDriverViolationCode&gt;
   &lt;j:CrashDrivingViolationCode&gt;S16&lt;/j:CrashDrivingViolationCode&gt;
 &lt;/j:CrashDriver&gt;
@@ -1457,7 +1457,7 @@
     &lt;/nc:WeaponUser&gt;
   &lt;/j:ArrestInvolvedWeapon&gt;
   &lt;j:ArrestSubject&gt;
-    &lt;nc:RoleOfPerson structures:ref="bart"/&gt;
+    &lt;nc:RoleOfPerson structures:ref="bart" xsi:nil="true"/&gt;
   &lt;/j:ArrestSubject&gt;
 &lt;/j:Arrest&gt;</pre></div></div><p>Note that rules below establish that relationships established using <code>structures:id</code> and <code>structures:ref</code> have the exact same meaning as relationships established using nested elements. An information exchange specification may constrain them differently, or prefer one over the other, but from a NIEM perspective, they have the same meaning.</p><div class="rule-section"><div class="heading"><a name="rule-ref-refs-id"></a><a name="rule_12-4"></a>Rule 12-4. Attribute <code>structures:ref</code> must reference <code>structures:id</code></div><p>Although many attributes with ID and IDREF semantics are defined by many vocabularies, for consistency, within a NIEM XML document any attribute <code>structures:ref</code> must refer to an attribute <code>structures:id</code>, and not any other attribute.</p><div class="box"><div class="normativeHead">[Rule 12-4] (<a href="#conformance_target_INS">INS</a>) (Constraint)</div><pre>&lt;sch:pattern&gt;
   &lt;sch:rule context="*[@structures:ref]"&gt;
@@ -1471,8 +1471,8 @@
   &lt;/nc:PersonName&gt;
 &lt;/nc:Person&gt;
 &lt;j:Witness&gt;
-  &lt;nc:RoleOfPerson structures:ref="c58"/&gt;
-&lt;/j:Witness&gt;</pre></div></div><div class="figure"><div class="caption"><a name="figure_12-5"></a>Figure 12-5: Example with a forward reference</div><div class="box"><pre>&lt;nc:Person structures:ref="t85"/&gt;
+  &lt;nc:RoleOfPerson structures:ref="c58" xsi:nil="true"/&gt;
+&lt;/j:Witness&gt;</pre></div></div><div class="figure"><div class="caption"><a name="figure_12-5"></a>Figure 12-5: Example with a forward reference</div><div class="box"><pre>&lt;nc:Person structures:ref="t85" xsi:nil="true"/&gt;
 &lt;j:Witness&gt;
   &lt;nc:RoleOfPerson structures:id="t85"&gt;
     &lt;nc:PersonName&gt;
