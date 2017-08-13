@@ -25,7 +25,7 @@
           
 <sch:pattern id="rule_7-4"><sch:title>Document element is xs:schema</sch:title>
   <sch:rule context="*[. is nf:get-document-element(.)]">
-    <sch:assert test="self::xs:schema">Rule 7-4: The [document element] of the XML document MUST have the name xs:schema.</sch:assert>
+    <sch:assert test="self::xs:schema">Rule 7-4: The [document element] of the [XML document] MUST have the name xs:schema.</sch:assert>
   </sch:rule>
 </sch:pattern>
           

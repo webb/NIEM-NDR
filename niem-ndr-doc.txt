@@ -535,7 +535,7 @@ Rule 4-2. Schema marked as extension schema document must conform
 
    Characteristics of a [conformant instance XML document] include:
 
-      *  The document element is locally schema-valid.
+      *  The [document element] is locally schema-valid.
 
       *  Each element information item within the [XML document] that has property [namespace name] matching the target namespace of a [reference schema document] or [extension schema document] is a [conformant element information item].
 
@@ -543,7 +543,7 @@ Rule 4-2. Schema marked as extension schema document must conform
 
    Assessment against schemas may be directed by a Model Package Description (MPD), by other instructions, or by other tools.
 
-   Note that this specification does not require the document element of a [conformant instance XML document] to be a [conformant element information item]. Other specifications, such as the MPD specification, may add additional constraints to these in order to specify MPD-specific or exchange-specific conformance constraints.
+   Note that this specification does not require the [document element] of a [conformant instance XML document] to be a [conformant element information item]. Other specifications, such as the MPD specification, may add additional constraints to these in order to specify MPD-specific or exchange-specific conformance constraints.
 
    [Definition: conformant element information item]
 
@@ -1352,7 +1352,11 @@ Rule 4-6. Schema claims extension conformance target
 
 7. Conformance to standards
 
+   There are numerous XML standards to which the instance and schema documents that constitute information exchanges must conform. This section applies XML specifications to the conformance targets of this document.
+
 7.1. Conformance to XML
+
+   The XML specification [XML] defines the term [XML document]. NIEM XML documents, including instance documents and schema documents, must conform to the definition of this term.
 
 Rule 7-1. Document is an XML document
 
@@ -1360,9 +1364,11 @@ Rule 7-1. Document is an XML document
 
       The document MUST be an XML document.
 
-   The term [XML document] is defined by this document.
+   This document establishes the term [XML document], by reference to [XML].
 
 7.2. Conformance to XML Namespaces
+
+   The XML namespaces specification and errata define correct use of XML namespaces; NIEM-conformant XML artifacts (instance documents and schema documents) must use namespaces properly.
 
 Rule 7-2. Document uses XML namespaces properly
 
@@ -1374,13 +1380,15 @@ Rule 7-2. Document uses XML namespaces properly
 
 7.3. Conformance to XML Schema
 
+   The XML Schema specification part 1 [XML Schema Structures] defines the syntax of the [XML Schema definition language], and identifies an [XML document] that follows that syntax as a [schema document]. This section requires that NIEM reference and extension schema documents be [schema documents].
+
 Rule 7-3. Document is a schema document
 
    [Rule 7-3] (REF, EXT)
 
-      The document MUST be a schema document.
+      The [XML document] MUST be a [schema document].
 
-   This document defines the term [schema document].
+   This document establishes the term [schema document], by reference to [XML Schema Structures].
 
 Rule 7-4. Document element is xs:schema
 
@@ -1389,11 +1397,11 @@ Rule 7-4. Document element is xs:schema
       <sch:pattern>
         <sch:rule context="*[. is nf:get-document-element(.)]">
           <sch:assert test="self::xs:schema"
-            >The [document element] of the XML document MUST have the name xs:schema.</sch:assert>
+            >The [document element] of the [XML document] MUST have the name xs:schema.</sch:assert>
         </sch:rule>
       </sch:pattern>
 
-   This document defines the term [XML document].
+   This document establishes the terms [document element] by reference to [XML Infoset], and [XML document] by reference to [XML].
 
 7.4. ISO 11179 Part 4
 

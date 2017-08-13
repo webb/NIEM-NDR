@@ -1663,7 +1663,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 7-4: The [document element] of the XML document MUST have the name xs:schema.</svrl:text>
+               <svrl:text>Rule 7-4: The [document element] of the [XML document] MUST have the name xs:schema.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
