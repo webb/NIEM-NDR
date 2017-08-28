@@ -118,6 +118,8 @@ Table of Tables
 
       *  structures: The namespace for the [structures namespace], "http://release.niem.gov/niem/structures/4.0/".
 
+   In addition to the prefixes above, the prefix example is used for XML examples, denoting a user-defined namespace, such as might be defined by an information exchange specification.
+
 2.4. Normative and informative content
 
    This document includes a variety of content. Some content of this document is [normative], while other content is [informative]. In general, the informative material appears as supporting text, description, and rationales for the normative material.
@@ -5813,23 +5815,77 @@ Rule 12-7. structures:uri denotes resource identifier
 
       The value of an attribute structures:uri is a URI-reference, as defined by [RFC 3986], which denotes a resource identifier on the element holding the attribute, in accordance with evaluation consistent with [RFC 3986] and [XML Base].
 
+   The following example shows a reference to an absolute URI, using the URN namespace for UUIDs:
+
+   Figure 12-4: Example of structures:uri holding an absolute URI
+
+      <example:ArrestMessage>
+        <j:Arrest xsi:nil="true"
+          structures:uri="urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6"/>
+      </example:ArrestMessage>
+
+   The following example shows a relative URI, using xml:base to carry the base URI for the document. The person object identified by the structures:uri attribute has the URI http://state.example/scmods/B263-1655-2187.
+
+   Figure 12-5: Example of structures:uri holding a relative URI, with an xml:base
+
+      <example:ArrestMessage xml:base="http://state.example/scmods/">
+        <j:Arrest>
+          <j:ArrestSubject>
+            <nc:RoleOfPerson structures:uri="B263-1655-2187"/>
+          </j:ArrestSubject>
+        </j:Arrest>
+      </example:ArrestMessage>
+
+   The following example shows a URI fragment. The example has no xml:base, so supposing the example was from file https://example.org/path/to/file.xml, the person object has the identifier https://example.org/path/to/file.xml#first.
+
+   Figure 12-6: Example of structures:uri holding a fragment
+
+      <example:ArrestMessage>
+        <j:Arrest>
+          <j:ArrestSubject>
+            <nc:RoleOfPerson structures:uri="#first"/>
+          </j:ArrestSubject>
+        </j:Arrest>
+      </example:ArrestMessage>
+
    The attributes structures:id and structures:ref each have a mapping to equivalent values of structures:uri.
 
-Rule 12-8. structures:id denotes resource identifier
+Rule 12-8. structures:id and structures:id denote resource identifier
 
    [Rule 12-8] (INS)
 
-      The value of the structures:id with a value of $value denotes a resource identifier on the element holding the attribute, as would be denoted by an attribute structures:uri with a value of "#$value".
-
-Rule 12-9. structures:ref denotes resource identifier
-
-   [Rule 12-9] (INS)
-
-      The value of the structures:ref with a value of $value denotes a resource identifier on the element holding the attribute, as would be denoted by an attribute structures:uri with a value of "#$value".
+      The value of an attribute structures:id with a value of $value, or an attribute structures:ref with a value of $value, denotes a resource identifier on the element holding the attribute, as would be denoted by an attribute structures:uri with a value of "#"$value.
 
    For example, structures:id="hello" and structures:ref="hello" each denote the same resource identifier for an element as if it held an attribute structures:uri="#hello".
 
    Consistent with Section 5.4, Unique identification of data objects, above, a set of elements that each have the same resource identifier denote the same object, which has that given identifier. This means that, in an XML representation, the properties of an object may be spread across a set of elements that share an identifier.
+
+   The following example contains four references to the same object, which has the identifier https://state.example/98723987/results.xml#delta.
+
+   Figure 12-7: Example of structures:uri, structures:id, and structures:ref identifying the same object.
+
+      <example:ArrestMessage xml:base="https://state.example/98723987/results.xml">
+        <j:Arrest>
+          <j:ArrestSubject>
+            <nc:RoleOfPerson structures:id="delta"/>
+          </j:ArrestSubject>
+        </j:Arrest>
+        <j:Arrest>
+          <j:ArrestSubject>
+            <nc:RoleOfPerson structures:ref="delta"/>
+          </j:ArrestSubject>
+        </j:Arrest>
+        <j:Arrest>
+          <j:ArrestSubject>
+            <nc:RoleOfPerson structures:uri="#delta"/>
+          </j:ArrestSubject>
+        </j:Arrest>
+        <j:Arrest>
+          <j:ArrestSubject>
+            <nc:RoleOfPerson structures:uri="https://state.example/98723987/results.xml#delta"/>
+          </j:ArrestSubject>
+        </j:Arrest>
+      </example:ArrestMessage>
 
 12.2.3. Differentiating reference-to-identifier links and use of URIs
 
@@ -5859,9 +5915,9 @@ Rule 12-9. structures:ref denotes resource identifier
 
    Any claim that nested elements represent composition while references represent aggregation is incorrect. No life cycle dependency is implied by either method.
 
-Rule 12-10. Nested elements and references have the same meaning.
+Rule 12-9. Nested elements and references have the same meaning.
 
-   [Rule 12-10] (INS)
+   [Rule 12-9] (INS)
 
       There MUST NOT be any difference in meaning between a relationship established via an element declaration instantiated by a nested element, and that element declaration instantiated via reference.
 
@@ -5869,9 +5925,9 @@ Rule 12-10. Nested elements and references have the same meaning.
 
    Being of type xs:ID and xs:IDREF, validating schema parsers will perform certain checks on the values of structures:id and structures:ref. Specifically, no two IDs may have the same value. This includes structures:id and other IDs that may be used within an XML document. Also, any value of structures:ref must also appear as the value of an ID.
 
-   By this rule, the following two XML fragments have the same meaning. First, Figure 12-4, Example with a backward reference, below, shows a person object being expressed, followed by a backwards reference to it. Second, Figure 12-5, Example with a forward reference, below, shows a person as a forward reference to the person object that is expressed later, within the definition of a witness. Both of these XML fragments have the same semantics.
+   By this rule, the following two XML fragments have the same meaning. First, Figure 12-8, Example with a backward reference, below, shows a person object being expressed, followed by a backwards reference to it. Second, Figure 12-9, Example with a forward reference, below, shows a person as a forward reference to the person object that is expressed later, within the definition of a witness. Both of these XML fragments have the same semantics.
 
-   Figure 12-4: Example with a backward reference
+   Figure 12-8: Example with a backward reference
 
       <nc:Person structures:id="c58">
         <nc:PersonName>
@@ -5882,7 +5938,7 @@ Rule 12-10. Nested elements and references have the same meaning.
         <nc:RoleOfPerson structures:ref="c58" xsi:nil="true"/>
       </j:Witness>
 
-   Figure 12-5: Example with a forward reference
+   Figure 12-9: Example with a forward reference
 
       <nc:Person structures:ref="t85" xsi:nil="true"/>
       <j:Witness>
@@ -5901,7 +5957,7 @@ Rule 12-10. Nested elements and references have the same meaning.
 
    NIEM provides the metadata mechanism for giving information about object assertions. An object may have an attribute that refers to one or more metadata objects. A structures:metadata attribute indicates that a data item has the given metadata. A structures:relationshipMetadata attribute asserts that the link (or relationship) established by an element has the given metadata.
 
-   Figure 12-6: Example of metadata used in an instance
+   Figure 12-10: Example of metadata used in an instance
 
       <nc:Person>
         <nc:PersonBirthDate structures:metadata="j86">
@@ -5945,45 +6001,45 @@ Rule 12-10. Nested elements and references have the same meaning.
 
    Application of metadata to a type or element to which it is not applicable is not NIEM-conformant. A metadata element may be labeled as applicable to multiple elements via attribute appinfo:appliesToElements, or to multiple types via attribute appinfo:appliesToTypes. In either case it may apply to an instance of any of the listed elements or types. A metadata element with neither attribute appinfo:appliesToElements nor attribute appinfo:appliesToTypes may be applied to any element of any type.
 
-Rule 12-11. Metadata applies to referring entity
+Rule 12-10. Metadata applies to referring entity
 
-   [Rule 12-11] (INS)
+   [Rule 12-10] (INS)
 
       Within an element instance, when an object $O links to a metadata object via an attribute structures:metadata, the information in the metadata object MUST be applied to the object $O.
 
    structures:metadata applies metadata to an object.
 
-Rule 12-12. Referent of structures:relationshipMetadata annotates relationship
+Rule 12-11. Referent of structures:relationshipMetadata annotates relationship
 
-   [Rule 12-12] (INS)
+   [Rule 12-11] (INS)
 
       Within an element instance, when an object $O1 contains an element $E, with content object $O2 or with a reference to object $O2, and $O2 links to a metadata object via an attribute structures:relationshipMetadata, the information in the metadata object MUST be applied to the relationship $E between $O1 and $O2.
 
    structures:relationshipMetadata applies metadata to a relationship between two objects.
 
-Rule 12-13. Values of structures:metadata refer to values of structures:id
+Rule 12-12. Values of structures:metadata refer to values of structures:id
 
-   [Rule 12-13] (INS)
+   [Rule 12-12] (INS)
 
       Given that each IDREF in the value of an attribute structures:metadata must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute structures:id.
 
-Rule 12-14. Value of structures:relationshipMetadata refers to value of structures:id
+Rule 12-13. Value of structures:relationshipMetadata refers to value of structures:id
 
-   [Rule 12-14] (INS)
+   [Rule 12-13] (INS)
 
       Given that each IDREF in the value of an attribute structures:relationshipMetadata must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute structures:id.
 
-Rule 12-15. structures:metadata and structures:relationshipMetadata refer to metadata elements
+Rule 12-14. structures:metadata and structures:relationshipMetadata refer to metadata elements
 
-   [Rule 12-15] (INS)
+   [Rule 12-14] (INS)
 
       Each element referenced by an attribute structures:metadata or an attribute structures:relationshipMetadata MUST have [element declaration] that is a [metadata element declaration].
 
-   Although not implemented in Schematron, this rule covers the cases not covered by Rule 12-16, Attribute structures:metadata references metadata element.
+   Although not implemented in Schematron, this rule covers the cases not covered by Rule 12-15, Attribute structures:metadata references metadata element.
 
-Rule 12-16. Attribute structures:metadata references metadata element
+Rule 12-15. Attribute structures:metadata references metadata element
 
-   [Rule 12-16] (INS)
+   [Rule 12-15] (INS)
 
       <sch:pattern>
         <sch:rule context="*[exists(@structures:metadata)]">
@@ -5996,9 +6052,9 @@ Rule 12-16. Attribute structures:metadata references metadata element
 
    Note that this will NOT diagnose a scenario in which the element with a name ending in "Metadata" is an external element; additional tests would be required to catch that.
 
-Rule 12-17. Attribute structures:relationshipMetadata references metadata element
+Rule 12-16. Attribute structures:relationshipMetadata references metadata element
 
-   [Rule 12-17] (INS)
+   [Rule 12-16] (INS)
 
       <sch:pattern>
         <sch:rule context="*[exists(@structures:relationshipMetadata)]">
@@ -6011,9 +6067,9 @@ Rule 12-17. Attribute structures:relationshipMetadata references metadata elemen
 
    Note that this will NOT diagnose a scenario in which the element with a name ending in "Metadata" is an external element; additional tests would be required to catch that.
 
-Rule 12-18. Metadata is applicable to element
+Rule 12-17. Metadata is applicable to element
 
-   [Rule 12-18] (INS)
+   [Rule 12-17] (INS)
 
       Given that an element $SUBJECT-ELEMENT uses a metadata element $METADATA-ELEMENT through a value in either an attribute structures:metadata or an attribute structures:relationshipMetadata, the element $SUBJECT-ELEMENT MUST be an applicable element for $METADATA-ELEMENT.
 
@@ -6494,17 +6550,16 @@ Appendix E. Index of rules
    Rule 12-5, Linked elements have same validation root: Section 12.2.1, Local identifiers and references
    Rule 12-6, Attribute structures:ref references element of correct type: Section 12.2.1, Local identifiers and references
    Rule 12-7, structures:uri denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
-   Rule 12-8, structures:id denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
-   Rule 12-9, structures:ref denotes resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
-   Rule 12-10, Nested elements and references have the same meaning.: Section 12.2.4, Reference and content elements have same meaning
-   Rule 12-11, Metadata applies to referring entity: Section 12.3, Instance metadata
-   Rule 12-12, Referent of structures:relationshipMetadata annotates relationship: Section 12.3, Instance metadata
-   Rule 12-13, Values of structures:metadata refer to values of structures:id: Section 12.3, Instance metadata
-   Rule 12-14, Value of structures:relationshipMetadata refers to value of structures:id: Section 12.3, Instance metadata
-   Rule 12-15, structures:metadata and structures:relationshipMetadata refer to metadata elements: Section 12.3, Instance metadata
-   Rule 12-16, Attribute structures:metadata references metadata element: Section 12.3, Instance metadata
-   Rule 12-17, Attribute structures:relationshipMetadata references metadata element: Section 12.3, Instance metadata
-   Rule 12-18, Metadata is applicable to element: Section 12.3, Instance metadata
+   Rule 12-8, structures:id and structures:id denote resource identifier: Section 12.2.2, Uniform resource identifiers in NIEM data
+   Rule 12-9, Nested elements and references have the same meaning.: Section 12.2.4, Reference and content elements have same meaning
+   Rule 12-10, Metadata applies to referring entity: Section 12.3, Instance metadata
+   Rule 12-11, Referent of structures:relationshipMetadata annotates relationship: Section 12.3, Instance metadata
+   Rule 12-12, Values of structures:metadata refer to values of structures:id: Section 12.3, Instance metadata
+   Rule 12-13, Value of structures:relationshipMetadata refers to value of structures:id: Section 12.3, Instance metadata
+   Rule 12-14, structures:metadata and structures:relationshipMetadata refer to metadata elements: Section 12.3, Instance metadata
+   Rule 12-15, Attribute structures:metadata references metadata element: Section 12.3, Instance metadata
+   Rule 12-16, Attribute structures:relationshipMetadata references metadata element: Section 12.3, Instance metadata
+   Rule 12-17, Metadata is applicable to element: Section 12.3, Instance metadata
 
 Appendix F. General index
 
