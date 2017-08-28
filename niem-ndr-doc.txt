@@ -796,7 +796,7 @@ Rule 4-6. Schema claims extension conformance target
 
                *  $language-tag is the in-scope value of attribute xml:lang.
 
-      *  Otherwise, if $value has a base type definition $base-type that is listed as an RDF-compatible XSD type in [RDF Concepts] Section 5.1, The XML Schema Built-in Datatypes, then the literal is:
+      *  Otherwise, if $value has a base type definition $base-type that is listed as an RDF-compatible XSD type in [RDF Concepts] Section 5.1, The XML Schema Built-in Datatypes, and $base-type is not xs:string, then the literal is:
 
             "$lexical-form"^^$datatype-IRI
 
