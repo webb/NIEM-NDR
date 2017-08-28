@@ -5983,7 +5983,7 @@ Rule 12-9. Nested elements and references have the same meaning.
 
       *  Metadata j86 asserts the name and the birth date were reported on 4/26/2005.
 
-      *  Link metadata o67 asserts a 25% probability that the name goes with the person.
+      *  Relationship metadata k25 asserts a 25% probability that the name goes with the person.
 
    This shows several characteristics of metadata:
 
@@ -5993,7 +5993,7 @@ Rule 12-9. Nested elements and references have the same meaning.
 
       *  Data may refer to more than one metadata object.
 
-      *  Metadata pertains to an object or simple content, while link metadata pertains to the relationship between objects.
+      *  Metadata pertains to an object or simple content, while relationship metadata pertains to the relationship between objects.
 
    An instance would not be valid XML if the structures:metadata or structures:relationshipMetadata attributes contained references for which there were no defined IDs. The instance would not be NIEM-conformant if the references were not to IDs defined with the structures:id attribute.
 
