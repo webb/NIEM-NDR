@@ -5913,7 +5913,7 @@ Rule 12-8. structures:id and structures:id denote resource identifier
 
    An important aspect of the use of nested elements, ref-to-id references, and URI references, is that they all have the same meaning. Expressing a relationship via a nested element, versus an ref-to-id reference is merely for convenience and ease of serialization. There is no change in meaning or semantics between relationships expressed by sub-elements versus relationships expressed by structures:ref or structures:uri.
 
-   Any claim that nested elements represent composition while references represent aggregation is incorrect. No life cycle dependency is implied by either method.
+   Any claim that nested elements represent composition, while references represent aggregation is incorrect. No life cycle dependency is implied by either method. Similarly, any claim that included data is intrinsic (i.e., a property inherent to an object), while referenced data is extrinsic (i.e., a property derived from a relationship to other things), is false. A property represented as a nested element has the exact same meaning as that property represented by a reference.
 
 Rule 12-9. Nested elements and references have the same meaning.
 
@@ -5950,8 +5950,6 @@ Rule 12-9. Nested elements and references have the same meaning.
       </j:Witness>
 
    NIEM-conformant data instances may use either representation as needed, to represent the meaning of the fundamental data. There is no difference in meaning between reference and content data representations. The two different methods are available for ease of representation. No difference in meaning should be implied by the use of one method or the other.
-
-   Assertions that indicate "included" data is intrinsic, while referenced data is extrinsic, are not valid and are not applicable to NIEM-conformant data instances and data definitions.
 
 12.3. Instance metadata
 
