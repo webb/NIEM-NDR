@@ -2045,7 +2045,7 @@ Rule 9-30. Complex content uses extension
 
 9.1.3.2.1. Base type of complex type with complex content has complex content
 
-   These two rules addresses a peculiarity of the [XML Schema definition language], which allows a complex type to be constructed using xs:complexContent, and yet is derived from a complex type that uses xs:simpleContent. These rules ensures that each type has the content style indicated by the schema. An example is included in the following figure. Note that type niem-xs:integer is a complex type with simple content.
+   These two rules addresses a peculiarity of the [XML Schema definition language], which allows a complex type to be constructed using xs:complexContent, and yet is derived from a complex type that uses xs:simpleContent. These rules ensure that each type has the content style indicated by the schema. An example is included in the following figure. Note that type niem-xs:integer is a complex type with simple content.
 
    Figure 9-1: Example of complex type with simple content that claims to have complex content
 
