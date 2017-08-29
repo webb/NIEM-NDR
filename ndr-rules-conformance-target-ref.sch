@@ -365,7 +365,7 @@
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_9-58"><sch:title>No attribute fixed values</sch:title>
+<sch:pattern id="rule_9-58"><sch:title>No fixed values for optional attributes</sch:title>
   <sch:rule context="xs:attribute[exists(@ref) and @use eq 'required']">
     <sch:report test="false()" role="warning">Rule 9-58: This rule does not constrain attribute uses that are required</sch:report>
   </sch:rule>

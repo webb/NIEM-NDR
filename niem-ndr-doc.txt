@@ -2442,7 +2442,7 @@ Rule 9-57. No attribute default values
 
    This rule helps to ensure that schema processing does not alter processed data, as described in Section 8.4, Ensure XML parsing does not construct values, above.
 
-Rule 9-58. No attribute fixed values
+Rule 9-58. No fixed values for optional attributes
 
    The fixed attribute is described by [XML Schema Structures] Section 3.2.1, The Attribute Declaration Schema Component:
 
@@ -6370,7 +6370,7 @@ Appendix E. Index of rules
    Rule 9-55, No attribute type of xs:ENTITIES: Section 9.2.3.1, Prohibited attribute types
    Rule 9-56, No attribute type of xs:anySimpleType: Section 9.2.3.1, Prohibited attribute types
    Rule 9-57, No attribute default values: Section 9.2.3.2, No attribute value constraints
-   Rule 9-58, No attribute fixed values: Section 9.2.3.2, No attribute value constraints
+   Rule 9-58, No fixed values for optional attributes: Section 9.2.3.2, No attribute value constraints
    Rule 9-59, No use of element xs:notation: Section 9.2.4, Notation declaration
    Rule 9-60, Model group does not affect meaning: Section 9.3.1, Model group
    Rule 9-61, No xs:all: Section 9.3.1, Model group

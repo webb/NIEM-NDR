@@ -718,7 +718,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-58</xsl:attribute>
-            <xsl:attribute name="name">No attribute fixed values</xsl:attribute>
+            <xsl:attribute name="name">No fixed values for optional attributes</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M68"/>
@@ -3351,8 +3351,8 @@
       <xsl:apply-templates select="*" mode="M67"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-58No attribute fixed values-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No attribute fixed values</svrl:text>
+   <!--PATTERN rule_9-58No fixed values for optional attributes-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No fixed values for optional attributes</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:attribute[exists(@ref) and @use eq 'required']"
