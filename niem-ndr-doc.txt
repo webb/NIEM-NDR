@@ -1543,7 +1543,7 @@ Rule 7-5. Component name follows ISO 11179 Part 5 Annex A
 
       *  Rule 9-10, Simple type definition is top-level
 
-      *  Rule 9-25, Complex type definitions is top-level
+      *  Rule 9-25, Complex type definition is top-level
 
       *  Rule 9-36, Element declaration is top-level
 
@@ -1958,7 +1958,7 @@ Rule 9-24. No union member types of xs:ENTITIES
 
 9.1.3. Complex type definition
 
-Rule 9-25. Complex type definitions is top-level
+Rule 9-25. Complex type definition is top-level
 
    [Rule 9-25] (REF, EXT)
 
@@ -6337,7 +6337,7 @@ Appendix E. Index of rules
    Rule 9-22, No union member types of xs:anySimpleType: Section 9.1.2.2, Simple types prohibited as union member types
    Rule 9-23, No union member types of xs:ENTITY: Section 9.1.2.2, Simple types prohibited as union member types
    Rule 9-24, No union member types of xs:ENTITIES: Section 9.1.2.2, Simple types prohibited as union member types
-   Rule 9-25, Complex type definitions is top-level: Section 9.1.3, Complex type definition
+   Rule 9-25, Complex type definition is top-level: Section 9.1.3, Complex type definition
    Rule 9-26, Complex type has data definition: Section 9.1.3, Complex type definition
    Rule 9-27, No mixed content on complex type: Section 9.1.3.1, No mixed content
    Rule 9-28, No mixed content on complex content: Section 9.1.3.1, No mixed content

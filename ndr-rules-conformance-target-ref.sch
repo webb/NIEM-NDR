@@ -173,7 +173,7 @@
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_9-25"><sch:title>Complex type definitions is top-level</sch:title>
+<sch:pattern id="rule_9-25"><sch:title>Complex type definition is top-level</sch:title>
   <sch:rule context="xs:complexType">
     <sch:assert test="exists(parent::xs:schema)">Rule 9-25: A complex type definition MUST be top-level.</sch:assert>
   </sch:rule>

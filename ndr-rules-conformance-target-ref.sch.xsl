@@ -430,7 +430,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-25</xsl:attribute>
-            <xsl:attribute name="name">Complex type definitions is top-level</xsl:attribute>
+            <xsl:attribute name="name">Complex type definition is top-level</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M36"/>
@@ -2467,8 +2467,8 @@
       <xsl:apply-templates select="*" mode="M35"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-25Complex type definitions is top-level-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Complex type definitions is top-level</svrl:text>
+   <!--PATTERN rule_9-25Complex type definition is top-level-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Complex type definition is top-level</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType" priority="1000" mode="M36">
