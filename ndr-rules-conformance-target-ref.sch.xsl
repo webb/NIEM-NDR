@@ -331,7 +331,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-14</xsl:attribute>
-            <xsl:attribute name="name">No list item type of xs:ID</xsl:attribute>
+            <xsl:attribute name="name">Enumeration has data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M25"/>
@@ -340,7 +340,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-15</xsl:attribute>
-            <xsl:attribute name="name">No list item type of xs:IDREF</xsl:attribute>
+            <xsl:attribute name="name">No list item type of xs:ID</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M26"/>
@@ -349,7 +349,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-16</xsl:attribute>
-            <xsl:attribute name="name">No list item type of xs:anySimpleType</xsl:attribute>
+            <xsl:attribute name="name">No list item type of xs:IDREF</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M27"/>
@@ -358,7 +358,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-17</xsl:attribute>
-            <xsl:attribute name="name">No list item type of xs:ENTITY</xsl:attribute>
+            <xsl:attribute name="name">No list item type of xs:anySimpleType</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M28"/>
@@ -367,7 +367,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-18</xsl:attribute>
-            <xsl:attribute name="name">No union member types of xs:ID</xsl:attribute>
+            <xsl:attribute name="name">No list item type of xs:ENTITY</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M29"/>
@@ -376,7 +376,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-19</xsl:attribute>
-            <xsl:attribute name="name">No union member types of xs:IDREF</xsl:attribute>
+            <xsl:attribute name="name">No union member types of xs:ID</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M30"/>
@@ -385,7 +385,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-20</xsl:attribute>
-            <xsl:attribute name="name">No union member types of xs:IDREFS</xsl:attribute>
+            <xsl:attribute name="name">No union member types of xs:IDREF</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M31"/>
@@ -394,7 +394,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-21</xsl:attribute>
-            <xsl:attribute name="name">No union member types of xs:anySimpleType</xsl:attribute>
+            <xsl:attribute name="name">No union member types of xs:IDREFS</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M32"/>
@@ -403,7 +403,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-22</xsl:attribute>
-            <xsl:attribute name="name">No union member types of xs:ENTITY</xsl:attribute>
+            <xsl:attribute name="name">No union member types of xs:anySimpleType</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M33"/>
@@ -412,7 +412,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-23</xsl:attribute>
-            <xsl:attribute name="name">No union member types of xs:ENTITIES</xsl:attribute>
+            <xsl:attribute name="name">No union member types of xs:ENTITY</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M34"/>
@@ -421,7 +421,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_9-24</xsl:attribute>
-            <xsl:attribute name="name">Enumeration has data definition</xsl:attribute>
+            <xsl:attribute name="name">No union member types of xs:ENTITIES</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M35"/>
@@ -2160,11 +2160,38 @@
       <xsl:apply-templates select="*" mode="M24"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-14No list item type of xs:ID-->
+   <!--PATTERN rule_9-14Enumeration has data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Enumeration has data definition</svrl:text>
+
+	  <!--RULE -->
+   <xsl:template match="xs:enumeration" priority="1000" mode="M25">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:enumeration"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="some $definition in xs:annotation/xs:documentation[1] satisfies                         string-length(normalize-space(string($definition))) &gt; 0"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="some $definition in xs:annotation/xs:documentation[1] satisfies string-length(normalize-space(string($definition))) &gt; 0">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Rule 9-14: An enumeration facet MUST have a data definition.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M25"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M25"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M25">
+      <xsl:apply-templates select="*" mode="M25"/>
+   </xsl:template>
+
+   <!--PATTERN rule_9-15No list item type of xs:ID-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No list item type of xs:ID</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@itemType)]" priority="1000" mode="M25">
+   <xsl:template match="xs:*[exists(@itemType)]" priority="1000" mode="M26">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@itemType)]"/>
 
@@ -2177,22 +2204,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-14: A schema component MUST NOT have an attribute {}itemType with a value of xs:ID.</svrl:text>
+               <svrl:text>Rule 9-15: A schema component MUST NOT have an attribute {}itemType with a value of xs:ID.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M25"/>
+      <xsl:apply-templates select="*" mode="M26"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M25"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M25">
-      <xsl:apply-templates select="*" mode="M25"/>
+   <xsl:template match="text()" priority="-1" mode="M26"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M26">
+      <xsl:apply-templates select="*" mode="M26"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-15No list item type of xs:IDREF-->
+   <!--PATTERN rule_9-16No list item type of xs:IDREF-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No list item type of xs:IDREF</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@itemType)]" priority="1000" mode="M26">
+   <xsl:template match="xs:*[exists(@itemType)]" priority="1000" mode="M27">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@itemType)]"/>
 
@@ -2205,22 +2232,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-15: A schema component MUST NOT have an attribute {}itemType with a value of xs:IDREF.</svrl:text>
+               <svrl:text>Rule 9-16: A schema component MUST NOT have an attribute {}itemType with a value of xs:IDREF.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M26"/>
+      <xsl:apply-templates select="*" mode="M27"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M26"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M26">
-      <xsl:apply-templates select="*" mode="M26"/>
+   <xsl:template match="text()" priority="-1" mode="M27"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M27">
+      <xsl:apply-templates select="*" mode="M27"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-16No list item type of xs:anySimpleType-->
+   <!--PATTERN rule_9-17No list item type of xs:anySimpleType-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No list item type of xs:anySimpleType</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@itemType)]" priority="1000" mode="M27">
+   <xsl:template match="xs:*[exists(@itemType)]" priority="1000" mode="M28">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@itemType)]"/>
 
@@ -2233,22 +2260,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-16: A schema component MUST NOT have an attribute {}itemType with a value of xs:anySimpleType.</svrl:text>
+               <svrl:text>Rule 9-17: A schema component MUST NOT have an attribute {}itemType with a value of xs:anySimpleType.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M27"/>
+      <xsl:apply-templates select="*" mode="M28"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M27"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M27">
-      <xsl:apply-templates select="*" mode="M27"/>
+   <xsl:template match="text()" priority="-1" mode="M28"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M28">
+      <xsl:apply-templates select="*" mode="M28"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-17No list item type of xs:ENTITY-->
+   <!--PATTERN rule_9-18No list item type of xs:ENTITY-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No list item type of xs:ENTITY</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@itemType)]" priority="1000" mode="M28">
+   <xsl:template match="xs:*[exists(@itemType)]" priority="1000" mode="M29">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@itemType)]"/>
 
@@ -2261,22 +2288,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-17: A schema component MUST NOT have an attribute {}itemType with a value of xs:ENTITY.</svrl:text>
+               <svrl:text>Rule 9-18: A schema component MUST NOT have an attribute {}itemType with a value of xs:ENTITY.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M28"/>
+      <xsl:apply-templates select="*" mode="M29"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M28"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M28">
-      <xsl:apply-templates select="*" mode="M28"/>
+   <xsl:template match="text()" priority="-1" mode="M29"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M29">
+      <xsl:apply-templates select="*" mode="M29"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-18No union member types of xs:ID-->
+   <!--PATTERN rule_9-19No union member types of xs:ID-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:ID</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M29">
+   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M30">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@memberTypes)]"/>
 
@@ -2289,22 +2316,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-18: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ID.</svrl:text>
+               <svrl:text>Rule 9-19: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ID.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M29"/>
+      <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M29"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M29">
-      <xsl:apply-templates select="*" mode="M29"/>
+   <xsl:template match="text()" priority="-1" mode="M30"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M30">
+      <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-19No union member types of xs:IDREF-->
+   <!--PATTERN rule_9-20No union member types of xs:IDREF-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:IDREF</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M30">
+   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M31">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@memberTypes)]"/>
 
@@ -2317,22 +2344,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-19: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREF.</svrl:text>
+               <svrl:text>Rule 9-20: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREF.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M30"/>
+      <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M30"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M30">
-      <xsl:apply-templates select="*" mode="M30"/>
+   <xsl:template match="text()" priority="-1" mode="M31"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M31">
+      <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-20No union member types of xs:IDREFS-->
+   <!--PATTERN rule_9-21No union member types of xs:IDREFS-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:IDREFS</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M31">
+   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M32">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@memberTypes)]"/>
 
@@ -2345,22 +2372,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-20: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREFS.</svrl:text>
+               <svrl:text>Rule 9-21: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREFS.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M31"/>
+      <xsl:apply-templates select="*" mode="M32"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M31"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M31">
-      <xsl:apply-templates select="*" mode="M31"/>
+   <xsl:template match="text()" priority="-1" mode="M32"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M32">
+      <xsl:apply-templates select="*" mode="M32"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-21No union member types of xs:anySimpleType-->
+   <!--PATTERN rule_9-22No union member types of xs:anySimpleType-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:anySimpleType</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M32">
+   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M33">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@memberTypes)]"/>
 
@@ -2373,22 +2400,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-21: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:anySimpleType.</svrl:text>
+               <svrl:text>Rule 9-22: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:anySimpleType.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M32"/>
+      <xsl:apply-templates select="*" mode="M33"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M32"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M32">
-      <xsl:apply-templates select="*" mode="M32"/>
+   <xsl:template match="text()" priority="-1" mode="M33"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M33">
+      <xsl:apply-templates select="*" mode="M33"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-22No union member types of xs:ENTITY-->
+   <!--PATTERN rule_9-23No union member types of xs:ENTITY-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:ENTITY</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M33">
+   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M34">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@memberTypes)]"/>
 
@@ -2401,22 +2428,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-22: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITY.</svrl:text>
+               <svrl:text>Rule 9-23: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITY.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M33"/>
+      <xsl:apply-templates select="*" mode="M34"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M33"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M33">
-      <xsl:apply-templates select="*" mode="M33"/>
+   <xsl:template match="text()" priority="-1" mode="M34"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M34">
+      <xsl:apply-templates select="*" mode="M34"/>
    </xsl:template>
 
-   <!--PATTERN rule_9-23No union member types of xs:ENTITIES-->
+   <!--PATTERN rule_9-24No union member types of xs:ENTITIES-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">No union member types of xs:ENTITIES</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M34">
+   <xsl:template match="xs:*[exists(@memberTypes)]" priority="1000" mode="M35">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="xs:*[exists(@memberTypes)]"/>
 
@@ -2429,34 +2456,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 9-23: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITIES.</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M34"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M34"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M34">
-      <xsl:apply-templates select="*" mode="M34"/>
-   </xsl:template>
-
-   <!--PATTERN rule_9-24Enumeration has data definition-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Enumeration has data definition</svrl:text>
-
-	  <!--RULE -->
-   <xsl:template match="xs:enumeration" priority="1000" mode="M35">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="xs:enumeration"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="some $definition in xs:annotation/xs:documentation[1] satisfies                         string-length(normalize-space(string($definition))) &gt; 0"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="some $definition in xs:annotation/xs:documentation[1] satisfies string-length(normalize-space(string($definition))) &gt; 0">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Rule 9-24: An enumeration facet MUST have a data definition.</svrl:text>
+               <svrl:text>Rule 9-24: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITIES.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

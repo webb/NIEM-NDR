@@ -1808,15 +1808,29 @@ Rule 9-13. No use of "fixed" on simple type facets
         </sch:rule>
       </sch:pattern>
 
+Rule 9-14. Enumeration has data definition
+
+   [Rule 9-14] (REF, EXT)
+
+      <sch:pattern>
+        <sch:rule context="xs:enumeration">
+          <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
+                              string-length(normalize-space(string($definition))) &gt; 0"
+            >An enumeration facet MUST have a data definition.</sch:assert>
+        </sch:rule>
+      </sch:pattern>
+
+   This document defines the term [data definition].
+
 9.1.2.1. Simple types prohibited as list item types
 
    There is no explicit prohibition on the use of xs:NOTATION as list item type, because it is prohibited by [XML Schema Datatypes].
 
    There is no prohibition on xs:anyType as a list item type, because xs:anyType is not a simple type.
 
-Rule 9-14. No list item type of xs:ID
+Rule 9-15. No list item type of xs:ID
 
-   [Rule 9-14] (REF, EXT)
+   [Rule 9-15] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@itemType)]">
@@ -1825,9 +1839,9 @@ Rule 9-14. No list item type of xs:ID
         </sch:rule>
       </sch:pattern>
 
-Rule 9-15. No list item type of xs:IDREF
+Rule 9-16. No list item type of xs:IDREF
 
-   [Rule 9-15] (REF, EXT)
+   [Rule 9-16] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@itemType)]">
@@ -1836,9 +1850,9 @@ Rule 9-15. No list item type of xs:IDREF
         </sch:rule>
       </sch:pattern>
 
-Rule 9-16. No list item type of xs:anySimpleType
+Rule 9-17. No list item type of xs:anySimpleType
 
-   [Rule 9-16] (REF, EXT)
+   [Rule 9-17] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@itemType)]">
@@ -1847,9 +1861,9 @@ Rule 9-16. No list item type of xs:anySimpleType
         </sch:rule>
       </sch:pattern>
 
-Rule 9-17. No list item type of xs:ENTITY
+Rule 9-18. No list item type of xs:ENTITY
 
-   [Rule 9-17] (REF, EXT)
+   [Rule 9-18] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@itemType)]">
@@ -1864,9 +1878,9 @@ Rule 9-17. No list item type of xs:ENTITY
 
    There is no prohibition on xs:anyType as a union member type, because xs:anyType is not a simple type.
 
-Rule 9-18. No union member types of xs:ID
+Rule 9-19. No union member types of xs:ID
 
-   [Rule 9-18] (REF, EXT)
+   [Rule 9-19] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@memberTypes)]">
@@ -1877,9 +1891,9 @@ Rule 9-18. No union member types of xs:ID
         </sch:rule>
       </sch:pattern>
 
-Rule 9-19. No union member types of xs:IDREF
+Rule 9-20. No union member types of xs:IDREF
 
-   [Rule 9-19] (REF, EXT)
+   [Rule 9-20] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@memberTypes)]">
@@ -1890,9 +1904,9 @@ Rule 9-19. No union member types of xs:IDREF
         </sch:rule>
       </sch:pattern>
 
-Rule 9-20. No union member types of xs:IDREFS
+Rule 9-21. No union member types of xs:IDREFS
 
-   [Rule 9-20] (REF, EXT)
+   [Rule 9-21] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@memberTypes)]">
@@ -1903,9 +1917,9 @@ Rule 9-20. No union member types of xs:IDREFS
         </sch:rule>
       </sch:pattern>
 
-Rule 9-21. No union member types of xs:anySimpleType
+Rule 9-22. No union member types of xs:anySimpleType
 
-   [Rule 9-21] (REF, EXT)
+   [Rule 9-22] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@memberTypes)]">
@@ -1916,9 +1930,9 @@ Rule 9-21. No union member types of xs:anySimpleType
         </sch:rule>
       </sch:pattern>
 
-Rule 9-22. No union member types of xs:ENTITY
+Rule 9-23. No union member types of xs:ENTITY
 
-   [Rule 9-22] (REF, EXT)
+   [Rule 9-23] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@memberTypes)]">
@@ -1929,9 +1943,9 @@ Rule 9-22. No union member types of xs:ENTITY
         </sch:rule>
       </sch:pattern>
 
-Rule 9-23. No union member types of xs:ENTITIES
+Rule 9-24. No union member types of xs:ENTITIES
 
-   [Rule 9-23] (REF, EXT)
+   [Rule 9-24] (REF, EXT)
 
       <sch:pattern>
         <sch:rule context="xs:*[exists(@memberTypes)]">
@@ -1941,20 +1955,6 @@ Rule 9-23. No union member types of xs:ENTITIES
             >A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITIES.</sch:assert>
         </sch:rule>
       </sch:pattern>
-
-Rule 9-24. Enumeration has data definition
-
-   [Rule 9-24] (REF, EXT)
-
-      <sch:pattern>
-        <sch:rule context="xs:enumeration">
-          <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies
-                              string-length(normalize-space(string($definition))) &gt; 0"
-            >An enumeration facet MUST have a data definition.</sch:assert>
-        </sch:rule>
-      </sch:pattern>
-
-   This document defines the term [data definition].
 
 9.1.3. Complex type definition
 
@@ -6326,17 +6326,17 @@ Appendix E. Index of rules
    Rule 9-11, No simple type disallowed derivation: Section 9.1.2, Simple type definition
    Rule 9-12, Simple type has data definition: Section 9.1.2, Simple type definition
    Rule 9-13, No use of "fixed" on simple type facets: Section 9.1.2, Simple type definition
-   Rule 9-14, No list item type of xs:ID: Section 9.1.2.1, Simple types prohibited as list item types
-   Rule 9-15, No list item type of xs:IDREF: Section 9.1.2.1, Simple types prohibited as list item types
-   Rule 9-16, No list item type of xs:anySimpleType: Section 9.1.2.1, Simple types prohibited as list item types
-   Rule 9-17, No list item type of xs:ENTITY: Section 9.1.2.1, Simple types prohibited as list item types
-   Rule 9-18, No union member types of xs:ID: Section 9.1.2.2, Simple types prohibited as union member types
-   Rule 9-19, No union member types of xs:IDREF: Section 9.1.2.2, Simple types prohibited as union member types
-   Rule 9-20, No union member types of xs:IDREFS: Section 9.1.2.2, Simple types prohibited as union member types
-   Rule 9-21, No union member types of xs:anySimpleType: Section 9.1.2.2, Simple types prohibited as union member types
-   Rule 9-22, No union member types of xs:ENTITY: Section 9.1.2.2, Simple types prohibited as union member types
-   Rule 9-23, No union member types of xs:ENTITIES: Section 9.1.2.2, Simple types prohibited as union member types
-   Rule 9-24, Enumeration has data definition: Section 9.1.2, Simple type definition
+   Rule 9-14, Enumeration has data definition: Section 9.1.2, Simple type definition
+   Rule 9-15, No list item type of xs:ID: Section 9.1.2.1, Simple types prohibited as list item types
+   Rule 9-16, No list item type of xs:IDREF: Section 9.1.2.1, Simple types prohibited as list item types
+   Rule 9-17, No list item type of xs:anySimpleType: Section 9.1.2.1, Simple types prohibited as list item types
+   Rule 9-18, No list item type of xs:ENTITY: Section 9.1.2.1, Simple types prohibited as list item types
+   Rule 9-19, No union member types of xs:ID: Section 9.1.2.2, Simple types prohibited as union member types
+   Rule 9-20, No union member types of xs:IDREF: Section 9.1.2.2, Simple types prohibited as union member types
+   Rule 9-21, No union member types of xs:IDREFS: Section 9.1.2.2, Simple types prohibited as union member types
+   Rule 9-22, No union member types of xs:anySimpleType: Section 9.1.2.2, Simple types prohibited as union member types
+   Rule 9-23, No union member types of xs:ENTITY: Section 9.1.2.2, Simple types prohibited as union member types
+   Rule 9-24, No union member types of xs:ENTITIES: Section 9.1.2.2, Simple types prohibited as union member types
    Rule 9-25, Complex type definitions is top-level: Section 9.1.3, Complex type definition
    Rule 9-26, Complex type has data definition: Section 9.1.3, Complex type definition
    Rule 9-27, No mixed content on complex type: Section 9.1.3.1, No mixed content

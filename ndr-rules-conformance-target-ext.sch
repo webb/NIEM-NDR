@@ -95,72 +95,72 @@
   </sch:rule>
 </sch:pattern>
     
-<sch:pattern id="rule_9-14"><sch:title>No list item type of xs:ID</sch:title>
-  <sch:rule context="xs:*[exists(@itemType)]">
-    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:ID')">Rule 9-14: A schema component MUST NOT have an attribute {}itemType with a value of xs:ID.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-15"><sch:title>No list item type of xs:IDREF</sch:title>
-  <sch:rule context="xs:*[exists(@itemType)]">
-    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:IDREF')">Rule 9-15: A schema component MUST NOT have an attribute {}itemType with a value of xs:IDREF.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-16"><sch:title>No list item type of xs:anySimpleType</sch:title>
-  <sch:rule context="xs:*[exists(@itemType)]">
-    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:anySimpleType')">Rule 9-16: A schema component MUST NOT have an attribute {}itemType with a value of xs:anySimpleType.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-17"><sch:title>No list item type of xs:ENTITY</sch:title>
-  <sch:rule context="xs:*[exists(@itemType)]">
-    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:ENTITY')">Rule 9-17: A schema component MUST NOT have an attribute {}itemType with a value of xs:ENTITY.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-18"><sch:title>No union member types of xs:ID</sch:title>
-  <sch:rule context="xs:*[exists(@memberTypes)]">
-    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:ID')">Rule 9-18: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ID.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-19"><sch:title>No union member types of xs:IDREF</sch:title>
-  <sch:rule context="xs:*[exists(@memberTypes)]">
-    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:IDREF')">Rule 9-19: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREF.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-20"><sch:title>No union member types of xs:IDREFS</sch:title>
-  <sch:rule context="xs:*[exists(@memberTypes)]">
-    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:IDREFS')">Rule 9-20: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREFS.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-21"><sch:title>No union member types of xs:anySimpleType</sch:title>
-  <sch:rule context="xs:*[exists(@memberTypes)]">
-    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:anySimpleType')">Rule 9-21: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:anySimpleType.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-22"><sch:title>No union member types of xs:ENTITY</sch:title>
-  <sch:rule context="xs:*[exists(@memberTypes)]">
-    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:ENTITY')">Rule 9-22: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITY.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-23"><sch:title>No union member types of xs:ENTITIES</sch:title>
-  <sch:rule context="xs:*[exists(@memberTypes)]">
-    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:ENTITIES')">Rule 9-23: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITIES.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-              
-<sch:pattern id="rule_9-24"><sch:title>Enumeration has data definition</sch:title>
+<sch:pattern id="rule_9-14"><sch:title>Enumeration has data definition</sch:title>
   <sch:rule context="xs:enumeration">
-    <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies                         string-length(normalize-space(string($definition))) &gt; 0">Rule 9-24: An enumeration facet MUST have a data definition.</sch:assert>
+    <sch:assert test="some $definition in xs:annotation/xs:documentation[1] satisfies                         string-length(normalize-space(string($definition))) &gt; 0">Rule 9-14: An enumeration facet MUST have a data definition.</sch:assert>
   </sch:rule>
 </sch:pattern>
     
+<sch:pattern id="rule_9-15"><sch:title>No list item type of xs:ID</sch:title>
+  <sch:rule context="xs:*[exists(@itemType)]">
+    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:ID')">Rule 9-15: A schema component MUST NOT have an attribute {}itemType with a value of xs:ID.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
+<sch:pattern id="rule_9-16"><sch:title>No list item type of xs:IDREF</sch:title>
+  <sch:rule context="xs:*[exists(@itemType)]">
+    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:IDREF')">Rule 9-16: A schema component MUST NOT have an attribute {}itemType with a value of xs:IDREF.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
+<sch:pattern id="rule_9-17"><sch:title>No list item type of xs:anySimpleType</sch:title>
+  <sch:rule context="xs:*[exists(@itemType)]">
+    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:anySimpleType')">Rule 9-17: A schema component MUST NOT have an attribute {}itemType with a value of xs:anySimpleType.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
+<sch:pattern id="rule_9-18"><sch:title>No list item type of xs:ENTITY</sch:title>
+  <sch:rule context="xs:*[exists(@itemType)]">
+    <sch:assert test="resolve-QName(@itemType, .) != xs:QName('xs:ENTITY')">Rule 9-18: A schema component MUST NOT have an attribute {}itemType with a value of xs:ENTITY.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
+<sch:pattern id="rule_9-19"><sch:title>No union member types of xs:ID</sch:title>
+  <sch:rule context="xs:*[exists(@memberTypes)]">
+    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:ID')">Rule 9-19: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ID.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
+<sch:pattern id="rule_9-20"><sch:title>No union member types of xs:IDREF</sch:title>
+  <sch:rule context="xs:*[exists(@memberTypes)]">
+    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:IDREF')">Rule 9-20: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREF.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
+<sch:pattern id="rule_9-21"><sch:title>No union member types of xs:IDREFS</sch:title>
+  <sch:rule context="xs:*[exists(@memberTypes)]">
+    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:IDREFS')">Rule 9-21: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:IDREFS.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
+<sch:pattern id="rule_9-22"><sch:title>No union member types of xs:anySimpleType</sch:title>
+  <sch:rule context="xs:*[exists(@memberTypes)]">
+    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:anySimpleType')">Rule 9-22: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:anySimpleType.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
+<sch:pattern id="rule_9-23"><sch:title>No union member types of xs:ENTITY</sch:title>
+  <sch:rule context="xs:*[exists(@memberTypes)]">
+    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:ENTITY')">Rule 9-23: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITY.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
+<sch:pattern id="rule_9-24"><sch:title>No union member types of xs:ENTITIES</sch:title>
+  <sch:rule context="xs:*[exists(@memberTypes)]">
+    <sch:assert test="every $type-qname                       in tokenize(normalize-space(@memberTypes), ' ')                       satisfies resolve-QName($type-qname, .) != xs:QName('xs:ENTITIES')">Rule 9-24: A schema component MUST NOT have an attribute {}memberTypes that includes a value of xs:ENTITIES.</sch:assert>
+  </sch:rule>
+</sch:pattern>
+              
 <sch:pattern id="rule_9-25"><sch:title>Complex type definitions is top-level</sch:title>
   <sch:rule context="xs:complexType">
     <sch:assert test="exists(parent::xs:schema)">Rule 9-25: A complex type definition MUST be top-level.</sch:assert>

@@ -27,17 +27,17 @@
    <map:rule descriptiveID="no-st-final" ruleID="rule_9-11"/>
    <map:rule descriptiveID="st-has-dd" ruleID="rule_9-12"/>
    <map:rule descriptiveID="no-facet-fixed" ruleID="rule_9-13"/>
-   <map:rule descriptiveID="no-itemType-xs-id" ruleID="rule_9-14"/>
-   <map:rule descriptiveID="no-itemType-xs-idref" ruleID="rule_9-15"/>
-   <map:rule descriptiveID="no-itemType-xs-anySimpleType" ruleID="rule_9-16"/>
-   <map:rule descriptiveID="no-itemType-xs-entity" ruleID="rule_9-17"/>
-   <map:rule descriptiveID="no-memberTypes-xs-id" ruleID="rule_9-18"/>
-   <map:rule descriptiveID="no-memberTypes-xs-idref" ruleID="rule_9-19"/>
-   <map:rule descriptiveID="no-memberTypes-xs-idrefs" ruleID="rule_9-20"/>
-   <map:rule descriptiveID="no-memberTypes-xs-anySimpleType" ruleID="rule_9-21"/>
-   <map:rule descriptiveID="no-memberTypes-xs-entity" ruleID="rule_9-22"/>
-   <map:rule descriptiveID="no-memberTypes-xs-entities" ruleID="rule_9-23"/>
-   <map:rule descriptiveID="enum-has-dd" ruleID="rule_9-24"/>
+   <map:rule descriptiveID="enum-has-dd" ruleID="rule_9-14"/>
+   <map:rule descriptiveID="no-itemType-xs-id" ruleID="rule_9-15"/>
+   <map:rule descriptiveID="no-itemType-xs-idref" ruleID="rule_9-16"/>
+   <map:rule descriptiveID="no-itemType-xs-anySimpleType" ruleID="rule_9-17"/>
+   <map:rule descriptiveID="no-itemType-xs-entity" ruleID="rule_9-18"/>
+   <map:rule descriptiveID="no-memberTypes-xs-id" ruleID="rule_9-19"/>
+   <map:rule descriptiveID="no-memberTypes-xs-idref" ruleID="rule_9-20"/>
+   <map:rule descriptiveID="no-memberTypes-xs-idrefs" ruleID="rule_9-21"/>
+   <map:rule descriptiveID="no-memberTypes-xs-anySimpleType" ruleID="rule_9-22"/>
+   <map:rule descriptiveID="no-memberTypes-xs-entity" ruleID="rule_9-23"/>
+   <map:rule descriptiveID="no-memberTypes-xs-entities" ruleID="rule_9-24"/>
    <map:rule descriptiveID="ct-top-level" ruleID="rule_9-25"/>
    <map:rule descriptiveID="ct-has-dd" ruleID="rule_9-26"/>
    <map:rule descriptiveID="ct-not-mixed" ruleID="rule_9-27"/>
