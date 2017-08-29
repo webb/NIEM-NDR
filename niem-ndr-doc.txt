@@ -2105,7 +2105,7 @@ Rule 9-33. Simple content uses extension
         </sch:rule>
       </sch:pattern>
 
-   This rule ensures that the definition of a complex type with simple content will use XML Schema extension. This allows for the above cases while disallowing more complicated syntactic options available in XML Schema. The above rule allows for use of xs:restriction within xs:simpleContent in extension schemas.
+   This rule ensures that the definition of a complex type with simple content will use XML Schema extension. Under this rule, the structure of these types will be more uniform, as alternate formats are prohibited. The above rule allows for use of xs:restriction within xs:simpleContent in extension schemas.
 
 Rule 9-34. No complex type disallowed substitutions
 

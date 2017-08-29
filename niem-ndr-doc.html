@@ -232,7 +232,7 @@
     &lt;sch:assert test="exists(xs:extension)"
       &gt;A complex type definition with simple content schema component MUST have a derivation method of extension.&lt;/sch:assert&gt;
   &lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</pre></div><p>This rule ensures that the definition of a complex type with simple content will use XML Schema extension. This allows for the above cases while disallowing more complicated syntactic options available in XML Schema. The above rule allows for use of <code>xs:restriction</code> within <code>xs:simpleContent</code> in extension schemas.</p></div></div><div class="rule-section"><div class="heading"><a name="no-ct-block"></a><a name="rule_9-34"></a>Rule 9-34. No complex type disallowed substitutions</div><div class="box"><div class="normativeHead">[Rule 9-34] (<a href="#conformance_target_REF">REF</a>) (Constraint)</div><pre>&lt;sch:pattern&gt;
+&lt;/sch:pattern&gt;</pre></div><p>This rule ensures that the definition of a complex type with simple content will use XML Schema extension. Under this rule, the structure of these types will be more uniform, as alternate formats are prohibited. The above rule allows for use of <code>xs:restriction</code> within <code>xs:simpleContent</code> in extension schemas.</p></div></div><div class="rule-section"><div class="heading"><a name="no-ct-block"></a><a name="rule_9-34"></a>Rule 9-34. No complex type disallowed substitutions</div><div class="box"><div class="normativeHead">[Rule 9-34] (<a href="#conformance_target_REF">REF</a>) (Constraint)</div><pre>&lt;sch:pattern&gt;
   &lt;sch:rule context="xs:complexType"&gt;
     &lt;sch:assert test="empty(@block)"
       &gt;An element xs:complexType MUST NOT have an attribute {}block.&lt;/sch:assert&gt;
