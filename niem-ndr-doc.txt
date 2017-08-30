@@ -3317,7 +3317,7 @@ Rule 10-6. Instance of RoleOf element indicates a role object
 
    Rule 11-48, Reference schema imports reference schema and Rule 11-49, Extension schema document imports reference or extension schema require that xs:import elements be consistent with an importing [schema document].
 
-   A NIEM-conformant schema has well-known documentation points. Therefore, a schema that imports a NIEM-conformant namespace need not provide additional documentation. However, when an external schema document is imported, appropriate documentation must be provided at the point of import because documentation associated with external schema documents is undefined and variable. In this particular case, documentation of external schema documents is required at their point of use in NIEM.
+   A NIEM-conformant schema has well-known documentation points. Therefore, a schema that imports a NIEM-conformant namespace need not provide additional documentation for the imported namespace. However, when an external schema document is imported, appropriate documentation must be provided on the xs:import element. This ensures that documentation for all external schema documents will be both available and accessible in a consistent manner.
 
 10.2.3.1. Import of external namespace
 
