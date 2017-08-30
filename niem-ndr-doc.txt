@@ -3167,6 +3167,10 @@ Rule 10-2. Object type with complex content is derived from object type
         </xs:complexContent>
       </xs:complexType>
 
+   Role types were introduced into NIEM after XML Schema extension proved to be insufficient in certain situations. An object may have multiple functions in the same instance document, each with associated data. For example, a person might be both a j:CrashDriver and a j:ArrestSubject. Without roles, information about the person would be duplicated in extensions, or would be left ambiguously blank in some places.
+
+   Role types and RoleOf elements enable more precise semantics. With roles, a single base object (e.g., a person) can have multiple roles or functions within a message (e.g., a victim, a witness, and a subject). A role type can reference a base object, rather than duplicate it. Role types allow function information to be defined once for multiple base objects, such as a single j:VictimType, which represents victim information for persons, organizations, and items (e.g., via nc:RoleOfPerson, nc:RoleOfOrganization, and nc:RoleOfItem).
+
    The term [role type] has a normative definition:
 
    [Definition: role type]
