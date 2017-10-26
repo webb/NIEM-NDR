@@ -3700,11 +3700,13 @@ Rule 10-22. Association element type is an association type
 
    [Definition: augmentation]
 
-      An augmentation is an [element] that
+      An augmentation is a [conformant element information item] that:
 
-         1. is a child of an [element] that is an instance of an [augmentable type], and
+         1. is an instance of an [augmentation element declaration],
 
-         2. is a member of the substitution group of the augmentation point element declaration for the [augmentable type].
+         2. is a child of a [conformant element information item] that is an instance of an [augmentable type], and
+
+         3. appears in the instance as a substitution for an augmentation point element.
 
    As an example, here is a definition for nc:PersonType, which includes its augmentation point element:
 
@@ -3973,7 +3975,7 @@ Rule 10-31. Augmentation point reference must be last particle
 
          3. is designed to be used as an [augmentation] of its parent object or association
 
-   This term may be mistaken for another. The term [augmentation element declaration] describes element declarations defined by schemas, while the term [augmentation] applies to any element information item within an XML document that appears as the result of being substituted for an augmentation point.
+   This term may be mistaken for the term [augmentation]. An [augmentation element declaration] is an element declaration defined by a schemas, while an [augmentation] is an element information item within an XML document that appears as the result of being substituted for an augmentation point.
 
 Rule 10-32. Element within instance of augmentation type modifies base
 
