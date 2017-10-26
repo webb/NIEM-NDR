@@ -1015,7 +1015,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_10-2</xsl:attribute>
-            <xsl:attribute name="name">Object type with complex content is derived from object type</xsl:attribute>
+            <xsl:attribute name="name">Object type with complex content is derived from structures:ObjectType</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M101"/>
@@ -1132,7 +1132,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_10-21</xsl:attribute>
-            <xsl:attribute name="name">Association type is derived from association type</xsl:attribute>
+            <xsl:attribute name="name">Association type derived from structures:AssociationType</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M114"/>
@@ -1240,7 +1240,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_10-35</xsl:attribute>
-            <xsl:attribute name="name">Type derived from augmentation type is an augmentation type</xsl:attribute>
+            <xsl:attribute name="name">Type derived from structures:AugmentationType is an augmentation type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M126"/>
@@ -4244,8 +4244,8 @@
       <xsl:apply-templates select="*" mode="M100"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-2Object type with complex content is derived from object type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Object type with complex content is derived from object type</svrl:text>
+   <!--PATTERN rule_10-2Object type with complex content is derived from structures:ObjectType-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Object type with complex content is derived from structures:ObjectType</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType[exists(xs:complexContent)                                     and not(ends-with(@name, 'AssociationType')                                         or ends-with(@name, 'MetadataType')                                         or ends-with(@name, 'AugmentationType'))]"
@@ -4630,8 +4630,8 @@
       <xsl:apply-templates select="*" mode="M113"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-21Association type is derived from association type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Association type is derived from association type</svrl:text>
+   <!--PATTERN rule_10-21Association type derived from structures:AssociationType-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Association type derived from structures:AssociationType</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType" priority="1000" mode="M114">
@@ -4993,8 +4993,8 @@
       <xsl:apply-templates select="*" mode="M125"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-35Type derived from augmentation type is an augmentation type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Type derived from augmentation type is an augmentation type</svrl:text>
+   <!--PATTERN rule_10-35Type derived from structures:AugmentationType is an augmentation type-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Type derived from structures:AugmentationType is an augmentation type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:*[(self::xs:restriction or self::xs:extension)                           and ends-with(@base, 'AugmentationType')]"

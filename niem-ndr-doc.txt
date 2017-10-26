@@ -3096,7 +3096,7 @@ Rule 10-1. Complex type has a category
 
 10.2.1.1. Object types with complex content
 
-Rule 10-2. Object type with complex content is derived from object type
+Rule 10-2. Object type with complex content is derived from structures:ObjectType
 
    [Rule 10-2] (REF, EXT)
 
@@ -3554,7 +3554,7 @@ Rule 10-20. Proxy type has designated structure
 
 10.3. Associations
 
-   Within NIEM, an association is a specific relationship between objects. Associations are used when a simple NIEM property is insufficient to model the relationship clearly, or when you want to model properties of the relationship itself.
+   Within NIEM data, an [association] is a specific relationship between objects. Associations are used when a simple NIEM property is insufficient to model the relationship clearly, or when you want to model properties of the relationship itself.
 
    Here is an example of an association in an XML instance:
 
@@ -3573,7 +3573,7 @@ Rule 10-20. Proxy type has designated structure
         </nc:TelephoneNumber>
       </scr:PersonPhoneAssociation>
 
-   This example shows an association between a person and a phone number. This relationship is defined by the element scr:PersonPhoneAssociation, the structure of which is defined by the type scr:PersonPhoneAssociationType. In practice, an [association type] usually defines what kinds of things the association relates, while the association element may refine the meaning of the association.
+   This example shows an association between a person and a phone number. This relationship is defined by the [association element declaration] scr:PersonPhoneAssociation, the structure of which is defined by the [association type] scr:PersonPhoneAssociationType. In practice, an [association type] usually defines what kinds of things the association relates, while the association element may refine the meaning of the association.
 
    An example of an association type defined by an XML Schema document follows, in Figure 10-8, A definition of an association type, below.
 
@@ -3602,17 +3602,21 @@ Rule 10-20. Proxy type has designated structure
 
    This schema fragment shows the definition of an association type that defines a relationship between a person and a telephone number. This is followed by the definition of an association element declaration that uses the association type.
 
-   [Definition: association type]
-
-      In a NIEM-conformant schema, an association type is a type that establishes a relationship between objects, along with the properties of that relationship. An association type provides a structure that does not establish existence of an object but instead specifies relationships between objects.
-
    [Definition: association]
 
-      In a NIEM-conformant schema, an association is an [element] whose type is an [association type].
+      An association is a [conformant element information item] that establishes a relationship between two or more objects, optionally including properties of that relationship. An association is an instance of an [association element declaration], and has a type that is an [association type]. 
+
+   [Definition: association element declaration]
+
+      An association element declaration is an [element declaration] declared in a [reference schema document] or [extension schema document] that describes a relationship between two or more objects, optionally including properties of that relationship.
+
+   [Definition: association type]
+
+      In a NIEM-conformant schema, an association type is a [complex type definition] defined in a [reference schema document] or [extension schema document] that establishes a relationship between two or more objects, optionally including the properties of that relationship.
 
 10.3.1. Association types
 
-Rule 10-21. Association type is derived from association type
+Rule 10-21. Association type derived from structures:AssociationType
 
    [Rule 10-21] (REF, EXT)
 
@@ -3628,7 +3632,7 @@ Rule 10-21. Association type is derived from association type
         </sch:rule>
       </sch:pattern>
 
-   Associations are easily identifiable as such and have a commonly defined base type. Using the qualifier Association immediately identifies a type as representing an association.
+   Associations types are easily identifiable as such and have a common base type, structures:AssociationType. Using the qualifier Association immediately identifies a type as an [association type].
 
 10.3.2. Association element declarations
 
@@ -4014,7 +4018,7 @@ Rule 10-34. Schema component with name ending in "AugmentationType" is an augmen
 
    The [base type definition] of an augmentation type is required to be from a conformant namespace by Rule 11-2, Base type definition defined by conformant schema.
 
-Rule 10-35. Type derived from augmentation type is an augmentation type
+Rule 10-35. Type derived from structures:AugmentationType is an augmentation type
 
    [Rule 10-35] (REF, EXT)
 
@@ -4025,6 +4029,8 @@ Rule 10-35. Type derived from augmentation type is an augmentation type
                       >A type definition derived from an augmentation type MUST be an augmentation type definition</sch:assert>
         </sch:rule>
       </sch:pattern>
+
+   This rule ensures that any type that is derived from an augmentation type, including structures:AugmentationType, is itself an augmentation type.
 
 10.4.5. Augmentation element declarations
 
@@ -6413,7 +6419,7 @@ Appendix E. Index of rules
    Rule 9-96, Namespace referenced by attribute ref is imported: Section 9.8.1, Namespaces for referenced components are imported
    Rule 9-97, Namespace referenced by attribute substitutionGroup is imported: Section 9.8.1, Namespaces for referenced components are imported
    Rule 10-1, Complex type has a category: Section 10.1, Categories of NIEM type definitions
-   Rule 10-2, Object type with complex content is derived from object type: Section 10.2.1.1, Object types with complex content
+   Rule 10-2, Object type with complex content is derived from structures:ObjectType: Section 10.2.1.1, Object types with complex content
    Rule 10-3, RoleOf element type is an object type: Section 10.2.2, Role types and roles
    Rule 10-4, Only object type has RoleOf element: Section 10.2.2, Role types and roles
    Rule 10-5, RoleOf elements indicate the base types of a role type: Section 10.2.2, Role types and roles
@@ -6432,7 +6438,7 @@ Appendix E. Index of rules
    Rule 10-18, Code type corresponds to a code list: Section 10.2.4, Code types
    Rule 10-19, Element of code type has code representation term: Section 10.2.4, Code types
    Rule 10-20, Proxy type has designated structure: Section 10.2.5, Proxy types
-   Rule 10-21, Association type is derived from association type: Section 10.3.1, Association types
+   Rule 10-21, Association type derived from structures:AssociationType: Section 10.3.1, Association types
    Rule 10-22, Association element type is an association type: Section 10.3.2, Association element declarations
    Rule 10-23, Augmentable type has augmentation point element: Section 10.4.1, Augmentable types
    Rule 10-24, Augmentable type has at most one augmentation point element: Section 10.4.1, Augmentable types
@@ -6446,7 +6452,7 @@ Appendix E. Index of rules
    Rule 10-32, Element within instance of augmentation type modifies base: Section 10.4.4, Augmentation types
    Rule 10-33, Only an augmentation type name ends in "AugmentationType": Section 10.4.4, Augmentation types
    Rule 10-34, Schema component with name ending in "AugmentationType" is an augmentation type: Section 10.4.4, Augmentation types
-   Rule 10-35, Type derived from augmentation type is an augmentation type: Section 10.4.4, Augmentation types
+   Rule 10-35, Type derived from structures:AugmentationType is an augmentation type: Section 10.4.4, Augmentation types
    Rule 10-36, Augmentation element type is an augmentation type: Section 10.4.5, Augmentation element declarations
    Rule 10-37, Augmentation elements are not used directly: Section 10.4.5, Augmentation element declarations
    Rule 10-38, Metadata type has data about data: Section 10.5.1, Metadata types

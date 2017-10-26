@@ -501,7 +501,7 @@
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_10-2"><sch:title>Object type with complex content is derived from object type</sch:title>
+<sch:pattern id="rule_10-2"><sch:title>Object type with complex content is derived from structures:ObjectType</sch:title>
   <sch:rule context="xs:complexType[exists(xs:complexContent)                                     and not(ends-with(@name, 'AssociationType')                                         or ends-with(@name, 'MetadataType')                                         or ends-with(@name, 'AugmentationType'))]">
     <sch:assert test="         every $derivation-method in (xs:complexContent/xs:extension, xs:complexContent/xs:restriction),               $base in $derivation-method/@base,               $base-qname in resolve-QName($base, $derivation-method),               $base-local-name in local-name-from-QName($base-qname) satisfies (           $base-qname = xs:QName('structures:ObjectType')           or not(ends-with($base-local-name, 'AssociationType')                  or ends-with($base-local-name, 'MetadataType')                  or ends-with($base-local-name, 'AugmentationType')))">Rule 10-2: An object type with complex content MUST be derived from structures:ObjectType or from another object type.</sch:assert>
   </sch:rule>
@@ -573,7 +573,7 @@
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_10-21"><sch:title>Association type is derived from association type</sch:title>
+<sch:pattern id="rule_10-21"><sch:title>Association type derived from structures:AssociationType</sch:title>
   <sch:rule context="xs:complexType">
     <sch:let name="is-association-type" value="exists(@name[ends-with(., 'AssociationType')])"/>
     <sch:let name="has-association-base-type" value="       exists(xs:complexContent[         exists(xs:*[local-name() = ('extension', 'restriction')                     and exists(@base[ends-with(., 'AssociationType')])])])"/>
@@ -632,7 +632,7 @@
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_10-35"><sch:title>Type derived from augmentation type is an augmentation type</sch:title>
+<sch:pattern id="rule_10-35"><sch:title>Type derived from structures:AugmentationType is an augmentation type</sch:title>
   <sch:rule context="xs:*[(self::xs:restriction or self::xs:extension)                           and ends-with(@base, 'AugmentationType')]">
     <sch:assert test="ancestor::xs:complexType[ends-with(@name, 'AugmentationType')]">Rule 10-35: A type definition derived from an augmentation type MUST be an augmentation type definition</sch:assert>
   </sch:rule>
