@@ -1079,7 +1079,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_10-28</xsl:attribute>
-            <xsl:attribute name="name">Augmentation point element may only be referenced by its type</xsl:attribute>
+            <xsl:attribute name="name">Augmentation point element is only referenced by its base type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M108"/>
@@ -4359,8 +4359,8 @@
       <xsl:apply-templates select="*" mode="M107"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-28Augmentation point element may only be referenced by its type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Augmentation point element may only be referenced by its type</svrl:text>
+   <!--PATTERN rule_10-28Augmentation point element is only referenced by its base type-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Augmentation point element is only referenced by its base type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType//xs:element[exists(@ref[                        matches(local-name-from-QName(resolve-QName(., ..)), 'AugmentationPoint$')]) ]"
@@ -4371,14 +4371,14 @@
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="QName(string(nf:get-target-namespace(ancestor::xs:complexType[1])), ancestor::xs:complexType[1]/@name)                       = QName(string(namespace-uri-from-QName(resolve-QName(@ref, .))),                replace(local-name-from-QName(resolve-QName(@ref, .)), 'AugmentationPoint$', 'Type'))"/>
+         <xsl:when test="QName(string(nf:get-target-namespace(ancestor::xs:complexType[1])), ancestor::xs:complexType[1]/@name)                       = QName(string(namespace-uri-from-QName(resolve-QName(@ref, .))),                           replace(local-name-from-QName(resolve-QName(@ref, .)), 'AugmentationPoint$', 'Type'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                                 test="QName(string(nf:get-target-namespace(ancestor::xs:complexType[1])), ancestor::xs:complexType[1]/@name) = QName(string(namespace-uri-from-QName(resolve-QName(@ref, .))), replace(local-name-from-QName(resolve-QName(@ref, .)), 'AugmentationPoint$', 'Type'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-28: An augmentation point element MUST only be referenced by its corresponding type.</svrl:text>
+               <svrl:text>Rule 10-28: An augmentation point element MUST only be referenced by its base type.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

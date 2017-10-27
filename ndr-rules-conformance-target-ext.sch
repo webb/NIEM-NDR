@@ -613,10 +613,9 @@
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_10-28"><sch:title>Augmentation point element may only be referenced by its type</sch:title>
+<sch:pattern id="rule_10-28"><sch:title>Augmentation point element is only referenced by its base type</sch:title>
   <sch:rule context="xs:complexType//xs:element[exists(@ref[                        matches(local-name-from-QName(resolve-QName(., ..)), 'AugmentationPoint$')]) ]">
-
-    <sch:assert test="QName(string(nf:get-target-namespace(ancestor::xs:complexType[1])), ancestor::xs:complexType[1]/@name)                       = QName(string(namespace-uri-from-QName(resolve-QName(@ref, .))),                replace(local-name-from-QName(resolve-QName(@ref, .)), 'AugmentationPoint$', 'Type'))">Rule 10-28: An augmentation point element MUST only be referenced by its corresponding type.</sch:assert>
+    <sch:assert test="QName(string(nf:get-target-namespace(ancestor::xs:complexType[1])), ancestor::xs:complexType[1]/@name)                       = QName(string(namespace-uri-from-QName(resolve-QName(@ref, .))),                           replace(local-name-from-QName(resolve-QName(@ref, .)), 'AugmentationPoint$', 'Type'))">Rule 10-28: An augmentation point element MUST only be referenced by its base type.</sch:assert>
   </sch:rule>
 </sch:pattern>
             
