@@ -3829,7 +3829,7 @@ Rule 10-23. Augmentable type has augmentation point element
                                 replace(./@name, 'Type$', 'AugmentationPoint'))"/>
           <sch:assert test="xs:complexContent/xs:extension/xs:sequence/xs:element[
                               @ref[resolve-QName(., ..) = $augmentation-point-qname]]"
-            >An augmentable type MUST contain an element use of its augmentation point element.</sch:assert>
+            >An augmentable type MUST contain an element use of its corresponding augmentation point element.</sch:assert>
         </sch:rule>
       </sch:pattern>
 
@@ -3848,13 +3848,13 @@ Rule 10-24. Augmentable type has at most one augmentation point element
                                 replace(./@name, 'Type$', 'AugmentationPoint'))"/>
           <sch:assert test="count(xs:complexContent/xs:extension/xs:sequence/xs:element[
                                     @ref[resolve-QName(., ..) = $augmentation-point-qname]]) le 1"
-            >An augmentable type MUST contain no more than one element use of its augmentation point element.</sch:assert>
+            >An augmentable type MUST contain no more than one element use of its corresponding augmentation point element.</sch:assert>
         </sch:rule>
       </sch:pattern>
 
 10.4.2. Augmentation point element declarations
 
-Rule 10-25. Augmentation point corresponds to augmentable type
+Rule 10-25. Augmentation point element corresponds to its base type
 
    [Rule 10-25] (REF, EXT)
 
@@ -3870,13 +3870,13 @@ Rule 10-25. Augmentation point corresponds to augmentable type
                                         and not(ends-with(., 'AugmentationType'))])
                                       and empty(@appinfo:externalAdapterTypeIndicator)
                                       and exists(child::xs:complexContent)])"
-            >A schema document containing an augmentation point element declaration MUST also contain a corresponding augmentable type definition.</sch:assert>
+            >A schema document containing an element declaration for an augmentation point element MUST also contain a type definition for its base type, a corresponding augmentable type.</sch:assert>
         </sch:rule>
       </sch:pattern>
 
    This document defines the terms [schema document], [element declaration], and [augmentable type].
 
-Rule 10-26. An augmentation point has no type
+Rule 10-26. An augmentation point element has no type
 
    [Rule 10-26] (REF, EXT)
 
@@ -3890,7 +3890,7 @@ Rule 10-26. An augmentation point has no type
 
    Because an augmentation point element has no type, it will be abstract, per Rule 9-38, Untyped element is abstract
 
-Rule 10-27. An augmentation point has no substitution group
+Rule 10-27. An augmentation point element has no substitution group
 
    [Rule 10-27] (REF, EXT)
 
@@ -3918,7 +3918,7 @@ Rule 10-28. Augmentation point element is only referenced by its base type
         </sch:rule>
       </sch:pattern>
 
-Rule 10-29. Augmentation point reference is optional
+Rule 10-29. Augmentation point element use is optional
 
    [Rule 10-29] (REF)
 
@@ -3930,7 +3930,7 @@ Rule 10-29. Augmentation point reference is optional
         </sch:rule>
       </sch:pattern>
 
-Rule 10-30. Augmentation point reference is unbounded
+Rule 10-30. Augmentation point element use is unbounded
 
    [Rule 10-30] (REF)
 
@@ -3942,7 +3942,7 @@ Rule 10-30. Augmentation point reference is unbounded
         </sch:rule>
       </sch:pattern>
 
-Rule 10-31. Augmentation point reference must be last particle
+Rule 10-31. Augmentation point element use must be last element in its base type
 
    [Rule 10-31] (REF, EXT)
 
@@ -6443,13 +6443,13 @@ Appendix E. Index of rules
    Rule 10-22, Association element type is an association type: Section 10.3.2, Association element declarations
    Rule 10-23, Augmentable type has augmentation point element: Section 10.4.1, Augmentable types
    Rule 10-24, Augmentable type has at most one augmentation point element: Section 10.4.1, Augmentable types
-   Rule 10-25, Augmentation point corresponds to augmentable type: Section 10.4.2, Augmentation point element declarations
-   Rule 10-26, An augmentation point has no type: Section 10.4.2, Augmentation point element declarations
-   Rule 10-27, An augmentation point has no substitution group: Section 10.4.2, Augmentation point element declarations
+   Rule 10-25, Augmentation point element corresponds to its base type: Section 10.4.2, Augmentation point element declarations
+   Rule 10-26, An augmentation point element has no type: Section 10.4.2, Augmentation point element declarations
+   Rule 10-27, An augmentation point element has no substitution group: Section 10.4.2, Augmentation point element declarations
    Rule 10-28, Augmentation point element is only referenced by its base type: Section 10.4.3, Augmentation point element use
-   Rule 10-29, Augmentation point reference is optional: Section 10.4.3, Augmentation point element use
-   Rule 10-30, Augmentation point reference is unbounded: Section 10.4.3, Augmentation point element use
-   Rule 10-31, Augmentation point reference must be last particle: Section 10.4.3, Augmentation point element use
+   Rule 10-29, Augmentation point element use is optional: Section 10.4.3, Augmentation point element use
+   Rule 10-30, Augmentation point element use is unbounded: Section 10.4.3, Augmentation point element use
+   Rule 10-31, Augmentation point element use must be last element in its base type: Section 10.4.3, Augmentation point element use
    Rule 10-32, Element within instance of augmentation type modifies base: Section 10.4.4, Augmentation types
    Rule 10-33, Only an augmentation type name ends in "AugmentationType": Section 10.4.4, Augmentation types
    Rule 10-34, Schema component with name ending in "AugmentationType" is an augmentation type: Section 10.4.4, Augmentation types

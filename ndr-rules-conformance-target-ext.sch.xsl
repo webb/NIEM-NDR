@@ -1052,7 +1052,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_10-25</xsl:attribute>
-            <xsl:attribute name="name">Augmentation point corresponds to augmentable type</xsl:attribute>
+            <xsl:attribute name="name">Augmentation point element corresponds to its base type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M105"/>
@@ -1061,7 +1061,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_10-26</xsl:attribute>
-            <xsl:attribute name="name">An augmentation point has no type</xsl:attribute>
+            <xsl:attribute name="name">An augmentation point element has no type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M106"/>
@@ -1070,7 +1070,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_10-27</xsl:attribute>
-            <xsl:attribute name="name">An augmentation point has no substitution group</xsl:attribute>
+            <xsl:attribute name="name">An augmentation point element has no substitution group</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M107"/>
@@ -1088,7 +1088,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_10-31</xsl:attribute>
-            <xsl:attribute name="name">Augmentation point reference must be last particle</xsl:attribute>
+            <xsl:attribute name="name">Augmentation point element use must be last element in its base type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M109"/>
@@ -4258,7 +4258,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-24: An augmentable type MUST contain no more than one element use of its augmentation point element.</svrl:text>
+               <svrl:text>Rule 10-24: An augmentable type MUST contain no more than one element use of its corresponding augmentation point element.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4269,8 +4269,8 @@
       <xsl:apply-templates select="*" mode="M104"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-25Augmentation point corresponds to augmentable type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Augmentation point corresponds to augmentable type</svrl:text>
+   <!--PATTERN rule_10-25Augmentation point element corresponds to its base type-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Augmentation point element corresponds to its base type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[exists(@name[                                  matches(., 'AugmentationPoint$')])]"
@@ -4289,7 +4289,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-25: A schema document containing an augmentation point element declaration MUST also contain a corresponding augmentable type definition.</svrl:text>
+               <svrl:text>Rule 10-25: A schema document containing an element declaration for an augmentation point element MUST also contain a type definition for its base type, a corresponding augmentable type.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -4300,8 +4300,8 @@
       <xsl:apply-templates select="*" mode="M105"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-26An augmentation point has no type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">An augmentation point has no type</svrl:text>
+   <!--PATTERN rule_10-26An augmentation point element has no type-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">An augmentation point element has no type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[exists(@name[                                  matches(., 'AugmentationPoint$')])]"
@@ -4329,8 +4329,8 @@
       <xsl:apply-templates select="*" mode="M106"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-27An augmentation point has no substitution group-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">An augmentation point has no substitution group</svrl:text>
+   <!--PATTERN rule_10-27An augmentation point element has no substitution group-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">An augmentation point element has no substitution group</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[exists(@name[                                  matches(., 'AugmentationPoint$')])]"
@@ -4389,8 +4389,8 @@
       <xsl:apply-templates select="*" mode="M108"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-31Augmentation point reference must be last particle-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Augmentation point reference must be last particle</svrl:text>
+   <!--PATTERN rule_10-31Augmentation point element use must be last element in its base type-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Augmentation point element use must be last element in its base type</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType//xs:element[exists(@ref[                            matches(local-name-from-QName(resolve-QName(., ..)), 'AugmentationPoint$')]) ]"
