@@ -204,7 +204,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-73</xsl:attribute>
+            <xsl:attribute name="id">rule_10-72</xsl:attribute>
             <xsl:attribute name="name">appinfo:appliesToTypes references types</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -213,7 +213,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-75</xsl:attribute>
+            <xsl:attribute name="id">rule_10-74</xsl:attribute>
             <xsl:attribute name="name">appinfo:appliesToElements references elements</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -321,7 +321,7 @@
       <xsl:apply-templates select="*" mode="M10"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-73appinfo:appliesToTypes references types-->
+   <!--PATTERN rule_10-72appinfo:appliesToTypes references types-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:appliesToTypes references types</svrl:text>
 
 	  <!--RULE -->
@@ -340,7 +340,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-73: Every item in @appinfo:appliesToTypes MUST resolve to a type.</svrl:text>
+               <svrl:text>Rule 10-72: Every item in @appinfo:appliesToTypes MUST resolve to a type.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -351,7 +351,7 @@
       <xsl:apply-templates select="*" mode="M11"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-75appinfo:appliesToElements references elements-->
+   <!--PATTERN rule_10-74appinfo:appliesToElements references elements-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:appliesToElements references elements</svrl:text>
 
 	  <!--RULE -->
@@ -370,7 +370,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-75: Every item in @appinfo:appliesToElements MUST resolve to an element.</svrl:text>
+               <svrl:text>Rule 10-74: Every item in @appinfo:appliesToElements MUST resolve to an element.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

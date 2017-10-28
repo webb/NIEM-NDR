@@ -1257,8 +1257,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-40</xsl:attribute>
-            <xsl:attribute name="name">Metadata types are derived from metadata types</xsl:attribute>
+            <xsl:attribute name="id">rule_10-39</xsl:attribute>
+            <xsl:attribute name="name">Metadata types are derived from structures:MetadataType</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M128"/>
@@ -1266,7 +1266,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-41</xsl:attribute>
+            <xsl:attribute name="id">rule_10-40</xsl:attribute>
             <xsl:attribute name="name">Metadata element declaration type is a metadata type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1275,7 +1275,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-43</xsl:attribute>
+            <xsl:attribute name="id">rule_10-42</xsl:attribute>
             <xsl:attribute name="name">Name of element that ends in "Representation" is abstract</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1284,7 +1284,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-46</xsl:attribute>
+            <xsl:attribute name="id">rule_10-45</xsl:attribute>
             <xsl:attribute name="name">Schema component names have only specific characters</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1293,7 +1293,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-49</xsl:attribute>
+            <xsl:attribute name="id">rule_10-48</xsl:attribute>
             <xsl:attribute name="name">Attribute name begins with lower case letter</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1302,7 +1302,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-50</xsl:attribute>
+            <xsl:attribute name="id">rule_10-49</xsl:attribute>
             <xsl:attribute name="name">Name of schema component other than attribute and proxy type begins with upper case letter</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1311,7 +1311,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-69</xsl:attribute>
+            <xsl:attribute name="id">rule_10-68</xsl:attribute>
             <xsl:attribute name="name">Deprecated annotates schema component</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1320,7 +1320,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-70</xsl:attribute>
+            <xsl:attribute name="id">rule_10-69</xsl:attribute>
             <xsl:attribute name="name">External import indicator annotates import</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1329,7 +1329,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-71</xsl:attribute>
+            <xsl:attribute name="id">rule_10-70</xsl:attribute>
             <xsl:attribute name="name">External adapter type indicator annotates complex type</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1338,7 +1338,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-72</xsl:attribute>
+            <xsl:attribute name="id">rule_10-71</xsl:attribute>
             <xsl:attribute name="name">appinfo:appliesToTypes annotates metadata element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1347,7 +1347,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-74</xsl:attribute>
+            <xsl:attribute name="id">rule_10-73</xsl:attribute>
             <xsl:attribute name="name">appinfo:appliesToElements annotates metadata element</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1356,7 +1356,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-76</xsl:attribute>
+            <xsl:attribute name="id">rule_10-75</xsl:attribute>
             <xsl:attribute name="name">appinfo:LocalTerm annotates schema</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -1365,7 +1365,7 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">rule_10-77</xsl:attribute>
+            <xsl:attribute name="id">rule_10-76</xsl:attribute>
             <xsl:attribute name="name">appinfo:LocalTerm has literal or definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
@@ -5051,8 +5051,8 @@
       <xsl:apply-templates select="*" mode="M127"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-40Metadata types are derived from metadata types-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Metadata types are derived from metadata types</svrl:text>
+   <!--PATTERN rule_10-39Metadata types are derived from structures:MetadataType-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Metadata types are derived from structures:MetadataType</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType" priority="1000" mode="M128">
@@ -5060,7 +5060,7 @@
       <xsl:variable name="is-metadata-type"
                     select="exists(@name[ends-with(., 'MetadataType')])"/>
       <xsl:variable name="has-metadata-base-type"
-                    select="       exists(xs:complexContent[         exists(xs:*[local-name() = ('extension', 'restriction')                     and exists(@base[ends-with(., 'MetadataType')])])])"/>
+                    select="exists(xs:complexContent[         exists(xs:*[local-name() = ('extension', 'restriction')                     and exists(@base[ends-with(., 'MetadataType')])])])"/>
 
 		    <!--ASSERT -->
       <xsl:choose>
@@ -5071,7 +5071,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-40: A type MUST have a metadata type name if an only if it is derived from a metadata type.</svrl:text>
+               <svrl:text>Rule 10-39: A type MUST be a metadata type if and only if it is derived from a metadata type.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5082,7 +5082,7 @@
       <xsl:apply-templates select="*" mode="M128"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-41Metadata element declaration type is a metadata type-->
+   <!--PATTERN rule_10-40Metadata element declaration type is a metadata type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Metadata element declaration type is a metadata type</svrl:text>
 
 	  <!--RULE -->
@@ -5099,7 +5099,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-41: An element MUST have a name that ends in 'Metadata' if and only if it has a type that is a metadata type.</svrl:text>
+               <svrl:text>Rule 10-40: An element MUST have a name that ends in 'Metadata' if and only if it has a type that is a metadata type.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5110,7 +5110,7 @@
       <xsl:apply-templates select="*" mode="M129"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-43Name of element that ends in "Representation" is abstract-->
+   <!--PATTERN rule_10-42Name of element that ends in "Representation" is abstract-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of element that ends in "Representation" is abstract</svrl:text>
 
 	  <!--RULE -->
@@ -5128,7 +5128,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 10-43: An element declaration with a name that ends in 'Representation' SHOULD have the {abstract} property with a value of "true".</svrl:text>
+            <svrl:text>Rule 10-42: An element declaration with a name that ends in 'Representation' SHOULD have the {abstract} property with a value of "true".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M130"/>
@@ -5138,7 +5138,7 @@
       <xsl:apply-templates select="*" mode="M130"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-46Schema component names have only specific characters-->
+   <!--PATTERN rule_10-45Schema component names have only specific characters-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Schema component names have only specific characters</svrl:text>
 
 	  <!--RULE -->
@@ -5154,7 +5154,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-46: The name of an XML Schema component defined by the schema must be composed of only the characters uppercase 'A' through 'Z', lowercase 'a' through 'z', numbers '0' through '9', underscore, hyphen, and period.</svrl:text>
+               <svrl:text>Rule 10-45: The name of an XML Schema component defined by the schema must be composed of only the characters uppercase 'A' through 'Z', lowercase 'a' through 'z', numbers '0' through '9', underscore, hyphen, and period.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5165,7 +5165,7 @@
       <xsl:apply-templates select="*" mode="M131"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-49Attribute name begins with lower case letter-->
+   <!--PATTERN rule_10-48Attribute name begins with lower case letter-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Attribute name begins with lower case letter</svrl:text>
 
 	  <!--RULE -->
@@ -5181,7 +5181,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-49: Within the schema, any attribute declaration MUST have a name that begins with a lowercase letter
+               <svrl:text>Rule 10-48: Within the schema, any attribute declaration MUST have a name that begins with a lowercase letter
       ('a'-'z').</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -5193,7 +5193,7 @@
       <xsl:apply-templates select="*" mode="M132"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-50Name of schema component other than attribute and proxy type begins with upper case letter-->
+   <!--PATTERN rule_10-49Name of schema component other than attribute and proxy type begins with upper case letter-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of schema component other than attribute and proxy type begins with upper case letter</svrl:text>
 
 	  <!--RULE -->
@@ -5207,7 +5207,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 10-50: This rule does not apply to an attribute.</svrl:text>
+            <svrl:text>Rule 10-49: This rule does not apply to an attribute.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M133"/>
@@ -5227,7 +5227,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 10-50: This rule does not apply to a proxy types.</svrl:text>
+            <svrl:text>Rule 10-49: This rule does not apply to a proxy types.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M133"/>
@@ -5245,7 +5245,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-50: Within the schema, an XML Schema component that is not an attribute declaration or proxy type MUST have a name that begins with an upper-case letter ('A'-'Z').</svrl:text>
+               <svrl:text>Rule 10-49: Within the schema, an XML Schema component that is not an attribute declaration or proxy type MUST have a name that begins with an upper-case letter ('A'-'Z').</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5256,7 +5256,7 @@
       <xsl:apply-templates select="*" mode="M133"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-69Deprecated annotates schema component-->
+   <!--PATTERN rule_10-68Deprecated annotates schema component-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Deprecated annotates schema component</svrl:text>
 
 	  <!--RULE -->
@@ -5273,7 +5273,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-69: The attribute appinfo:deprecated MUST be owned by an element with a namespace name <namespace-uri-for-prefix xmlns="https://iead.ittl.gtri.org/wr24/doc/2011-09-30-2258"
+               <svrl:text>Rule 10-68: The attribute appinfo:deprecated MUST be owned by an element with a namespace name <namespace-uri-for-prefix xmlns="https://iead.ittl.gtri.org/wr24/doc/2011-09-30-2258"
                                             xmlns:sch="http://purl.oclc.org/dsdl/schematron">xs</namespace-uri-for-prefix>.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -5285,7 +5285,7 @@
       <xsl:apply-templates select="*" mode="M134"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-70External import indicator annotates import-->
+   <!--PATTERN rule_10-69External import indicator annotates import-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">External import indicator annotates import</svrl:text>
 
 	  <!--RULE -->
@@ -5303,7 +5303,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-70: The attribute {http://release.niem.gov/niem/appinfo/4.0/}externalImportIndicator MUST be owned by an element xs:import.</svrl:text>
+               <svrl:text>Rule 10-69: The attribute {http://release.niem.gov/niem/appinfo/4.0/}externalImportIndicator MUST be owned by an element xs:import.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5314,7 +5314,7 @@
       <xsl:apply-templates select="*" mode="M135"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-71External adapter type indicator annotates complex type-->
+   <!--PATTERN rule_10-70External adapter type indicator annotates complex type-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">External adapter type indicator annotates complex type</svrl:text>
 
 	  <!--RULE -->
@@ -5333,7 +5333,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-71: The attribute appinfo:externalAdapterTypeIndicator MUST be owned by an element xs:complexType.</svrl:text>
+               <svrl:text>Rule 10-70: The attribute appinfo:externalAdapterTypeIndicator MUST be owned by an element xs:complexType.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5344,7 +5344,7 @@
       <xsl:apply-templates select="*" mode="M136"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-72appinfo:appliesToTypes annotates metadata element-->
+   <!--PATTERN rule_10-71appinfo:appliesToTypes annotates metadata element-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:appliesToTypes annotates metadata element</svrl:text>
 
 	  <!--RULE -->
@@ -5363,7 +5363,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-72: The attribute appinfo:appliesToTypes MUST be owned by a metadata element.</svrl:text>
+               <svrl:text>Rule 10-71: The attribute appinfo:appliesToTypes MUST be owned by a metadata element.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5374,7 +5374,7 @@
       <xsl:apply-templates select="*" mode="M137"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-74appinfo:appliesToElements annotates metadata element-->
+   <!--PATTERN rule_10-73appinfo:appliesToElements annotates metadata element-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:appliesToElements annotates metadata element</svrl:text>
 
 	  <!--RULE -->
@@ -5393,7 +5393,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-74: The attribute appinfo:appliesToElements MUST be owned by a metadata element.</svrl:text>
+               <svrl:text>Rule 10-73: The attribute appinfo:appliesToElements MUST be owned by a metadata element.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5404,7 +5404,7 @@
       <xsl:apply-templates select="*" mode="M138"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-76appinfo:LocalTerm annotates schema-->
+   <!--PATTERN rule_10-75appinfo:LocalTerm annotates schema-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:LocalTerm annotates schema</svrl:text>
 
 	  <!--RULE -->
@@ -5420,7 +5420,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-76: The element appinfo:LocalTerm MUST be application information on an element xs:schema.</svrl:text>
+               <svrl:text>Rule 10-75: The element appinfo:LocalTerm MUST be application information on an element xs:schema.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -5431,7 +5431,7 @@
       <xsl:apply-templates select="*" mode="M139"/>
    </xsl:template>
 
-   <!--PATTERN rule_10-77appinfo:LocalTerm has literal or definition-->
+   <!--PATTERN rule_10-76appinfo:LocalTerm has literal or definition-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">appinfo:LocalTerm has literal or definition</svrl:text>
 
 	  <!--RULE -->
@@ -5447,7 +5447,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Rule 10-77: The element {http://release.niem.gov/niem/appinfo/4.0/}LocalTerm MUST have a literal or definition.</svrl:text>
+               <svrl:text>Rule 10-76: The element {http://release.niem.gov/niem/appinfo/4.0/}LocalTerm MUST have a literal or definition.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
