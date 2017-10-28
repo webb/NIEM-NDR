@@ -4061,7 +4061,7 @@ Rule 10-37. Augmentation elements are not used directly
 
 10.5. Metadata
 
-   There are rules for use of metadata in instance in Section 12.3, Instance metadata, below.
+   There are rules for the use of metadata in instance in Section 12.3, Instance metadata, below.
 
 10.5.1. Metadata types
 
