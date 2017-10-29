@@ -4371,7 +4371,7 @@ Rule 10-50. Names use common abbreviations
 
          2. It is introduced into the schema document via an appinfo element appinfo:LocalTerm.
 
-         3. It is used in the local name of a schema component within the schema document.
+         3. It may be used in the local name of a schema component within the schema document.
 
    Local terminology is introduced into a schema document by the use of appinfo:LocalTerm within the schema.
 
