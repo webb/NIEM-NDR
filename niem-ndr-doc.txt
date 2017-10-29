@@ -188,11 +188,7 @@ Table of Tables
 
    An execution of a Schematron pattern that issues a failed assertion (represented via sch:assert) represents a validation error, and signifies that the assessed artifact violates a requirement (i.e., a "MUST") of a conformance rule. An example of a constraint rule that uses Schematron is Rule 9-10, Simple type definition is top-level.
 
-   An execution of a Schematron pattern that issues a report (represented via sch:report) indicates a warning. This may be:
-
-      *  An indication that the automated rules are not sufficient to validate a conformance rule, and that another means is required to ensure conformance. This is frequently a reference to another specification. For example, see Rule 9-84, Target namespace is absolute URI, which references [RFC 3986].
-
-      *  an indication that an automated rule has found that the assessed artifact violates a recommendation of the specification (i.e., a "SHOULD", rather than a "MUST"), and that attention should be paid to ensure that the artifact maintains the spirit of the specification. For example, see Rule 10-42, Name of element that ends in "Representation" is abstract.
+   An execution of a Schematron pattern that issues a report (represented via sch:report) indicates a warning. This may be an indication that an automated rule has found that the assessed artifact violates a recommendation of the specification (i.e., a "SHOULD", rather than a "MUST"), and that attention should be paid to ensure that the artifact maintains the spirit of the specification. For example, see Rule 10-42, Name of element that ends in "Representation" is abstract.
 
    In addition to the exclusive use of sch:report for warnings, this document annotates sch:report elements with attribute role="warning", which is interpreted by some Schematron platforms to indicate that a failure indicates a warning, rather than an error.
 
