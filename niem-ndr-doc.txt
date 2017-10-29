@@ -4291,7 +4291,7 @@ Rule 10-46. Punctuation in component name is a separator
 
       The characters hyphen ("-"), underscore ("_") MAY appear in a component name only when used as a separator between parts of a word, phrase, or value, which would otherwise be incomprehensible without the use of a separator. The period character (".") MAY appear in component names only when appearing as a separator (as above) or as a decimal within a numeric value. A punctuation character MUST NOT be used as a substitute for camel case in component names, or as a method to avoid camel case in component names.
 
-   Names of standards and specifications, in particular, tend to consist of series of discrete numbers. Such names require some explicit separator to keep the values from running together. The separator used within NIEM is the hyphen.
+   Names of standards and specifications, in particular, tend to consist of series of discrete numbers. Such names require some explicit separator to keep the values from running together.
 
    Names of NIEM components follow the rules of XML Schema, by Rule 7-3, Document is a schema document. NIEM components also follow the rules specified herein for each type of XML Schema component.
 
