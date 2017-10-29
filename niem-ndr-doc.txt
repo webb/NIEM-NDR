@@ -4162,7 +4162,7 @@ Rule 10-41. Metadata element has applicable elements
 
    There are a variety of methods that could be used to satisfy this need. A method could be devised that uses an abstract type, along with a set of concrete extensions of that abstract type. However, there would still be a need for a set of concrete elements to carry the types, as type substitution (distinct from element substitution) is not widely adopted across the NIEM community. As well, it is difficult to create a network of complex types with complex content and complex types with simple content that all substitute for a base type; the XML Schema syntax is complicated. Other alternatives each have their pros and cons.
 
-   To handle this need, NIEM has adopted the "Representation" pattern, in which a type has contains a representation element, and the various representations for that type are in the substitution group for that representation element.
+   To handle this need, NIEM has adopted the "Representation" pattern, in which a type contains a representation element, and the various representations for that type are in the substitution group for that representation element.
 
    For example, the definition of nc:DateType uses this pattern:
 
