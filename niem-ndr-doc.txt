@@ -4224,6 +4224,10 @@ Rule 10-41. Metadata element has applicable elements
 
       *  It is highly extensible. Any domain or exchange specification may define additional representations for any concept, by defining new elements substitutable for the representation element.
 
+   [Definition: representation element declaration]
+
+      A representation element declaration is an [element declaration] that is abstract, and that has a {name} that ends in "Representation".
+
 Rule 10-42. Name of element that ends in "Representation" is abstract
 
    [Rule 10-42] (REF, EXT)
@@ -4235,10 +4239,6 @@ Rule 10-42. Name of element that ends in "Representation" is abstract
             >An element declaration with a name that ends in 'Representation' SHOULD have the {abstract} property with a value of "true".</sch:report>
         </sch:rule>
       </sch:pattern>
-
-   [Definition: representation element declaration]
-
-      A representation element declaration is an [element declaration] that is abstract, and that has a {name} that ends in "Representation".
 
 Rule 10-43. A substitution for a representation element declaration is a value for a type
 
