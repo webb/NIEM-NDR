@@ -4421,9 +4421,9 @@ Rule 10-55. Name does not have nonessential words
 
    Articles (e.g., a, an, the), conjunctions (e.g., and, or, but), and prepositions (e.g., at, by, for, from, in, of, to) are all disallowed in NIEM component names, unless they are required. For example, PowerOfAttorneyCode requires the preposition. These rules constrain slight variations in word forms and types to improve consistency and reduce potentially ambiguous or confusing component names.
 
-Rule 10-56. Component name follows pattern
+Rule 10-56. Element or attribute name follows pattern
 
-   Elements in NIEM-conformant schemas are given names that follow a specific pattern. This pattern comes from [ISO 11179-5].
+   Elements and attributes in NIEM-conformant schemas are given names that follow a specific pattern. This pattern comes from [ISO 11179-5].
 
    [Rule 10-56] (REF, EXT)
 
@@ -6463,7 +6463,7 @@ Appendix E. Index of rules
    Rule 10-53, Singular form is preferred in name: Section 10.8.3, Word forms
    Rule 10-54, Present tense is preferred in name: Section 10.8.3, Word forms
    Rule 10-55, Name does not have nonessential words: Section 10.8.3, Word forms
-   Rule 10-56, Component name follows pattern: Section 10.8, Naming rules
+   Rule 10-56, Element or attribute name follows pattern: Section 10.8, Naming rules
    Rule 10-57, Object-class term identifies concrete category: Section 10.8.4, Object-class term
    Rule 10-58, Property term describes characteristic or subpart: Section 10.8.5, Property term
    Rule 10-59, Name may have multiple qualifier terms: Section 10.8.6, Qualifier terms
