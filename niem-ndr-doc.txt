@@ -4577,7 +4577,7 @@ Rule 10-63. Element with simple content has representation term
 
    This rule is also supported by Rule 11-14, Name of element declaration with simple content has representation term and Rule 11-15, Name of element declaration with simple content has representation term, which provide tests that a top-level declaration has a representation term.
 
-Rule 10-64. Name has representation term when appropriate
+Rule 10-64. Element with complex content has representation term when appropriate
 
    [Rule 10-64] (REF, EXT)
 
@@ -4585,7 +4585,7 @@ Rule 10-64. Name has representation term when appropriate
 
    An element that represents a value listed in the table should have a representation term. It should do so even if its type is complex with multiple parts. For example, a type with multiple fields may represent an audio binary, a date, or a name.
 
-Rule 10-65. Name has representation term only when appropriate
+Rule 10-65. Element with complex content has representation term only when appropriate
 
    [Rule 10-65] (REF, EXT)
 
@@ -6471,8 +6471,8 @@ Appendix E. Index of rules
    Rule 10-61, Order of qualifiers is not significant: Section 10.8.6, Qualifier terms
    Rule 10-62, Redundant term in name is omitted: Section 10.8.7, Representation terms
    Rule 10-63, Element with simple content has representation term: Section 10.8.7, Representation terms
-   Rule 10-64, Name has representation term when appropriate: Section 10.8.7, Representation terms
-   Rule 10-65, Name has representation term only when appropriate: Section 10.8.7, Representation terms
+   Rule 10-64, Element with complex content has representation term when appropriate: Section 10.8.7, Representation terms
+   Rule 10-65, Element with complex content has representation term only when appropriate: Section 10.8.7, Representation terms
    Rule 10-66, Machine-readable annotations are valid: Section 10.9, Machine-readable annotations
    Rule 10-67, Component marked as deprecated is deprecated component: Section 10.9.1.1, Deprecation
    Rule 10-68, Deprecated annotates schema component: Section 10.9.1.1, Deprecation
