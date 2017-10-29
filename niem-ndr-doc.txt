@@ -4593,7 +4593,7 @@ Rule 10-65. Element with complex content has representation term only when appro
 
 10.9. Machine-readable annotations
 
-   XML Schema provides application information schema components to provide for automatic processing and machine-readable content for schemas, as described by [XML Schema Structures] Section 3.13.2, XML Representation of Annotation Schema Components. NIEM utilizes application information to convey information that is outside schema definition and outside human-readable text definitions. NIEM uses application information to convey high-level data model concepts and additional syntax to support the NIEM conceptual model and validation of NIEM-conformant XML instances.
+   XML Schema provides application information schema components to provide for automatic processing and machine-readable content for schemas, as described by [XML Schema Structures] Section 3.13.2, XML Representation of Annotation Schema Components. XML Schema also allows the use of attributes (with namespaces other than the XML Schema namespace) to carry additional information in schemas. NIEM uses these machine-readable annotations convey information that is outside schema definition and outside human-readable text definitions.
 
    XML elements, attributes, and text content may appear as machine-readable annotations within an XML Schema document. The methods provided by XML Schema for machine-readable annotations are:
 
