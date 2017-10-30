@@ -5287,6 +5287,8 @@ Rule 11-28. Data definition follows 11179-4 recommendations
 
 11.6.1.1. Data definition opening phrases
 
+   In order to provide a more consistent voice across NIEM, a model built from requirements from many different sources, component data definitions should begin with a standard opening phrase, as defined below.
+
 11.6.1.1.1. Element opening phrases
 
 Rule 11-29. Standard opening phrase for augmentation point element
