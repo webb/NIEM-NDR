@@ -5735,7 +5735,7 @@ Rule 12-3. Element has only one resource identifying attribute
 
       *  Within an XML document, each value of any attribute of type xs:ID must be unique. For example, if an element has an attribute of type xs:ID with the value of "Bob", then there may not be any other attribute in the document that is of type xs:ID that also has the value "Bob". NIEM provides attribute structures:id of type xs:ID to act as a standard local identifier.
 
-      *  Within an XML document, the value of any attribute of type xs:IDREF must appear somewhere within the document as the value of some attribute of type xs:ID. For example, if an attribute of type xs:IDREF has the value "Bob", then somewhere within that XML document there must be an attribute of type xs:ID with the value "Bob". NIEM provides attribute structures:ref as a standard local reference.
+      *  Within an XML document, the value of any attribute of type xs:IDREF must appear somewhere within the document as the value of some attribute of type xs:ID. For example, if an attribute of type xs:IDREF has the value "Bob", then somewhere within that XML document there must be an attribute of type xs:ID with the value "Bob". NIEM provides attribute structures:ref of type xs:IDREF as a standard local reference.
 
       *  These constraints, that IDs must be unique, and that IDREFs must refer to IDs, are XML constraints, not unique to NIEM.
 
