@@ -4787,13 +4787,13 @@ Rule 10-76. appinfo:LocalTerm has literal or definition
 
    The structures namespace is a single namespace, separate from namespaces that define NIEM-conformant data. This document refers to this content via the prefix structures.
 
-Rule 10-77. Use structures as specified
+Rule 10-77. Use structures consistent with specification
 
-   [Rule 10-77] (REF, EXT, INS)
+   [Rule 10-77] (REF, EXT, INS, SET)
 
-      The schema or instance MUST use content within the NIEM structures namespace as specified in this document and ONLY as specified by this document.
+      Any schema or instance MUST use the NIEM [structures namespace] consistent with the schema as it is defined in Appendix B, Structures namespace.
 
-   This rule further enforces uniformity and consistency by mandating use of the NIEM structures namespace as is, without modification. Users are not allowed to insert types, attributes, etc. that are not specified by this document.
+   This rule further enforces uniform and consistent use of the NIEM structures namespace, without addition. Users are not allowed to insert types, attributes, etc. that are not specified by this document. However, users may profile the structures namespace, as needed.
 
 11. Rules for NIEM modeling, by XML Schema component
 
@@ -6488,7 +6488,7 @@ Appendix E. Index of rules
    Rule 10-74, appinfo:appliesToElements references elements: Section 10.9.1.4, appinfo:appliesToElements annotation
    Rule 10-75, appinfo:LocalTerm annotates schema: Section 10.9.2, Local terminology
    Rule 10-76, appinfo:LocalTerm has literal or definition: Section 10.9.2, Local terminology
-   Rule 10-77, Use structures as specified: Section 10.10, NIEM structural facilities
+   Rule 10-77, Use structures consistent with specification: Section 10.10, NIEM structural facilities
    Rule 11-1, Name of type ends in "Type": Section 11.1, Type definition components
    Rule 11-2, Base type definition defined by conformant schema: Section 11.1.1, Type definition hierarchy
    Rule 11-3, Name of simple type ends in "SimpleType": Section 11.1.2, Simple type definition
