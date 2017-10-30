@@ -232,7 +232,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-48</xsl:attribute>
-            <xsl:attribute name="name">Reference schema imports reference schema</xsl:attribute>
+            <xsl:attribute name="name">Reference schema document imports reference schema document</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M14"/>
@@ -241,7 +241,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-49</xsl:attribute>
-            <xsl:attribute name="name">Extension schema document imports reference or extension schema</xsl:attribute>
+            <xsl:attribute name="name">Extension schema document imports reference or extension schema document</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M15"/>
@@ -409,8 +409,8 @@
       <xsl:apply-templates select="*" mode="M13"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-48Reference schema imports reference schema-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Reference schema imports reference schema</svrl:text>
+   <!--PATTERN rule_11-48Reference schema document imports reference schema document-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Reference schema document imports reference schema document</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:import[                          nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument'))                          and exists(@namespace)                          and empty(@appinfo:externalImportIndicator)                          and not(xs:anyURI(@namespace) = (xs:anyURI('http://release.niem.gov/niem/structures/4.0/'),                                                           xs:anyURI('http://www.w3.org/XML/1998/namespace')))]"
@@ -439,8 +439,8 @@
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-49Extension schema document imports reference or extension schema-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Extension schema document imports reference or extension schema</svrl:text>
+   <!--PATTERN rule_11-49Extension schema document imports reference or extension schema document-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Extension schema document imports reference or extension schema document</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:import[                          nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ExtensionSchemaDocument'))                          and exists(@namespace)                          and empty(@appinfo:externalImportIndicator)                          and not(xs:anyURI(@namespace) = (xs:anyURI('http://release.niem.gov/niem/structures/4.0/'),                                                           xs:anyURI('http://www.w3.org/XML/1998/namespace')))]"

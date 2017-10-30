@@ -41,13 +41,13 @@
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_11-48"><sch:title>Reference schema imports reference schema</sch:title>
+<sch:pattern id="rule_11-48"><sch:title>Reference schema document imports reference schema document</sch:title>
   <sch:rule context="xs:import[                          nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument'))                          and exists(@namespace)                          and empty(@appinfo:externalImportIndicator)                          and not(xs:anyURI(@namespace) = (xs:anyURI('http://release.niem.gov/niem/structures/4.0/'),                                                           xs:anyURI('http://www.w3.org/XML/1998/namespace')))]">
     <sch:assert test="some $schema in nf:resolve-namespace(., @namespace) satisfies                         nf:has-effective-conformance-target-identifier($schema, xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument'))">Rule 11-48: A namespace imported as conformant from a reference schema document MUST identify a namespace defined by a reference schema document.</sch:assert>
   </sch:rule>
 </sch:pattern>
           
-<sch:pattern id="rule_11-49"><sch:title>Extension schema document imports reference or extension schema</sch:title>
+<sch:pattern id="rule_11-49"><sch:title>Extension schema document imports reference or extension schema document</sch:title>
   <sch:rule context="xs:import[                          nf:has-effective-conformance-target-identifier(., xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ExtensionSchemaDocument'))                          and exists(@namespace)                          and empty(@appinfo:externalImportIndicator)                          and not(xs:anyURI(@namespace) = (xs:anyURI('http://release.niem.gov/niem/structures/4.0/'),                                                           xs:anyURI('http://www.w3.org/XML/1998/namespace')))]">
     <sch:assert test="some $schema in nf:resolve-namespace(., @namespace) satisfies (                         nf:has-effective-conformance-target-identifier($schema, xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument'))                         or nf:has-effective-conformance-target-identifier($schema, xs:anyURI('http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ExtensionSchemaDocument')))">Rule 11-49: A namespace imported as conformant from an extension schema document MUST identify a namespace defined by a reference schema document or an extension schema document.</sch:assert>
   </sch:rule>

@@ -3311,7 +3311,7 @@ Rule 10-6. Instance of RoleOf element indicates a role object
 
    To construct such a component, a NIEM-conformant schema must import the namespace defined by the [external schema document].
 
-   Rule 11-48, Reference schema imports reference schema and Rule 11-49, Extension schema document imports reference or extension schema require that xs:import elements be consistent with an importing [schema document].
+   Rule 11-48, Reference schema document imports reference schema document and Rule 11-49, Extension schema document imports reference or extension schema document require that xs:import elements be consistent with an importing [schema document].
 
    A NIEM-conformant schema has well-known documentation points. Therefore, a schema that imports a NIEM-conformant namespace need not provide additional documentation for the imported namespace. However, when an external schema document is imported, appropriate documentation must be provided on the xs:import element. This ensures that documentation for all external schema documents will be both available and accessible in a consistent manner.
 
@@ -5542,7 +5542,7 @@ Rule 11-47. Different version means different view
 
 11.8. Schema assembly
 
-Rule 11-48. Reference schema imports reference schema
+Rule 11-48. Reference schema document imports reference schema document
 
    [Rule 11-48] (SET)
 
@@ -5561,7 +5561,7 @@ Rule 11-48. Reference schema imports reference schema
 
    This document defines the term [reference schema document].
 
-Rule 11-49. Extension schema document imports reference or extension schema
+Rule 11-49. Extension schema document imports reference or extension schema document
 
    [Rule 11-49] (SET)
 
@@ -6559,8 +6559,8 @@ Appendix E. Index of rules
    Rule 11-45, Standard opening phrase for simple type data definition: Section 11.6.1.1, Data definition opening phrases
    Rule 11-46, Same namespace means same components: Section 11.7.1, xs:schema document element restrictions
    Rule 11-47, Different version means different view: Section 11.7.1, xs:schema document element restrictions
-   Rule 11-48, Reference schema imports reference schema: Section 11.8, Schema assembly
-   Rule 11-49, Extension schema document imports reference or extension schema: Section 11.8, Schema assembly
+   Rule 11-48, Reference schema document imports reference schema document: Section 11.8, Schema assembly
+   Rule 11-49, Extension schema document imports reference or extension schema document: Section 11.8, Schema assembly
    Rule 11-50, Structures imported as conformant: Section 11.8.1, Supporting namespaces are imported as conformant
    Rule 11-51, XML namespace imported as conformant: Section 11.8.1, Supporting namespaces are imported as conformant
    Rule 11-52, Each namespace may have only a single root schema in a schema set: Section 11.8, Schema assembly
