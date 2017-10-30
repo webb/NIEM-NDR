@@ -4909,7 +4909,7 @@ Rule 11-6. Union member types defined by conformant schemas
 
    Many code simple types are composed of xs:enumeration values. Code simple types may also be constructed using the NIEM Code Lists Specification [Code Lists], which supports code lists defined using a variety of methods, including CSV spreadsheets.
 
-Rule 11-7. Name of a code simple type has standard suffix
+Rule 11-7. Name of a code simple type ends in "CodeSimpleType"
 
    [Rule 11-7] (REF, EXT)
 
@@ -6495,7 +6495,7 @@ Appendix E. Index of rules
    Rule 11-4, Use lists only when data is uniform: Section 11.1.2.1, Derivation by list
    Rule 11-5, List item type defined by conformant schemas: Section 11.1.2.1, Derivation by list
    Rule 11-6, Union member types defined by conformant schemas: Section 11.1.2.2, Derivation by union
-   Rule 11-7, Name of a code simple type has standard suffix: Section 11.1.2.3, Code simple types
+   Rule 11-7, Name of a code simple type ends in "CodeSimpleType": Section 11.1.2.3, Code simple types
    Rule 11-8, Code simple type corresponds to a code list: Section 11.1.2.3, Code simple types
    Rule 11-9, Attribute of code simple type has code representation term: Section 11.1.2.3, Code simple types
    Rule 11-10, Complex type with simple content has structures:SimpleObjectAttributeGroup: Section 11.1.3, Complex type definition

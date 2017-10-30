@@ -1420,7 +1420,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-7</xsl:attribute>
-            <xsl:attribute name="name">Name of a code simple type has standard suffix</xsl:attribute>
+            <xsl:attribute name="name">Name of a code simple type ends in "CodeSimpleType"</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M146"/>
@@ -5619,8 +5619,8 @@
       <xsl:apply-templates select="*" mode="M145"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-7Name of a code simple type has standard suffix-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of a code simple type has standard suffix</svrl:text>
+   <!--PATTERN rule_11-7Name of a code simple type ends in "CodeSimpleType"-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Name of a code simple type ends in "CodeSimpleType"</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:simpleType[exists(@name)       and (xs:restriction/xs:enumeration            or xs:restriction[ends-with(local-name-from-QName(resolve-QName(@base, .)), 'CodeSimpleType')])]"

@@ -764,7 +764,7 @@
   </sch:rule>
 </sch:pattern>
               
-<sch:pattern id="rule_11-7"><sch:title>Name of a code simple type has standard suffix</sch:title>
+<sch:pattern id="rule_11-7"><sch:title>Name of a code simple type ends in "CodeSimpleType"</sch:title>
   <sch:rule context="xs:simpleType[exists(@name)       and (xs:restriction/xs:enumeration            or xs:restriction[ends-with(local-name-from-QName(resolve-QName(@base, .)), 'CodeSimpleType')])]">
     <sch:report test="not(ends-with(@name, 'CodeSimpleType'))" role="warning">Rule 11-7: A simple type definition schema component that has an enumeration facet or that is derived from a code simple type SHOULD have a name that ends in "CodeSimpleType".</sch:report>
   </sch:rule>
