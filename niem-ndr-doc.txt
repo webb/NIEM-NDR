@@ -5133,9 +5133,13 @@ Rule 11-18. Attribute name uses representation term
 
 11.2.4. Notation declaration
 
+   NIEM does not define any additional features relating to notation declarations. This section is present to maintain with [XML Schema Structures] Section 2.2, XML Schema Abstract Data Model, See Section 9.2.4, Notation declaration, above, for rules related to notation declarations.
+
 11.3. Model group components
 
 11.3.1. Model group
+
+   NIEM does not define any additional features relating to model groups. This section is present to maintain with [XML Schema Structures] Section 2.2, XML Schema Abstract Data Model, See Section 9.3.1, Model group, above, for rules related to model groups.
 
 11.3.2. Particle
 
@@ -5209,13 +5213,21 @@ Rule 11-22. Schema uses only known attribute groups
 
 11.3.4. Wildcard
 
+   NIEM does not define any additional features relating to wildcards. This section is present to maintain with [XML Schema Structures] Section 2.2, XML Schema Abstract Data Model, See Section 9.3.4, Wildcard, above, for rules related to wildcards.
+
 11.4. Identity-constraint definition components
+
+   NIEM does not define any additional features relating to identity-constraint definition components. This section is present to maintain with [XML Schema Structures] Section 2.2, XML Schema Abstract Data Model, See Section 9.4, Identity-constraint definition components, above, for rules related to identity-constraint definition components.
 
 11.5. Group definition components
 
 11.5.1. Model group definition
 
+   NIEM does not define any additional features relating to model group definitions. This section is present to maintain with [XML Schema Structures] Section 2.2, XML Schema Abstract Data Model, See Section 9.5.1, Model group definition, above, for rules related to model group definitions.
+
 11.5.2. Attribute group definition
+
+   NIEM does not define any additional features relating to attribute group definitions. This section is present to maintain with [XML Schema Structures] Section 2.2, XML Schema Abstract Data Model, See Section 9.5.2, Attribute group definition, above, for rules related to attribute group definitions.
 
 11.6. Annotation components
 
