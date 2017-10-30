@@ -4672,6 +4672,10 @@ Rule 10-68. Deprecated annotates schema component
         </sch:rule>
       </sch:pattern>
 
+10.9.1.2. External adapters
+
+   The annotation attributes appinfo:externalImportIndicator and appinfo:externalAdapterTypeIndicator document, in a machine-readable way, which components are external (i.e., defined by schemas that are not NIEM-conformant), and which support the use of external components.
+
 Rule 10-69. External import indicator annotates import
 
    [Rule 10-69] (REF, EXT)
@@ -4694,7 +4698,7 @@ Rule 10-70. External adapter type indicator annotates complex type
         </sch:rule>
       </sch:pattern>
 
-10.9.1.2. appinfo:appliesToTypes annotation
+10.9.1.3. appinfo:appliesToTypes annotation
 
 Rule 10-71. appinfo:appliesToTypes annotates metadata element
 
@@ -4720,7 +4724,7 @@ Rule 10-72. appinfo:appliesToTypes references types
         </sch:rule>
       </sch:pattern>
 
-10.9.1.3. appinfo:appliesToElements annotation
+10.9.1.4. appinfo:appliesToElements annotation
 
 Rule 10-73. appinfo:appliesToElements annotates metadata element
 
@@ -6476,12 +6480,12 @@ Appendix E. Index of rules
    Rule 10-66, Machine-readable annotations are valid: Section 10.9, Machine-readable annotations
    Rule 10-67, Component marked as deprecated is deprecated component: Section 10.9.1.1, Deprecation
    Rule 10-68, Deprecated annotates schema component: Section 10.9.1.1, Deprecation
-   Rule 10-69, External import indicator annotates import: Section 10.9.1, The NIEM appinfo namespace
-   Rule 10-70, External adapter type indicator annotates complex type: Section 10.9.1, The NIEM appinfo namespace
-   Rule 10-71, appinfo:appliesToTypes annotates metadata element: Section 10.9.1.2, appinfo:appliesToTypes annotation
-   Rule 10-72, appinfo:appliesToTypes references types: Section 10.9.1.2, appinfo:appliesToTypes annotation
-   Rule 10-73, appinfo:appliesToElements annotates metadata element: Section 10.9.1.3, appinfo:appliesToElements annotation
-   Rule 10-74, appinfo:appliesToElements references elements: Section 10.9.1.3, appinfo:appliesToElements annotation
+   Rule 10-69, External import indicator annotates import: Section 10.9.1.2, External adapters
+   Rule 10-70, External adapter type indicator annotates complex type: Section 10.9.1.2, External adapters
+   Rule 10-71, appinfo:appliesToTypes annotates metadata element: Section 10.9.1.3, appinfo:appliesToTypes annotation
+   Rule 10-72, appinfo:appliesToTypes references types: Section 10.9.1.3, appinfo:appliesToTypes annotation
+   Rule 10-73, appinfo:appliesToElements annotates metadata element: Section 10.9.1.4, appinfo:appliesToElements annotation
+   Rule 10-74, appinfo:appliesToElements references elements: Section 10.9.1.4, appinfo:appliesToElements annotation
    Rule 10-75, appinfo:LocalTerm annotates schema: Section 10.9.2, Local terminology
    Rule 10-76, appinfo:LocalTerm has literal or definition: Section 10.9.2, Local terminology
    Rule 10-77, Use structures as specified: Section 10.10, NIEM structural facilities
