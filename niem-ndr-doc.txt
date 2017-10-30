@@ -5950,9 +5950,21 @@ Rule 12-9. Nested elements and references have the same meaning.
 
    Being of type xs:ID and xs:IDREF, validating schema parsers will perform certain checks on the values of structures:id and structures:ref. Specifically, no two IDs may have the same value. This includes structures:id and other IDs that may be used within an XML document. Also, any value of structures:ref must also appear as the value of an ID.
 
-   By this rule, the following two XML fragments have the same meaning. First, Figure 12-8, Example with a backward reference, below, shows a person object being expressed, followed by a backwards reference to it. Second, Figure 12-9, Example with a forward reference, below, shows a person as a forward reference to the person object that is expressed later, within the definition of a witness. Both of these XML fragments have the same semantics.
+   By this rule, the following three XML fragments have a very similar meaning. First, Figure 12-8, Example with no reference, below, shows a witness that is a role of a person.
 
-   Figure 12-8: Example with a backward reference
+   Figure 12-8: Example with no reference
+
+      <j:Witness>
+        <nc:RoleOfPerson>
+          <nc:PersonName>
+            <nc:PersonFullName>John Doe</nc:PersonFullName>
+          </nc:PersonName>
+        </nc:RoleOfPerson>
+      </j:Witness>
+
+   Figure 12-9, Example with a backward reference, below, also expresses a witness object that is a role of a person. It first expresses the person object, then the witness object as a role of a that person, expressed as a reference back to the person.
+
+   Figure 12-9: Example with a backward reference
 
       <nc:Person structures:id="c58">
         <nc:PersonName>
@@ -5963,7 +5975,9 @@ Rule 12-9. Nested elements and references have the same meaning.
         <nc:RoleOfPerson structures:ref="c58" xsi:nil="true"/>
       </j:Witness>
 
-   Figure 12-9: Example with a forward reference
+   Figure 12-10, Example with a forward reference, below, shows a witness as a role of a person, with a separate person object expressed as a forward reference to the person object that is expressed later, within the definition of the witness.
+
+   Figure 12-10: Example with a forward reference
 
       <nc:Person structures:ref="t85" xsi:nil="true"/>
       <j:Witness>
@@ -5980,7 +5994,7 @@ Rule 12-9. Nested elements and references have the same meaning.
 
    NIEM provides the metadata mechanism for giving information about object assertions. An object may have an attribute that refers to one or more metadata objects. A structures:metadata attribute indicates that a data item has the given metadata. A structures:relationshipMetadata attribute asserts that the link (or relationship) established by an element has the given metadata.
 
-   Figure 12-10: Example of metadata used in an instance
+   Figure 12-11: Example of metadata used in an instance
 
       <nc:Person>
         <nc:PersonBirthDate structures:metadata="j86">
