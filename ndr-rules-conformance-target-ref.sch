@@ -966,45 +966,45 @@
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-34"><sch:title>Standard opening phrase for date element data definition</sch:title>
-  <sch:rule context="xs:element[ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]">
-    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))">Rule 11-34: The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) (date|month|year)...".</sch:report>
+<sch:pattern id="rule_11-34"><sch:title>Standard opening phrase for date element or attribute data definition</sch:title>
+  <sch:rule context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]">
+    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))">Rule 11-34: The data definition for an element or attribute with a date representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) (date|month|year)...".</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-35"><sch:title>Standard opening phrase for quantity element data definition</sch:title>
-  <sch:rule context="xs:element[ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]">
-    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))">Rule 11-35: The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (count|number)...".</sch:report>
+<sch:pattern id="rule_11-35"><sch:title>Standard opening phrase for quantity element or attribute data definition</sch:title>
+  <sch:rule context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]">
+    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))">Rule 11-35: The data definition for an element or attribute with a quantity representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (count|number)...".</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-36"><sch:title>Standard opening phrase for picture element data definition</sch:title>
-  <sch:rule context="xs:element[ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]">
-    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))">Rule 11-36: The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (image|picture|photograph)".</sch:report>
+<sch:pattern id="rule_11-36"><sch:title>Standard opening phrase for picture element or attribute data definition</sch:title>
+  <sch:rule context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]">
+    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))">Rule 11-36: The data definition for an element or attribute with a picture representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (image|picture|photograph)".</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-37"><sch:title>Standard opening phrase for indicator element data definition</sch:title>
-  <sch:rule context="xs:element[ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]">
-    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">Rule 11-37: The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "True if ...; false (otherwise|if)...".</sch:report>
+<sch:pattern id="rule_11-37"><sch:title>Standard opening phrase for indicator element or attribute data definition</sch:title>
+  <sch:rule context="*[(self::xs:element or self::xs:attribute)]                        and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]">
+    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">Rule 11-37: The data definition for an element or attribute with an indicator representation term SHOULD begin with the standard opening phrase "True if ...; false (otherwise|if)...".</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-38"><sch:title>Standard opening phrase for identification element data definition</sch:title>
-  <sch:rule context="xs:element[ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]">
-    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))">Rule 11-38: The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) identification...".</sch:report>
+<sch:pattern id="rule_11-38"><sch:title>Standard opening phrase for identification element or attribute data definition</sch:title>
+  <sch:rule context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]">
+    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))">Rule 11-38: The data definition for an element or attribute with an identification representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) identification...".</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-39"><sch:title>Standard opening phrase for name element data definition</sch:title>
-  <sch:rule context="xs:element[ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]">
-    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))">Rule 11-39: The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) name...".</sch:report>
+<sch:pattern id="rule_11-39"><sch:title>Standard opening phrase for name element or attribute data definition</sch:title>
+  <sch:rule context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]">
+    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))">Rule 11-39: The data definition for an element or attribute with a name representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) name...".</sch:report>
   </sch:rule>
 </sch:pattern>
             
-<sch:pattern id="rule_11-40"><sch:title>Standard opening phrase for element data definition</sch:title>
-  <sch:rule context="xs:element[@name                                 and not(ends-with(@name, 'Indicator'))                                 and not(ends-with(@name, 'Augmentation'))                                 and not(ends-with(@name, 'Metadata'))                                 and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]">
-    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an? '))">Rule 11-40: The data definition for an element declaration SHOULD begin with the standard opening phrase "(A|An)".</sch:report>
+<sch:pattern id="rule_11-40"><sch:title>Standard opening phrase for element or attribute data definition</sch:title>
+  <sch:rule context="*[(self::xs:element or self::xs:attribute)                        and @name                        and not(ends-with(@name, 'Indicator'))                        and not(ends-with(@name, 'Augmentation'))                        and not(ends-with(@name, 'Metadata'))                        and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]">
+    <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^an? '))">Rule 11-40: The data definition for an element or attribute declaration SHOULD begin with the standard opening phrase "(A|An)".</sch:report>
   </sch:rule>
 </sch:pattern>
             

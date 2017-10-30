@@ -5289,7 +5289,7 @@ Rule 11-28. Data definition follows 11179-4 recommendations
 
    In order to provide a more consistent voice across NIEM, a model built from requirements from many different sources, component data definitions should begin with a standard opening phrase, as defined below.
 
-11.6.1.1.1. Element opening phrases
+11.6.1.1.1. Element and attribute opening phrases
 
 Rule 11-29. Standard opening phrase for augmentation point element data definition
 
@@ -5356,98 +5356,105 @@ Rule 11-33. Standard opening phrase for abstract element data definition
         </sch:rule>
       </sch:pattern>
 
-Rule 11-34. Standard opening phrase for date element data definition
+Rule 11-34. Standard opening phrase for date element or attribute data definition
 
    [Rule 11-34] (REF, EXT)
 
       <sch:pattern>
-        <sch:rule context="xs:element[ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]
-                             /xs:annotation/xs:documentation[1]">
+        <sch:rule context="*[(self::xs:element or self::xs:attribute)
+                             and ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]
+                            /xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
               test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))"
-            >The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) (date|month|year)...".</sch:report>
+            >The data definition for an element or attribute with a date representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) (date|month|year)...".</sch:report>
         </sch:rule>
       </sch:pattern>
 
-Rule 11-35. Standard opening phrase for quantity element data definition
+Rule 11-35. Standard opening phrase for quantity element or attribute data definition
 
    [Rule 11-35] (REF, EXT)
 
       <sch:pattern>
-        <sch:rule context="xs:element[ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]
-                             /xs:annotation/xs:documentation[1]">
+        <sch:rule context="*[(self::xs:element or self::xs:attribute)
+                             and ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]
+                            /xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
               test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))"
-            >The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (count|number)...".</sch:report>
+            >The data definition for an element or attribute with a quantity representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (count|number)...".</sch:report>
         </sch:rule>
       </sch:pattern>
 
-Rule 11-36. Standard opening phrase for picture element data definition
+Rule 11-36. Standard opening phrase for picture element or attribute data definition
 
    [Rule 11-36] (REF, EXT)
 
       <sch:pattern>
-        <sch:rule context="xs:element[ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]
-                             /xs:annotation/xs:documentation[1]">
+        <sch:rule context="*[(self::xs:element or self::xs:attribute)
+                             and ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]
+                            /xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
               test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))"
-            >The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (image|picture|photograph)".</sch:report>
+            >The data definition for an element or attribute with a picture representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (image|picture|photograph)".</sch:report>
         </sch:rule>
       </sch:pattern>
 
-Rule 11-37. Standard opening phrase for indicator element data definition
+Rule 11-37. Standard opening phrase for indicator element or attribute data definition
 
    [Rule 11-37] (REF, EXT)
 
       <sch:pattern>
-        <sch:rule context="xs:element[ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]
-                             /xs:annotation/xs:documentation[1]">
+        <sch:rule context="*[(self::xs:element or self::xs:attribute)]
+                             and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]
+                            /xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
               test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))"
-            >The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "True if ...; false (otherwise|if)...".</sch:report>
+            >The data definition for an element or attribute with an indicator representation term SHOULD begin with the standard opening phrase "True if ...; false (otherwise|if)...".</sch:report>
         </sch:rule>
       </sch:pattern>
 
-Rule 11-38. Standard opening phrase for identification element data definition
+Rule 11-38. Standard opening phrase for identification element or attribute data definition
 
    [Rule 11-38] (REF, EXT)
 
       <sch:pattern>
-        <sch:rule context="xs:element[ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]
-                             /xs:annotation/xs:documentation[1]">
+        <sch:rule context="*[(self::xs:element or self::xs:attribute)
+                             and ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]
+                            /xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
               test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))"
-            >The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) identification...".</sch:report>
+            >The data definition for an element or attribute with an identification representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) identification...".</sch:report>
         </sch:rule>
       </sch:pattern>
 
-Rule 11-39. Standard opening phrase for name element data definition
+Rule 11-39. Standard opening phrase for name element or attribute data definition
 
    [Rule 11-39] (REF, EXT)
 
       <sch:pattern>
-        <sch:rule context="xs:element[ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]
-                             /xs:annotation/xs:documentation[1]">
+        <sch:rule context="*[(self::xs:element or self::xs:attribute)
+                             and ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]
+                            /xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
               test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))"
-            >The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) name...".</sch:report>
+            >The data definition for an element or attribute with a name representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) name...".</sch:report>
         </sch:rule>
       </sch:pattern>
 
-Rule 11-40. Standard opening phrase for element data definition
+Rule 11-40. Standard opening phrase for element or attribute data definition
 
    [Rule 11-40] (REF, EXT)
 
       <sch:pattern>
-        <sch:rule context="xs:element[@name
-                                      and not(ends-with(@name, 'Indicator'))
-                                      and not(ends-with(@name, 'Augmentation'))
-                                      and not(ends-with(@name, 'Metadata'))
-                                      and not(xs:boolean(@abstract) eq true())]
-                             /xs:annotation/xs:documentation[1]">
+        <sch:rule context="*[(self::xs:element or self::xs:attribute)
+                             and @name
+                             and not(ends-with(@name, 'Indicator'))
+                             and not(ends-with(@name, 'Augmentation'))
+                             and not(ends-with(@name, 'Metadata'))
+                             and not(xs:boolean(@abstract) eq true())]
+                            /xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
               test="not(matches(lower-case(normalize-space(.)), '^an? '))"
-            >The data definition for an element declaration SHOULD begin with the standard opening phrase "(A|An)".</sch:report>
+            >The data definition for an element or attribute declaration SHOULD begin with the standard opening phrase "(A|An)".</sch:report>
         </sch:rule>
       </sch:pattern>
 
@@ -6533,18 +6540,18 @@ Appendix E. Index of rules
    Rule 11-26, Do not leak representation into data definition: Section 11.6.1, Human-readable documentation
    Rule 11-27, Data definition follows 11179-4 requirements: Section 11.6.1, Human-readable documentation
    Rule 11-28, Data definition follows 11179-4 recommendations: Section 11.6.1, Human-readable documentation
-   Rule 11-29, Standard opening phrase for augmentation point element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-30, Standard opening phrase for augmentation element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-31, Standard opening phrase for metadata element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-32, Standard opening phrase for association element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-33, Standard opening phrase for abstract element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-34, Standard opening phrase for date element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-35, Standard opening phrase for quantity element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-36, Standard opening phrase for picture element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-37, Standard opening phrase for indicator element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-38, Standard opening phrase for identification element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-39, Standard opening phrase for name element data definition: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-40, Standard opening phrase for element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-29, Standard opening phrase for augmentation point element data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-30, Standard opening phrase for augmentation element data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-31, Standard opening phrase for metadata element data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-32, Standard opening phrase for association element data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-33, Standard opening phrase for abstract element data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-34, Standard opening phrase for date element or attribute data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-35, Standard opening phrase for quantity element or attribute data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-36, Standard opening phrase for picture element or attribute data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-37, Standard opening phrase for indicator element or attribute data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-38, Standard opening phrase for identification element or attribute data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-39, Standard opening phrase for name element or attribute data definition: Section 11.6.1.1.1, Element and attribute opening phrases
+   Rule 11-40, Standard opening phrase for element or attribute data definition: Section 11.6.1.1.1, Element and attribute opening phrases
    Rule 11-41, Standard opening phrase for association type data definition: Section 11.6.1.1.2, Complex type opening phrases
    Rule 11-42, Standard opening phrase for augmentation type data definition: Section 11.6.1.1.2, Complex type opening phrases
    Rule 11-43, Standard opening phrase for metadata type data definition: Section 11.6.1.1.2, Complex type opening phrases

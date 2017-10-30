@@ -1448,7 +1448,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-34</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for date element data definition</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for date element or attribute data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M149"/>
@@ -1457,7 +1457,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-35</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for quantity element data definition</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for quantity element or attribute data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M150"/>
@@ -1466,7 +1466,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-36</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for picture element data definition</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for picture element or attribute data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M151"/>
@@ -1475,7 +1475,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-37</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for indicator element data definition</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for indicator element or attribute data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M152"/>
@@ -1484,7 +1484,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-38</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for identification element data definition</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for identification element or attribute data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M153"/>
@@ -1493,7 +1493,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-39</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for name element data definition</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for name element or attribute data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M154"/>
@@ -1502,7 +1502,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-40</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for element data definition</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for element or attribute data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M155"/>
@@ -5587,15 +5587,15 @@
       <xsl:apply-templates select="*" mode="M148"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-34Standard opening phrase for date element data definition-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for date element data definition</svrl:text>
+   <!--PATTERN rule_11-34Standard opening phrase for date element or attribute data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for date element or attribute data definition</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+   <xsl:template match="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"
                  priority="1000"
                  mode="M149">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
+                       context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (date|month|year)'))">
@@ -5605,7 +5605,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-34: The data definition for an element with a date representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) (date|month|year)...".</svrl:text>
+            <svrl:text>Rule 11-34: The data definition for an element or attribute with a date representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) (date|month|year)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M149"/>
@@ -5615,15 +5615,15 @@
       <xsl:apply-templates select="*" mode="M149"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-35Standard opening phrase for quantity element data definition-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for quantity element data definition</svrl:text>
+   <!--PATTERN rule_11-35Standard opening phrase for quantity element or attribute data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for quantity element or attribute data definition</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+   <xsl:template match="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"
                  priority="1000"
                  mode="M150">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
+                       context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (count|number)'))">
@@ -5633,7 +5633,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-35: The data definition for an element with a quantity representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (count|number)...".</svrl:text>
+            <svrl:text>Rule 11-35: The data definition for an element or attribute with a quantity representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (count|number)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M150"/>
@@ -5643,15 +5643,15 @@
       <xsl:apply-templates select="*" mode="M150"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-36Standard opening phrase for picture element data definition-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for picture element data definition</svrl:text>
+   <!--PATTERN rule_11-36Standard opening phrase for picture element or attribute data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for picture element or attribute data definition</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+   <xsl:template match="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"
                  priority="1000"
                  mode="M151">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
+                       context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? (image|picture|photograph)'))">
@@ -5661,7 +5661,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-36: The data definition for an element with a picture representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (image|picture|photograph)".</svrl:text>
+            <svrl:text>Rule 11-36: The data definition for an element or attribute with a picture representation term SHOULD begin with the standard opening phrase "An (optional adjectives) (image|picture|photograph)".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M151"/>
@@ -5671,15 +5671,15 @@
       <xsl:apply-templates select="*" mode="M151"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-37Standard opening phrase for indicator element data definition-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for indicator element data definition</svrl:text>
+   <!--PATTERN rule_11-37Standard opening phrase for indicator element or attribute data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for indicator element or attribute data definition</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+   <xsl:template match="*[(self::xs:element or self::xs:attribute)]                        and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"
                  priority="1000"
                  mode="M152">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
+                       context="*[(self::xs:element or self::xs:attribute)]                        and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">
@@ -5689,7 +5689,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-37: The data definition for an element with an indicator representation term SHOULD begin with the standard opening phrase "True if ...; false (otherwise|if)...".</svrl:text>
+            <svrl:text>Rule 11-37: The data definition for an element or attribute with an indicator representation term SHOULD begin with the standard opening phrase "True if ...; false (otherwise|if)...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M152"/>
@@ -5699,15 +5699,15 @@
       <xsl:apply-templates select="*" mode="M152"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-38Standard opening phrase for identification element data definition-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for identification element data definition</svrl:text>
+   <!--PATTERN rule_11-38Standard opening phrase for identification element or attribute data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for identification element or attribute data definition</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+   <xsl:template match="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"
                  priority="1000"
                  mode="M153">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
+                       context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an?( .*)? identification'))">
@@ -5717,7 +5717,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-38: The data definition for an element with an identification representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) identification...".</svrl:text>
+            <svrl:text>Rule 11-38: The data definition for an element or attribute with an identification representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) identification...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M153"/>
@@ -5727,15 +5727,15 @@
       <xsl:apply-templates select="*" mode="M153"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-39Standard opening phrase for name element data definition-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for name element data definition</svrl:text>
+   <!--PATTERN rule_11-39Standard opening phrase for name element or attribute data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for name element or attribute data definition</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:element[ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+   <xsl:template match="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"
                  priority="1000"
                  mode="M154">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
+                       context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^(a|an)( .*)? name'))">
@@ -5745,7 +5745,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-39: The data definition for an element with a name representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) name...".</svrl:text>
+            <svrl:text>Rule 11-39: The data definition for an element or attribute with a name representation term SHOULD begin with the standard opening phrase "(A|An) (optional adjectives) name...".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M154"/>
@@ -5755,15 +5755,15 @@
       <xsl:apply-templates select="*" mode="M154"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-40Standard opening phrase for element data definition-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for element data definition</svrl:text>
+   <!--PATTERN rule_11-40Standard opening phrase for element or attribute data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for element or attribute data definition</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="xs:element[@name                                 and not(ends-with(@name, 'Indicator'))                                 and not(ends-with(@name, 'Augmentation'))                                 and not(ends-with(@name, 'Metadata'))                                 and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
+   <xsl:template match="*[(self::xs:element or self::xs:attribute)                        and @name                        and not(ends-with(@name, 'Indicator'))                        and not(ends-with(@name, 'Augmentation'))                        and not(ends-with(@name, 'Metadata'))                        and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"
                  priority="1000"
                  mode="M155">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="xs:element[@name                                 and not(ends-with(@name, 'Indicator'))                                 and not(ends-with(@name, 'Augmentation'))                                 and not(ends-with(@name, 'Metadata'))                                 and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"/>
+                       context="*[(self::xs:element or self::xs:attribute)                        and @name                        and not(ends-with(@name, 'Indicator'))                        and not(ends-with(@name, 'Augmentation'))                        and not(ends-with(@name, 'Metadata'))                        and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^an? '))">
@@ -5773,7 +5773,7 @@
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
-            <svrl:text>Rule 11-40: The data definition for an element declaration SHOULD begin with the standard opening phrase "(A|An)".</svrl:text>
+            <svrl:text>Rule 11-40: The data definition for an element or attribute declaration SHOULD begin with the standard opening phrase "(A|An)".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
       <xsl:apply-templates select="*" mode="M155"/>
