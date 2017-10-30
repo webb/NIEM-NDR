@@ -1537,7 +1537,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-29</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for augmentation point element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for augmentation point element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M159"/>
@@ -1546,7 +1546,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-30</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for augmentation element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for augmentation element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M160"/>
@@ -1555,7 +1555,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-31</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for metadata element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for metadata element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M161"/>
@@ -1564,7 +1564,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-32</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for association element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for association element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M162"/>
@@ -1573,7 +1573,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-33</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for abstract element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for abstract element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M163"/>
@@ -1582,7 +1582,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-34</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for date element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for date element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M164"/>
@@ -1591,7 +1591,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-35</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for quantity element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for quantity element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M165"/>
@@ -1600,7 +1600,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-36</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for picture element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for picture element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M166"/>
@@ -1609,7 +1609,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-37</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for indicator element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for indicator element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M167"/>
@@ -1618,7 +1618,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-38</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for identification element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for identification element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M168"/>
@@ -1627,7 +1627,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-39</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for name element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for name element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M169"/>
@@ -1636,7 +1636,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-40</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for element</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for element data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M170"/>
@@ -1645,7 +1645,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-41</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for association type</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for association type data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M171"/>
@@ -1654,7 +1654,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-42</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for augmentation type</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for augmentation type data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M172"/>
@@ -1663,7 +1663,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-43</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for metadata type</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for metadata type data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M173"/>
@@ -1672,7 +1672,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-44</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for complex type</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for complex type data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M174"/>
@@ -1681,7 +1681,7 @@
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
             <xsl:attribute name="id">rule_11-45</xsl:attribute>
-            <xsl:attribute name="name">Standard opening phrase for simple type</xsl:attribute>
+            <xsl:attribute name="name">Standard opening phrase for simple type data definition</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M175"/>
@@ -5991,8 +5991,8 @@
       <xsl:apply-templates select="*" mode="M158"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-29Standard opening phrase for augmentation point element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for augmentation point element</svrl:text>
+   <!--PATTERN rule_11-29Standard opening phrase for augmentation point element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for augmentation point element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'AugmentationPoint')]/xs:annotation/xs:documentation[1]"
@@ -6019,8 +6019,8 @@
       <xsl:apply-templates select="*" mode="M159"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-30Standard opening phrase for augmentation element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for augmentation element</svrl:text>
+   <!--PATTERN rule_11-30Standard opening phrase for augmentation element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for augmentation element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Augmentation')]/xs:annotation/xs:documentation[1]"
@@ -6047,8 +6047,8 @@
       <xsl:apply-templates select="*" mode="M160"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-31Standard opening phrase for metadata element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for metadata element</svrl:text>
+   <!--PATTERN rule_11-31Standard opening phrase for metadata element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for metadata element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Metadata')                                 and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]"
@@ -6075,8 +6075,8 @@
       <xsl:apply-templates select="*" mode="M161"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-32Standard opening phrase for association element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for association element</svrl:text>
+   <!--PATTERN rule_11-32Standard opening phrase for association element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for association element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Association')                                 and not(xs:boolean(@abstract) eq true())]/xs:annotation/xs:documentation[1]"
@@ -6103,8 +6103,8 @@
       <xsl:apply-templates select="*" mode="M162"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-33Standard opening phrase for abstract element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for abstract element</svrl:text>
+   <!--PATTERN rule_11-33Standard opening phrase for abstract element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for abstract element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[xs:boolean(@abstract) = true()                        and not(ends-with(@name, 'AugmentationPoint'))]/xs:annotation/xs:documentation[1]"
@@ -6131,8 +6131,8 @@
       <xsl:apply-templates select="*" mode="M163"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-34Standard opening phrase for date element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for date element</svrl:text>
+   <!--PATTERN rule_11-34Standard opening phrase for date element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for date element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Date') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
@@ -6159,8 +6159,8 @@
       <xsl:apply-templates select="*" mode="M164"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-35Standard opening phrase for quantity element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for quantity element</svrl:text>
+   <!--PATTERN rule_11-35Standard opening phrase for quantity element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for quantity element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Quantity') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
@@ -6187,8 +6187,8 @@
       <xsl:apply-templates select="*" mode="M165"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-36Standard opening phrase for picture element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for picture element</svrl:text>
+   <!--PATTERN rule_11-36Standard opening phrase for picture element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for picture element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Picture') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
@@ -6215,8 +6215,8 @@
       <xsl:apply-templates select="*" mode="M166"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-37Standard opening phrase for indicator element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for indicator element</svrl:text>
+   <!--PATTERN rule_11-37Standard opening phrase for indicator element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for indicator element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
@@ -6243,8 +6243,8 @@
       <xsl:apply-templates select="*" mode="M167"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-38Standard opening phrase for identification element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for identification element</svrl:text>
+   <!--PATTERN rule_11-38Standard opening phrase for identification element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for identification element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Identification') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
@@ -6271,8 +6271,8 @@
       <xsl:apply-templates select="*" mode="M168"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-39Standard opening phrase for name element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for name element</svrl:text>
+   <!--PATTERN rule_11-39Standard opening phrase for name element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for name element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[ends-with(@name, 'Name') and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
@@ -6299,8 +6299,8 @@
       <xsl:apply-templates select="*" mode="M169"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-40Standard opening phrase for element-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for element</svrl:text>
+   <!--PATTERN rule_11-40Standard opening phrase for element data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for element data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:element[@name                                 and not(ends-with(@name, 'Indicator'))                                 and not(ends-with(@name, 'Augmentation'))                                 and not(ends-with(@name, 'Metadata'))                                 and not(xs:boolean(@abstract) eq true())]                        /xs:annotation/xs:documentation[1]"
@@ -6327,8 +6327,8 @@
       <xsl:apply-templates select="*" mode="M170"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-41Standard opening phrase for association type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for association type</svrl:text>
+   <!--PATTERN rule_11-41Standard opening phrase for association type data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for association type data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType[ends-with(@name, 'AssociationType')]/xs:annotation/xs:documentation[1]"
@@ -6355,8 +6355,8 @@
       <xsl:apply-templates select="*" mode="M171"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-42Standard opening phrase for augmentation type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for augmentation type</svrl:text>
+   <!--PATTERN rule_11-42Standard opening phrase for augmentation type data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for augmentation type data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType[ends-with(@name, 'AugmentationType')]/xs:annotation/xs:documentation[1]"
@@ -6383,8 +6383,8 @@
       <xsl:apply-templates select="*" mode="M172"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-43Standard opening phrase for metadata type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for metadata type</svrl:text>
+   <!--PATTERN rule_11-43Standard opening phrase for metadata type data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for metadata type data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType[ends-with(@name, 'MetadataType')]/xs:annotation/xs:documentation[1]"
@@ -6411,8 +6411,8 @@
       <xsl:apply-templates select="*" mode="M173"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-44Standard opening phrase for complex type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for complex type</svrl:text>
+   <!--PATTERN rule_11-44Standard opening phrase for complex type data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for complex type data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:complexType/xs:annotation/xs:documentation[1]"
@@ -6439,8 +6439,8 @@
       <xsl:apply-templates select="*" mode="M174"/>
    </xsl:template>
 
-   <!--PATTERN rule_11-45Standard opening phrase for simple type-->
-   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for simple type</svrl:text>
+   <!--PATTERN rule_11-45Standard opening phrase for simple type data definition-->
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for simple type data definition</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="xs:simpleType/xs:annotation/xs:documentation[1]"

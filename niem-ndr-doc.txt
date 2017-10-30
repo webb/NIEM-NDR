@@ -5291,7 +5291,7 @@ Rule 11-28. Data definition follows 11179-4 recommendations
 
 11.6.1.1.1. Element opening phrases
 
-Rule 11-29. Standard opening phrase for augmentation point element
+Rule 11-29. Standard opening phrase for augmentation point element data definition
 
    [Rule 11-29] (REF, EXT)
 
@@ -5303,7 +5303,7 @@ Rule 11-29. Standard opening phrase for augmentation point element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-30. Standard opening phrase for augmentation element
+Rule 11-30. Standard opening phrase for augmentation element data definition
 
    [Rule 11-30] (REF, EXT)
 
@@ -5317,7 +5317,7 @@ Rule 11-30. Standard opening phrase for augmentation element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-31. Standard opening phrase for metadata element
+Rule 11-31. Standard opening phrase for metadata element data definition
 
    [Rule 11-31] (REF, EXT)
 
@@ -5330,7 +5330,7 @@ Rule 11-31. Standard opening phrase for metadata element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-32. Standard opening phrase for association element
+Rule 11-32. Standard opening phrase for association element data definition
 
    [Rule 11-32] (REF, EXT)
 
@@ -5343,7 +5343,7 @@ Rule 11-32. Standard opening phrase for association element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-33. Standard opening phrase for abstract element
+Rule 11-33. Standard opening phrase for abstract element data definition
 
    [Rule 11-33] (REF, EXT)
 
@@ -5356,7 +5356,7 @@ Rule 11-33. Standard opening phrase for abstract element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-34. Standard opening phrase for date element
+Rule 11-34. Standard opening phrase for date element data definition
 
    [Rule 11-34] (REF, EXT)
 
@@ -5369,7 +5369,7 @@ Rule 11-34. Standard opening phrase for date element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-35. Standard opening phrase for quantity element
+Rule 11-35. Standard opening phrase for quantity element data definition
 
    [Rule 11-35] (REF, EXT)
 
@@ -5382,7 +5382,7 @@ Rule 11-35. Standard opening phrase for quantity element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-36. Standard opening phrase for picture element
+Rule 11-36. Standard opening phrase for picture element data definition
 
    [Rule 11-36] (REF, EXT)
 
@@ -5395,7 +5395,7 @@ Rule 11-36. Standard opening phrase for picture element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-37. Standard opening phrase for indicator element
+Rule 11-37. Standard opening phrase for indicator element data definition
 
    [Rule 11-37] (REF, EXT)
 
@@ -5408,7 +5408,7 @@ Rule 11-37. Standard opening phrase for indicator element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-38. Standard opening phrase for identification element
+Rule 11-38. Standard opening phrase for identification element data definition
 
    [Rule 11-38] (REF, EXT)
 
@@ -5421,7 +5421,7 @@ Rule 11-38. Standard opening phrase for identification element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-39. Standard opening phrase for name element
+Rule 11-39. Standard opening phrase for name element data definition
 
    [Rule 11-39] (REF, EXT)
 
@@ -5434,7 +5434,7 @@ Rule 11-39. Standard opening phrase for name element
         </sch:rule>
       </sch:pattern>
 
-Rule 11-40. Standard opening phrase for element
+Rule 11-40. Standard opening phrase for element data definition
 
    [Rule 11-40] (REF, EXT)
 
@@ -5453,7 +5453,7 @@ Rule 11-40. Standard opening phrase for element
 
 11.6.1.1.2. Complex type opening phrases
 
-Rule 11-41. Standard opening phrase for association type
+Rule 11-41. Standard opening phrase for association type data definition
 
    [Rule 11-41] (REF, EXT)
 
@@ -5465,7 +5465,7 @@ Rule 11-41. Standard opening phrase for association type
         </sch:rule>
       </sch:pattern>
 
-Rule 11-42. Standard opening phrase for augmentation type
+Rule 11-42. Standard opening phrase for augmentation type data definition
 
    [Rule 11-42] (REF, EXT)
 
@@ -5478,7 +5478,7 @@ Rule 11-42. Standard opening phrase for augmentation type
         </sch:rule>
       </sch:pattern>
 
-Rule 11-43. Standard opening phrase for metadata type
+Rule 11-43. Standard opening phrase for metadata type data definition
 
    [Rule 11-43] (REF, EXT)
 
@@ -5491,7 +5491,7 @@ Rule 11-43. Standard opening phrase for metadata type
         </sch:rule>
       </sch:pattern>
 
-Rule 11-44. Standard opening phrase for complex type
+Rule 11-44. Standard opening phrase for complex type data definition
 
    [Rule 11-44] (REF, EXT)
 
@@ -5503,7 +5503,7 @@ Rule 11-44. Standard opening phrase for complex type
         </sch:rule>
       </sch:pattern>
 
-Rule 11-45. Standard opening phrase for simple type
+Rule 11-45. Standard opening phrase for simple type data definition
 
    [Rule 11-45] (REF, EXT)
 
@@ -6533,23 +6533,23 @@ Appendix E. Index of rules
    Rule 11-26, Do not leak representation into data definition: Section 11.6.1, Human-readable documentation
    Rule 11-27, Data definition follows 11179-4 requirements: Section 11.6.1, Human-readable documentation
    Rule 11-28, Data definition follows 11179-4 recommendations: Section 11.6.1, Human-readable documentation
-   Rule 11-29, Standard opening phrase for augmentation point element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-30, Standard opening phrase for augmentation element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-31, Standard opening phrase for metadata element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-32, Standard opening phrase for association element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-33, Standard opening phrase for abstract element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-34, Standard opening phrase for date element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-35, Standard opening phrase for quantity element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-36, Standard opening phrase for picture element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-37, Standard opening phrase for indicator element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-38, Standard opening phrase for identification element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-39, Standard opening phrase for name element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-40, Standard opening phrase for element: Section 11.6.1.1.1, Element opening phrases
-   Rule 11-41, Standard opening phrase for association type: Section 11.6.1.1.2, Complex type opening phrases
-   Rule 11-42, Standard opening phrase for augmentation type: Section 11.6.1.1.2, Complex type opening phrases
-   Rule 11-43, Standard opening phrase for metadata type: Section 11.6.1.1.2, Complex type opening phrases
-   Rule 11-44, Standard opening phrase for complex type: Section 11.6.1.1.2, Complex type opening phrases
-   Rule 11-45, Standard opening phrase for simple type: Section 11.6.1.1, Data definition opening phrases
+   Rule 11-29, Standard opening phrase for augmentation point element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-30, Standard opening phrase for augmentation element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-31, Standard opening phrase for metadata element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-32, Standard opening phrase for association element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-33, Standard opening phrase for abstract element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-34, Standard opening phrase for date element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-35, Standard opening phrase for quantity element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-36, Standard opening phrase for picture element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-37, Standard opening phrase for indicator element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-38, Standard opening phrase for identification element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-39, Standard opening phrase for name element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-40, Standard opening phrase for element data definition: Section 11.6.1.1.1, Element opening phrases
+   Rule 11-41, Standard opening phrase for association type data definition: Section 11.6.1.1.2, Complex type opening phrases
+   Rule 11-42, Standard opening phrase for augmentation type data definition: Section 11.6.1.1.2, Complex type opening phrases
+   Rule 11-43, Standard opening phrase for metadata type data definition: Section 11.6.1.1.2, Complex type opening phrases
+   Rule 11-44, Standard opening phrase for complex type data definition: Section 11.6.1.1.2, Complex type opening phrases
+   Rule 11-45, Standard opening phrase for simple type data definition: Section 11.6.1.1, Data definition opening phrases
    Rule 11-46, Same namespace means same components: Section 11.7.1, xs:schema document element restrictions
    Rule 11-47, Different version means different view: Section 11.7.1, xs:schema document element restrictions
    Rule 11-48, Reference schema imports reference schema: Section 11.8, Schema assembly
