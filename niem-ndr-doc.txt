@@ -5536,7 +5536,7 @@ Rule 11-47. Different version means different view
 
    [Rule 11-47] (REF, EXT)
 
-      Two XML Schema documents MUST have the same value for attribute targetNamespace carried by the element xs:schema, and different values for attribute version carried by the element xs:schema if and only if they are different views of the same set of components.
+      Two XML Schema documents MUST have the same value for attribute targetNamespace carried by the element xs:schema, and different values for attribute version carried by the element xs:schema if and only if they are profiles of the same set of components.
 
    These rules embody the basic philosophy behind NIEM's use of components with namespaces: A component is uniquely identified by its class (e.g. element, attribute, type), its namespace (a URI), and its local name (an unqualified string). Any two matching component identifiers refer to the same component, even if the versions of the schemas containing each are different.
 
