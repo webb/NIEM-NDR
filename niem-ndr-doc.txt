@@ -4566,9 +4566,9 @@ Rule 10-62. Redundant term in name is omitted
 
       |Value|A result of a calculation.
 
-      |Rate|A representation of a ratio where the two units are not included.
+      |Rate|A relative speed of change or progress.
 
-      |Percent|A representation of a ratio in which the two units are the same.
+      |Percent|A representation of a unitless ratio, expressed as parts of a hundred, with 100 percent representing a ratio of 1 to 1.
 
       Quantity||A counted number of non-monetary units possibly including fractions.
 
