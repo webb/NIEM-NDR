@@ -6013,7 +6013,7 @@ Rule 12-9. Nested elements and references have the same meaning.
         </nc:ReportedDate>
       </nc:Metadata>
       <nc:Metadata structures:id="k25">
-        <nc:ProbabilityPercent>0.25</nc:ProbabilityPercent>
+        <nc:ProbabilityPercent>25</nc:ProbabilityPercent>
       </nc:Metadata>
 
    This example shows a person named John Doe, born 12/1/1945. This data has several pieces of metadata on it:
