@@ -418,7 +418,7 @@ Table of Tables
 
 3.5. XML Namespaces terminology
 
-   This document uses XML Namespaces as defined by [XML Namespaces] and [XML Namespaces Errata].
+   This document uses XML Namespaces as defined by [XML Namespaces].
 
 3.6. Conformance Targets Attribute Specification terminology
 
@@ -1366,7 +1366,7 @@ Rule 7-1. Document is an XML document
 
 7.2. Conformance to XML Namespaces
 
-   The XML namespaces specification and errata define correct use of XML namespaces; NIEM-conformant XML artifacts (instance documents and schema documents) must use namespaces properly.
+   The XML namespaces specification defines correct use of XML namespaces; NIEM-conformant XML artifacts (instance documents and schema documents) must use namespaces properly.
 
 Rule 7-2. Document uses XML namespaces properly
 
@@ -1374,7 +1374,7 @@ Rule 7-2. Document uses XML namespaces properly
 
       The document MUST be namespace-well-formed and namespace-valid.
 
-   The terms namespace-well-formed and namespace-valid are normatively defined by [XML Namespaces] and [XML Namespaces Errata].
+   The terms namespace-well-formed and namespace-valid are normatively defined by [XML Namespaces].
 
 7.3. Conformance to XML Schema
 
@@ -6164,8 +6164,6 @@ Appendix A. References
    [XML Infoset]: Cowan, John, and Richard Tobin. "XML Information Set (Second Edition)", 4 February 2004. http://www.w3.org/TR/2004/REC-xml-infoset-20040204/.
 
    [XML Namespaces]: "Namespaces in XML 1.0 (Third Edition)", W3C Recommendation, 8 December 2009. Available from http://www.w3.org/TR/2009/REC-xml-names-20091208/.
-
-   [XML Namespaces Errata]: "Namespaces in XML Errata", 6 December 2002. Available from http://www.w3.org/XML/xml-names-19990114-errata.
 
    [XML Schema Datatypes]: "XML Schema Part 2: Datatypes Second Edition", W3C Recommendation, 28 October 2004. Available at http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/.
 
