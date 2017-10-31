@@ -4130,6 +4130,17 @@ Rule 10-41. Metadata element has applicable elements
 
                *  any element with a type with a qualified name that is in the value of appinfo:appliesToTypes, or any element with a type that is validly derived from such a type.
 
+   Figure 10-14, Sample use of appinfo:appliesToTypes, below, shows an example of appinfo:appliesToTypes, defining a metadata element that is applicable to all objects and all associations.
+
+   Figure 10-14: Sample use of appinfo:appliesToTypes
+
+      <xs:element name="Metadata" type="nc:MetadataType" nillable="true"
+          appinfo:appliesToTypes="structures:ObjectType structures:AssociationType">
+        <xs:annotation>
+          <xs:documentation>Information that further qualifies primary data; data about data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
 10.6. Container elements
 
    All NIEM properties establish a relationship between the object holding the property and the value of the property. For example, an activity object of type nc:ActivityType may have an element nc:ActivityDescriptionText. This element will be of type nc:TextType and represents a NIEM property owned by that activity object. An occurrence of this element within an activity object establishes a relationship between the activity object and the text: the text is the description of the activity.
@@ -4162,7 +4173,7 @@ Rule 10-41. Metadata element has applicable elements
 
    For example, the definition of nc:DateType uses this pattern:
 
-   Figure 10-14: A type definition that uses the "Representation" pattern
+   Figure 10-15: A type definition that uses the "Representation" pattern
 
       <xs:complexType name="DateType">
         <xs:annotation>
@@ -4182,7 +4193,7 @@ Rule 10-41. Metadata element has applicable elements
 
    The type has elements that represent accuracy and margin of error, as well as an augmentation point. The actual date value, however, is carried by an element that substitutes for nc:DateRepresentation. That base element, and several substitutions are defined by the NIEM Core namespace:
 
-   Figure 10-15: Element declarations that implement representations
+   Figure 10-16: Element declarations that implement representations
 
       <xs:element name="DateRepresentation" abstract="true">
         <xs:annotation>
@@ -6036,7 +6047,7 @@ Rule 12-9. Nested elements and references have the same meaning.
 
    An instance would not be valid XML if the structures:metadata or structures:relationshipMetadata attributes contained references for which there were no defined IDs. The instance would not be NIEM-conformant if the references were not to IDs defined with the structures:id attribute.
 
-   Application of metadata to a type or element to which it is not applicable is not NIEM-conformant. A metadata element may be labeled as applicable to multiple elements via attribute appinfo:appliesToElements, or to multiple types via attribute appinfo:appliesToTypes. In either case it may apply to an instance of any of the listed elements or types. A metadata element with neither attribute appinfo:appliesToElements nor attribute appinfo:appliesToTypes may be applied to any element of any type.
+   Application of metadata to a type or element to which it is not applicable is not NIEM-conformant. A metadata element may be labeled as applicable to multiple elements via attribute appinfo:appliesToElements, or to multiple types via attribute appinfo:appliesToTypes. In either case it may apply to an instance of any of the listed elements or types. For an example, see Figure 10-14, Sample use of appinfo:appliesToTypes, above. A metadata element with neither attribute appinfo:appliesToElements nor attribute appinfo:appliesToTypes may be applied to any element of any type.
 
 Rule 12-10. Metadata applies to referring entity
 
