@@ -985,7 +985,7 @@
 </sch:pattern>
             
 <sch:pattern id="rule_11-37"><sch:title>Standard opening phrase for indicator element or attribute data definition</sch:title>
-  <sch:rule context="*[(self::xs:element or self::xs:attribute)]                        and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]">
+  <sch:rule context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]">
     <sch:report role="warning" test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">Rule 11-37: The data definition for an element or attribute with an indicator representation term SHOULD begin with the standard opening phrase "True if ...; false (otherwise|if)...".</sch:report>
   </sch:rule>
 </sch:pattern>

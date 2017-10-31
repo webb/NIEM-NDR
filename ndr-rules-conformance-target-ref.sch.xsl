@@ -6219,11 +6219,11 @@
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">Standard opening phrase for indicator element or attribute data definition</svrl:text>
 
 	  <!--RULE -->
-   <xsl:template match="*[(self::xs:element or self::xs:attribute)]                        and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"
+   <xsl:template match="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"
                  priority="1000"
                  mode="M167">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="*[(self::xs:element or self::xs:attribute)]                        and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"/>
+                       context="*[(self::xs:element or self::xs:attribute)                        and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]                       /xs:annotation/xs:documentation[1]"/>
 
 		    <!--REPORT warning-->
       <xsl:if test="not(matches(lower-case(normalize-space(.)), '^true if .*; false (otherwise|if)'))">

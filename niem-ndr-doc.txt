@@ -5403,7 +5403,7 @@ Rule 11-37. Standard opening phrase for indicator element or attribute data defi
    [Rule 11-37] (REF, EXT)
 
       <sch:pattern>
-        <sch:rule context="*[(self::xs:element or self::xs:attribute)]
+        <sch:rule context="*[(self::xs:element or self::xs:attribute)
                              and ends-with(@name, 'Indicator') and not(xs:boolean(@abstract) eq true())]
                             /xs:annotation/xs:documentation[1]">
           <sch:report role="warning"
@@ -5936,7 +5936,7 @@ Rule 12-8. structures:id and structures:id denote resource identifier
 
 12.2.4. Reference and content elements have same meaning
 
-   An important aspect of the use of nested elements, ref-to-id references, and URI references, is that they all have the same meaning. Expressing a relationship via a nested element, versus an ref-to-id reference is merely for convenience and ease of serialization. There is no change in meaning or semantics between relationships expressed by sub-elements versus relationships expressed by structures:ref or structures:uri.
+   An important aspect of the use of nested elements, ref-to-id references, and URI references, is that they all have the same meaning. Expressing a relationship as a nested element, versus as a ref-to-id reference is merely for convenience and ease of serialization. There is no change in meaning or semantics between relationships expressed by sub-elements versus relationships expressed by structures:ref or structures:uri.
 
    Any claim that nested elements represent composition, while references represent aggregation is incorrect. No life cycle dependency is implied by either method. Similarly, any claim that included data is intrinsic (i.e., a property inherent to an object), while referenced data is extrinsic (i.e., a property derived from a relationship to other things), is false. A property represented as a nested element has the exact same meaning as that property represented by a reference.
 
