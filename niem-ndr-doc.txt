@@ -4116,7 +4116,7 @@ Rule 10-40. Metadata element declaration type is a metadata type
 
 Rule 10-41. Metadata element has applicable elements
 
-   Each metadata element declaration may be applied to a set of elements. Any element to which a metadata element may be validly applied is called an "applicable element" for the metadata element.
+   Each metadata element declaration may be applied to a set of elements. Any element to which a metadata element may be validly applied is called an "applicable element" for the metadata element. A metadata element that does not explicitly specify applicability information may be applied to any NIEM-conformant element.
 
    [Rule 10-41] (REF, EXT, SET)
 
