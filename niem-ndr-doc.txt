@@ -6071,7 +6071,7 @@ Rule 12-12. Values of structures:metadata refer to values of structures:id
 
       Given that each IDREF in the value of an attribute structures:metadata must match the value of an ID attribute on some element in the XML document, that ID attribute MUST be an occurrence of the attribute structures:id.
 
-Rule 12-13. Value of structures:relationshipMetadata refers to value of structures:id
+Rule 12-13. Values of structures:relationshipMetadata refer to values of structures:id
 
    [Rule 12-13] (INS)
 
@@ -6602,7 +6602,7 @@ Appendix E. Index of rules
    Rule 12-10, Metadata applies to referring entity: Section 12.3, Instance metadata
    Rule 12-11, Referent of structures:relationshipMetadata annotates relationship: Section 12.3, Instance metadata
    Rule 12-12, Values of structures:metadata refer to values of structures:id: Section 12.3, Instance metadata
-   Rule 12-13, Value of structures:relationshipMetadata refers to value of structures:id: Section 12.3, Instance metadata
+   Rule 12-13, Values of structures:relationshipMetadata refer to values of structures:id: Section 12.3, Instance metadata
    Rule 12-14, structures:metadata and structures:relationshipMetadata refer to metadata elements: Section 12.3, Instance metadata
    Rule 12-15, Attribute structures:metadata references metadata element: Section 12.3, Instance metadata
    Rule 12-16, Attribute structures:relationshipMetadata references metadata element: Section 12.3, Instance metadata
