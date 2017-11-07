@@ -3970,7 +3970,7 @@ Rule 10-31. Augmentation point element use must be last element in its base type
 
          3. is designed to be used as an [augmentation] of its parent object or association
 
-   This term may be mistaken for the term [augmentation]. An [augmentation element declaration] is an element declaration defined by a schemas, while an [augmentation] is an element information item within an XML document that appears as the result of being substituted for an augmentation point.
+   This term may be mistaken for the term [augmentation]. An [augmentation element declaration] is an element declaration defined by a schema, while an [augmentation] is an element information item within an XML document that appears as the result of being substituted for an augmentation point.
 
 Rule 10-32. Element within instance of augmentation type modifies base
 
