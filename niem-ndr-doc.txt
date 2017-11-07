@@ -5000,7 +5000,7 @@ Rule 11-10. Complex type with simple content has structures:SimpleObjectAttribut
 
 Rule 11-11. Element type does not have a simple type name
 
-   This rule ensures that all conformant elements will have complex types that contain attributes from the structures namespace, enabling a consistent approach for using IDs, references, metadata, relationship metadata, and security markup data.
+   This rule, in conjunction with Rule 11-3, Name of simple type ends in "SimpleType", ensures that all conformant elements will have complex types that contain attributes from the structures namespace, enabling a consistent approach for using IDs, references, metadata, relationship metadata, and security markup data.
 
    [Rule 11-11] (REF, EXT)
 
