@@ -2,7 +2,7 @@ National Information Exchange Model Naming and Design Rules
 
 Version 4.0
 
-November 1, 2017
+November 7, 2017
 
 NIEM Technical Architecture Committee (NTAC)
 
@@ -6133,7 +6133,7 @@ Appendix A. References
 
    [ClarkNS]: Clark, J. "XML Namespaces", 4 February 1999. Available from http://www.jclark.com/xml/xmlns.htm.
 
-   [Code Lists]: Webb Roberts. "NIEM Code Lists Specification." NIEM Technical Architecture Committee (NTAC), November 1, 2017. Available from https://reference.niem.gov/niem/specification/code-lists/4.0/niem-code-lists-4.0.html. 
+   [Code Lists]: Webb Roberts. "NIEM Code Lists Specification." NIEM Technical Architecture Committee (NTAC), November 7, 2017. Available from https://reference.niem.gov/niem/specification/code-lists/4.0/niem-code-lists-4.0.html. 
 
    [ConfReq]: Lynne Rosenthal, and Mark Skall, eds. "Conformance Requirements for Specifications v1.0." The Organization for the Advancement of Structured Information Standards (OASIS), March 15, 2002. https://www.oasis-open.org/committees/download.php/305/conformance_requirements-v1.pdf.
 
